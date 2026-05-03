@@ -207,7 +207,7 @@
         function syncChat() {
             const chatIframe = document.getElementById('live-chat');
             const hostname = window.location.hostname;
-            // IMPORTANT: embed_domain must be 2smokinbarrels.com or ironjeff80.github.io
+            const domain = hostname || "2smokinbarrels.com";
             chatIframe.src = `https://www.youtube.com/live_chat?v=${CURRENT_VIDEO_ID}&embed_domain=${hostname}`;
         }
 

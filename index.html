@@ -116,12 +116,42 @@
         .section-title { font-size: 2.2rem; margin-bottom: 2rem; color: var(--grey-med); }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
-        .card { background: var(--card-bg); border: 1px solid #222; padding: 2.5rem; transition: 0.3s; text-decoration: none; color: inherit; }
+        .card { background: var(--card-bg); border: 1px solid #222; padding: 2.5rem; transition: 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
-        .badge { background: var(--accent-red); color: white; padding: 3px 12px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 1.2rem; display: inline-block; font-weight: 600; }
+        .badge { background: var(--accent-red); color: white; padding: 3px 12px; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 1.2rem; display: inline-block; font-weight: 600; align-self: flex-start; }
         
         .card h3 { font-size: 1.8rem; margin: 0.5rem 0; color: var(--accent-red); }
         .card-footer { margin-top: 2rem; color: var(--grey-med); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
+
+        /* Copy link box styles */
+        .copy-link-container {
+            margin-top: 1rem;
+            display: flex;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #333;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .copy-input {
+            background: transparent;
+            border: none;
+            color: var(--grey-med);
+            font-family: 'Hapna', sans-serif;
+            font-size: 0.8rem;
+            width: 100%;
+            padding: 5px;
+            pointer-events: none;
+        }
+        .copy-btn {
+            background: var(--accent-red);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+        .copy-btn:hover { background: #b30000; }
 
         footer { text-align: center; padding: 5rem; border-top: 1px solid #1a1a1a; color: var(--grey-med); background: var(--bg-dark); }
     </style>
@@ -182,21 +212,41 @@
     <div class="container">
         <h2 class="section-title">Available Projects</h2>
         <div class="grid">
-            <a href="/condoreggmap/" class="card" target="_blank" rel="noopener noreferrer">
-                <span class="badge">Tool</span>
-                <h3>RDR2 Condor Egg Map</h3>
-                <div class="card-footer">Launch Map <i class="fas fa-external-link-alt"></i></div>
-            </a>
-            <a href="/gtawidget/" class="card" target="_blank" rel="noopener noreferrer">
-                <span class="badge">Overlay</span>
-                <h3>GTA World Widget</h3>
-                <div class="card-footer">Configure <i class="fas fa-external-link-alt"></i></div>
-            </a>
-            <a href="/reddeadoverlay/" class="card" target="_blank" rel="noopener noreferrer">
-                <span class="badge">Overlay</span>
-                <h3>Red Dead Overlay</h3>
-                <div class="card-footer">Configure <i class="fas fa-external-link-alt"></i></div>
-            </a>
+            <div class="card">
+                <a href="/condoreggmap/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                    <span class="badge">Tool</span>
+                    <h3>RDR2 Condor Egg Map</h3>
+                    <div class="card-footer" style="margin-top: 0;">Launch Map <i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <div class="copy-link-container">
+                    <input type="text" class="copy-input" value="https://2smokinbarrels.com/condoreggmap/" readonly id="map-link">
+                    <button class="copy-btn" onclick="copyLink('map-link')" title="Copy Share Link"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="/gtawidget/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                    <span class="badge">Overlay</span>
+                    <h3>GTA World Widget</h3>
+                    <div class="card-footer" style="margin-top: 0;">Configure <i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <div class="copy-link-container">
+                    <input type="text" class="copy-input" value="https://2smokinbarrels.com/gtawidget/" readonly id="gta-link">
+                    <button class="copy-btn" onclick="copyLink('gta-link')" title="Copy OBS Browser Source"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="/reddeadoverlay/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                    <span class="badge">Overlay</span>
+                    <h3>Red Dead Overlay</h3>
+                    <div class="card-footer" style="margin-top: 0;">Configure <i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <div class="copy-link-container">
+                    <input type="text" class="copy-input" value="https://2smokinbarrels.com/reddeadoverlay/" readonly id="rdo-link">
+                    <button class="copy-btn" onclick="copyLink('rdo-link')" title="Copy OBS Browser Source"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -281,6 +331,15 @@
                 args: { userName: userData.name, youtubeId: userData.id, pointCost: cost }
             }));
             alert(`Action '${actionName}' sent!`);
+        }
+
+        function copyLink(id) {
+            const copyText = document.getElementById(id);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); 
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                alert("Link copied: " + copyText.value);
+            });
         }
     </script>
 </body>

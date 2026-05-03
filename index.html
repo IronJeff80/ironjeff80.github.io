@@ -178,7 +178,7 @@
             
             <div id="user-auth">
                 <div id="login-button-container">
-                    <div id="g_id_onload" data-client_id="111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com" data-callback="handleCredentialResponse" data-auto_select="false"></div>
+                    <div id="g_id_onload"></div>
                     <div class="g_id_signin" data-type="icon" data-shape="circle"></div>
                 </div>
                 <div id="user-profile" onclick="signOut()" title="Click to Sign Out">
@@ -222,7 +222,7 @@
             <div class="card">
                 <a href="/condoreggmap/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                     <span class="badge">Tool</span>
-                    <h3>RDR2 Condor Egg Map</h3>
+                    <h3>RDO Condor Egg Map</h3>
                     <div class="card-footer" style="margin-top: 0;">Launch Map <i class="fas fa-external-link-alt"></i></div>
                 </a>
                 <div class="copy-label">Share Link:</div>
@@ -235,7 +235,7 @@
             <div class="card">
                 <a href="https://github.com/IronJeff80/gtawidget" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                     <span class="badge">Overlay</span>
-                    <h3>GTA World Widget</h3>
+                    <h3>GTA OBS Widget</h3>
                     <div class="card-footer" style="margin-top: 0;">Configure <i class="fas fa-external-link-alt"></i></div>
                 </a>
                 <div class="copy-label">OBS Browser Source:</div>
@@ -248,7 +248,7 @@
             <div class="card">
                 <a href="https://github.com/IronJeff80/reddeadoverlay" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
                     <span class="badge">Overlay</span>
-                    <h3>Red Dead Overlay</h3>
+                    <h3>RDO Events OBS Overlay</h3>
                     <div class="card-footer" style="margin-top: 0;">Configure <i class="fas fa-external-link-alt"></i></div>
                 </a>
                 <div class="copy-label">OBS Browser Source:</div>
@@ -274,8 +274,24 @@
                 restoreUserUI();
             } else {
                 document.getElementById('status-msg').innerText = "Sign in to interact with the stream.";
+                // Initialize Google Sign-In ONLY if the user is not logged in
+                initGoogleSignIn();
             }
         };
+
+        function initGoogleSignIn() {
+            google.accounts.id.initialize({
+                client_id: "111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com",
+                callback: handleCredentialResponse,
+                auto_select: false // Disables automatic login
+            });
+            google.accounts.id.renderButton(
+                document.querySelector(".g_id_signin"),
+                { type: "icon", shape: "circle" }
+            );
+            // This displays the One Tap prompt only if the user hasn't signed in yet
+            google.accounts.id.prompt(); 
+        }
 
         function handleCredentialResponse(response) {
             const payload = JSON.parse(atob(response.credential.split('.')[1]));
@@ -297,6 +313,7 @@
             if (!confirm("Do you want to sign out?")) return;
             localStorage.removeItem('smokinUser');
             userData = null;
+            // Force a reload to show the sign-in button again
             location.reload();
         }
 

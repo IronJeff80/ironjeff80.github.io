@@ -29,6 +29,11 @@
             src: url('./fonts/HapnaSlabSerif-DemiBold.ttf') format('truetype');
             font-weight: 600; font-style: normal;
         }
+        @font-face {
+            font-family: 'Redemption';
+            src: url('./fonts/Redemption.ttf') format('truetype');
+            font-weight: normal; font-style: normal;
+        }
 
         :root {
             --bg-dark: #070707;
@@ -54,7 +59,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .nav-logo-text {
+        h1, h2, h3 {
             font-family: 'RDRLino', serif;
             text-transform: uppercase;
         }
@@ -62,7 +67,8 @@
         /* --- NAVIGATION --- */
         nav {
             position: sticky; top: 0;
-            background: var(--nav-bg);
+            background-image: url('./images/bg.png');
+            background-repeat: repeat;
             border-bottom: 3px solid var(--accent-red);
             display: flex; justify-content: space-between; align-items: center;
             padding: 0.5rem 5%;
@@ -72,14 +78,28 @@
 
         .nav-brand { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .nav-logo-img { height: 40px; width: auto; }
-        .nav-logo-text { font-size: 1.4rem; color: var(--accent-red); letter-spacing: 1px; }
+        .nav-logo-text { 
+            font-family: 'Redemption', serif; /* Only the nav text uses Redemption */
+            font-size: 2.2rem; /* Adjusted size as script fonts often appear smaller */
+            color: var(--accent-red); 
+            letter-spacing: 1px; 
+            text-transform: none; /* Redemption usually looks better in natural case */
+        }
 
         .nav-links { display: flex; align-items: center; gap: 1rem; }
         
         /* Desktop Social Icons */
         .social-icons-desktop { display: flex; align-items: center; gap: 1rem; }
-        .social-icons-desktop a img { width: 24px; height: 24px; transition: 0.2s; filter: brightness(0.2); }
-        .social-icons-desktop a:hover img { transform: scale(1.15); filter: brightness(1); }
+        .social-icons-desktop a img { 
+            width: 24px; 
+            height: 24px; 
+            transition: 0.2s; 
+            filter: brightness(1); 
+        }
+        .social-icons-desktop a:hover img { 
+            transform: scale(1.15); 
+            filter: brightness(0) invert(1); 
+        }
 
         /* Mobile/Narrow Menu Button */
         .mobile-menu-btn { 
@@ -107,7 +127,7 @@
             padding: 10px;
             z-index: 1001;
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            grid-template-columns: repeat(2, 1fr); /* 2 Columns for growth */
+            grid-template-columns: repeat(2, 1fr); 
             gap: 10px;
             min-width: 280px;
         }
@@ -133,27 +153,23 @@
         .container { max-width: 1300px; margin: 0 auto; padding: 1rem 5%; }
         .section-title { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--grey-med); }
 
-        /* Stream Layout: Stacked for mobile, Row for Desktop */
         .stream-container { display: flex; flex-direction: column; gap: 20px; margin-top: 1rem; }
         .video-wrapper { width: 100%; aspect-ratio: 16 / 9; background: #000; border: 2px solid var(--accent-red); }
         .video-wrapper iframe { width: 100%; height: 100%; border: none; }
         .chat-wrapper { width: 100%; height: 450px; border: 2px solid var(--accent-red); background: #000; }
         .chat-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-        /* Command Center */
         .command-center { background: rgba(139, 0, 0, 0.15); border: 1px solid var(--accent-red); padding: 20px; margin-top: 20px; backdrop-filter: blur(5px); }
         .btn-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px; }
         .cmd-btn { background: var(--accent-red); color: white; border: none; padding: 12px; font-family: 'Hapna'; font-weight: 600; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
         .cmd-btn:hover:not(:disabled) { background: #b30000; }
         .cmd-btn:disabled { background: #333; color: #777; cursor: not-allowed; opacity: 0.6; }
 
-        /* Glitch Videos Grid Section */
         .glitch-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 3rem; }
         .glitch-card { background: var(--card-bg); border: 1px solid #222; padding: 1rem; text-align: center; }
-        .glitch-card h4 { font-size: 0.85rem; margin: 0 0 10px 0; color: var(--accent-red); height: 2.4rem; overflow: hidden; }
+        .glitch-card h4 { font-size: 0.85rem; margin: 0 0 10px 0; color: var(--accent-red); height: 2.4rem; overflow: hidden; font-family: 'Hapna', sans-serif; }
         .glitch-thumb { width: 100%; border: 1px solid var(--accent-red); display: block; }
 
-        /* Project Cards */
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .card { background: var(--card-bg); border: 1px solid #222; padding: 1.5rem; transition: 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--accent-red); transform: translateY(-3px); }
@@ -163,10 +179,9 @@
         .copy-input { background: transparent; border: none; color: var(--grey-med); font-size: 0.75rem; width: 100%; padding: 5px; pointer-events: none; }
         .copy-btn { background: var(--accent-red); border: none; color: white; padding: 5px 12px; cursor: pointer; }
 
-        /* OPTIMIZED FOOTER WITH BACKGROUND IMAGE */
         footer { 
             text-align: center; 
-            padding: 4rem 1rem 2rem; /* Increased top padding to show image pattern */
+            padding: 3rem 1rem 3rem; 
             border-top: 2px solid var(--accent-red); 
             color: #fff; 
             background-color: var(--bg-dark); 
@@ -176,34 +191,23 @@
             background-repeat: no-repeat;
             font-size: 0.9rem;
             font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0,0,0,1); /* Makes text readable over the stars */
+            text-shadow: 2px 2px 4px rgba(0,0,0,1);
         }
 
-        /* ============================================================
-           RESPONSIVE OVERRIDES (TABLET/DESKTOP)
-           ============================================================ */
-        
-        /* Narrow Window Breakpoint (approx 1100px) */
         @media (max-width: 1100px) {
             .social-icons-desktop { display: none; }
             .mobile-menu-btn { display: block; }
         }
 
-        /* Desktop/Wide Breakpoint */
         @media (min-width: 992px) {
             .nav-logo-img { height: 50px; }
-            .nav-logo-text { font-size: 1.8rem; }
             #user-name { display: inline; }
             .hero h1 { font-size: 4.5rem; }
             .hero p { font-size: 1.4rem; }
-
             .stream-container { flex-direction: row; height: 500px; }
             .video-wrapper { flex: 3; aspect-ratio: auto; }
             .chat-wrapper { flex: 1; height: auto; }
-
-            /* Force 4 videos on one line */
             .glitch-grid { grid-template-columns: repeat(4, 1fr); }
-
             .btn-grid { grid-template-columns: repeat(3, 1fr); }
             .grid { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
             .card { padding: 2.5rem; }
@@ -237,7 +241,7 @@
                     <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png"> X </a>
                     <a href="https://www.patreon.com/c/2SmokinBarrels" target="_blank"><img src="./icons/patreon.png"> Patreon</a>
                     <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png"> GitHub</a>
-                    </div>
+                </div>
             </div>
 
             <div id="user-auth">
@@ -354,7 +358,6 @@
     <footer>&copy; 2026 In Smokin' We Trust.</footer>
 
     <script>
-        // Navigation Toggle
         function toggleMenu(event) {
             event.stopPropagation();
             document.getElementById('socialDropdown').classList.toggle('active');
@@ -367,7 +370,6 @@
             }
         };
 
-        // Streamer.bot & Google Auth Logic
         let ws;
         let userData = null;
         let isStreamLive = false;

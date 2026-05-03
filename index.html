@@ -36,7 +36,6 @@
             overflow-x: hidden;
         }
 
-        /* Responsive Navigation */
         nav {
             position: sticky; top: 0;
             background: var(--nav-bg);
@@ -49,28 +48,25 @@
 
         .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .nav-logo-img { height: 45px; width: auto; }
-        .nav-logo-text { font-family: 'RDRLino'; font-size: 1.6rem; color: var(--accent-red); }
+        .nav-logo-text { font-family: 'RDRLino'; font-size: 1.6rem; color: var(--accent-red); text-transform: uppercase; }
 
-        .nav-links { display: flex; gap: 1rem; align-items: center; }
-        .nav-links img { width: 24px; filter: brightness(0.2); transition: 0.2s; }
+        .nav-links { display: flex; gap: 1.2rem; align-items: center; }
+        .nav-links img { width: 24px; height: 24px; filter: brightness(0.2); transition: 0.2s; }
         .nav-links a:hover img { filter: brightness(1); transform: scale(1.1); }
 
-        /* Stream Section Layout */
         .container { max-width: 1200px; margin: 0 auto; padding: 1rem 5%; }
         
         .stream-layout { 
             display: flex; 
             gap: 15px; 
             margin-top: 1rem; 
-            aspect-ratio: 16 / 9; /* Maintains scale on desktop */
+            aspect-ratio: 16 / 9;
         }
 
         .video-wrapper { flex: 3; background: #000; border: 2px solid var(--accent-red); }
         .chat-wrapper { flex: 1; background: #000; border: 2px solid var(--accent-red); }
-        
         iframe { width: 100%; height: 100%; border: none; }
 
-        /* Command Center */
         .command-center {
             background: var(--card-bg);
             border: 1px solid var(--accent-red);
@@ -99,19 +95,13 @@
 
         .cmd-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-        /* Responsive Breakpoints */
         @media (max-width: 900px) {
-            .stream-layout { 
-                flex-direction: column; 
-                aspect-ratio: auto; /* Allow content to stack */
-            }
+            .stream-layout { flex-direction: column; aspect-ratio: auto; }
             .video-wrapper { aspect-ratio: 16 / 9; }
             .chat-wrapper { height: 400px; }
-            .nav-logo-text { display: none; } /* Mobile space saver */
-            .hero h1 { font-size: 2.5rem; }
+            .nav-logo-text { display: none; }
         }
 
-        /* Projects Grid */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
@@ -128,7 +118,8 @@
             transition: 0.3s;
         }
         .card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
-        .card h3 { color: var(--accent-red); margin: 10px 0; }
+        .card h3 { font-family: 'RDRLino'; color: var(--accent-red); margin: 10px 0; }
+        .card-footer { margin-top: 1.5rem; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
         
         footer { text-align: center; padding: 4rem; opacity: 0.5; font-size: 0.8rem; }
     </style>
@@ -141,8 +132,11 @@
             <span class="nav-logo-text">2 Smokin' Barrels</span>
         </a>
         <div class="nav-links">
-            <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YT"></a>
-            <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png" alt="GH"></a>
+            <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YouTube"></a>
+            <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="./icons/discord.png" alt="Discord"></a>
+            <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png" alt="X"></a>
+            <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png" alt="GitHub"></a>
+            
             <div id="user-auth">
                 <div id="login-button-container">
                     <div id="g_id_onload" data-client_id="111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com" data-callback="handleCredentialResponse"></div>
@@ -157,8 +151,8 @@
 
     <div class="container">
         <header style="text-align:center; padding: 3rem 0;">
-            <h1 style="font-family:'RDRLino'; color:var(--accent-red); font-size: 4rem; margin:0;">2 SMOKIN' BARRELS</h1>
-            <p style="font-weight:500;">Live Stream Automation & Community Tools</p>
+            <h1 style="font-family:'RDRLino'; color:var(--accent-red); font-size: 4.5rem; margin:0;">2 SMOKIN' BARRELS</h1>
+            <p style="font-weight:500; font-size: 1.2rem;">Live Stream Automation & Community Tools</p>
         </header>
 
         <div class="stream-layout">
@@ -180,15 +174,25 @@
             </div>
         </div>
 
-        <h2 style="font-family:'RDRLino'; margin-top: 4rem;">Available Projects</h2>
+        <h2 style="font-family:'RDRLino'; margin-top: 4rem; color:var(--grey-med);">Available Projects</h2>
         <div class="grid">
             <a href="/condoreggmap/" class="card" target="_blank" rel="noopener">
+                <span style="color: var(--accent-red); font-weight:600; font-size:0.75rem; text-transform:uppercase;">Tool</span>
                 <h3>RDR2 Condor Egg Map</h3>
                 <p>Real-time spatial map for RDO events.</p>
+                <div class="card-footer">Launch Map <i class="fas fa-external-link-alt"></i></div>
             </a>
             <a href="/gtawidget/" class="card" target="_blank" rel="noopener">
+                <span style="color: var(--accent-red); font-weight:600; font-size:0.75rem; text-transform:uppercase;">Overlay</span>
                 <h3>GTA World Widget</h3>
                 <p>Technical overlay for GTA Online events.</p>
+                <div class="card-footer">Configure <i class="fas fa-external-link-alt"></i></div>
+            </a>
+            <a href="/reddeadoverlay/" class="card" target="_blank" rel="noopener">
+                <span style="color: var(--accent-red); font-weight:600; font-size:0.75rem; text-transform:uppercase;">Overlay</span>
+                <h3>Red Dead Overlay</h3>
+                <p>Cinematic notification overlay for RDO.</p>
+                <div class="card-footer">Configure <i class="fas fa-external-link-alt"></i></div>
             </a>
         </div>
     </div>
@@ -197,20 +201,14 @@
 
     <script>
         let userData = null;
-        const CHANNEL_ID = "UCbflkZl3HSQVyVW153f2Z3A";
+        // THE CURRENT ACTIVE VIDEO ID FOR CHAT (Must be updated per stream if auto-sync fails)
+        const CURRENT_VIDEO_ID = "GBSp_Esg28k"; 
 
-        // AUTO-SYNC CHAT ID
-        async function syncChat() {
-            try {
-                // We use the oEmbed endpoint to find the current active Video ID
-                const response = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=live_stream?channel=${CHANNEL_ID}&format=json`);
-                // Note: YouTube often blocks direct oEmbed fetch from browsers due to CORS. 
-                // If it fails, we fall back to a manual ID update or your bot's API.
-                const currentID = "GBSp_Esg28k"; // Update this per stream if auto-fetch is blocked
-                document.getElementById('live-chat').src = `https://www.youtube.com/live_chat?v=${currentID}&embed_domain=${window.location.hostname}`;
-            } catch (e) {
-                console.log("Auto-chat sync failed, using fallback.");
-            }
+        function syncChat() {
+            const chatIframe = document.getElementById('live-chat');
+            const hostname = window.location.hostname;
+            // IMPORTANT: embed_domain must be 2smokinbarrels.com or ironjeff80.github.io
+            chatIframe.src = `https://www.youtube.com/live_chat?v=${CURRENT_VIDEO_ID}&embed_domain=${hostname}`;
         }
 
         window.onload = function() {
@@ -233,7 +231,7 @@
             document.getElementById('login-button-container').style.display = 'none';
             document.getElementById('user-profile').style.display = 'flex';
             document.getElementById('user-avatar').src = userData.picture;
-            document.getElementById('status-msg').innerText = `Welcome back, ${userData.name}!`;
+            document.getElementById('status-msg').innerText = `Welcome back, ${userData.name}! Ready to trigger actions.`;
             document.querySelectorAll('.cmd-btn').forEach(btn => btn.disabled = false);
         }
 
@@ -245,7 +243,7 @@
         }
 
         function sendAction(name, cost) {
-            // Your bot connection logic (Cloudflare Tunnel / Worker) goes here
+            // Placeholder for your secure relay/proxy call
             alert(`Action ${name} sent for ${cost} points!`);
         }
     </script>

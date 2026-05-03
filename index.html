@@ -147,6 +147,12 @@
         .cmd-btn:hover:not(:disabled) { background: #b30000; }
         .cmd-btn:disabled { background: #333; color: #777; cursor: not-allowed; opacity: 0.6; }
 
+        /* Glitch Videos Grid Section */
+        .glitch-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 3rem; }
+        .glitch-card { background: var(--card-bg); border: 1px solid #222; padding: 1rem; text-align: center; }
+        .glitch-card h4 { font-size: 0.85rem; margin: 0 0 10px 0; color: var(--accent-red); height: 2.4rem; overflow: hidden; }
+        .glitch-thumb { width: 100%; border: 1px solid var(--accent-red); display: block; }
+
         /* Project Cards */
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .card { background: var(--card-bg); border: 1px solid #222; padding: 1.5rem; transition: 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
@@ -163,13 +169,11 @@
            RESPONSIVE OVERRIDES (TABLET/DESKTOP)
            ============================================================ */
         
-        /* Narrow Window Breakpoint (approx 1100px) */
         @media (max-width: 1100px) {
             .social-icons-desktop { display: none; }
             .mobile-menu-btn { display: block; }
         }
 
-        /* Desktop/Wide Breakpoint */
         @media (min-width: 992px) {
             .nav-logo-img { height: 50px; }
             .nav-logo-text { font-size: 1.8rem; }
@@ -180,6 +184,9 @@
             .stream-container { flex-direction: row; height: 500px; }
             .video-wrapper { flex: 3; aspect-ratio: auto; }
             .chat-wrapper { flex: 1; height: auto; }
+
+            /* Force 4 videos on one line */
+            .glitch-grid { grid-template-columns: repeat(4, 1fr); }
 
             .btn-grid { grid-template-columns: repeat(3, 1fr); }
             .grid { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
@@ -256,31 +263,31 @@
     </div>
 
     <div class="container">
-        <h2 class="section-title">Popular Videos</h2>
-        <div class="grid">
-            <div class="card">
-                <span class="badge">Highlight</span>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/olP7h9B7V90" allowfullscreen></iframe>
-                </div>
+        <h2 class="section-title">2026 Working Red Dead Online Glitches</h2>
+        <div class="glitch-grid">
+            <div class="glitch-card">
+                <h4>Rapid Treasure Map Spawn Location</h4>
+                <a href="https://www.youtube.com/watch?v=olP7h9B7V90" target="_blank">
+                    <img class="glitch-thumb" src="https://img.youtube.com/vi/olP7h9B7V90/hqdefault.jpg" alt="Glitch 1">
+                </a>
             </div>
-            <div class="card">
-                <span class="badge">Highlight</span>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/sf41Gy08b-I" allowfullscreen></iframe>
-                </div>
+            <div class="glitch-card">
+                <h4>Infinite Gold & Cash Glitch</h4>
+                <a href="https://www.youtube.com/watch?v=sf41Gy08b-I" target="_blank">
+                    <img class="glitch-thumb" src="https://img.youtube.com/vi/sf41Gy08b-I/hqdefault.jpg" alt="Glitch 2">
+                </a>
             </div>
-            <div class="card">
-                <span class="badge">Highlight</span>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/puidk5oZY7o" allowfullscreen></iframe>
-                </div>
+            <div class="glitch-card">
+                <h4>Off-Radar & God Mode Guide</h4>
+                <a href="https://www.youtube.com/watch?v=puidk5oZY7o" target="_blank">
+                    <img class="glitch-thumb" src="https://img.youtube.com/vi/puidk5oZY7o/hqdefault.jpg" alt="Glitch 3">
+                </a>
             </div>
-            <div class="card">
-                <span class="badge">Highlight</span>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/R6Hcy5KiiPk" allowfullscreen></iframe>
-                </div>
+            <div class="glitch-card">
+                <h4>Solo Lobby Tutorial 2026</h4>
+                <a href="https://www.youtube.com/watch?v=R6Hcy5KiiPk" target="_blank">
+                    <img class="glitch-thumb" src="https://img.youtube.com/vi/R6Hcy5KiiPk/hqdefault.jpg" alt="Glitch 4">
+                </a>
             </div>
         </div>
     </div>
@@ -329,7 +336,6 @@
     <footer>&copy; 2026 In Smokin' We Trust.</footer>
 
     <script>
-        // Navigation Toggle
         function toggleMenu(event) {
             event.stopPropagation();
             document.getElementById('socialDropdown').classList.toggle('active');
@@ -342,7 +348,6 @@
             }
         };
 
-        // Streamer.bot & Google Auth Logic
         let ws;
         let userData = null;
         let isStreamLive = false;

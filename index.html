@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2 Smokin' Barrels | Test Build</title>
+    <title>2 Smokin' Barrels | Stream Tools & Extensions</title>
     <link rel="icon" type="image/png" href="./fav.png"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
         /* Typography Setup */
-        @font-face { font-family: 'RDRLino'; src: url('./fonts/RDRLino-Regular.ttf'); }
-        @font-face { font-family: 'Hapna'; src: url('./fonts/HapnaSlabSerif-Regular.ttf'); font-weight: 400; }
-        @font-face { font-family: 'Hapna'; src: url('./fonts/HapnaSlabSerif-Medium.ttf'); font-weight: 500; }
-        @font-face { font-family: 'Hapna'; src: url('./fonts/HapnaSlabSerif-DemiBold.ttf'); font-weight: 600; }
+        @font-face {
+            font-family: 'RDRLino';
+            src: url('./fonts/RDRLino-Regular.ttf') format('truetype');
+            font-weight: normal; font-style: normal;
+        }
+        @font-face { font-family: 'Hapna'; src: url('./fonts/HapnaSlabSerif-Regular.ttf') format('truetype'); font-weight: 400; }
+        @font-face { font-family: 'Hapna'; src: url('./fonts/HapnaSlabSerif-Medium.ttf') format('truetype'); font-weight: 500; }
+        @font-face { font-family: 'Hapna'; src: url('./fonts/HapnaSlabSerif-DemiBold.ttf') format('truetype'); font-weight: 600; }
 
         :root {
             --bg-dark: #070707;
@@ -28,6 +32,7 @@
             background: var(--bg-dark) url('./images/bg.png') repeat fixed top center;
             color: var(--white-low);
             margin: 0;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -38,60 +43,83 @@
             display: flex; justify-content: space-between; align-items: center;
             padding: 0.5rem 5%;
             z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo-img { height: 45px; }
+        .nav-logo-img { height: 45px; width: auto; }
         .nav-logo-text { font-family: 'RDRLino'; font-size: 1.6rem; color: var(--accent-red); text-transform: uppercase; }
 
         .nav-links { display: flex; gap: 1.2rem; align-items: center; }
-        .nav-links img { width: 24px; filter: brightness(0.2); transition: 0.2s; }
+        .nav-links img { width: 24px; height: 24px; filter: brightness(0.2); transition: 0.2s; }
         .nav-links a:hover img { filter: brightness(1); transform: scale(1.1); }
-
-        /* USER ICON FIX: Prevents the "oblong" shape */
-        #user-profile { display: none; align-items: center; cursor: pointer; }
-        #user-avatar { 
-            width: 38px; 
-            height: 38px; 
-            border-radius: 50%; 
-            border: 2px solid var(--accent-red);
-            object-fit: cover; /* Keeps image centered and circular */
-            display: block;
-        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 1rem 5%; }
         
-        .stream-layout { display: flex; gap: 15px; margin-top: 1rem; aspect-ratio: 16 / 9; }
+        .stream-layout { 
+            display: flex; 
+            gap: 15px; 
+            margin-top: 1rem; 
+            aspect-ratio: 16 / 9;
+        }
+
         .video-wrapper { flex: 3; background: #000; border: 2px solid var(--accent-red); }
         .chat-wrapper { flex: 1; background: #000; border: 2px solid var(--accent-red); }
         iframe { width: 100%; height: 100%; border: none; }
 
-        /* Mobile Adjustments */
-        @media (max-width: 900px) {
-            .stream-layout { flex-direction: column; aspect-ratio: auto; }
-            .video-wrapper { aspect-ratio: 16 / 9; }
-            .chat-wrapper { height: 450px; }
-            .nav-logo-text { display: none; }
-        }
-
         .command-center {
             background: var(--card-bg);
             border: 1px solid var(--accent-red);
-            padding: 1.5rem; margin-top: 1.5rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
             backdrop-filter: blur(8px);
         }
 
-        .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 1rem; }
-        .cmd-btn {
-            background: var(--accent-red); color: white; border: none; padding: 12px;
-            font-weight: 600; text-transform: uppercase; cursor: pointer; transition: 0.2s;
+        .btn-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 10px; 
+            margin-top: 1rem; 
         }
+
+        .cmd-btn {
+            background: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
         .cmd-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin: 2rem 0; }
-        .card { background: var(--card-bg); padding: 2rem; border: 1px solid #222; text-decoration: none; color: inherit; transition: 0.3s; }
+        @media (max-width: 900px) {
+            .stream-layout { flex-direction: column; aspect-ratio: auto; }
+            .video-wrapper { aspect-ratio: 16 / 9; }
+            .chat-wrapper { height: 400px; }
+            .nav-logo-text { display: none; }
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin-top: 2rem;
+        }
+
+        .card { 
+            background: var(--card-bg); 
+            padding: 2rem; 
+            border: 1px solid #222; 
+            text-decoration: none; 
+            color: inherit; 
+            transition: 0.3s;
+        }
         .card:hover { border-color: var(--accent-red); transform: translateY(-5px); }
         .card h3 { font-family: 'RDRLino'; color: var(--accent-red); margin: 10px 0; }
+        .card-footer { margin-top: 1.5rem; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; }
         
         footer { text-align: center; padding: 4rem; opacity: 0.5; font-size: 0.8rem; }
     </style>
@@ -104,31 +132,32 @@
             <span class="nav-logo-text">2 Smokin' Barrels</span>
         </a>
         <div class="nav-links">
-            <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YT"></a>
+            <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YouTube"></a>
             <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="./icons/discord.png" alt="Discord"></a>
-            <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png" alt="GH"></a>
+            <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png" alt="X"></a>
+            <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png" alt="GitHub"></a>
             
             <div id="user-auth">
                 <div id="login-button-container">
                     <div id="g_id_onload" data-client_id="111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com" data-callback="handleCredentialResponse"></div>
                     <div class="g_id_signin" data-type="icon" data-shape="circle"></div>
                 </div>
-                <div id="user-profile" onclick="signOut()" title="Click to Sign Out">
-                    <img id="user-avatar" src="" referrerpolicy="no-referrer">
+                <div id="user-profile" onclick="signOut()" style="display:none; align-items:center; gap:10px; cursor:pointer;">
+                    <img id="user-avatar" src="" style="width:34px; border-radius:50%; border:2px solid var(--accent-red);">
                 </div>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <header style="text-align:center; padding: 2rem 0;">
-            <h1 style="font-family:'RDRLino'; color:var(--accent-red); font-size: 4rem; margin:0;">2 SMOKIN' BARRELS</h1>
-            <p style="font-weight:500;">Live Stream Automation & Tools</p>
+        <header style="text-align:center; padding: 3rem 0;">
+            <h1 style="font-family:'RDRLino'; color:var(--accent-red); font-size: 4.5rem; margin:0;">2 SMOKIN' BARRELS</h1>
+            <p style="font-weight:500; font-size: 1.2rem;">Live Stream Automation & Community Tools</p>
         </header>
 
         <div class="stream-layout">
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/ik8MBQ_d7kQ" allowfullscreen></iframe>
+                <iframe id="main-player" src="https://www.youtube.com/embed/live_stream?channel=UCbflkZl3HSQVyVW153f2Z3A" allowfullscreen></iframe>
             </div>
             <div class="chat-wrapper">
                 <iframe id="live-chat" src=""></iframe>
@@ -137,27 +166,49 @@
 
         <div class="command-center">
             <h3 style="font-family:'RDRLino'; color:var(--accent-red); margin-top:0;">Command Center</h3>
-            <p id="status-msg" style="color:var(--grey-med); font-size:0.9rem;">Sign in to test commands.</p>
+            <p id="status-msg" style="color:var(--grey-med); font-size:0.9rem;">Sign in to unlock interactive commands.</p>
             <div class="btn-grid">
-                <button class="cmd-btn" onclick="alert('Test sent!')" disabled>Test Action</button>
+                <button class="cmd-btn" id="btn-wotd" onclick="sendAction('WOTD_Clue', 10)" disabled>WOTD Clue (10pts)</button>
+                <button class="cmd-btn" id="btn-map" onclick="sendAction('ShowMap', 25)" disabled>Show Map (25pts)</button>
+                <button class="cmd-btn" id="btn-poke" onclick="sendAction('CatchPokemon', 50)" disabled>Throw Pokeball (50pts)</button>
             </div>
+        </div>
+
+        <h2 style="font-family:'RDRLino'; margin-top: 4rem; color:var(--grey-med);">Available Projects</h2>
+        <div class="grid">
+            <a href="/condoreggmap/" class="card" target="_blank" rel="noopener">
+                <span style="color: var(--accent-red); font-weight:600; font-size:0.75rem; text-transform:uppercase;">Tool</span>
+                <h3>RDR2 Condor Egg Map</h3>
+                <p>Real-time spatial map for RDO events.</p>
+                <div class="card-footer">Launch Map <i class="fas fa-external-link-alt"></i></div>
+            </a>
+            <a href="/gtawidget/" class="card" target="_blank" rel="noopener">
+                <span style="color: var(--accent-red); font-weight:600; font-size:0.75rem; text-transform:uppercase;">Overlay</span>
+                <h3>GTA World Widget</h3>
+                <p>Technical overlay for GTA Online events.</p>
+                <div class="card-footer">Configure <i class="fas fa-external-link-alt"></i></div>
+            </a>
+            <a href="/reddeadoverlay/" class="card" target="_blank" rel="noopener">
+                <span style="color: var(--accent-red); font-weight:600; font-size:0.75rem; text-transform:uppercase;">Overlay</span>
+                <h3>Red Dead Overlay</h3>
+                <p>Cinematic notification overlay for RDO.</p>
+                <div class="card-footer">Configure <i class="fas fa-external-link-alt"></i></div>
+            </a>
         </div>
     </div>
 
+    <footer>&copy; 2026 In Smokin' We Trust.</footer>
+
     <script>
         let userData = null;
-        
-        // HARD-CODED TEST ID
-        const TEST_ID = "ik8MBQ_d7kQ";
+        // THE CURRENT ACTIVE VIDEO ID FOR CHAT (Must be updated per stream if auto-sync fails)
+        const CURRENT_VIDEO_ID = "GBSp_Esg28k"; 
 
         function syncChat() {
-            const chatFrame = document.getElementById('live-chat');
-            const domain = window.location.hostname;
-            
-            // If local testing (no hostname), YouTube requires a real domain or it blocks
-            const embedDomain = domain || "2smokinbarrels.com";
-            
-            chatFrame.src = `https://www.youtube.com/live_chat?v=${TEST_ID}&embed_domain=${embedDomain}`;
+            const chatIframe = document.getElementById('live-chat');
+            const hostname = window.location.hostname;
+            // IMPORTANT: embed_domain must be 2smokinbarrels.com or ironjeff80.github.io
+            chatIframe.src = `https://www.youtube.com/live_chat?v=${CURRENT_VIDEO_ID}&embed_domain=${hostname}`;
         }
 
         window.onload = function() {
@@ -171,7 +222,7 @@
 
         function handleCredentialResponse(response) {
             const payload = JSON.parse(atob(response.credential.split('.')[1]));
-            userData = { name: payload.name, picture: payload.picture };
+            userData = { name: payload.name, picture: payload.picture, id: payload.sub };
             localStorage.setItem('smokinUser', JSON.stringify(userData));
             restoreUI();
         }
@@ -180,12 +231,20 @@
             document.getElementById('login-button-container').style.display = 'none';
             document.getElementById('user-profile').style.display = 'flex';
             document.getElementById('user-avatar').src = userData.picture;
+            document.getElementById('status-msg').innerText = `Welcome back, ${userData.name}! Ready to trigger actions.`;
             document.querySelectorAll('.cmd-btn').forEach(btn => btn.disabled = false);
         }
 
         function signOut() {
-            localStorage.removeItem('smokinUser');
-            location.reload();
+            if(confirm("Sign out?")) {
+                localStorage.removeItem('smokinUser');
+                location.reload();
+            }
+        }
+
+        function sendAction(name, cost) {
+            // Placeholder for your secure relay/proxy call
+            alert(`Action ${name} sent for ${cost} points!`);
         }
     </script>
 </body>

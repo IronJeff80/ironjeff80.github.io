@@ -124,8 +124,15 @@
         .card-footer { margin-top: 2rem; color: var(--grey-med); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; }
 
         /* Copy link box styles */
+        .copy-label {
+            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--accent-red);
+        }
         .copy-link-container {
-            margin-top: 1rem;
+            margin-top: 0.4rem;
             display: flex;
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid #333;
@@ -218,6 +225,7 @@
                     <h3>RDR2 Condor Egg Map</h3>
                     <div class="card-footer" style="margin-top: 0;">Launch Map <i class="fas fa-external-link-alt"></i></div>
                 </a>
+                <div class="copy-label">Share Link:</div>
                 <div class="copy-link-container">
                     <input type="text" class="copy-input" value="https://2smokinbarrels.com/condoreggmap/" readonly id="map-link">
                     <button class="copy-btn" onclick="copyLink('map-link')" title="Copy Share Link"><i class="fas fa-copy"></i></button>
@@ -230,6 +238,7 @@
                     <h3>GTA World Widget</h3>
                     <div class="card-footer" style="margin-top: 0;">Configure <i class="fas fa-external-link-alt"></i></div>
                 </a>
+                <div class="copy-label">OBS Browser Source:</div>
                 <div class="copy-link-container">
                     <input type="text" class="copy-input" value="https://2smokinbarrels.com/gtawidget/" readonly id="gta-link">
                     <button class="copy-btn" onclick="copyLink('gta-link')" title="Copy OBS Browser Source"><i class="fas fa-copy"></i></button>
@@ -242,6 +251,7 @@
                     <h3>Red Dead Overlay</h3>
                     <div class="card-footer" style="margin-top: 0;">Configure <i class="fas fa-external-link-alt"></i></div>
                 </a>
+                <div class="copy-label">OBS Browser Source:</div>
                 <div class="copy-link-container">
                     <input type="text" class="copy-input" value="https://2smokinbarrels.com/reddeadoverlay/" readonly id="rdo-link">
                     <button class="copy-btn" onclick="copyLink('rdo-link')" title="Copy OBS Browser Source"><i class="fas fa-copy"></i></button>

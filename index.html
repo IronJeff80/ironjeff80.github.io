@@ -79,7 +79,7 @@
         /* Desktop Social Icons */
         .social-icons-desktop { display: flex; align-items: center; gap: 1rem; }
         .social-icons-desktop a img { width: 24px; height: 24px; transition: 0.2s; filter: brightness(0.2); }
-        .social-icons-desktop a:hover img { transform: scale(1.15); filter: brightness(1); }
+        .social-icons-desktop a:hover img { transform: scale(1.15) filter: brightness(1); }
 
         /* Mobile/Narrow Menu Button */
         .mobile-menu-btn { 
@@ -212,7 +212,7 @@
                     <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="./icons/discord.png"> Discord</a>
                     <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png"> X / Twitter</a>
                     <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png"> GitHub</a>
-                    </div>
+                </div>
             </div>
 
             <div id="user-auth">
@@ -251,6 +251,36 @@
                 <button class="cmd-btn" id="btn-wotd" onclick="sendAction('WOTD_Clue', 10)" disabled>Reveal WOTD Clue (10pts)</button>
                 <button class="cmd-btn" id="btn-map" onclick="sendAction('ShowMap', 25)" disabled>Show Map on Stream (25pts)</button>
                 <button class="cmd-btn" id="btn-poke" onclick="sendAction('CatchPokemon', 50)" disabled>Throw Pokeball (50pts)</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Popular Videos</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="badge">Highlight</span>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/olP7h9B7V90" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="card">
+                <span class="badge">Highlight</span>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/sf41Gy08b-I" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="card">
+                <span class="badge">Highlight</span>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/puidk5oZY7o" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="card">
+                <span class="badge">Highlight</span>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/R6Hcy5KiiPk" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>

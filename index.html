@@ -65,26 +65,31 @@
             text-transform: uppercase;
         }
 
+        /* --- NEW HEADER SECTION --- */
+        .site-header {
+            text-align: center;
+            padding: 20px 5%;
+            background-image: url('./images/bg.png');
+            background-repeat: repeat;
+        }
+        
+        .header-logo-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px; /* Adjust height as needed */
+        }
+
         /* --- NAVIGATION --- */
         nav {
             position: sticky; top: 0;
             background-image: url('./images/bg.png');
             background-repeat: repeat;
+            border-top: 3px solid var(--accent-red); /* Border added to top for separation */
             border-bottom: 3px solid var(--accent-red);
             display: flex; justify-content: space-between; align-items: center;
             padding: 0.5rem 5%;
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-
-        .nav-brand { display: flex; align-items: center; gap: 15px; text-decoration: none; }
-        .nav-logo-img { height: 40px; width: auto; }
-        .nav-logo-text { 
-            font-family: 'Redemption', serif; /* Only the nav text uses Redemption */
-            font-size: 2.2rem; /* Adjusted size as script fonts often appear smaller */
-            color: var(--accent-red); 
-            letter-spacing: 1px; 
-            text-transform: none; /* Redemption usually looks better in natural case */
         }
 
         .nav-links { display: flex; align-items: center; gap: 1rem; }
@@ -201,7 +206,7 @@
         }
 
         @media (min-width: 992px) {
-            .nav-logo-img { height: 50px; }
+            .header-logo-img { max-height: 120px; }
             #user-name { display: inline; }
             .hero h1 { font-size: 4.5rem; }
             .hero p { font-size: 1.4rem; }
@@ -217,12 +222,13 @@
 </head>
 <body>
 
-    <nav>
-        <a href="/" class="nav-brand">
-            <img src="./images/longlogo.png" alt="Logo" class="nav-logo-img">
-            <span class="nav-logo-text"></span>
+    <header class="site-header">
+        <a href="/">
+            <img src="./images/longlogo.png" alt="Logo" class="header-logo-img">
         </a>
+    </header>
 
+    <nav>
         <div class="nav-links">
             <div class="social-icons-desktop">
                 <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YouTube"></a>
@@ -244,16 +250,16 @@
                     <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png"> GitHub</a>
                 </div>
             </div>
+        </div>
 
-            <div id="user-auth">
-                <div id="login-button-container">
-                    <div id="g_id_onload"></div>
-                    <div class="g_id_signin" data-type="icon" data-shape="circle"></div>
-                </div>
-                <div id="user-profile" onclick="signOut()" title="Click to Sign Out">
-                    <span id="user-name" style="color: var(--accent-red); font-weight: 600; font-size: 0.9rem;"></span>
-                    <img id="user-avatar" src="" alt="Profile" referrerpolicy="no-referrer">
-                </div>
+        <div id="user-auth">
+            <div id="login-button-container">
+                <div id="g_id_onload"></div>
+                <div class="g_id_signin" data-type="icon" data-shape="circle"></div>
+            </div>
+            <div id="user-profile" onclick="signOut()" title="Click to Sign Out">
+                <span id="user-name" style="color: var(--accent-red); font-weight: 600; font-size: 0.9rem;"></span>
+                <img id="user-avatar" src="" alt="Profile" referrerpolicy="no-referrer">
             </div>
         </div>
     </nav>

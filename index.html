@@ -65,7 +65,7 @@
             text-transform: uppercase;
         }
 
-        /* --- NEW HEADER SECTION --- */
+        /* --- HEADER SECTION --- */
         .site-header {
             text-align: center;
             padding: 20px 5%;
@@ -76,7 +76,7 @@
         .header-logo-img {
             max-width: 100%;
             height: auto;
-            max-height: 80px; /* Adjust height as needed */
+            max-height: 80px;
         }
 
         /* --- NAVIGATION --- */
@@ -84,7 +84,7 @@
             position: sticky; top: 0;
             background-image: url('./images/bg.png');
             background-repeat: repeat;
-            border-top: 3px solid var(--accent-red); /* Border added to top for separation */
+            border-top: 3px solid var(--accent-red);
             border-bottom: 3px solid var(--accent-red);
             display: flex; justify-content: space-between; align-items: center;
             padding: 0.5rem 5%;
@@ -94,57 +94,17 @@
 
         .nav-links { display: flex; align-items: center; gap: 1rem; }
         
-        /* Desktop Social Icons */
-        .social-icons-desktop { display: flex; align-items: center; gap: 1rem; }
-        .social-icons-desktop a img { 
+        .social-icons { display: flex; align-items: center; gap: 1rem; }
+        .social-icons a img { 
             width: 24px; 
             height: 24px; 
             transition: 0.2s; 
             filter: brightness(1); 
         }
-        .social-icons-desktop a:hover img { 
+        .social-icons a:hover img { 
             transform: scale(1.15); 
             filter: brightness(0) invert(1); 
         }
-
-        /* Mobile/Narrow Menu Button */
-        .mobile-menu-btn { 
-            display: none; 
-            background: var(--accent-red); 
-            color: white; 
-            border: none; 
-            padding: 8px 12px; 
-            border-radius: 4px; 
-            cursor: pointer;
-            font-family: 'Hapna';
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-        }
-
-        /* Dropdown Menu */
-        .mobile-dropdown {
-            display: none;
-            position: absolute;
-            top: calc(100% + 10px);
-            right: 0;
-            background: #e0e0e0;
-            border: 2px solid var(--accent-red);
-            padding: 10px;
-            z-index: 1001;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 10px;
-            min-width: 280px;
-        }
-        .mobile-dropdown.active { display: grid; }
-        .mobile-dropdown a {
-            display: flex; align-items: center; gap: 8px;
-            text-decoration: none; color: #000; font-weight: 600; font-size: 0.85rem;
-            padding: 8px; transition: background 0.2s;
-        }
-        .mobile-dropdown a:hover { background: rgba(139, 0, 0, 0.1); }
-        .mobile-dropdown img { width: 18px; height: 18px; filter: brightness(0); }
 
         #user-auth { margin-left: 10px; }
         #user-profile { display: none; align-items: center; gap: 8px; cursor: pointer; }
@@ -200,11 +160,6 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,1);
         }
 
-        @media (max-width: 1100px) {
-            .social-icons-desktop { display: none; }
-            .mobile-menu-btn { display: block; }
-        }
-
         @media (min-width: 992px) {
             .header-logo-img { max-height: 120px; }
             #user-name { display: inline; }
@@ -229,27 +184,12 @@
     </header>
 
     <nav>
-        <div class="nav-links">
-            <div class="social-icons-desktop">
-                <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YouTube"></a>
-                <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="./icons/discord.png" alt="Discord"></a>
-                <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png" alt="X"></a>
-                <a href="https://www.patreon.com/c/2SmokinBarrels" target="_blank"><img src="./icons/patreon.png" alt="Patreon"></a>
-                <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png" alt="GitHub"></a>
-            </div>
-
-            <div style="position: relative;">
-                <button class="mobile-menu-btn" onclick="toggleMenu(event)">
-                    Socials <i class="fas fa-bars" style="margin-left:5px;"></i>
-                </button>
-                <div class="mobile-dropdown" id="socialDropdown">
-                    <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png"> YouTube</a>
-                    <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="./icons/discord.png"> Discord</a>
-                    <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png"> X </a>
-                    <a href="https://www.patreon.com/c/2SmokinBarrels" target="_blank"><img src="./icons/patreon.png"> Patreon</a>
-                    <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png"> GitHub</a>
-                </div>
-            </div>
+        <div class="social-icons">
+            <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YouTube"></a>
+            <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="./icons/discord.png" alt="Discord"></a>
+            <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png" alt="X"></a>
+            <a href="https://www.patreon.com/c/2SmokinBarrels" target="_blank"><img src="./icons/patreon.png" alt="Patreon"></a>
+            <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png" alt="GitHub"></a>
         </div>
 
         <div id="user-auth">
@@ -365,18 +305,6 @@
     <footer>&copy; 2026 In Smokin' We Trust.</footer>
 
     <script>
-        function toggleMenu(event) {
-            event.stopPropagation();
-            document.getElementById('socialDropdown').classList.toggle('active');
-        }
-
-        window.onclick = function() {
-            const dropdown = document.getElementById('socialDropdown');
-            if (dropdown.classList.contains('active')) {
-                dropdown.classList.remove('active');
-            }
-        };
-
         let ws;
         let userData = null;
         let isStreamLive = false;

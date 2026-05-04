@@ -69,15 +69,15 @@
         .menu-toggle {
             background: none;
             border: none;
-            color: var(--white-low);
+            color: var(--accent-red); /* Changed to your Red #8b0000 */
             font-size: 1.2rem;
             cursor: pointer;
-            padding: 0 15px 0 0;
+            padding: 0; /* Removed padding to align fully left */
             display: flex;
             align-items: center;
             transition: 0.2s;
         }
-        .menu-toggle:hover { color: var(--accent-red); }
+        .menu-toggle:hover { filter: brightness(1.2); }
 
         .sidebar {
             position: fixed;
@@ -159,14 +159,20 @@
             border-top: 3px solid var(--accent-red);
             border-bottom: 3px solid var(--accent-red);
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0.5rem 5%;
+            padding: 0.5rem 5%; /* Main horizontal padding for the bar */
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        .nav-links { display: flex; align-items: center; }
+        /* Updated nav-links to remove gap on the left and unify spacing */
+        .nav-links { 
+            display: flex; 
+            align-items: center; 
+            gap: 1rem; /* Uniform gap between hamburger and first social icon */
+        }
         
         .social-icons { display: flex; align-items: center; gap: 1rem; }
+        .social-icons a { display: flex; align-items: center; } /* Ensures clean vertical alignment */
         .social-icons a img { 
             width: 24px; 
             height: 24px; 
@@ -253,7 +259,7 @@
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3 style="color: var(--accent-red); margin: 0;">Navigation</h3>
-            <button class="menu-toggle" onclick="toggleSidebar()" style="padding:0;"><i class="fas fa-times"></i></button>
+            <button class="menu-toggle" onclick="toggleSidebar()" style="padding:0; color: var(--white-low);"><i class="fas fa-times"></i></button>
         </div>
         <div class="sidebar-links">
             <a href="/">Home</a>

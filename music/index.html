@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
-        /* Typography Setup - Paths adjusted for subfolders */
+        /* Typography Setup */
         @font-face {
             font-family: 'RDRLino';
             src: url('../fonts/RDRLino-Regular.ttf') format('truetype');
@@ -78,19 +78,25 @@
         }
         .menu-overlay.active { display: block; }
 
-        /* --- HEADER & NAV --- */
+        /* --- HEADER SECTION --- */
         .site-header { text-align: center; padding: 20px 5%; background-image: url('../images/bg.png'); background-repeat: repeat; }
         .header-logo-img { max-width: 100%; height: auto; max-height: 80px; }
 
+        /* --- NAVIGATION (Exact Alignment Fix) --- */
         nav {
-            position: sticky; top: 0; background-image: url('../images/bg.png');
-            background-repeat: repeat; border-top: 3px solid var(--accent-red);
-            border-bottom: 3px solid var(--accent-red); display: flex;
-            justify-content: space-between; align-items: center; padding: 0.5rem 5%;
-            z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            position: sticky; top: 0;
+            background-image: url('../images/bg.png'); background-repeat: repeat;
+            border-top: 3px solid var(--accent-red);
+            border-bottom: 3px solid var(--accent-red);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0.5rem 5%; z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
+
         .nav-links { display: flex; align-items: center; gap: 1rem; }
+        
         .social-icons { display: flex; align-items: center; gap: 1rem; }
+        .social-icons a { display: flex; align-items: center; } 
         .social-icons a img { width: 24px; height: 24px; transition: 0.2s; filter: brightness(1); }
         .social-icons a:hover img { transform: scale(1.15); filter: brightness(0) invert(1); }
 
@@ -101,12 +107,12 @@
         /* --- CONTENT --- */
         .container { max-width: 1100px; margin: 0 auto; padding: 5rem 5%; text-align: center; }
         .coming-soon-box { background: var(--card-bg); border: 2px solid var(--accent-red); padding: 3rem; }
-        .coming-soon-box h1 { font-size: 3.5rem; color: var(--accent-red); margin: 0; }
+        .coming-soon-box h1 { font-family: 'RDRLino', serif; font-size: 3.5rem; color: var(--accent-red); margin: 0; }
         .coming-soon-box p { font-size: 1.2rem; color: var(--white-med); }
 
         /* --- FOOTER --- */
         footer { 
-            text-align: center; padding: 3rem 1rem; border-top: 2px solid var(--accent-red);
+            text-align: center; padding: 3rem 1rem 3rem; border-top: 2px solid var(--accent-red);
             color: #fff; background-color: var(--bg-dark); background-image: url('../images/footer.png');
             background-size: cover; background-position: center; background-repeat: no-repeat;
             font-size: 0.9rem; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,1);
@@ -143,7 +149,9 @@
 
     <nav>
         <div class="nav-links">
-            <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+            <button class="menu-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="social-icons">
                 <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="../icons/youtube.png" alt="YouTube"></a>
                 <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="../icons/discord.png" alt="Discord"></a>

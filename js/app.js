@@ -34,7 +34,7 @@ window.onload = function () {
         restoreUserUI();
     } else {
         if (statusMsg) statusMsg.innerText = "Sign in to interact with the stream.";
-        initGoogleSignIn();
+        // Note: We don't auto-call initGoogleSignIn() anymore because OAuth popups must be triggered by a user click
     }
 
     // Commands Page Auto-scroll Logic
@@ -58,27 +58,60 @@ window.onload = function () {
 };
 
 // ==========================================
-// 4. GOOGLE AUTH LOGIC
+// 4. GOOGLE AUTH & YOUTUBE API LOGIC
 // ==========================================
-function initGoogleSignIn() {
-    const signinBtn = document.querySelector(".g_id_signin");
-    if (!signinBtn) return; 
+let tokenClient;
 
-    google.accounts.id.initialize({
+function initGoogleSignIn() {
+    // Initialize the new Google Identity Services Token Client
+    tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: "111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com",
-        callback: handleCredentialResponse,
-        auto_select: false 
+        scope: "https://www.googleapis.com/auth/youtube.readonly",
+        callback: (tokenResponse) => {
+            if (tokenResponse && tokenResponse.access_token) {
+                // We got the token! Now fetch the YouTube Channel Data
+                fetchYouTubeData(tokenResponse.access_token);
+            }
+        }
     });
     
-    google.accounts.id.renderButton(signinBtn, { type: "icon", shape: "circle" });
-    google.accounts.id.prompt(); 
+    // Trigger the popup
+    tokenClient.requestAccessToken();
 }
 
-function handleCredentialResponse(response) {
-    const payload = JSON.parse(atob(response.credential.split('.')[1]));
-    userData = { id: payload.sub, name: payload.name, picture: payload.picture };
-    localStorage.setItem('smokinUser', JSON.stringify(userData));
-    restoreUserUI();
+async function fetchYouTubeData(accessToken) {
+    try {
+        const response = await fetch('https://youtube.googleapis.com/youtube/v3/channels?part=snippet&mine=true', {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        });
+        
+        const data = await response.json();
+        
+        if (data.items && data.items.length > 0) {
+            const channel = data.items[0];
+            
+            // Map the exact variables Streamer.bot needs
+            userData = {
+                id: channel.id, // The UC... ID!
+                name: channel.snippet.title, // The Display Name
+                userName: channel.snippet.customUrl || channel.snippet.title, // The @handle (fallback to title if none exists)
+                picture: channel.snippet.thumbnails.default.url
+            };
+            
+            localStorage.setItem('smokinUser', JSON.stringify(userData));
+            restoreUserUI();
+            
+            // Re-check stream status to unlock buttons
+            updateStreamState(isStreamLive); 
+        } else {
+            alert("No YouTube channel found for this Google account.");
+        }
+    } catch (error) {
+        console.error("Error fetching YouTube data:", error);
+        alert("Failed to securely connect to YouTube.");
+    }
 }
 
 function restoreUserUI() {
@@ -86,10 +119,12 @@ function restoreUserUI() {
     const loginContainer = document.getElementById('login-button-container');
     const userProfile = document.getElementById('user-profile');
     const userAvatar = document.getElementById('user-avatar');
+    const userNameDisplay = document.getElementById('user-name');
     
     if (loginContainer) loginContainer.style.display = 'none';
     if (userProfile) userProfile.style.display = 'flex';
     if (userAvatar) userAvatar.src = userData.picture;
+    if (userNameDisplay) userNameDisplay.innerText = userData.name; // Show their name next to avatar
 }
 
 function signOut() {
@@ -159,14 +194,36 @@ function updateStreamState(live) {
 }
 
 function sendAction(actionName, cost) {
-    // Removed isStreamLive check so you can test while offline
-    if (!ws || ws.readyState !== WebSocket.OPEN) return;
+    // 1. Connection Check
+    if (!ws || ws.readyState !== WebSocket.OPEN) {
+        alert("Not connected to Command Center. Please wait.");
+        return;
+    }
     
-    ws.send(JSON.stringify({
+    // 2. Authentication Check
+    if (!userData) {
+        alert("Please sign in to use commands.");
+        return;
+    }
+
+    // 3. Construct the precise payload for Streamer.bot
+    const payload = {
         request: "ExecuteAction",
-        action: { name: actionName },
-        args: { userName: userData.name, youtubeId: userData.id, pointCost: cost }
-    }));
+        action: { 
+            name: actionName 
+        },
+        args: { 
+            user: userData.name,         // Native fallback
+            userName: userData.userName, // The exact @handle 
+            displayName: userData.name,  // The exact Display Name
+            userId: userData.id,         // The precise UC... YouTube Channel ID
+            userType: "youtube",         // Binds it to the YouTube integration in SB
+            commandCost: cost            // Easily deduct points
+        }
+    };
+
+    // 4. Fire!
+    ws.send(JSON.stringify(payload));
     alert(`Action '${actionName}' sent!`);
 }
 

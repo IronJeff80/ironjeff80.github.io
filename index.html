@@ -56,8 +56,9 @@
 
         <div id="user-auth">
             <div id="login-button-container">
-                <div id="g_id_onload" data-client_id="111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com"></div>
-                <div class="g_id_signin" data-type="icon" data-shape="circle"></div>
+                <button id="custom-google-login" onclick="initGoogleSignIn()" class="cmd-btn" style="background-color: white; color: black; border-radius: 20px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; font-weight: bold; border: none; cursor: pointer; font-size: 0.9rem;">
+                    <i class="fa-brands fa-google" style="color: #DB4437;"></i> Sign in
+                </button>
             </div>
             <div id="user-profile" onclick="signOut()" title="Click to Sign Out">
                 <span id="user-name" style="color: var(--accent-red); font-weight: 600; font-size: 0.9rem;"></span>

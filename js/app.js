@@ -187,8 +187,11 @@ function updateStreamState(live) {
 
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
 
+    // FIX: Only target the command buttons inside the grid, ignore the nav bar!
+    const commandButtons = document.querySelectorAll('.btn-grid .cmd-btn');
+
     if (isConnected && userData) {
-        document.querySelectorAll('.cmd-btn').forEach(btn => btn.disabled = false);
+        commandButtons.forEach(btn => btn.disabled = false);
         
         if (isStreamLive) {
             msgEl.innerText = "Live & Connected! Use your commands below.";
@@ -198,7 +201,7 @@ function updateStreamState(live) {
             msgEl.style.color = "var(--white-med)";
         }
     } else {
-        document.querySelectorAll('.cmd-btn').forEach(btn => btn.disabled = true);
+        commandButtons.forEach(btn => btn.disabled = true);
         if (!userData) {
             msgEl.innerText = "Sign in to trigger commands.";
         } else {

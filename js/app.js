@@ -107,6 +107,7 @@ function connectBot() {
     
     ws.onopen = () => {
         ws.send(JSON.stringify({ "request": "Subscribe", "events": { "General": ["Custom"] } }));
+        updateStreamState(isStreamLive);
         checkCurrentStatus();
     };
     

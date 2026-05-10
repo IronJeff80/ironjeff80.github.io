@@ -104,7 +104,7 @@ function signOut() {
 // 5. STREAMER.BOT WEBSOCKET LOGIC
 // ==========================================
 function connectBot() {
-    ws = new WebSocket("ws://127.0.0.1:8080/");
+    ws = new WebSocket("wss://bot.2smokinbarrels.com/");
     
     ws.onopen = () => {
         ws.send(JSON.stringify({ "request": "Subscribe", "events": { "General": ["Custom"] } }));

@@ -62,21 +62,34 @@ window.onload = function () {
 // ==========================================
 let tokenClient;
 
-function initGoogleSignIn() {
-    // Initialize the new Google Identity Services Token Client
-    tokenClient = google.accounts.oauth2.initTokenClient({
-        client_id: "111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com",
-        scope: "https://www.googleapis.com/auth/youtube.readonly",
-        callback: (tokenResponse) => {
-            if (tokenResponse && tokenResponse.access_token) {
-                // We got the token! Now fetch the YouTube Channel Data
-                fetchYouTubeData(tokenResponse.access_token);
+// Initialize the client in the background as soon as Google's library loads
+function setupGoogleClient() {
+    if (typeof google !== 'undefined' && google.accounts && google.accounts.oauth2) {
+        tokenClient = google.accounts.oauth2.initTokenClient({
+            client_id: "111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com",
+            scope: "https://www.googleapis.com/auth/youtube.readonly",
+            callback: (tokenResponse) => {
+                if (tokenResponse && tokenResponse.access_token) {
+                    fetchYouTubeData(tokenResponse.access_token);
+                }
             }
-        }
-    });
-    
-    // Trigger the popup
-    tokenClient.requestAccessToken();
+        });
+    } else {
+        // If Google's script hasn't finished downloading yet, check again in 100ms
+        setTimeout(setupGoogleClient, 100);
+    }
+}
+
+// Start the background setup immediately
+setupGoogleClient();
+
+function initGoogleSignIn() {
+    if (!tokenClient) {
+        alert("Google Sign-In is still loading. Please try again in a second.");
+        return;
+    }
+    // Fire the popup! (Passing prompt: '' ensures a clean re-authentication)
+    tokenClient.requestAccessToken({prompt: ''});
 }
 
 async function fetchYouTubeData(accessToken) {
@@ -96,7 +109,8 @@ async function fetchYouTubeData(accessToken) {
             userData = {
                 id: channel.id, // The UC... ID!
                 name: channel.snippet.title, // The Display Name
-                userName: channel.snippet.customUrl || channel.snippet.title, // The @handle (fallback to title if none exists)
+                // Natively strip the '@' symbol from the handle!
+                userName: (channel.snippet.customUrl || channel.snippet.title).replace('@', ''), 
                 picture: channel.snippet.thumbnails.default.url
             };
             

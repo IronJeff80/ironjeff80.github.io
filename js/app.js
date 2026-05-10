@@ -20,7 +20,12 @@ function toggleSidebar() {
 // 3. INITIALIZATION ON PAGE LOAD
 // ==========================================
 window.onload = function () {
-    // A. Handle User Auth UI Restoration
+    // START BOT CONNECTION IMMEDIATELY FOR TESTING
+    if (document.getElementById('status-msg')) {
+        connectBot();
+    }
+
+    // Handle User Auth UI Restoration
     const savedUser = localStorage.getItem('smokinUser');
     const statusMsg = document.getElementById('status-msg');
 
@@ -28,12 +33,11 @@ window.onload = function () {
         userData = JSON.parse(savedUser);
         restoreUserUI();
     } else {
-        // If they are not signed in, and we are on a page WITH a status message (Home Page)
         if (statusMsg) statusMsg.innerText = "Sign in to interact with the stream.";
         initGoogleSignIn();
     }
 
-    // B. Commands Page Auto-scroll Logic (Safely skips if no details elements exist)
+    // Commands Page Auto-scroll Logic
     const details = document.querySelectorAll('details[name="commands"]');
     details.forEach((targetDetail) => {
         targetDetail.addEventListener("toggle", (e) => {
@@ -58,7 +62,7 @@ window.onload = function () {
 // ==========================================
 function initGoogleSignIn() {
     const signinBtn = document.querySelector(".g_id_signin");
-    if (!signinBtn) return; // Exit if the Google button isn't on this page
+    if (!signinBtn) return; 
 
     google.accounts.id.initialize({
         client_id: "111000715471-1o7t0ulmnpdiq93agihl4t4q1s4b5mth.apps.googleusercontent.com",
@@ -86,11 +90,6 @@ function restoreUserUI() {
     if (loginContainer) loginContainer.style.display = 'none';
     if (userProfile) userProfile.style.display = 'flex';
     if (userAvatar) userAvatar.src = userData.picture;
-
-    // Only attempt to connect to Streamer.bot if the status message element exists (Home Page)
-    if (document.getElementById('status-msg')) {
-        connectBot();
-    }
 }
 
 function signOut() {
@@ -101,7 +100,7 @@ function signOut() {
 }
 
 // ==========================================
-// 5. STREAMER.BOT WEBSOCKET LOGIC
+// 5. STREAMER.BOT WEBSOCKET LOGIC (VIA CLOUDFLARE)
 // ==========================================
 function connectBot() {
     ws = new WebSocket("wss://bot.2smokinbarrels.com/");
@@ -121,7 +120,7 @@ function connectBot() {
     ws.onclose = () => {
         const statusMsg = document.getElementById('status-msg');
         if (statusMsg) statusMsg.innerText = "Offline: Streamer's PC not reachable.";
-        setTimeout(connectBot, 5000); // Try reconnecting every 5 seconds
+        setTimeout(connectBot, 5000); 
     };
 }
 
@@ -136,16 +135,14 @@ function updateStreamState(live) {
     const msgEl = document.getElementById('status-msg');
     if (!msgEl) return;
 
-    // Check if the WebSocket is actually open
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
 
     if (isConnected && userData) {
-        // Enable buttons if we are connected and logged in, regardless of live status
         document.querySelectorAll('.cmd-btn').forEach(btn => btn.disabled = false);
         
         if (isStreamLive) {
             msgEl.innerText = "Live & Connected! Use your commands below.";
-            msgEl.style.color = "#00ff00"; // Optional: Green for Live
+            msgEl.style.color = "#00ff00"; 
         } else {
             msgEl.innerText = "Bot Connected (Stream Offline). System ready for testing.";
             msgEl.style.color = "var(--white-med)";
@@ -161,7 +158,8 @@ function updateStreamState(live) {
 }
 
 function sendAction(actionName, cost) {
-    if (!isStreamLive || !ws || ws.readyState !== WebSocket.OPEN) return;
+    // Removed isStreamLive check so you can test while offline
+    if (!ws || ws.readyState !== WebSocket.OPEN) return;
     
     ws.send(JSON.stringify({
         request: "ExecuteAction",

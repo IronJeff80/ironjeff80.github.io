@@ -132,16 +132,31 @@ function checkCurrentStatus() {
 }
 
 function updateStreamState(live) {
-    isStreamLive = live;
+    isStreamLive = live; 
     const msgEl = document.getElementById('status-msg');
     if (!msgEl) return;
 
-    if (isStreamLive && userData) {
+    // Check if the WebSocket is actually open
+    const isConnected = ws && ws.readyState === WebSocket.OPEN;
+
+    if (isConnected && userData) {
+        // Enable buttons if we are connected and logged in, regardless of live status
         document.querySelectorAll('.cmd-btn').forEach(btn => btn.disabled = false);
-        msgEl.innerText = "Live & Connected! Use your commands below.";
+        
+        if (isStreamLive) {
+            msgEl.innerText = "Live & Connected! Use your commands below.";
+            msgEl.style.color = "#00ff00"; // Optional: Green for Live
+        } else {
+            msgEl.innerText = "Bot Connected (Stream Offline). System ready for testing.";
+            msgEl.style.color = "var(--white-med)";
+        }
     } else {
         document.querySelectorAll('.cmd-btn').forEach(btn => btn.disabled = true);
-        msgEl.innerText = isStreamLive ? "Sign in to trigger commands." : "Commands locked: Stream is currently offline.";
+        if (!userData) {
+            msgEl.innerText = "Sign in to trigger commands.";
+        } else {
+            msgEl.innerText = "Connecting to Streamer.bot...";
+        }
     }
 }
 

@@ -193,7 +193,7 @@ function updateStreamState(live) {
     }
 }
 
-function sendAction(actionName, cost) {
+function sendAction(actionName) {
     // 1. Connection Check
     if (!ws || ws.readyState !== WebSocket.OPEN) {
         alert("Not connected to Command Center. Please wait.");
@@ -206,19 +206,18 @@ function sendAction(actionName, cost) {
         return;
     }
 
-    // 3. Construct the precise payload for Streamer.bot
+    // 3. Construct the exact payload for Streamer.bot Target Variables
     const payload = {
         request: "ExecuteAction",
         action: { 
             name: actionName 
         },
         args: { 
-            user: userData.name,         // Native fallback
-            userName: userData.userName, // The exact @handle 
-            displayName: userData.name,  // The exact Display Name
-            userId: userData.id,         // The precise UC... YouTube Channel ID
-            userType: "youtube",         // Binds it to the YouTube integration in SB
-            commandCost: cost            // Easily deduct points
+            user: userData.name,
+            userName: userData.userName, 
+            userId: userData.id,
+            userProfileUrl: userData.picture, 
+            userType: "youtube"         
         }
     };
 

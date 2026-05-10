@@ -206,9 +206,9 @@ function sendAction(actionName) {
         return;
     }
 
-    // 3. Construct the exact payload for Streamer.bot Target Variables
+    // 3. Construct the precise payload for Streamer.bot Target Variables
     const payload = {
-        request: "ExecuteAction",
+        request: "DoAction",  // <-- THIS IS THE FIX. Must be DoAction.
         action: { 
             name: actionName 
         },
@@ -218,12 +218,13 @@ function sendAction(actionName) {
             userId: userData.id,
             userProfileUrl: userData.picture, 
             userType: "youtube"         
-        }
+        },
+        id: "WebCommandCenter" // Adds a tag so you can trace it in SB's websocket logs
     };
 
     // 4. Fire!
     ws.send(JSON.stringify(payload));
-    alert(`Action '${actionName}' sent!`);
+    console.log(`Successfully fired DoAction for: ${actionName}`);
 }
 
 // ==========================================

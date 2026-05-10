@@ -225,18 +225,19 @@ function sendAction(actionName) {
 
     // 3. Construct the precise payload for Streamer.bot Target Variables
     const payload = {
-        request: "DoAction",  // <-- THIS IS THE FIX. Must be DoAction.
+        request: "DoAction",
         action: { 
             name: actionName 
         },
         args: { 
-            user: userData.name,
-            userName: userData.userName, 
-            userId: userData.id,
+            user: userData.userName,       // Now uses the clean handle (e.g., 2smokinbarrels)
+            userName: userData.userName,   // Also uses the clean handle
+            displayName: userData.name,    // Passes the Channel Name (e.g., 2 Smokin' Barrels)
+            userId: userData.id,           // The UC... ID
             userProfileUrl: userData.picture, 
             userType: "youtube"         
         },
-        id: "WebCommandCenter" // Adds a tag so you can trace it in SB's websocket logs
+        id: "WebCommandCenter" 
     };
 
     // 4. Fire!

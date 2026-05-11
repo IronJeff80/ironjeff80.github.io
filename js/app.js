@@ -214,26 +214,28 @@ function updateStreamState(live) {
     if (!msgEl) return;
 
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
-
-    // FIX: Only target the command buttons inside the grid, ignore the nav bar!
     const commandButtons = document.querySelectorAll('.btn-grid .cmd-btn');
 
     if (isConnected && userData) {
-        commandButtons.forEach(btn => btn.disabled = false);
-        
+        // The bot is connected and the user is signed in. Now check if live:
         if (isStreamLive) {
-            msgEl.innerText = "Live & Connected! Use your commands below.";
-            msgEl.style.color = "#00ff00"; 
+            commandButtons.forEach(btn => btn.disabled = false); // UNLOCK buttons
+            msgEl.innerText = "Bot Connected (Stream Online). System ready for testing.";
+            msgEl.style.color = "#00ff00"; // Keep it green when live
         } else {
-            msgEl.innerText = "Bot Connected (Stream Offline). System ready for testing.";
+            commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
+            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
             msgEl.style.color = "var(--white-med)";
         }
     } else {
-        commandButtons.forEach(btn => btn.disabled = true);
+        // Not connected or not signed in
+        commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
         if (!userData) {
             msgEl.innerText = "Sign in to trigger commands.";
+            msgEl.style.color = "var(--white-med)"; // Ensure color resets
         } else {
             msgEl.innerText = "Connecting to Streamer.bot...";
+            msgEl.style.color = "var(--white-med)"; // Ensure color resets
         }
     }
 }

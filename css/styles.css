@@ -454,3 +454,20 @@ details summary::-webkit-details-marker {
     transform: scale(1.1);
     box-shadow: 0 0 10px var(--accent-red);
 }
+
+/* Collapsible Sections Styling */
+.collapsible-header:hover {
+    color: var(--accent-red) !important;
+}
+
+.transition-icon {
+    transition: transform 0.3s ease;
+}
+
+.collapsible-header.collapsed .transition-icon {
+    transform: rotate(-90deg); /* Points the arrow to the right when closed */
+}
+
+.collapsible-content.collapsed {
+    display: none !important; /* Hides the grid/flex container */
+}

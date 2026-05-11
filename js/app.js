@@ -155,14 +155,15 @@ function connectBot() {
     ws = new WebSocket("wss://bot.2smokinbarrels.com/");
     
     ws.onopen = () => {
-        ws.send(JSON.stringify({ "request": "Subscribe", "events": { "General": ["Custom"] } }));
+        // FIX: Streamer.bot strictly requires 'general' to be lowercase
+        ws.send(JSON.stringify({ "request": "Subscribe", "events": { "general": ["Custom"] }, "id": "SubRequest" }));
         updateStreamState(isStreamLive);
         checkCurrentStatus();
     };
     
     ws.onmessage = (event) => {
         console.log("RAW WS MESSAGE:", event.data);
-        
+
         const msg = JSON.parse(event.data);
         if (msg.event && msg.event.type === "Custom" && msg.data.name === "LiveStatusUpdate") {
             updateStreamState(msg.data.isLive);

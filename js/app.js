@@ -184,7 +184,8 @@ function connectBot() {
 
 function checkCurrentStatus() {
     if (ws && ws.readyState === WebSocket.OPEN) {
-        ws.send(JSON.stringify({ "request": "ExecuteAction", "action": { "name": "Web_Request_Status" } }));
+        // FIX: Changed ExecuteAction to DoAction so Streamer.bot actually replies!
+        ws.send(JSON.stringify({ "request": "DoAction", "action": { "name": "Web_Request_Status" }, "id": "StatusCheck" }));
     }
 }
 

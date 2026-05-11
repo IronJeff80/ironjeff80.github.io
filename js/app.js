@@ -161,20 +161,36 @@ function connectBot() {
         checkCurrentStatus();
     };
     
-    ws.onmessage = (event) => {
-        console.log("RAW WS MESSAGE:", event.data);
-
-        const msg = JSON.parse(event.data);
-        if (msg.event && msg.event.type === "Custom" && msg.data.name === "LiveStatusUpdate") {
-            updateStreamState(msg.data.isLive);
+ws.onmessage = (event) => {
+        console.log("RAW WS MESSAGE:", event.data); 
+        
+        try {
+            const msg = JSON.parse(event.data);
             
-            // Inject the dynamic Video ID into the Chat window
-            if (msg.data.videoId) {
-                const chatFrame = document.getElementById('yt-chat-frame');
-                if (chatFrame) {
-                    chatFrame.src = `https://www.youtube.com/live_chat?v=${msg.data.videoId}&embed_domain=2smokinbarrels.com`;
+            // 1. Check if Streamer.bot sent its native Custom Event wrapper
+            if (msg.event && msg.event.type === "Custom" && msg.data && msg.data.data) {
+                
+                // 2. Unpack the string we sent from our C# script
+                const customData = JSON.parse(msg.data.data);
+                
+                // 3. Route the variables to your UI
+                if (customData.name === "LiveStatusUpdate") {
+                    updateStreamState(customData.isLive);
+                    
+                    // Inject the Video ID to trigger the live chat iframe!
+                    if (customData.videoId) {
+                        const chatFrame = document.getElementById('yt-chat-frame');
+                        if (chatFrame) {
+                            const currentDomain = window.location.hostname;
+                            // Added dark_theme=1 so it matches your site's aesthetic!
+                            chatFrame.src = `https://www.youtube.com/live_chat?v=${customData.videoId}&embed_domain=${currentDomain}&dark_theme=1`;
+                            console.log("SUCCESS: Chat loaded for Video ID: " + customData.videoId);
+                        }
+                    }
                 }
             }
+        } catch (error) {
+            console.error("Failed to parse incoming WebSocket message:", error);
         }
     };
     

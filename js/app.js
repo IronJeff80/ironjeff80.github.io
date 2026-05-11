@@ -293,7 +293,7 @@ function copyLink(id) {
     copyText.select();
     copyText.setSelectionRange(0, 99999); 
     navigator.clipboard.writeText(copyText.value).then(() => {
-        alert("Link copied: " + copyText.value);
+        alert("Link copied: " + copyText.value); 
     });
 }
 

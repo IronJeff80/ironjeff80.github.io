@@ -240,7 +240,7 @@ function updateStreamState(live) {
     }
 }
 
-function sendAction(actionName) {
+function sendAction(actionName, extraCommand = null) {
     // 1. Connection Check
     if (!ws || ws.readyState !== WebSocket.OPEN) {
         alert("Not connected to Command Center. Please wait.");
@@ -260,19 +260,27 @@ function sendAction(actionName) {
             name: actionName 
         },
         args: { 
-            user: userData.userName,       // Now uses the clean handle (e.g., 2smokinbarrels)
-            userName: userData.userName,   // Also uses the clean handle
-            displayName: userData.name,    // Passes the Channel Name (e.g., 2 Smokin' Barrels)
-            userId: userData.id,           // The UC... ID
+            user: userData.userName,       
+            userName: userData.userName,   
+            displayName: userData.name,    
+            userId: userData.id,           
             userProfileUrl: userData.picture, 
             userType: "youtube"         
         },
         id: "WebCommandCenter" 
     };
 
-    // 4. Fire!
+    // 4. Inject the specific command name if the button provided one!
+    if (extraCommand) {
+        payload.args.commandName = extraCommand;
+        
+        // Passing 'command' as well just as a safety net, as some SB logic prefers it
+        payload.args.command = extraCommand; 
+    }
+
+    // 5. Fire!
     ws.send(JSON.stringify(payload));
-    console.log(`Successfully fired DoAction for: ${actionName}`);
+    console.log(`Successfully fired DoAction for: ${actionName} | Command: ${extraCommand || 'None'}`);
 }
 
 // ==========================================

@@ -91,19 +91,36 @@
             <div class="command-center">
                 <h3 style="color: var(--accent-red); margin-top: 0;">Command Center</h3>
                 <p id="status-msg" style="color: var(--grey-med); font-size: 0.9rem; font-weight: 500;">Connecting to Streamer.bot...</p>
+                
                 <div class="btn-grid">
-                    <button class="cmd-btn" id="btn-wotd" onclick="sendAction('Join Whammy Game ')" disabled>Join Whammy</button>
-                    <button class="cmd-btn" id="btn-map" onclick="sendAction('Plinko 2 -  Join Game')" disabled>Join Plinko</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('Barrel Roll')" disabled>Barrel Roll</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('Haduken')" disabled>Haduken</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('Shoryuken')" disabled>Shoryuken</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('Scorpion')" disabled>Scorpion</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('BallDrop')" disabled>BallDrop</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('BallDrop BlackHole')" disabled>BallDrop BlackHole</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('BallDrop Explode')" disabled>BallDrop Explode</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('Bombs Away')" disabled>Bombs Away</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('Skeletor')" disabled>Skeletor</button>
-                    <button class="cmd-btn" id="btn-poke" onclick="sendAction('GTA Wasted')" disabled>GTA Wasted</button>
+                    <button class="cmd-btn" onclick="sendAction('Join Whammy Game ')" disabled>Join Whammy</button>
+                    <button class="cmd-btn" onclick="sendAction('Plinko 2 -  Join Game')" disabled>Join Plinko</button>
+                    <button class="cmd-btn" onclick="sendAction('Barrel Roll')" disabled>Barrel Roll</button>
+                    <button class="cmd-btn" onclick="sendAction('Haduken')" disabled>Haduken</button>
+                    <button class="cmd-btn" onclick="sendAction('Shoryuken')" disabled>Shoryuken</button>
+                    <button class="cmd-btn" onclick="sendAction('Scorpion')" disabled>Scorpion</button>
+                    <button class="cmd-btn" onclick="sendAction('BallDrop')" disabled>BallDrop</button>
+                    <button class="cmd-btn" onclick="sendAction('BallDrop BlackHole')" disabled>BallDrop BlackHole</button>
+                    <button class="cmd-btn" onclick="sendAction('BallDrop Explode')" disabled>BallDrop Explode</button>
+                    <button class="cmd-btn" onclick="sendAction('Bombs Away')" disabled>Bombs Away</button>
+                    <button class="cmd-btn" onclick="sendAction('Skeletor')" disabled>Skeletor</button>
+                    <button class="cmd-btn" onclick="sendAction('GTA Wasted')" disabled>GTA Wasted</button>
+                </div>
+
+                <h4 style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Media Controls</h4>
+                <div class="media-bar">
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
+                </div>
+
+                <h4 style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Extra Actions</h4>
+                <div class="btn-grid">
+                    <button class="cmd-btn" onclick="sendAction('Extra Action 1')" disabled>Extra 1</button>
+                    <button class="cmd-btn" onclick="sendAction('Extra Action 2')" disabled>Extra 2</button>
+                    <button class="cmd-btn" onclick="sendAction('Extra Action 3')" disabled>Extra 3</button>
                 </div>
             </div>
         </div>

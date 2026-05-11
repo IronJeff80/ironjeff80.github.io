@@ -424,3 +424,33 @@ details summary::-webkit-details-marker {
     .grid { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
     .card { padding: 2.5rem; }
 }
+
+/* Media Control Bar Styling */
+.media-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    background-color: rgba(255, 255, 255, 0.05); /* Slight highlight box */
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* Make the media buttons circular */
+.media-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+/* Add a slight glow when hovered */
+.media-btn:hover:not([disabled]) {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--accent-red);
+}

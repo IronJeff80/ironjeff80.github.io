@@ -296,3 +296,12 @@ function copyLink(id) {
         alert("Link copied: " + copyText.value);
     });
 }
+
+function toggleSection(headerElement) {
+    headerElement.classList.toggle('collapsed');
+    
+    const contentElement = headerElement.nextElementSibling;
+    if (contentElement) {
+        contentElement.classList.toggle('collapsed');
+    }
+}

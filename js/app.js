@@ -164,6 +164,14 @@ function connectBot() {
         const msg = JSON.parse(event.data);
         if (msg.event && msg.event.type === "Custom" && msg.data.name === "LiveStatusUpdate") {
             updateStreamState(msg.data.isLive);
+            
+            // Inject the dynamic Video ID into the Chat window
+            if (msg.data.videoId) {
+                const chatFrame = document.getElementById('yt-chat-frame');
+                if (chatFrame) {
+                    chatFrame.src = `https://www.youtube.com/live_chat?v=${msg.data.videoId}&embed_domain=2smokinbarrels.com`;
+                }
+            }
         }
     };
     

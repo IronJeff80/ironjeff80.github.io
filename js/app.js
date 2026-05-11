@@ -161,6 +161,8 @@ function connectBot() {
     };
     
     ws.onmessage = (event) => {
+        console.log("RAW WS MESSAGE:", event.data);
+        
         const msg = JSON.parse(event.data);
         if (msg.event && msg.event.type === "Custom" && msg.data.name === "LiveStatusUpdate") {
             updateStreamState(msg.data.isLive);

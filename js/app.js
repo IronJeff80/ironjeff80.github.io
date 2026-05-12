@@ -254,26 +254,27 @@ function sendAction(actionName, extraCommand = null) {
     }
 
     // 3. Construct the precise payload for Streamer.bot Target Variables
-    const payload = {
-        request: "DoAction",
-        action: {
-            name: actionName
+const payload = {
+    request: "DoAction",
+    action: { 
+        name: actionName 
+    },
+    args: { 
+        // This is the part that fixes the 'Get' sub-action
+        user: {
+            id: userData.id,
+            name: userData.userName,
+            type: "youtube"
         },
-        args: {
-            user: {
-                id: userData.id,
-                name: userData.userName,
-                displayName: userData.name,
-                type: "youtube"
-            },
-            userName: userData.userName,
-            displayName: userData.name,
-            userId: userData.id,
-            userProfileUrl: userData.picture,
-            userType: "youtube"
-        },
-        id: "WebCommandCenter"
-    };
+        // These keep your display variables working
+        userName: userData.userName,   
+        displayName: userData.name,    
+        userId: userData.id,           
+        userProfileUrl: userData.picture, 
+        userType: "youtube"         
+    },
+    id: "WebCommandCenter" 
+};
 
     // 4. Inject the specific command name if the button provided one!
     if (extraCommand) {

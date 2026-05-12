@@ -11,7 +11,7 @@ let isStreamLive = false;
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     const menuOverlay = document.getElementById('menuOverlay');
-    
+
     if (sidebar) sidebar.classList.toggle('active');
     if (menuOverlay) menuOverlay.classList.toggle('active');
 }
@@ -89,7 +89,7 @@ function initGoogleSignIn() {
         return;
     }
     // Fire the popup! (Passing prompt: '' ensures a clean re-authentication)
-    tokenClient.requestAccessToken({prompt: ''});
+    tokenClient.requestAccessToken({ prompt: '' });
 }
 
 async function fetchYouTubeData(accessToken) {
@@ -99,26 +99,26 @@ async function fetchYouTubeData(accessToken) {
                 'Authorization': `Bearer ${accessToken}`
             }
         });
-        
+
         const data = await response.json();
-        
+
         if (data.items && data.items.length > 0) {
             const channel = data.items[0];
-            
+
             // Map the exact variables Streamer.bot needs
             userData = {
                 id: channel.id, // The UC... ID!
                 name: channel.snippet.title, // The Display Name
                 // Natively strip the '@' symbol from the handle!
-                userName: (channel.snippet.customUrl || channel.snippet.title).replace('@', ''), 
+                userName: (channel.snippet.customUrl || channel.snippet.title).replace('@', ''),
                 picture: channel.snippet.thumbnails.default.url
             };
-            
+
             localStorage.setItem('smokinUser', JSON.stringify(userData));
             restoreUserUI();
-            
+
             // Re-check stream status to unlock buttons
-            updateStreamState(isStreamLive); 
+            updateStreamState(isStreamLive);
         } else {
             alert("No YouTube channel found for this Google account.");
         }
@@ -134,7 +134,7 @@ function restoreUserUI() {
     const userProfile = document.getElementById('user-profile');
     const userAvatar = document.getElementById('user-avatar');
     const userNameDisplay = document.getElementById('user-name');
-    
+
     if (loginContainer) loginContainer.style.display = 'none';
     if (userProfile) userProfile.style.display = 'flex';
     if (userAvatar) userAvatar.src = userData.picture;
@@ -153,30 +153,30 @@ function signOut() {
 // ==========================================
 function connectBot() {
     ws = new WebSocket("wss://bot.2smokinbarrels.com/");
-    
+
     ws.onopen = () => {
         // FIX: Streamer.bot strictly requires 'general' to be lowercase
         ws.send(JSON.stringify({ "request": "Subscribe", "events": { "general": ["Custom"] }, "id": "SubRequest" }));
         updateStreamState(isStreamLive);
         checkCurrentStatus();
     };
-    
-ws.onmessage = (event) => {
-        console.log("RAW WS MESSAGE:", event.data); 
-        
+
+    ws.onmessage = (event) => {
+        console.log("RAW WS MESSAGE:", event.data);
+
         try {
             const msg = JSON.parse(event.data);
-            
+
             // 1. Check if Streamer.bot sent its native Custom Event wrapper
             if (msg.event && msg.event.type === "Custom" && msg.data && msg.data.data) {
-                
+
                 // 2. Unpack the string we sent from our C# script
                 const customData = JSON.parse(msg.data.data);
-                
+
                 // 3. Route the variables to your UI
                 if (customData.name === "LiveStatusUpdate") {
                     updateStreamState(customData.isLive);
-                    
+
                     // Inject the Video ID to trigger the live chat iframe!
                     if (customData.videoId) {
                         const chatFrame = document.getElementById('yt-chat-frame');
@@ -193,11 +193,11 @@ ws.onmessage = (event) => {
             console.error("Failed to parse incoming WebSocket message:", error);
         }
     };
-    
+
     ws.onclose = () => {
         const statusMsg = document.getElementById('status-msg');
         if (statusMsg) statusMsg.innerText = "Offline: Streamer's PC not reachable.";
-        setTimeout(connectBot, 5000); 
+        setTimeout(connectBot, 5000);
     };
 }
 
@@ -209,7 +209,7 @@ function checkCurrentStatus() {
 }
 
 function updateStreamState(live) {
-    isStreamLive = live; 
+    isStreamLive = live;
     const msgEl = document.getElementById('status-msg');
     if (!msgEl) return;
 
@@ -246,7 +246,7 @@ function sendAction(actionName, extraCommand = null) {
         alert("Not connected to Command Center. Please wait.");
         return;
     }
-    
+
     // 2. Authentication Check
     if (!userData) {
         alert("Please sign in to use commands.");
@@ -256,26 +256,31 @@ function sendAction(actionName, extraCommand = null) {
     // 3. Construct the precise payload for Streamer.bot Target Variables
     const payload = {
         request: "DoAction",
-        action: { 
-            name: actionName 
+        action: {
+            name: actionName
         },
-        args: { 
-            user: userData.userName,       
-            userName: userData.userName,   
-            displayName: userData.name,    
-            userId: userData.id,           
-            userProfileUrl: userData.picture, 
-            userType: "youtube"         
+        args: {
+            user: {
+                id: userData.id,
+                name: userData.userName,
+                displayName: userData.name,
+                type: "youtube"
+            },
+            userName: userData.userName,
+            displayName: userData.name,
+            userId: userData.id,
+            userProfileUrl: userData.picture,
+            userType: "youtube"
         },
-        id: "WebCommandCenter" 
+        id: "WebCommandCenter"
     };
 
     // 4. Inject the specific command name if the button provided one!
     if (extraCommand) {
         payload.args.commandName = extraCommand;
-        
+
         // Passing 'command' as well just as a safety net, as some SB logic prefers it
-        payload.args.command = extraCommand; 
+        payload.args.command = extraCommand;
     }
 
     // 5. Fire!
@@ -289,17 +294,17 @@ function sendAction(actionName, extraCommand = null) {
 function copyLink(id) {
     const copyText = document.getElementById(id);
     if (!copyText) return;
-    
+
     copyText.select();
-    copyText.setSelectionRange(0, 99999); 
+    copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value).then(() => {
-        alert("Link copied: " + copyText.value); 
+        alert("Link copied: " + copyText.value);
     });
 }
 
 function toggleSection(headerElement) {
     headerElement.classList.toggle('collapsed');
-    
+
     const contentElement = headerElement.nextElementSibling;
     if (contentElement) {
         contentElement.classList.toggle('collapsed');

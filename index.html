@@ -93,12 +93,57 @@
                 <p id="status-msg" style="color: var(--grey-med); font-size: 0.9rem; font-weight: 500;">Connecting to Streamer.bot...</p>
                 
                 <h4 class="collapsible-header" onclick="toggleSection(this)" style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                    Test Actions <i class="fas fa-chevron-down transition-icon"></i>
+                    Utilites <i class="fas fa-chevron-down transition-icon"></i>
                 </h4>
-                
                 <div class="btn-grid collapsible-content">
-                    <button class="cmd-btn" onclick="sendAction('Button 1 test')" disabled>Daily Check-In</button>
+                    <button class="cmd-btn" onclick="sendAction('Stream Check-In')" disabled>Daily Check-In</button>
+                    <button class="cmd-btn" onclick="sendAction('0 Get Set Daily Challenges')" disabled>Get Daily Challenges</button>
+                    <button class="cmd-btn" onclick="sendAction('Command - Get User Rank and Value Per Stat', 'Check Points')" disabled>Check Your Points</button>
+                    <button class="cmd-btn" onclick="sendAction('BallDrop')" disabled>Check Your Stats</button>
+                </div>
+                
+                <h4 class="collapsible-header" onclick="toggleSection(this)" style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    Fun Stuff & Games <i class="fas fa-chevron-down transition-icon"></i>
+                </h4>
+                <div class="btn-grid collapsible-content">
+                    <button class="cmd-btn" onclick="sendAction('Join Whammy Game ')" disabled>Join Whammy</button>
+                    <button class="cmd-btn" onclick="sendAction('Plinko 2 -  Join Game')" disabled>Join Plinko</button>
+                    <button class="cmd-btn" onclick="sendAction('Barrel Roll')" disabled>Barrel Roll</button>
+                    <button class="cmd-btn" onclick="sendAction('Haduken')" disabled>Haduken</button>
                     <button class="cmd-btn" onclick="sendAction('Shoryuken')" disabled>Shoryuken</button>
+                    <button class="cmd-btn" onclick="sendAction('Scorpion')" disabled>Scorpion</button>
+                    <button class="cmd-btn" onclick="sendAction('BallDrop')" disabled>BallDrop</button>
+                    <button class="cmd-btn" onclick="sendAction('BallDrop BlackHole')" disabled>BallDrop BlackHole</button>
+                    <button class="cmd-btn" onclick="sendAction('BallDrop Explode')" disabled>BallDrop Explode</button>
+                    <button class="cmd-btn" onclick="sendAction('Bombs Away')" disabled>Bombs Away</button>
+                    <button class="cmd-btn" onclick="sendAction('Skeletor')" disabled>Skeletor</button>
+                    <button class="cmd-btn" onclick="sendAction('GTA Wasted')" disabled>GTA Wasted</button>
+                </div>
+
+                <h4 class="collapsible-header" onclick="toggleSection(this)" style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    Media Controls <i class="fas fa-chevron-down transition-icon"></i>
+                </h4>
+                <div class="media-bar collapsible-content">
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
+                    <button class="cmd-btn media-btn" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
+                </div>
+
+                <h4 class="collapsible-header" onclick="toggleSection(this)" style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    Album Selection <i class="fas fa-chevron-down transition-icon"></i>
+                </h4>
+                <div class="btn-grid collapsible-content">
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Breakin')" disabled>Breakin & Scratchin</button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Careless Desires')" disabled>80s Retro Vibes </button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'RDO Camp SOngs')" disabled>RDO Camp Songs</button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Halloween')" disabled>Halloween Vibes</button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Hot List')" disabled>Chat Favorites</button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Midnight Ride')" disabled>80s Driving Vibes</button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Pipa')" disabled>Orient Meditation</button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Rock')" disabled>Rock N Roll Vibes</button>
+                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Western')" disabled>Western Vibes</button>
                 </div>
 
             </div>

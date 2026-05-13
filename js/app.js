@@ -217,25 +217,27 @@ function updateStreamState(live) {
     const commandButtons = document.querySelectorAll('.btn-grid .cmd-btn');
 
     if (isConnected && userData) {
-        // The bot is connected and the user is signed in. Now check if live:
+        // --- OFFLINE TESTING OVERRIDE ---
+        // We unlock buttons regardless of 'live' status, as long as we are connected to the bot
+        commandButtons.forEach(btn => btn.disabled = false); 
+
         if (isStreamLive) {
-            commandButtons.forEach(btn => btn.disabled = false); // UNLOCK buttons
-            msgEl.innerText = "Bot Connected (Stream Online). System ready for testing.";
-            msgEl.style.color = "#00ff00"; // Keep it green when live
+            msgEl.innerText = "Bot Connected (Stream Online). System ready.";
+            msgEl.style.color = "#00ff00"; 
         } else {
-            commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
-            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
-            msgEl.style.color = "var(--white-med)";
+            // Updated message to reflect that testing is allowed while offline
+            msgEl.innerText = "Bot Connected (Stream Offline). Testing Mode Active.";
+            msgEl.style.color = "#ffaa00"; // Orange/Yellow to indicate "Testing/Offline"
         }
     } else {
-        // Not connected or not signed in
-        commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
+        // Still lock buttons if the Bot isn't running or User isn't signed in
+        commandButtons.forEach(btn => btn.disabled = true); 
         if (!userData) {
             msgEl.innerText = "Sign in to trigger commands.";
-            msgEl.style.color = "var(--white-med)"; // Ensure color resets
+            msgEl.style.color = "var(--white-med)";
         } else {
             msgEl.innerText = "Connecting to Streamer.bot...";
-            msgEl.style.color = "var(--white-med)"; // Ensure color resets
+            msgEl.style.color = "var(--white-med)";
         }
     }
 }
@@ -260,18 +262,22 @@ const payload = {
         name: actionName 
     },
     args: { 
-        // This is the part that fixes the 'Get' sub-action
-        user: {
-            id: userData.id,
-            name: userData.userName,
-            type: "youtube"
-        },
-        // These keep your display variables working
-        userName: userData.userName,   
-        displayName: userData.name,    
-        userId: userData.id,           
-        userProfileUrl: userData.picture, 
-        userType: "youtube"         
+        // Identifies the trigger origin for your if/else logic
+        __source: "website",
+
+        // Target mapping to bypass 'Redeemer' internal requirements
+        targetUser: userData.userName,
+        targetUserId: userData.id,
+        targetUserName: userData.userName,
+        targetUserProfileUrl: userData.picture,
+        targetUserType: "youtube",      // Standard variable name
+        targetUserPlatform: "youtube",  // Some sub-actions prefer 'platform'
+
+        // Keep existing user variables for backward compatibility/other actions
+        user: userData.userName,
+        userId: userData.id,
+        userName: userData.userName,
+        userType: "youtube"
     },
     id: "WebCommandCenter" 
 };

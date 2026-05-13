@@ -217,27 +217,25 @@ function updateStreamState(live) {
     const commandButtons = document.querySelectorAll('.btn-grid .cmd-btn');
 
     if (isConnected && userData) {
-        // --- OFFLINE TESTING OVERRIDE ---
-        // We unlock buttons regardless of 'live' status, as long as we are connected to the bot
-        commandButtons.forEach(btn => btn.disabled = false); 
-
+        // The bot is connected and the user is signed in. Now check if live:
         if (isStreamLive) {
-            msgEl.innerText = "Bot Connected (Stream Online). System ready.";
-            msgEl.style.color = "#00ff00"; 
+            commandButtons.forEach(btn => btn.disabled = false); // UNLOCK buttons
+            msgEl.innerText = "Bot Connected (Stream Online). System ready for testing.";
+            msgEl.style.color = "#00ff00"; // Keep it green when live
         } else {
-            // Updated message to reflect that testing is allowed while offline
-            msgEl.innerText = "Bot Connected (Stream Offline). Testing Mode Active.";
-            msgEl.style.color = "#ffaa00"; // Orange/Yellow to indicate "Testing/Offline"
+            commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
+            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
+            msgEl.style.color = "var(--white-med)";
         }
     } else {
-        // Still lock buttons if the Bot isn't running or User isn't signed in
-        commandButtons.forEach(btn => btn.disabled = true); 
+        // Not connected or not signed in
+        commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
         if (!userData) {
             msgEl.innerText = "Sign in to trigger commands.";
-            msgEl.style.color = "var(--white-med)";
+            msgEl.style.color = "var(--white-med)"; // Ensure color resets
         } else {
             msgEl.innerText = "Connecting to Streamer.bot...";
-            msgEl.style.color = "var(--white-med)";
+            msgEl.style.color = "var(--white-med)"; // Ensure color resets
         }
     }
 }

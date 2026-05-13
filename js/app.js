@@ -258,25 +258,17 @@ function sendAction(actionName, extraCommand = null) {
     // 3. Construct the precise payload for Streamer.bot Target Variables
 const payload = {
     request: "DoAction",
-    action: { 
-        name: actionName 
-    },
+    action: { name: actionName },
     args: { 
-        // Identifies the trigger origin for your if/else logic
-        __source: "website",
-
-        // Target mapping to bypass 'Redeemer' internal requirements
-        targetUser: userData.userName,
-        targetUserId: userData.id,
-        targetUserName: userData.userName,
-        targetUserProfileUrl: userData.picture,
-        targetUserType: "youtube",      // Standard variable name
-        targetUserPlatform: "youtube",  // Some sub-actions prefer 'platform'
-
-        // Keep existing user variables for backward compatibility/other actions
-        user: userData.userName,
-        userId: userData.id,
-        userName: userData.userName,
+        // The trigger flag for your If/Else sub-action
+        isWebsocketRequest: "True", 
+        
+        // The unique ID the C# script will use
+        userId: userData.id, 
+        
+        // Optional: Keep these for any generic log/chat messages
+        userProfileUrl: userData.picture,
+        userName: userData.name, 
         userType: "youtube"
     },
     id: "WebCommandCenter" 

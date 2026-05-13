@@ -240,6 +240,43 @@ function updateStreamState(live) {
     }
 }
 
+/* This Section Enables buttons while Not Live for testing.
+
+function updateStreamState(live) {
+    isStreamLive = live;
+    const msgEl = document.getElementById('status-msg');
+    if (!msgEl) return;
+
+    const isConnected = ws && ws.readyState === WebSocket.OPEN;
+    const commandButtons = document.querySelectorAll('.cmd-btn');
+
+    if (isConnected && userData) {
+        // --- OFFLINE TESTING OVERRIDE ---
+        // We unlock buttons regardless of 'live' status, as long as we are connected to the bot
+        commandButtons.forEach(btn => btn.disabled = false); 
+
+        if (isStreamLive) {
+            msgEl.innerText = "Bot Connected (Stream Online). System ready.";
+            msgEl.style.color = "#00ff00"; 
+        } else {
+            // Updated message to reflect that testing is allowed while offline
+            msgEl.innerText = "Bot Connected (Stream Offline). Testing Mode Active.";
+            msgEl.style.color = "#ffaa00"; // Orange/Yellow to indicate "Testing/Offline"
+        }
+    } else {
+        // Still lock buttons if the Bot isn't running or User isn't signed in
+        commandButtons.forEach(btn => btn.disabled = true); 
+        if (!userData) {
+            msgEl.innerText = "Sign in to trigger commands.";
+            msgEl.style.color = "var(--white-med)";
+        } else {
+            msgEl.innerText = "Connecting to Streamer.bot...";
+            msgEl.style.color = "var(--white-med)";
+        }
+    }
+}
+*/
+
 function sendAction(actionName, extraCommand = null) {
     // 1. Connection Check
     if (!ws || ws.readyState !== WebSocket.OPEN) {

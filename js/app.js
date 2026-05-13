@@ -214,7 +214,7 @@ function updateStreamState(live) {
     if (!msgEl) return;
 
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
-    const commandButtons = document.querySelectorAll('.btn-grid .cmd-btn');
+    const commandButtons = document.querySelectorAll('.cmd-btn');
 
     if (isConnected && userData) {
         // The bot is connected and the user is signed in. Now check if live:

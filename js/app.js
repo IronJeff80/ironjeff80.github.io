@@ -181,10 +181,15 @@ function connectBot() {
                     if (customData.videoId) {
                         const chatFrame = document.getElementById('yt-chat-frame');
                         if (chatFrame) {
-                            const currentDomain = window.location.hostname;
-                            // Added dark_theme=1 so it matches your site's aesthetic!
-                            chatFrame.src = `https://www.youtube.com/live_chat?v=${customData.videoId}&embed_domain=${currentDomain}&dark_theme=1`;
-                            console.log("SUCCESS: Chat loaded for Video ID: " + customData.videoId);
+                            
+                            // FIX: Only update the iframe if it doesn't already have this Video ID loaded.
+                            // This stops the constant refreshing!
+                            if (!chatFrame.src.includes(customData.videoId)) {
+                                const currentDomain = window.location.hostname;
+                                chatFrame.src = `https://www.youtube.com/live_chat?v=${customData.videoId}&embed_domain=${currentDomain}&dark_theme=1`;
+                                console.log("SUCCESS: Chat loaded for Video ID: " + customData.videoId);
+                            }
+                            
                         }
                     }
                 }
@@ -200,7 +205,6 @@ function connectBot() {
         setTimeout(connectBot, 5000);
     };
 }
-
 function checkCurrentStatus() {
     if (ws && ws.readyState === WebSocket.OPEN) {
         // FIX: Changed ExecuteAction to DoAction so Streamer.bot actually replies!

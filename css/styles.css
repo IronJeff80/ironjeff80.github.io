@@ -416,9 +416,25 @@ details summary::-webkit-details-marker {
     #user-name { display: inline; }
     .hero h1 { font-size: 4.5rem; }
     .hero p { font-size: 1.4rem; }
-    .stream-container { flex-direction: row; height: 500px; }
-    .video-wrapper { flex: 3; aspect-ratio: auto; }
-    .chat-wrapper { flex: 1; height: auto; }
+    
+    /* FIX: Switched to Grid to strictly protect Chat Box width */
+    .stream-container { 
+        display: grid; 
+        grid-template-columns: 1fr 380px; /* Video takes remaining space, Chat is strictly 380px */
+        gap: 20px; 
+        height: auto; 
+        align-items: stretch; /* Forces chat box height to match video height */
+    }
+    .video-wrapper { 
+        width: 100%; 
+        aspect-ratio: 16 / 9; 
+    }
+    .chat-wrapper { 
+        width: 100%; 
+        height: 100%; /* Matches the video height driven by the grid */
+        min-height: 450px; /* Fallback for very small desktop windows */
+    }
+    
     .glitch-grid { grid-template-columns: repeat(4, 1fr); }
     .btn-grid { grid-template-columns: repeat(3, 1fr); }
     .grid { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }

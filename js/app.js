@@ -214,7 +214,8 @@ function updateStreamState(live) {
     if (!msgEl) return;
 
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
-    const commandButtons = document.querySelectorAll('.cmd-btn');
+    // CHANGED: Now properly targets .stream-cmd instead of .cmd-btn
+    const commandButtons = document.querySelectorAll('.stream-cmd');
 
     if (isConnected && userData) {
         // The bot is connected and the user is signed in. Now check if live:
@@ -248,7 +249,8 @@ function updateStreamState(live) {
     if (!msgEl) return;
 
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
-    const commandButtons = document.querySelectorAll('.cmd-btn');
+    // CHANGED: Make sure this is updated here as well for testing!
+    const commandButtons = document.querySelectorAll('.stream-cmd');
 
     if (isConnected && userData) {
         // --- OFFLINE TESTING OVERRIDE ---

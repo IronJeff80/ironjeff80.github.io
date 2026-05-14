@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2 Smokin' Barrels | Stream Tools & Extensions</title>
     
-    <link rel="icon" type="image/png" href="./fav.png"> 
+    <link rel="icon" type="image/png" href="/fav.png"> 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
@@ -38,7 +38,7 @@
 
     <header class="site-header">
         <a href="/">
-            <img src="./images/longlogo.png" alt="Logo" class="header-logo-img">
+            <img src="/images/longlogo.png" alt="Logo" class="header-logo-img">
         </a>
     </header>
 
@@ -48,12 +48,12 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="social-icons">
-                <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="./icons/youtube.png" alt="YouTube"></a>
-                <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="./icons/discord.png" alt="Discord"></a>
-                <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="./icons/x.png" alt="X"></a>
-                <a href="https://www.facebook.com/2smokinbarrelsgaming/" target="_blank"><img src="./icons/facebook.png" alt="Facebook"></a>
-                <a href="https://www.patreon.com/c/2SmokinBarrels" target="_blank"><img src="./icons/patreon.png" alt="Patreon"></a>
-                <a href="https://github.com/ironjeff80" target="_blank"><img src="./icons/github.png" alt="GitHub"></a>
+                <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="/icons/youtube.png" alt="YouTube"></a>
+                <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="/icons/discord.png" alt="Discord"></a>
+                <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="/icons/x.png" alt="X"></a>
+                <a href="https://www.facebook.com/2smokinbarrelsgaming/" target="_blank"><img src="/icons/facebook.png" alt="Facebook"></a>
+                <a href="https://www.patreon.com/c/2SmokinBarrels" target="_blank"><img src="/icons/patreon.png" alt="Patreon"></a>
+                <a href="https://github.com/ironjeff80" target="_blank"><img src="/icons/github.png" alt="GitHub"></a>
             </div>
         </div>
 
@@ -96,44 +96,44 @@
                     Fun Stuff & Games <i class="fas fa-chevron-down transition-icon"></i>
                 </h4>
                 <div class="btn-grid collapsible-content">
-                    <button class="cmd-btn" onclick="sendAction('2) Join Game (Command)')" disabled>Join Whammy</button>
-                    <button class="cmd-btn" onclick="sendAction('Plinko 2 -  Join Game (Command)')" disabled>Join Plinko</button>
-                    <button class="cmd-btn" onclick="sendAction('Barrel Roll')" disabled>Barrel Roll</button>
-                    <button class="cmd-btn" onclick="sendAction('Haduken')" disabled>Haduken</button>
-                    <button class="cmd-btn" onclick="sendAction('Shoryuken')" disabled>Shoryuken</button>
-                    <button class="cmd-btn" onclick="sendAction('Scorpion')" disabled>Scorpion</button>
-                    <button class="cmd-btn" onclick="sendAction('BallDrop')" disabled>BallDrop</button>
-                    <button class="cmd-btn" onclick="sendAction('BallDrop BlackHole')" disabled>BallDrop BlackHole</button>
-                    <button class="cmd-btn" onclick="sendAction('BallDrop Explode')" disabled>BallDrop Explode</button>
-                    <button class="cmd-btn" onclick="sendAction('Bombs Away')" disabled>Bombs Away</button>
-                    <button class="cmd-btn" onclick="sendAction('Skeletor')" disabled>Skeletor</button>
-                    <button class="cmd-btn" onclick="sendAction('GTA Wasted')" disabled>GTA Wasted</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('2) Join Game (Command)')" disabled>Join Whammy</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Plinko 2 -  Join Game (Command)')" disabled>Join Plinko</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Barrel Roll')" disabled>Barrel Roll</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Haduken')" disabled>Haduken</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Shoryuken')" disabled>Shoryuken</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Scorpion')" disabled>Scorpion</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('BallDrop')" disabled>BallDrop</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('BallDrop BlackHole')" disabled>BallDrop BlackHole</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('BallDrop Explode')" disabled>BallDrop Explode</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Bombs Away')" disabled>Bombs Away</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Skeletor')" disabled>Skeletor</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('GTA Wasted')" disabled>GTA Wasted</button>
                 </div>
 
                 <h4 class="collapsible-header" onclick="toggleSection(this)" style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                     Media Controls <i class="fas fa-chevron-down transition-icon"></i>
                 </h4>
                 <div class="media-bar collapsible-content">
-                    <button class="cmd-btn media-btn" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
-                    <button class="cmd-btn media-btn" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
-                    <button class="cmd-btn media-btn" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
-                    <button class="cmd-btn media-btn" onclick="sendAction('Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
-                    <button class="cmd-btn media-btn" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
+                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
+                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
+                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
+                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
+                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
                 </div>
 
                 <h4 class="collapsible-header" onclick="toggleSection(this)" style="color: var(--white-high); margin: 25px 0 15px; border-bottom: 1px solid #333; padding-bottom: 5px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
                     Album Selection <i class="fas fa-chevron-down transition-icon"></i>
                 </h4>
                 <div class="btn-grid collapsible-content">
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Breakin')" disabled>Breakin & Scratchin</button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Careless Desires')" disabled>80s Retro Vibes </button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'RDO Camp SOngs')" disabled>RDO Camp Songs</button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Halloween')" disabled>Halloween Vibes</button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Hot List')" disabled>Chat Favorites</button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Midnight Ride')" disabled>80s Driving Vibes</button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Pipa')" disabled>Orient Meditation</button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Rock')" disabled>Rock N Roll Vibes</button>
-                    <button class="cmd-btn" onclick="sendAction('Select Album', 'Western')" disabled>Western Vibes</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Breakin')" disabled>Breakin & Scratchin</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Careless Desires')" disabled>80s Retro Vibes </button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'RDO Camp SOngs')" disabled>RDO Camp Songs</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Halloween')" disabled>Halloween Vibes</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Hot List')" disabled>Chat Favorites</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Midnight Ride')" disabled>80s Driving Vibes</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Pipa')" disabled>Orient Meditation</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Rock')" disabled>Rock N Roll Vibes</button>
+                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Western')" disabled>Western Vibes</button>
                 </div>
 
             </div>
@@ -216,6 +216,6 @@
         <a href="/legal/privacy/" style="color: var(--grey-med); font-size: 0.8rem; text-decoration: none;">Privacy Policy</a>
     </footer>
 
-    <script src="./js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

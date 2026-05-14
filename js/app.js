@@ -133,12 +133,10 @@ function restoreUserUI() {
     const loginContainer = document.getElementById('login-button-container');
     const userProfile = document.getElementById('user-profile');
     const userAvatar = document.getElementById('user-avatar');
-    const userNameDisplay = document.getElementById('user-name');
 
     if (loginContainer) loginContainer.style.display = 'none';
     if (userProfile) userProfile.style.display = 'flex';
     if (userAvatar) userAvatar.src = userData.picture;
-    if (userNameDisplay) userNameDisplay.innerText = userData.name; // Show their name next to avatar
 }
 
 function signOut() {

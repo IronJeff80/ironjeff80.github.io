@@ -213,11 +213,24 @@ function checkCurrentStatus() {
 function updateStreamState(live) {
     isStreamLive = live;
     const msgEl = document.getElementById('status-msg');
-    if (!msgEl) return;
-
+    
+    // Grab the video frame and placeholder image
+    const videoFrame = document.getElementById('yt-video-frame');
+    const placeholderImg = document.getElementById('offline-placeholder');
+    
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
-    // CHANGED: Now properly targets .stream-cmd instead of .cmd-btn
     const commandButtons = document.querySelectorAll('.stream-cmd');
+
+    // Toggle Video vs Placeholder Image
+    if (isStreamLive) {
+        if (videoFrame) videoFrame.style.display = 'block';
+        if (placeholderImg) placeholderImg.style.display = 'none';
+    } else {
+        if (videoFrame) videoFrame.style.display = 'none';
+        if (placeholderImg) placeholderImg.style.display = 'block';
+    }
+
+    if (!msgEl) return;
 
     if (isConnected && userData) {
         // The bot is connected and the user is signed in. Now check if live:
@@ -235,10 +248,10 @@ function updateStreamState(live) {
         commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
         if (!userData) {
             msgEl.innerText = "Sign in to trigger commands.";
-            msgEl.style.color = "var(--white-med)"; // Ensure color resets
+            msgEl.style.color = "var(--white-med)"; 
         } else {
             msgEl.innerText = "Connecting to Streamer.bot...";
-            msgEl.style.color = "var(--white-med)"; // Ensure color resets
+            msgEl.style.color = "var(--white-med)"; 
         }
     }
 }

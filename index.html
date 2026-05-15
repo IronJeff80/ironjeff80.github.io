@@ -79,8 +79,10 @@
         <div class="container">
             <h2 class="section-title">Live Stream</h2>
             <div class="stream-container">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/live_stream?channel=UCbflkZl3HSQVyVW153f2Z3A" allowfullscreen></iframe>
+                <div class="video-wrapper" style="position: relative;">
+                    <img id="offline-placeholder" src="/images/offline.png" alt="Stream is currently offline" style="width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; top: 0; left: 0;">
+                    
+                    <iframe id="yt-video-frame" src="https://www.youtube.com/embed/live_stream?channel=UCbflkZl3HSQVyVW153f2Z3A" allowfullscreen style="display: none; width: 100%; height: 100%; position: relative; z-index: 2;"></iframe>
                 </div>
                 <div class="chat-wrapper">
                     <iframe id="yt-chat-frame" src="about:blank"></iframe>

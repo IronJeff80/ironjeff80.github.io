@@ -155,7 +155,8 @@ function connectBot() {
     ws.onopen = () => {
         // FIX: Streamer.bot strictly requires 'general' to be lowercase
         ws.send(JSON.stringify({ "request": "Subscribe", "events": { "general": ["Custom"] }, "id": "SubRequest" }));
-        updateStreamState(isStreamLive);
+        
+        // Removed updateStreamState here so we don't accidentally override the scheduled stream logic before checking status
         checkCurrentStatus();
     };
 
@@ -173,22 +174,51 @@ function connectBot() {
 
                 // 3. Route the variables to your UI
                 if (customData.name === "LiveStatusUpdate") {
+                    // Update buttons based on live status
                     updateStreamState(customData.isLive);
 
-                    // Inject the Video ID to trigger the live chat iframe!
-                    if (customData.videoId) {
-                        const chatFrame = document.getElementById('yt-chat-frame');
-                        if (chatFrame) {
+                    const videoFrame = document.getElementById('yt-video-frame');
+                    const placeholderImg = document.getElementById('offline-placeholder');
+                    const chatFrame = document.getElementById('yt-chat-frame');
+                    const msgEl = document.getElementById('status-msg');
+
+                    // SCENARIO A & B: We have a Video ID (Either Scheduled OR Live)
+                    if (customData.videoId && customData.videoId.trim() !== "") {
+                        
+                        // 1. Show the video player, hide the offline image
+                        if (videoFrame) {
+                            videoFrame.style.display = 'block';
                             
-                            // FIX: Only update the iframe if it doesn't already have this Video ID loaded.
-                            // This stops the constant refreshing!
-                            if (!chatFrame.src.includes(customData.videoId)) {
-                                const currentDomain = window.location.hostname;
-                                chatFrame.src = `https://www.youtube.com/live_chat?v=${customData.videoId}&embed_domain=${currentDomain}&dark_theme=1`;
-                                console.log("SUCCESS: Chat loaded for Video ID: " + customData.videoId);
+                            // Only update if it's a new video ID so we don't refresh the player
+                            if (!videoFrame.src.includes(customData.videoId)) {
+                                // Optional: auto-play if it's actually live
+                                const autoPlay = customData.isLive ? "?autoplay=1" : "";
+                                videoFrame.src = `https://www.youtube.com/embed/${customData.videoId}${autoPlay}`;
                             }
-                            
                         }
+                        if (placeholderImg) placeholderImg.style.display = 'none';
+
+                        // 2. Load the Chat (This works for both Waiting Rooms and Live Chat)
+                        if (chatFrame && !chatFrame.src.includes(customData.videoId)) {
+                            const currentDomain = window.location.hostname;
+                            chatFrame.src = `https://www.youtube.com/live_chat?v=${customData.videoId}&embed_domain=${currentDomain}&dark_theme=1`;
+                        }
+
+                        // 3. Override the status text if it is specifically Scheduled (Not Live)
+                        if (!customData.isLive && msgEl) {
+                            msgEl.innerText = "Stream Scheduled! Waiting room is open.";
+                            msgEl.style.color = "#ffaa00"; // Orange to indicate waiting mode
+                        }
+                        
+                    } 
+                    // SCENARIO C: No Video ID (Offline and nothing scheduled)
+                    else {
+                        if (videoFrame) {
+                            videoFrame.style.display = 'none';
+                            if (!videoFrame.src.includes("about:blank")) videoFrame.src = "about:blank"; // Clear the player cleanly
+                        }
+                        if (placeholderImg) placeholderImg.style.display = 'block';
+                        if (chatFrame && !chatFrame.src.includes("about:blank")) chatFrame.src = "about:blank"; // Clear the chat cleanly
                     }
                 }
             }
@@ -214,21 +244,11 @@ function updateStreamState(live) {
     isStreamLive = live;
     const msgEl = document.getElementById('status-msg');
     
-    // Grab the video frame and placeholder image
-    const videoFrame = document.getElementById('yt-video-frame');
-    const placeholderImg = document.getElementById('offline-placeholder');
-    
+    // NOTE: Video Frame and Placeholder toggling has been moved to ws.onmessage
+    // to properly handle the Scheduled Video ID logic!
+
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
     const commandButtons = document.querySelectorAll('.stream-cmd');
-
-    // Toggle Video vs Placeholder Image
-    if (isStreamLive) {
-        if (videoFrame) videoFrame.style.display = 'block';
-        if (placeholderImg) placeholderImg.style.display = 'none';
-    } else {
-        if (videoFrame) videoFrame.style.display = 'none';
-        if (placeholderImg) placeholderImg.style.display = 'block';
-    }
 
     if (!msgEl) return;
 
@@ -240,8 +260,11 @@ function updateStreamState(live) {
             msgEl.style.color = "#00ff00"; // Keep it green when live
         } else {
             commandButtons.forEach(btn => btn.disabled = true); // LOCK buttons
-            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
-            msgEl.style.color = "var(--white-med)";
+            // We only set this offline message if the Scheduled logic hasn't already overwritten it
+            if (msgEl.innerText !== "Stream Scheduled! Waiting room is open.") {
+                msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
+                msgEl.style.color = "var(--white-med)";
+            }
         }
     } else {
         // Not connected or not signed in

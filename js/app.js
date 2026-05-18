@@ -181,6 +181,7 @@ function connectBot() {
                     const placeholderImg = document.getElementById('offline-placeholder');
                     const chatFrame = document.getElementById('yt-chat-frame');
                     const msgEl = document.getElementById('status-msg');
+                    const chatWrapper = document.getElementById('chat-wrapper');
 
                     // SCENARIO A & B: We have a Video ID (Either Scheduled OR Live)
                     if (customData.videoId && customData.videoId.trim() !== "") {
@@ -203,6 +204,8 @@ function connectBot() {
                             const currentDomain = window.location.hostname;
                             chatFrame.src = `https://www.youtube.com/live_chat?v=${customData.videoId}&embed_domain=${currentDomain}&dark_theme=1`;
                         }
+                        
+                        if (chatWrapper) chatWrapper.style.display = 'block';
 
                         // 3. Override the status text if it is specifically Scheduled (Not Live)
                         if (!customData.isLive && msgEl) {
@@ -219,6 +222,7 @@ function connectBot() {
                         }
                         if (placeholderImg) placeholderImg.style.display = 'block';
                         if (chatFrame && !chatFrame.src.includes("about:blank")) chatFrame.src = "about:blank"; // Clear the chat cleanly
+                        if (chatWrapper) chatWrapper.style.display = 'none';
                     }
                 }
             }

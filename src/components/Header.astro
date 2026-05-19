@@ -1,0 +1,36 @@
+---
+---
+<header class="site-header">
+    <a href="/">
+        <img src="/images/longlogo.png" alt="Logo" class="header-logo-img">
+    </a>
+</header>
+
+<nav>
+    <div class="nav-links">
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="social-icons">
+            <a href="https://youtube.com/@2smokinbarrels" target="_blank"><img src="/icons/youtube.png" alt="YouTube"></a>
+            <a href="https://discord.gg/AWC6PNA2mK" target="_blank"><img src="/icons/discord.png" alt="Discord"></a>
+            <a href="https://x.com/2_SmokinBarrels" target="_blank"><img src="/icons/x.png" alt="X"></a>
+            <a href="https://www.facebook.com/2smokinbarrelsgaming/" target="_blank"><img src="/icons/facebook.png" alt="Facebook"></a>
+            <a href="https://www.patreon.com/c/2SmokinBarrels" target="_blank"><img src="/icons/patreon.png" alt="Patreon"></a>
+            <a href="https://github.com/ironjeff80" target="_blank"><img src="/icons/github.png" alt="GitHub"></a>
+        </div>
+    </div>
+
+    <div id="user-auth">
+        <div id="login-button-container">
+            <button id="custom-google-login" onclick="initGoogleSignIn()" class="cmd-btn" style="background-color: white; color: black; border-radius: 20px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; font-weight: bold; border: none; cursor: pointer; font-size: 0.9rem;">
+                <i class="fa-brands fa-google" style="color: #DB4437;"></i> Sign in
+            </button>
+        </div>
+        
+        <div id="user-profile" onclick="signOut()" title="Click to Sign Out" style="display: none;">
+            <span id="user-name" style="color: var(--accent-red); font-weight: 600; font-size: 0.9rem;"></span>
+            <img id="user-avatar" src="" alt="Profile" referrerpolicy="no-referrer">
+        </div>
+    </div>
+</nav>

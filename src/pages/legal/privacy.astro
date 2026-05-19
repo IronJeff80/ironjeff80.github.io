@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro'; 
+---
+
+<Layout title="Privacy Policy | 2 Smokin' Barrels">
+    <main>
+        <div class="container" style="max-width: 800px; margin: 0 auto; text-align: left; padding: 2rem; background: var(--bg-dark); border-radius: 10px;">
+            <p style="color: var(--grey-med);"><strong>Effective Date:</strong> May 10, 2026</p>
+
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">1. Introduction</h3>
+            <p>Welcome to 2 Smokin' Barrels ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you interact with our website (2smokinbarrels.com) and our live stream Command Center.</p>
+
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">2. Information We Collect</h3>
+            <p>When you use the Command Center to interact with our live stream, we require authentication via Google Identity Services. If you choose to sign in, we request the following specific data using the YouTube Data API (<code>youtube.readonly</code> scope):</p>
+            <ul style="color: var(--white-med); padding-left: 20px; line-height: 1.6;">
+                <li><strong>YouTube Channel ID:</strong> To uniquely identify your account in our stream database.</li>
+                <li><strong>YouTube Display Name & Handle:</strong> To display your name on our website's user interface and attribute your commands in our stream chat.</li>
+                <li><strong>Profile Picture:</strong> To display your avatar locally on your web browser.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">3. How We Use Your Information</h3>
+            <p>We use the information collected solely to facilitate your interaction with the 2 Smokin' Barrels live stream. Specifically:</p>
+            <ul style="color: var(--white-med); padding-left: 20px; line-height: 1.6;">
+                <li>To verify your identity when you trigger a stream command.</li>
+                <li>To deduct the appropriate stream points (e.g., "Catching a Pokemon").</li>
+                <li>To track your persistent variables (like your Word of the Day stats) within our local Streamer.bot database.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">4. Data Storage and Sharing</h3>
+            <ul style="color: var(--white-med); padding-left: 20px; line-height: 1.6;">
+                <li><strong>Local Storage:</strong> Your profile information is temporarily stored in your browser's local storage to keep you logged in.</li>
+                <li><strong>No Third-Party Sharing:</strong> We do not sell, trade, or otherwise transfer your personal information to outside parties. Your data is routed securely through an encrypted Cloudflare Tunnel directly to our private, local streaming PC.</li>
+                <li><strong>No Email Tracking:</strong> We do not collect or store your email address, nor do we send promotional emails.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">5. Your Rights and Data Deletion</h3>
+            <p>You can sign out of the Command Center at any time by clicking your profile picture and selecting "Sign Out." You may also revoke our application's access to your YouTube account at any time via your Google Account Security settings.</p>
+
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">6. Changes to This Policy</h3>
+            <p>We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated Effective Date.</p>
+        </div>
+    </main>
+</Layout>

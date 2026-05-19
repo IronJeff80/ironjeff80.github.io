@@ -55,6 +55,9 @@ window.onload = function () {
             }
         });
     });
+
+    // Fetch Madam Nazar location for the Resources page
+    fetchNazarLocation();
 };
 
 // ==========================================
@@ -386,5 +389,86 @@ function toggleSection(headerElement) {
     const contentElement = headerElement.nextElementSibling;
     if (contentElement) {
         contentElement.classList.toggle('collapsed');
+    }
+}
+
+// ==========================================
+// 7. MADAM NAZAR TRACKER (Cached)
+// ==========================================
+async function fetchNazarLocation() {
+    const banner = document.getElementById('nazar-banner');
+    const locationText = document.getElementById('nazar-location-text');
+    const nazarImage = document.getElementById('nazar-image');
+    
+    if (!banner || !locationText) return;
+    banner.style.display = 'flex'; // Unhide the banner
+
+    // 1. Calculate the current "Nazar Cycle" Day (Resets at 06:01 UTC)
+    const now = new Date();
+    const currentHourUTC = now.getUTCHours();
+    const currentMinuteUTC = now.getUTCMinutes();
+    let cycleDate = new Date(now);
+
+    if (currentHourUTC < 6 || (currentHourUTC === 6 && currentMinuteUTC < 1)) {
+        cycleDate.setUTCDate(cycleDate.getUTCDate() - 1);
+    }
+
+    const cacheKey = `nazar_${cycleDate.getUTCFullYear()}-${cycleDate.getUTCMonth() + 1}-${cycleDate.getUTCDate()}`;
+    const cachedData = localStorage.getItem(cacheKey);
+
+    // 2. Check Cache
+    if (cachedData) {
+        try {
+            const parsed = JSON.parse(cachedData);
+            locationText.innerText = parsed.text;
+            if (nazarImage) nazarImage.src = parsed.img;
+            return; // Exit early, no API call needed
+        } catch (e) {
+            // If cache string is malformed for some reason, clear it and fetch fresh
+            localStorage.removeItem(cacheKey);
+        }
+    }
+
+    // 3. Helper to clean up RDO codenames (e.g., "p_4_emerald_ranch" -> "Emerald Ranch")
+    const formatCodename = (name) => {
+        if (!name) return "";
+        let clean = name.replace(/^p_\d+_/, '').replace(/_/g, ' ');
+        return clean.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+    };
+
+    // 4. Fetch from API
+    try {
+        const response = await fetch('https://api.rdo.gg/nazar');
+        if (!response.ok) throw new Error("API Offline");
+        
+        const data = await response.json();
+        
+        if (data && data.location && data.id) {
+            // Build the string and map the image
+            const readableLocation = `${formatCodename(data.location)}, ${formatCodename(data.state)}`;
+            
+            // The API returns 'MPSW_LOCATION_XX', so we lower case it to match your files
+            const imgPath = `/nazar/${data.id.toLowerCase()}.png`;
+
+            // Apply to UI
+            locationText.innerText = readableLocation;
+            if (nazarImage) nazarImage.src = imgPath;
+
+            // Clear old cache, save the new daily JSON
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('nazar_')) localStorage.removeItem(key);
+            });
+            
+            localStorage.setItem(cacheKey, JSON.stringify({
+                text: readableLocation,
+                img: imgPath
+            }));
+            
+        } else {
+            locationText.innerText = "Location currently unknown.";
+        }
+    } catch (error) {
+        console.error("Failed to track Madam Nazar:", error);
+        locationText.innerText = "The spirits are quiet today (API Error).";
     }
 }

@@ -597,7 +597,6 @@ details summary::-webkit-details-marker {
     aspect-ratio: 560 / 400; /* Locks the exact dimensions */
     background-color: #0d0d0d;
     position: relative;
-    cursor: pointer;
     border-bottom: 2px solid var(--accent-red);
     overflow: hidden;
     flex-shrink: 0; 
@@ -617,50 +616,19 @@ details summary::-webkit-details-marker {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.nazar-image-container:hover img {
-    transform: scale(1.03); 
-}
-
-.nazar-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    font-family: 'RDRLino', serif;
-    letter-spacing: 2px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.nazar-overlay i {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: var(--accent-red);
-}
-
-.nazar-image-container:hover .nazar-overlay {
-    opacity: 1;
 }
 
 .nazar-info {
-    padding: 20px; /* Matched perfectly to standard .resource-info */
+    padding: 20px; 
     display: flex;
     flex-direction: column;
     justify-content: center; 
     flex-grow: 1;
-    text-align: left; /* Left-aligned to match the other cards */
+    text-align: left; 
 }
 
 .nazar-info h3 {
-    margin: 0 0 10px 0; /* Matched to standard cards */
+    margin: 0 0 10px 0; 
     color: #fff;
     font-size: 1.6rem; 
     font-family: 'RDRLino', serif;

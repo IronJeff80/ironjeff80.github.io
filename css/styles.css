@@ -376,6 +376,7 @@ details summary::-webkit-details-marker {
         font-size: 4.5rem;
     }
 }
+
 /* =========================================
    8. PAGE SPECIFIC: HOME PAGE
    ========================================= */
@@ -417,13 +418,12 @@ details summary::-webkit-details-marker {
     .hero h1 { font-size: 4.5rem; }
     .hero p { font-size: 1.4rem; }
     
-    /* FIX: Switched to Grid to strictly protect Chat Box width */
     .stream-container { 
         display: grid; 
-        grid-template-columns: 1fr 380px; /* Video takes remaining space, Chat is strictly 380px */
+        grid-template-columns: 1fr 380px; 
         gap: 20px; 
         height: auto; 
-        align-items: stretch; /* Forces chat box height to match video height */
+        align-items: stretch; 
     }
     .video-wrapper { 
         width: 100%; 
@@ -431,8 +431,8 @@ details summary::-webkit-details-marker {
     }
     .chat-wrapper { 
         width: 100%; 
-        height: 100%; /* Matches the video height driven by the grid */
-        min-height: 450px; /* Fallback for very small desktop windows */
+        height: 100%; 
+        min-height: 450px; 
     }
     
     .glitch-grid { grid-template-columns: repeat(4, 1fr); }
@@ -447,12 +447,11 @@ details summary::-webkit-details-marker {
     justify-content: center;
     gap: 15px;
     margin-bottom: 25px;
-    background-color: rgba(255, 255, 255, 0.05); /* Slight highlight box */
+    background-color: rgba(255, 255, 255, 0.05); 
     padding: 15px;
     border-radius: 12px;
 }
 
-/* Make the media buttons circular */
 .media-btn {
     width: 50px;
     height: 50px;
@@ -465,13 +464,11 @@ details summary::-webkit-details-marker {
     transition: all 0.2s ease;
 }
 
-/* Add a slight glow when hovered */
 .media-btn:hover:not([disabled]) {
     transform: scale(1.1);
     box-shadow: 0 0 10px var(--accent-red);
 }
 
-/* Collapsible Sections Styling */
 .collapsible-header:hover {
     color: var(--accent-red) !important;
 }
@@ -481,9 +478,88 @@ details summary::-webkit-details-marker {
 }
 
 .collapsible-header.collapsed .transition-icon {
-    transform: rotate(-90deg); /* Points the arrow to the right when closed */
+    transform: rotate(-90deg); 
 }
 
 .collapsible-content.collapsed {
-    display: none !important; /* Hides the grid/flex container */
+    display: none !important; 
+}
+
+/* =========================================
+   9. PAGE SPECIFIC: RED DEAD RESOURCES
+   ========================================= */
+.page-subtitle {
+    color: var(--grey-med, #aaa);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    background-color: var(--grey-dark, #1a1a1a);
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-red, #ff0000);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.15);
+}
+
+.resource-thumb {
+    height: 160px;
+    background-color: #0d0d0d;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid var(--accent-red, #ff0000);
+    position: relative;
+}
+
+.resource-thumb i {
+    font-size: 3.5rem;
+    color: #333;
+    z-index: 1;
+}
+
+.resource-thumb::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.resource-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-info h3 {
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 1.15rem;
+}
+
+.resource-info p {
+    margin: 0;
+    color: var(--white-med, #aaa);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }

@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us | 2 Smokin' Barrels">
+    <main class="container" style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: var(--bg-dark); border-radius: 10px;">
+        <h1 class="page-title">Contact Us</h1>
+        <p style="color: var(--white-med); margin-bottom: 2rem;">
+            Have a question, feedback, or a request? Use the form below to reach out. 
+            We try to respond to all community inquiries within 48 hours.
+        </p>
+
+        <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+            
+            <input type="hidden" name="access_key" value="ac03e2e3-2ea1-487c-ae65-3301bf19416e">
+            
+            <input type="hidden" name="redirect" value="https://2smokinbarrels.com/thank-you">
+
+            <label style="color: var(--accent-red); font-weight: bold;">Name</label>
+            <input type="text" name="name" required style="padding: 10px; border-radius: 5px; border: 1px solid var(--grey-dark); background: var(--bg-light); color: white;">
+
+            <label style="color: var(--accent-red); font-weight: bold;">Email</label>
+            <input type="email" name="email" required style="padding: 10px; border-radius: 5px; border: 1px solid var(--grey-dark); background: var(--bg-light); color: white;">
+
+            <label style="color: var(--accent-red); font-weight: bold;">Message</label>
+            <textarea name="message" rows="5" required style="padding: 10px; border-radius: 5px; border: 1px solid var(--grey-dark); background: var(--bg-light); color: white;"></textarea>
+
+            <button type="submit" class="cmd-btn" style="background: var(--accent-red); color: white; border: none; padding: 12px; cursor: pointer; font-weight: bold; margin-top: 1rem;">
+                Send Message
+            </button>
+        </form>
+    </main>
+</Layout>

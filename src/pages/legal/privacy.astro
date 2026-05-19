@@ -8,10 +8,10 @@ import Layout from '../../layouts/Layout.astro';
             <p style="color: var(--grey-med);"><strong>Effective Date:</strong> May 10, 2026</p>
 
             <h3 style="color: var(--accent-red); margin-top: 2rem;">1. Introduction</h3>
-            <p>Welcome to 2 Smokin' Barrels ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you interact with our website (2smokinbarrels.com) and our live stream Command Center.</p>
+            <p>Welcome to 2 Smokin' Barrels ("we," "our," or "us"). Our application uses the YouTube API Services to provide interactive features during our live streams. By using our services, you are agreeing to be bound by the <a href="https://www.youtube.com/t/terms" style="color: var(--accent-red); text-decoration: underline;">YouTube Terms of Service</a>. This Privacy Policy explains how we collect, use, and safeguard your information when you interact with our website (2smokinbarrels.com) and our live stream Command Center.</p>
 
             <h3 style="color: var(--accent-red); margin-top: 2rem;">2. Information We Collect</h3>
-            <p>When you use the Command Center to interact with our live stream, we require authentication via Google Identity Services. If you choose to sign in, we request the following specific data using the YouTube Data API (<code>youtube.readonly</code> scope):</p>
+            <p>When you use the Command Center to interact with our live stream, we require authentication via Google Identity Services. If you choose to sign in, we request the following specific data using the YouTube Data API (<code>youtube.readonly</code> scope). For more information on how Google manages your data, please refer to the <a href="https://policies.google.com/privacy" style="color: var(--accent-red); text-decoration: underline;">Google Privacy Policy</a>.</p>
             <ul style="color: var(--white-med); padding-left: 20px; line-height: 1.6;">
                 <li><strong>YouTube Channel ID:</strong> To uniquely identify your account in our stream database.</li>
                 <li><strong>YouTube Display Name & Handle:</strong> To display your name on our website's user interface and attribute your commands in our stream chat.</li>
@@ -26,17 +26,23 @@ import Layout from '../../layouts/Layout.astro';
                 <li>To track your persistent variables (like your Word of the Day stats) within our local Streamer.bot database.</li>
             </ul>
 
-            <h3 style="color: var(--accent-red); margin-top: 2rem;">4. Data Storage and Sharing</h3>
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">4. Data Storage and Retention</h3>
             <ul style="color: var(--white-med); padding-left: 20px; line-height: 1.6;">
                 <li><strong>Local Storage:</strong> Your profile information is temporarily stored in your browser's local storage to keep you logged in.</li>
+                <li><strong>Retention:</strong> User data (Channel ID and associated activity stats) is retained in our local Streamer.bot database for as long as our interactive stream features are active, or until a user requests deletion.</li>
                 <li><strong>No Third-Party Sharing:</strong> We do not sell, trade, or otherwise transfer your personal information to outside parties. Your data is routed securely through an encrypted Cloudflare Tunnel directly to our private, local streaming PC.</li>
                 <li><strong>No Email Tracking:</strong> We do not collect or store your email address, nor do we send promotional emails.</li>
             </ul>
 
             <h3 style="color: var(--accent-red); margin-top: 2rem;">5. Your Rights and Data Deletion</h3>
-            <p>You can sign out of the Command Center at any time by clicking your profile picture and selecting "Sign Out." You may also revoke our application's access to your YouTube account at any time via your Google Account Security settings.</p>
+            <p>You can sign out of the Command Center at any time by clicking your profile picture and selecting "Sign Out." You may also revoke our application's access to your YouTube account at any time via your <a href="https://myaccount.google.com/permissions" style="color: var(--accent-red); text-decoration: underline;">Google Account Security settings</a>. To request manual deletion of your data from our local database, please contact us.</p>
 
-            <h3 style="color: var(--accent-red); margin-top: 2rem;">6. Changes to This Policy</h3>
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">6. Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy or wish to request the deletion of your data, please contact us via our 
+                <a href="/contact" style="color: var(--accent-red); text-decoration: underline;">Contact Form</a>.
+                </p>
+                
+            <h3 style="color: var(--accent-red); margin-top: 2rem;">7. Changes to This Policy</h3>
             <p>We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated Effective Date.</p>
         </div>
     </main>

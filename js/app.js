@@ -472,3 +472,28 @@ async function fetchNazarLocation() {
         locationText.innerText = "The spirits are quiet today (API Error).";
     }
 }
+
+// ==========================================
+// 8. MODAL LOGIC
+// ==========================================
+function openNazarModal() {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modal-img");
+    const srcImg = document.getElementById("nazar-image");
+    
+    // Only open if the image has successfully loaded from the cache/API
+    if (modal && modalImg && srcImg.src && !srcImg.src.endsWith(window.location.host + "/")) {
+        modal.style.display = "flex";
+        modalImg.src = srcImg.src;
+    }
+}
+
+function closeNazarModal(event) {
+    const modal = document.getElementById("imageModal");
+    const modalContent = document.getElementById("modal-img");
+    
+    // Close the modal if they click the 'X' or anywhere in the black background
+    if (event.target !== modalContent) {
+        modal.style.display = "none";
+    }
+}

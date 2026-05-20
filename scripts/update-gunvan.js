@@ -4,54 +4,55 @@ import * as cheerio from 'cheerio';
 async function fetchGunVanLocation() {
     try {
         console.log("Fetching latest Gun Van data...");
+        
+        // Replace this URL with the actual site you are targeting
+        const targetUrl = 'https://gtalens.com/map/gun-vans'; 
+        const response = await fetch(targetUrl);
+        const html = await response.text();
+        
+        const $ = cheerio.load(html);
+        
+        // Strip all HTML tags to get pure text, just like your copy-paste
+        const plainText = $('body').text();
+
         let location = "";
+        let inventory = [];
 
-        // TARGET 1: GTA Wiki
-        try {
-            const wikiRes = await fetch('https://gta.wiki/w/Gun_Van');
-            const wikiHtml = await wikiRes.text();
-            const $wiki = cheerio.load(wikiHtml);
-            
-            // Look for standard Wiki table structures for "Current location"
-            location = $wiki('th:contains("Current")').next('td').text().trim();
-            
-            if (!location) {
-                // Fallback for Wiki Infoboxes
-                location = $wiki('[data-source="location"] .pi-data-value').first().text().trim();
-            }
-        } catch (e) {
-            console.log("Wiki fetch failed, trying fallback...");
+        // 1. EXTRACT THE LOCATION
+        // Looks for "Gun Van #X" followed by "[active]"
+        const activeMatch = plainText.match(/(Gun Van #\d+)[\s\S]*?\[active\]/i);
+        if (activeMatch) {
+            location = activeMatch[1].trim();
         }
 
-        // TARGET 2: Rockstar Intel (If Target 1 fails)
-        if (!location || location.toLowerCase().includes("changes daily") || location.includes("parsing failed")) {
-            console.log("Wiki data unclear. Falling back to Rockstar Intel...");
-            const intelRes = await fetch('https://rockstarintel.com/gta-online-gun-van-location/');
-            const intelHtml = await intelRes.text();
-            const $intel = cheerio.load(intelHtml);
-            
-            // Rockstar Intel usually puts the location right after a specific header
-            location = $intel('h2:contains("Where is the Gun Van today")').next('p').text().trim();
+        // 2. EXTRACT THE INVENTORY
+        // Looks for the text between "In stock:" and "Locations"
+        const inventoryMatch = plainText.match(/In stock:([\s\S]*?)(?=Locations|Gun Van #1\s)/i);
+        if (inventoryMatch) {
+            // Split the block into individual lines, clean up empty spaces
+            const rawItems = inventoryMatch[1].split('\n');
+            inventory = rawItems
+                .map(item => item.trim())
+                .filter(item => item.length > 0 && item !== "Weapons:" && item !== "Throwables:");
         }
 
-        // Final cleanup & validation
+        // 3. FALLBACKS & VALIDATION
         if (!location) {
-            location = "Location data parsing failed. Check scraper script.";
-            console.warn("Could not find the exact location text on any target.");
-        } else {
-            // Remove Wikipedia-style citation brackets (e.g., "[1]")
-            location = location.replace(/\[\d+\]/g, '').trim();
-        }
+            location = "Location data parsing failed.";
+            console.warn("Could not find the [active] tag in the text.");
+        } 
 
         console.log(`Final Location Found: ${location}`);
+        console.log(`Inventory Items Found: ${inventory.length}`);
 
-        // Ensure directory exists and save
+        // 4. SAVE TO JSON
         if (!fs.existsSync('./public/api')) {
             fs.mkdirSync('./public/api', { recursive: true });
         }
 
         const data = { 
             location: location, 
+            inventory: inventory, // Added the array of items!
             updatedAt: new Date().toISOString() 
         };
 

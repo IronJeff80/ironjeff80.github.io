@@ -379,13 +379,13 @@ async function fetchNazarLocation() {
 }
 
 // ==========================================
-// 8. GUN VAN TRACKER (Cached)
+// 8. GUN VAN TRACKER (Cached & Inventory)
 // ==========================================
 async function fetchGunVanLocation() {
     const banner = document.getElementById('gun-van-banner');
     const locationText = document.getElementById('gun-van-location-text');
     
-    // Ensure we only run this logic if we are actually on the GTA Resources page
+    // Check if we are on the GTA page
     if (!banner || !locationText) return;
     banner.style.display = 'flex'; 
     
@@ -394,7 +394,6 @@ async function fetchGunVanLocation() {
     const currentMinuteUTC = now.getUTCMinutes();
     let cycleDate = new Date(now);
 
-    // GTA updates daily at ~06:00 UTC
     if (currentHourUTC < 6 || (currentHourUTC === 6 && currentMinuteUTC < 1)) {
         cycleDate.setUTCDate(cycleDate.getUTCDate() - 1);
     }
@@ -405,7 +404,7 @@ async function fetchGunVanLocation() {
     if (cachedData) {
         try {
             const parsed = JSON.parse(cachedData);
-            locationText.innerText = parsed.text;
+            locationText.innerHTML = parsed.htmlContent;
             return;
         } catch (e) {
             localStorage.removeItem(cacheKey);
@@ -413,24 +412,33 @@ async function fetchGunVanLocation() {
     }
 
     try {
-        // Fetching directly from your own self-hosted JSON file created by the Scraper Action
         const response = await fetch('/api/gunvan.json'); 
         if (!response.ok) throw new Error("Local API missing");
         
         const data = await response.json();
         
         if (data && data.location) {
-            const readableLocation = data.location;
+            // Build the HTML string
+            let displayHtml = `<strong>${data.location}</strong>`;
             
-            locationText.innerText = readableLocation;
+            // If the scraper found inventory, build a styled list
+            if (data.inventory && data.inventory.length > 0) {
+                displayHtml += `<br><span style="font-size: 0.85rem; color: var(--grey-med);">Today's Stock:</span>`;
+                displayHtml += `<ul style="font-size: 0.8rem; color: var(--white-med); padding-left: 15px; margin-top: 5px; list-style-type: square;">`;
+                data.inventory.forEach(item => {
+                    displayHtml += `<li>${item}</li>`;
+                });
+                displayHtml += `</ul>`;
+            }
+            
+            locationText.innerHTML = displayHtml;
 
-            // Clear old cache, save the new daily JSON
             Object.keys(localStorage).forEach(key => {
                 if (key.startsWith('gunvan_')) localStorage.removeItem(key);
             });
             
             localStorage.setItem(cacheKey, JSON.stringify({
-                text: readableLocation
+                htmlContent: displayHtml
             }));
             
         } else {

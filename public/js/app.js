@@ -384,6 +384,8 @@ async function fetchNazarLocation() {
 async function fetchGunVanLocation() {
     const banner = document.getElementById('gun-van-banner');
     const locationText = document.getElementById('gun-van-location-text');
+    const gunVanImage = document.getElementById('gun-van-image');
+    const gunVanIcon = document.getElementById('gun-van-icon');
     
     if (!banner || !locationText) return;
     banner.style.display = 'flex'; 
@@ -400,11 +402,17 @@ async function fetchGunVanLocation() {
     const cacheKey = `gunvan_${cycleDate.getUTCFullYear()}-${cycleDate.getUTCMonth() + 1}-${cycleDate.getUTCDate()}`;
     const cachedData = localStorage.getItem(cacheKey);
 
+    // Look for the new cache structure
     if (cachedData) {
         try {
             const parsed = JSON.parse(cachedData);
-            if (parsed.htmlContent) {
+            if (parsed.htmlContent && parsed.imgSrc) {
                 locationText.innerHTML = parsed.htmlContent;
+                if (gunVanImage) {
+                    gunVanImage.src = parsed.imgSrc;
+                    gunVanImage.style.display = 'block';
+                }
+                if (gunVanIcon) gunVanIcon.style.display = 'none';
                 return;
             } else {
                 localStorage.removeItem(cacheKey);
@@ -421,20 +429,11 @@ async function fetchGunVanLocation() {
         const data = await response.json();
         
         if (data && data.locationName) {
-            // Build the HTML string starting with the clean name
+            // 1. Build the Text Panel (Right Side)
             let displayHtml = `<strong style="font-size: 1.1rem;">${data.locationName}</strong>`;
             
-            // Only display the Map Image, set to full width of the container
-            if (data.mapPath) {
-                displayHtml += `
-                <div style="margin-top: 10px; margin-bottom: 15px;">
-                    <img src="${data.mapPath}" alt="Gun Van Map Location" style="width: 100%; border-radius: 5px; border: 1px solid var(--grey-dark); object-fit: cover; aspect-ratio: 16/9;">
-                </div>`;
-            }
-            
-            // Add the cleaned-up inventory list
             if (data.inventory && data.inventory.length > 0) {
-                displayHtml += `<span style="font-size: 0.85rem; color: var(--grey-med);">Today's Stock:</span>`;
+                displayHtml += `<br><span style="font-size: 0.85rem; color: var(--grey-med);">Today's Stock:</span>`;
                 displayHtml += `<ul style="font-size: 0.8rem; color: var(--white-med); padding-left: 15px; margin-top: 5px; list-style-type: square;">`;
                 data.inventory.forEach(item => {
                     displayHtml += `<li>${item}</li>`;
@@ -444,12 +443,23 @@ async function fetchGunVanLocation() {
             
             locationText.innerHTML = displayHtml;
 
+            // 2. Handle the Image Panel (Left Side)
+            let imgSrcToCache = "";
+            if (data.mapPath && gunVanImage) {
+                gunVanImage.src = data.mapPath;
+                gunVanImage.style.display = 'block';
+                if (gunVanIcon) gunVanIcon.style.display = 'none';
+                imgSrcToCache = data.mapPath;
+            }
+
+            // 3. Save to Cache
             Object.keys(localStorage).forEach(key => {
                 if (key.startsWith('gunvan_')) localStorage.removeItem(key);
             });
             
             localStorage.setItem(cacheKey, JSON.stringify({
-                htmlContent: displayHtml
+                htmlContent: displayHtml,
+                imgSrc: imgSrcToCache
             }));
             
         } else {

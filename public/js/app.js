@@ -385,7 +385,6 @@ async function fetchGunVanLocation() {
     const banner = document.getElementById('gun-van-banner');
     const locationText = document.getElementById('gun-van-location-text');
     
-    // Check if we are on the GTA page
     if (!banner || !locationText) return;
     banner.style.display = 'flex'; 
     
@@ -401,10 +400,9 @@ async function fetchGunVanLocation() {
     const cacheKey = `gunvan_${cycleDate.getUTCFullYear()}-${cycleDate.getUTCMonth() + 1}-${cycleDate.getUTCDate()}`;
     const cachedData = localStorage.getItem(cacheKey);
 
-if (cachedData) {
+    if (cachedData) {
         try {
             const parsed = JSON.parse(cachedData);
-            
             if (parsed.htmlContent) {
                 locationText.innerHTML = parsed.htmlContent;
                 return;
@@ -422,13 +420,21 @@ if (cachedData) {
         
         const data = await response.json();
         
-        if (data && data.location) {
-            // Build the HTML string
-            let displayHtml = `<strong>${data.location}</strong>`;
+        if (data && data.locationName) {
+            // Build the HTML string starting with the clean name
+            let displayHtml = `<strong style="font-size: 1.1rem;">${data.locationName}</strong>`;
             
-            // If the scraper found inventory, build a styled list
+            // Only display the Map Image, set to full width of the container
+            if (data.mapPath) {
+                displayHtml += `
+                <div style="margin-top: 10px; margin-bottom: 15px;">
+                    <img src="${data.mapPath}" alt="Gun Van Map Location" style="width: 100%; border-radius: 5px; border: 1px solid var(--grey-dark); object-fit: cover; aspect-ratio: 16/9;">
+                </div>`;
+            }
+            
+            // Add the cleaned-up inventory list
             if (data.inventory && data.inventory.length > 0) {
-                displayHtml += `<br><span style="font-size: 0.85rem; color: var(--grey-med);">Today's Stock:</span>`;
+                displayHtml += `<span style="font-size: 0.85rem; color: var(--grey-med);">Today's Stock:</span>`;
                 displayHtml += `<ul style="font-size: 0.8rem; color: var(--white-med); padding-left: 15px; margin-top: 5px; list-style-type: square;">`;
                 data.inventory.forEach(item => {
                     displayHtml += `<li>${item}</li>`;

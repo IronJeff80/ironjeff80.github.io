@@ -8,7 +8,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write # Important: Gives the bot permission to push code
+  contents: write # Gives the bot permission to push code
+  actions: write  # Gives the bot permission to trigger other workflows
 
 jobs:
   scrape-and-update:
@@ -38,3 +39,8 @@ jobs:
           # Only commit if the location actually changed to avoid empty commits
           git commit -m "🤖 Auto-update Gun Van location" || echo "No changes to commit"
           git push
+
+      - name: Trigger Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml

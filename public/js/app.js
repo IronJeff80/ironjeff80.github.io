@@ -401,11 +401,16 @@ async function fetchGunVanLocation() {
     const cacheKey = `gunvan_${cycleDate.getUTCFullYear()}-${cycleDate.getUTCMonth() + 1}-${cycleDate.getUTCDate()}`;
     const cachedData = localStorage.getItem(cacheKey);
 
-    if (cachedData) {
+if (cachedData) {
         try {
             const parsed = JSON.parse(cachedData);
-            locationText.innerHTML = parsed.htmlContent;
-            return;
+            
+            if (parsed.htmlContent) {
+                locationText.innerHTML = parsed.htmlContent;
+                return;
+            } else {
+                localStorage.removeItem(cacheKey);
+            }
         } catch (e) {
             localStorage.removeItem(cacheKey);
         }

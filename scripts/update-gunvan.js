@@ -4,33 +4,52 @@ import * as cheerio from 'cheerio';
 async function fetchGunVanLocation() {
     try {
         console.log("Fetching latest Gun Van data...");
-        
-        // Target the GTA Wiki (or GTALens if they render server-side HTML)
-        const response = await fetch('https://gta.wiki/w/Gun_Van');
-        const html = await response.text();
-        
-        // Load the HTML into Cheerio so we can query it like CSS
-        const $ = cheerio.load(html);
+        let location = "";
 
-        // Note: Websites change their layout. This selector looks for the first bold 
-        // text in the "Current Location" table data. You may need to tweak this 
-        // selector based on the exact HTML structure of the page!
-        let location = $('th:contains("Current location")').next('td').text().trim();
-
-        // Fallback if the wiki format changes slightly
-        if (!location) {
-            location = "Location data parsing failed. Check scraper script.";
-            console.warn("Could not find the exact location text.");
+        // TARGET 1: GTA Wiki
+        try {
+            const wikiRes = await fetch('https://gta.wiki/w/Gun_Van');
+            const wikiHtml = await wikiRes.text();
+            const $wiki = cheerio.load(wikiHtml);
+            
+            // Look for standard Wiki table structures for "Current location"
+            location = $wiki('th:contains("Current")').next('td').text().trim();
+            
+            if (!location) {
+                // Fallback for Wiki Infoboxes
+                location = $wiki('[data-source="location"] .pi-data-value').first().text().trim();
+            }
+        } catch (e) {
+            console.log("Wiki fetch failed, trying fallback...");
         }
 
-        console.log(`Found location: ${location}`);
+        // TARGET 2: Rockstar Intel (If Target 1 fails)
+        if (!location || location.toLowerCase().includes("changes daily") || location.includes("parsing failed")) {
+            console.log("Wiki data unclear. Falling back to Rockstar Intel...");
+            const intelRes = await fetch('https://rockstarintel.com/gta-online-gun-van-location/');
+            const intelHtml = await intelRes.text();
+            const $intel = cheerio.load(intelHtml);
+            
+            // Rockstar Intel usually puts the location right after a specific header
+            location = $intel('h2:contains("Where is the Gun Van today")').next('p').text().trim();
+        }
 
-        // Ensure the public/api directory exists
+        // Final cleanup & validation
+        if (!location) {
+            location = "Location data parsing failed. Check scraper script.";
+            console.warn("Could not find the exact location text on any target.");
+        } else {
+            // Remove Wikipedia-style citation brackets (e.g., "[1]")
+            location = location.replace(/\[\d+\]/g, '').trim();
+        }
+
+        console.log(`Final Location Found: ${location}`);
+
+        // Ensure directory exists and save
         if (!fs.existsSync('./public/api')) {
             fs.mkdirSync('./public/api', { recursive: true });
         }
 
-        // Save the data to our local JSON file
         const data = { 
             location: location, 
             updatedAt: new Date().toISOString() 
@@ -41,7 +60,7 @@ async function fetchGunVanLocation() {
 
     } catch (error) {
         console.error("Scraper Error:", error);
-        process.exit(1); // Tell GitHub Action that it failed
+        process.exit(1); 
     }
 }
 

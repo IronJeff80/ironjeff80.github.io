@@ -1,5 +1,8 @@
 {
-  "location": "Gun Van #9",
+  "id": "9",
+  "locationName": "Palmer-Taylor Power Station",
+  "imagePath": "/images/gunvan/loc_9.jpg",
+  "mapPath": "/images/gunvan/map_9.jpg",
   "inventory": [
     "Compact EMP Launcher: -40 %",
     "Military Rifle: -10 %",
@@ -10,11 +13,7 @@
     "Molotov: -10 %",
     "Tear Gas: -10 %",
     "Proximity Mine: -10 %",
-    "Body armor: -10 %",
-    "Note that the list of available weapons is updated weekly by R* and cannot be known in advance, but the location changes daily.",
-    "Watch video",
-    "Remove all checkmarks",
-    "Reveal coordinates"
+    "Body armor: -10 %"
   ],
-  "updatedAt": "2026-05-20T18:42:03.043Z"
+  "updatedAt": "2026-05-20T19:37:25.382Z"
 }

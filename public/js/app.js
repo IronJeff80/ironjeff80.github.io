@@ -399,4 +399,45 @@ async function fetchGunVanLocation() {
         cycleDate.setUTCDate(cycleDate.getUTCDate() - 1);
     }
 
-    const cacheKey = `gunvan_${cycleDate.getUTCFullYear()}-${cycleDate.getUTCMonth() + 1}-${cycleDate
+    const cacheKey = `gunvan_${cycleDate.getUTCFullYear()}-${cycleDate.getUTCMonth() + 1}-${cycleDate.getUTCDate()}`;
+    const cachedData = localStorage.getItem(cacheKey);
+
+    if (cachedData) {
+        try {
+            const parsed = JSON.parse(cachedData);
+            locationText.innerText = parsed.text;
+            return;
+        } catch (e) {
+            localStorage.removeItem(cacheKey);
+        }
+    }
+
+    try {
+        // Fetching directly from your own self-hosted JSON file created by the Scraper Action
+        const response = await fetch('/api/gunvan.json'); 
+        if (!response.ok) throw new Error("Local API missing");
+        
+        const data = await response.json();
+        
+        if (data && data.location) {
+            const readableLocation = data.location;
+            
+            locationText.innerText = readableLocation;
+
+            // Clear old cache, save the new daily JSON
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('gunvan_')) localStorage.removeItem(key);
+            });
+            
+            localStorage.setItem(cacheKey, JSON.stringify({
+                text: readableLocation
+            }));
+            
+        } else {
+            locationText.innerText = "Location currently unknown.";
+        }
+    } catch (error) {
+        console.error("Failed to track Gun Van:", error);
+        locationText.innerText = "Los Santos is quiet today (API Data missing).";
+    }
+}

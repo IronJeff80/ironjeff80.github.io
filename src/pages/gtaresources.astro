@@ -4,15 +4,75 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="GTA Resources | 2 Smokin' Barrels">
     <main class="container">
-        <div class="coming-soon-box">
-            <h1 class="page-title">GTA Resources</h1>
-            <h1>Coming Soon</h1>
-            <p>We are currently building this resource for the community.</p>
-            <div style="margin-top: 2rem;">
-                <a href="/"
-                    style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr;
-                    Back to Home</a>
+        <h1 class="page-title">GTA Online Resources</h1>
+        <p class="page-subtitle">Essential tools and community hubs for Los Santos.</p>
+
+        <div id="gun-van-banner" class="resource-card nazar-hero">
+            <div class="nazar-image-container">
+                <i class="fa-solid fa-van-shuttle" style="font-size: 3rem; color: var(--accent-red);"></i>
             </div>
+            <div class="nazar-info">
+                <h3>Daily Gun Van Location</h3>
+                <p id="gun-van-location-text">Updating location data...</p>
+            </div>
+        </div>
+
+        <div class="resource-grid">
+            <a href="https://gtaweb.eu/" class="resource-card" target="_blank" rel="noopener noreferrer">
+                <div class="resource-thumb"><i class="fa-solid fa-map"></i></div>
+                <div class="resource-info">
+                    <h3>GTAWeb Map</h3>
+                    <p>The definitive interactive map for collectibles and points of interest in GTA Online.</p>
+                </div>
+            </a>
+
+            <a href="https://rockstarintel.com/" class="resource-card" target="_blank" rel="noopener noreferrer">
+                <div class="resource-thumb"><i class="fa-solid fa-newspaper"></i></div>
+                <div class="resource-info">
+                    <h3>Rockstar Intel</h3>
+                    <p>Stay updated with the latest news, updates, and community guides for all Rockstar titles.</p>
+                </div>
+            </a>
+
+            <a href="https://docs.google.com/spreadsheets/d/1CV8d9A1x55ZDoJ-Q2Bslkek_K6UbqaBzvODG52HHHCM/edit?gid=0" class="resource-card" target="_blank" rel="noopener noreferrer">
+                <div class="resource-thumb"><i class="fa-solid fa-table"></i></div>
+                <div class="resource-info">
+                    <h3>GTA Online Guides</h3>
+                    <p>A deep-dive community spreadsheet containing vehicle stats, payout data, and more.</p>
+                </div>
+            </a>
+
+            <a href="https://gta.wiki/" class="resource-card" target="_blank" rel="noopener noreferrer">
+                <div class="resource-thumb"><i class="fa-solid fa-book"></i></div>
+                <div class="resource-info">
+                    <h3>GTA Wiki</h3>
+                    <p>The most comprehensive encyclopedia for all lore, vehicles, and gameplay mechanics.</p>
+                </div>
+            </a>
+
+            <a href="https://gtaforums.com/" class="resource-card" target="_blank" rel="noopener noreferrer">
+                <div class="resource-thumb"><i class="fa-solid fa-comments"></i></div>
+                <div class="resource-info">
+                    <h3>GTAForums</h3>
+                    <p>Join the largest community discussion board for technical troubleshooting and community events.</p>
+                </div>
+            </a>
+
+            <a href="https://amethxst.dev/" class="resource-card" target="_blank" rel="noopener noreferrer">
+                <div class="resource-thumb"><i class="fa-solid fa-code"></i></div>
+                <div class="resource-info">
+                    <h3>Amethxst.dev</h3>
+                    <p>Custom tools and utilities for GTA Online players and creators.</p>
+                </div>
+            </a>
+            
+            <a href="https://vi-text-generator.vercel.app/" class="resource-card" target="_blank" rel="noopener noreferrer">
+                <div class="resource-thumb"><i class="fa-solid fa-font"></i></div>
+                <div class="resource-info">
+                    <h3>VI Text Generator</h3>
+                    <p>Generate creative text and logos in the distinct style of GTA VI.</p>
+                </div>
+            </a>
         </div>
     </main>
 </Layout>

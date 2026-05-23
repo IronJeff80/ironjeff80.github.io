@@ -1,8 +1,8 @@
 {
-  "id": "15",
-  "locationName": "Land Act Reservoir (north end)",
-  "imagePath": "/images/gunvan/loc_15.jpg",
-  "mapPath": "/images/gunvan/map_15.jpg",
+  "id": "11",
+  "locationName": "Thomson Scrapyard",
+  "imagePath": "/images/gunvan/loc_11.jpg",
+  "mapPath": "/images/gunvan/map_11.jpg",
   "inventory": [
     "Combat Shotgun: -10 %",
     "Precision Rifle: -10 %",
@@ -15,5 +15,5 @@
     "Proximity Mine: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-05-22T09:39:15.181Z"
+  "updatedAt": "2026-05-23T08:26:47.047Z"
 }

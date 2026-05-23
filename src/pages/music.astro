@@ -4,15 +4,106 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Royalty Free Music | 2 Smokin' Barrels">
     <main class="container">
-        <div class="coming-soon-box">
-            <h1 class="page-title">Royalty Free Music</h1>
-            <h1>Coming Soon</h1>
-            <p>We are currently building this resource for the community.</p>
-            <div style="margin-top: 2rem;">
-                <a href="/"
-                    style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr;
-                    Back to Home</a>
+        <h1 class="page-title">Royalty Free Music</h1>
+        <p style="text-align: center; color: var(--white-med); margin-bottom: 3rem;">
+            Download and use these royalty-free instrumental tracks and stems for your streams and content. 
+        </p>
+
+        <!-- Albums Grid -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <!-- Steel Legends -->
+            <div class="card">
+                <h3>Steel Legends</h3>
+                <span class="badge" style="background: #444;">Classic Rock</span>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    High-energy, driving instrumental rock anthems perfect for intense action and gameplay montages.
+                </p>
+                <div style="margin-bottom: 1rem;">
+                    <a href="YOUR_GOOGLE_DRIVE_FOLDER_LINK_HERE" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; display: block;">Download Full Album</a>
+                </div>
+                
+                <details style="background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 10px; border-radius: 4px;">
+                    <summary style="color: var(--accent-red); font-weight: 600; cursor: pointer; outline: none;">View Tracks</summary>
+                    <ul style="list-style: none; padding: 0; margin: 10px 0 0 0;">
+                        <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding: 8px 0;">
+                            <span style="font-size: 0.9rem; color: var(--white-low);">1. Track Name Here</span>
+                            <a href="YOUR_TRACK_DOWNLOAD_LINK" target="_blank" style="color: #00ff00; text-decoration: none; font-size: 0.8rem; font-weight: bold;">DL</a>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding: 8px 0;">
+                            <span style="font-size: 0.9rem; color: var(--white-low);">2. Track Name Here</span>
+                            <a href="YOUR_TRACK_DOWNLOAD_LINK" target="_blank" style="color: #00ff00; text-decoration: none; font-size: 0.8rem; font-weight: bold;">DL</a>
+                        </li>
+                    </ul>
+                </details>
             </div>
+
+            <!-- Digital Heartbeat -->
+            <div class="card">
+                <h3>Digital Heartbeat</h3>
+                <span class="badge" style="background: #444;">Vocaloid J-Pop</span>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    Upbeat, synthetic, and melodic J-Pop inspired tracks designed to bring high energy to your stream.
+                </p>
+                <div style="margin-bottom: 1rem;">
+                    <a href="YOUR_GOOGLE_DRIVE_FOLDER_LINK_HERE" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; display: block;">Download Full Album</a>
+                </div>
+                
+                <details style="background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 10px; border-radius: 4px;">
+                    <summary style="color: var(--accent-red); font-weight: 600; cursor: pointer; outline: none;">View Tracks</summary>
+                    <ul style="list-style: none; padding: 0; margin: 10px 0 0 0;">
+                        <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding: 8px 0;">
+                            <span style="font-size: 0.9rem; color: var(--white-low);">1. Track Name Here</span>
+                            <a href="YOUR_TRACK_DOWNLOAD_LINK" target="_blank" style="color: #00ff00; text-decoration: none; font-size: 0.8rem; font-weight: bold;">DL</a>
+                        </li>
+                    </ul>
+                </details>
+            </div>
+
+            <!-- Vinyl Breakup -->
+            <div class="card">
+                <h3>Vinyl Breakup</h3>
+                <span class="badge" style="background: #444;">Phonk / Lo-Fi</span>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    Gritty basslines and distorted lo-fi beats perfect for drifting, cruising, or just setting a heavy mood.
+                </p>
+                <div style="margin-bottom: 1rem;">
+                    <a href="YOUR_GOOGLE_DRIVE_FOLDER_LINK_HERE" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; display: block;">Download Full Album</a>
+                </div>
+                
+                <details style="background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 10px; border-radius: 4px;">
+                    <summary style="color: var(--accent-red); font-weight: 600; cursor: pointer; outline: none;">View Tracks</summary>
+                    <ul style="list-style: none; padding: 0; margin: 10px 0 0 0;">
+                        <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding: 8px 0;">
+                            <span style="font-size: 0.9rem; color: var(--white-low);">1. Track Name Here</span>
+                            <a href="YOUR_TRACK_DOWNLOAD_LINK" target="_blank" style="color: #00ff00; text-decoration: none; font-size: 0.8rem; font-weight: bold;">DL</a>
+                        </li>
+                    </ul>
+                </details>
+            </div>
+
+            <!-- Mandarin Trance -->
+            <div class="card">
+                <h3>Mandarin Trance</h3>
+                <span class="badge" style="background: #444;">Traditional Chinese / EDM</span>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    A fusion of traditional Chinese festival instruments mixed with deep electronic dance and trance beats.
+                </p>
+                <div style="margin-bottom: 1rem;">
+                    <a href="YOUR_GOOGLE_DRIVE_FOLDER_LINK_HERE" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; display: block;">Download Full Album</a>
+                </div>
+                
+                <details style="background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 10px; border-radius: 4px;">
+                    <summary style="color: var(--accent-red); font-weight: 600; cursor: pointer; outline: none;">View Tracks</summary>
+                    <ul style="list-style: none; padding: 0; margin: 10px 0 0 0;">
+                        <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding: 8px 0;">
+                            <span style="font-size: 0.9rem; color: var(--white-low);">1. Track Name Here</span>
+                            <a href="YOUR_TRACK_DOWNLOAD_LINK" target="_blank" style="color: #00ff00; text-decoration: none; font-size: 0.8rem; font-weight: bold;">DL</a>
+                        </li>
+                    </ul>
+                </details>
+            </div>
+
         </div>
     </main>
 </Layout>

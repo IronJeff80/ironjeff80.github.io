@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// This array holds all your album data. To add a new album later, just add another block here!
+// This array holds all your album data.
 const albums = [
     {
         title: "Midnight Vector",
@@ -353,7 +353,16 @@ const albums = [
             
             <!-- Map through the albums array to generate cards -->
             {albums.map((album) => (
-                <div class="card">
+                <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column;">
+                    
+                    <!-- Dynamic Cover Art Image -->
+                    <img 
+                        src={`/images/albums/${album.title}.jpg`} 
+                        alt={`${album.title} Cover Art`} 
+                        style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 2px solid var(--accent-red); margin-bottom: 1.5rem; border-radius: 4px; background-color: #111;"
+                        loading="lazy"
+                    />
+
                     <h3>{album.title}</h3>
                     <span class="badge" style="background: #444;">{album.genre}</span>
                     <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">

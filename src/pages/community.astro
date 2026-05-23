@@ -4,15 +4,61 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Community | 2 Smokin' Barrels">
     <main class="container">
-        <div class="coming-soon-box">
-            <h1 class="page-title">Community</h1>
-            <h1>Coming Soon</h1>
-            <p>We are currently building this resource for the community.</p>
-            <div style="margin-top: 2rem;">
-                <a href="/"
-                    style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr;
-                    Back to Home</a>
+        <h1 class="page-title">Community</h1>
+        <p style="text-align: center; color: var(--white-med); margin-bottom: 3rem;">
+            Check out the incredible creators, channels, and friends of the community!
+        </p>
+
+        <!-- Cards Container -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            
+            <!-- Official Nugzz Crew -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="https://ui-avatars.com/api/?name=Nugzz+Crew&background=8b0000&color=fff&size=120" alt="Official Nugzz Crew" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem;">
+                <h3>Official Nugzz Crew</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    An amazing collective creating fantastic content. Check out their official site and latest YouTube uploads!
+                </p>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://officialnugzzcrew.com/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">Website</a>
+                    <a href="https://www.youtube.com/@OfficialNugzzCrew" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">YouTube</a>
+                </div>
             </div>
+
+            <!-- Aidan Ketch -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="https://ui-avatars.com/api/?name=Aidan+Ketch&background=8b0000&color=fff&size=120" alt="Aidan Ketch" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem;">
+                <h3>Aidan Ketch</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    Bringing you great gameplay and high-quality streaming content. Catch the newest videos over on YouTube.
+                </p>
+                <a href="https://www.youtube.com/@AidanKetch" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+            <!-- Leslie Cheyanne -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="https://ui-avatars.com/api/?name=Leslie+Cheyanne&background=8b0000&color=fff&size=120" alt="Leslie Cheyanne" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem;">
+                <h3>Leslie Cheyanne</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    Live streaming great vibes, fun chats, and awesome gameplay. Drop by Twitch and say hello!
+                </p>
+                <a href="https://www.twitch.tv/lesliecheyanne" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Twitch Channel</a>
+            </div>
+
+            <!-- Anne Williams -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="https://ui-avatars.com/api/?name=Anne+Williams&background=8b0000&color=fff&size=120" alt="Anne Williams" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem;">
+                <h3>Anne Williams</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    An incredibly welcoming stream featuring a beautiful community built on friendship.
+                </p>
+                <a href="https://www.twitch.tv/anne_williamss" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Twitch Channel</a>
+            </div>
+
+        </div>
+        
+        <div style="margin-top: 3rem; text-align: center;">
+            <a href="/" style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr; Back to Home</a>
         </div>
     </main>
 </Layout>

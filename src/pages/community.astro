@@ -9,8 +9,15 @@ import Layout from '../layouts/Layout.astro';
             Check out the incredible creators, channels, and friends of the community!
         </p>
 
-        <!-- Cards Container -->
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+        <!-- ============================================== -->
+        <!-- FEATURED STREAMERS                             -->
+        <!-- ============================================== -->
+        <h2 style="font-family: 'RDRLino', serif; text-align: center; color: var(--accent-red); font-size: 2.5rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+            Featured Streamers
+        </h2>
+        
+        <!-- Featured Grid -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 4rem;">
             
             <!-- Official Nugzz Crew -->
             <div class="card" style="align-items: center; text-align: center;">
@@ -31,60 +38,6 @@ import Layout from '../layouts/Layout.astro';
                     <a href="https://officialnugzzcrew.com/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">Website</a>
                     <a href="https://www.youtube.com/@OfficialNugzzCrew" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">YouTube</a>
                 </div>
-            </div>
-
-            <!-- Aidan Ketch -->
-            <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/aidan.jpg" alt="Aidan Ketch" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Aidan Ketch</h3>
-                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
-                    Bringing you great gameplay and high-quality streaming content. Catch the newest videos over on YouTube.
-                </p>
-                
-                <!-- Stream Indicators -->
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
-                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
-                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
-                </div>
-
-                <a href="https://www.youtube.com/@AidanKetch" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
-            </div>
-
-            <!-- Leslie Cheyanne -->
-            <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/leslie.jpg" alt="Leslie Cheyanne" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Leslie Cheyanne</h3>
-                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
-                    Live streaming great vibes, fun chats, and awesome gameplay. Drop by Twitch and say hello!
-                </p>
-                
-                <!-- Stream Indicators -->
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
-                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
-                </div>
-
-                <a href="https://www.twitch.tv/lesliecheyanne" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Twitch Channel</a>
-            </div>
-
-            <!-- Anne Williams -->
-            <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/anne.jpg" alt="Anne Williams" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Anne Williams</h3>
-                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
-                    An incredibly welcoming stream featuring a beautiful community built on friendship.
-                </p>
-                
-                <!-- Stream Indicators -->
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
-                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Mix-It-Up</span></span>
-                </div>
-
-                <a href="https://www.twitch.tv/anne_williamss" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Twitch Channel</a>
             </div>
 
             <!-- Haunter -->
@@ -108,22 +61,70 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
 
-            <!-- Billy Ricketts -->
+        </div>
+
+        <!-- ============================================== -->
+        <!-- ENGLISH / US CREATORS                          -->
+        <!-- ============================================== -->
+        <h2 style="font-family: 'RDRLino', serif; text-align: center; color: var(--accent-red); font-size: 2.5rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+            English / US Creators
+        </h2>
+        
+        <!-- English Grid -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 4rem;">
+            
+            <!-- Leslie Cheyanne -->
             <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/billy.jpg" alt="Billy Ricketts" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Billy Ricketts</h3>
+                <img src="/images/community/leslie.jpg" alt="Leslie Cheyanne" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Leslie Cheyanne</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
-                    Check out Billy's latest streams and videos for top-tier gameplay and fun interactions.
+                    Live streaming great vibes, fun chats, and awesome gameplay. Drop by Twitch and say hello!
                 </p>
                 
                 <!-- Stream Indicators -->
                 <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
-                    <span style="color: var(--white-low);">Face: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
-                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
-                    <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Streamer.bot</span></span>
+                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
                 </div>
 
-                <a href="https://www.youtube.com/@billyricketts" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+                <a href="https://www.twitch.tv/lesliecheyanne" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Twitch Channel</a>
+            </div>
+
+            <!-- Aidan Ketch -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/aidan.jpg" alt="Aidan Ketch" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Aidan Ketch</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    Bringing you great gameplay and high-quality streaming content. Catch the newest videos over on YouTube.
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
+                </div>
+
+                <a href="https://www.youtube.com/@AidanKetch" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+            <!-- Anne Williams -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/anne.jpg" alt="Anne Williams" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Anne Williams</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    An incredibly welcoming stream featuring a beautiful community built on friendship.
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Mix-It-Up</span></span>
+                </div>
+
+                <a href="https://www.twitch.tv/anne_williamss" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Twitch Channel</a>
             </div>
 
             <!-- Exzumi -->
@@ -160,6 +161,127 @@ import Layout from '../layouts/Layout.astro';
                 </div>
 
                 <a href="https://www.youtube.com/@HighGuyGaming" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+            
+            <!-- Big Dog Triple OG -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/bigdog.jpg" alt="Big Dog Triple OG" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Big Dog Triple OG</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    Delivering top-notch entertainment and great gameplay. Don't miss the latest streams!
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-low);">Face: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
+                </div>
+
+                <a href="https://www.youtube.com/@Bigdog_badassmc" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+            <!-- Creepy King -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/creepy.jpg" alt="Creepy King" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Creepy King</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    A fantastic channel filled with incredible content and a welcoming community.
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
+                </div>
+
+                <a href="https://www.youtube.com/@CREEPY1825KING" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+            <!-- Okami -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/okami.jpg" alt="Okami" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Okami</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    Dive into epic adventures and highly interactive streams powered by custom automation.
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Streamer.bot</span></span>
+                </div>
+
+                <a href="https://www.youtube.com/@Kuku-Percs" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+        </div>
+
+
+        <!-- ============================================== -->
+        <!-- BRAZILIAN PORTUGUESE CREATORS                  -->
+        <!-- ============================================== -->
+        <h2 style="font-family: 'RDRLino', serif; text-align: center; color: var(--accent-red); font-size: 2.5rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+            Brazilian Portuguese Creators
+        </h2>
+
+        <!-- PT-BR Grid -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+
+            <!-- Billy Ricketts -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/billy.jpg" alt="Billy Ricketts" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Billy Ricketts</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    Check out Billy's latest streams and videos for top-tier gameplay and fun interactions.
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-low);">Face: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Streamer.bot</span></span>
+                </div>
+
+                <a href="https://www.youtube.com/@billyricketts" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+            <!-- LordBlackCA -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/lordblack.jpg" alt="LordBlackCA" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>LordBlackCA</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    Incredible Red Dead Online content and engaging streams for the Portuguese speaking community.
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-low);">Face: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
+                </div>
+
+                <a href="https://www.youtube.com/@LordBlackCA" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+            <!-- Mr. Braga -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <img src="/images/community/braga.jpg" alt="Mr. Braga" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
+                <h3>Mr. Braga</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
+                    Join the action-packed adventures and great discussions on Red Dead Online.
+                </p>
+                
+                <!-- Stream Indicators -->
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
+                </div>
+
+                <a href="https://www.youtube.com/@Mr._Braga" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
             </div>
 
         </div>

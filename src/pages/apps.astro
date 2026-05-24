@@ -2,17 +2,167 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Stream Apps | 2 Smokin' Barrels">
+<Layout title="Stream Apps & Tools | 2 Smokin' Barrels">
     <main class="container">
-        <div class="coming-soon-box">
-            <h1 class="page-title">Stream Apps</h1>
-            <h1>Coming Soon</h1>
-            <p>We are currently building this resource for the community.</p>
-            <div style="margin-top: 2rem;">
-                <a href="/"
-                    style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr;
-                    Back to Home</a>
+        <h1 class="page-title">Stream Apps & Tools</h1>
+        <p style="text-align: center; color: var(--white-med); margin-bottom: 3rem;">
+            Explore custom overlays, widgets, and powerful streaming tools to level up your broadcast.
+        </p>
+
+        <!-- ============================================== -->
+        <!-- SECTION 1: FEATURED APPS                       -->
+        <!-- ============================================== -->
+        <h2 style="font-family: 'RDRLino', serif; text-align: center; color: var(--accent-red); font-size: 2.5rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+            Featured Apps & Overlays
+        </h2>
+        <p style="text-align: center; color: var(--white-med); margin-top: -1rem; margin-bottom: 2rem; font-size: 0.95rem;">
+            Custom widgets and stream integrations designed and developed by 2 Smokin' Barrels.
+        </p>
+
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 5rem;">
+            
+            <!-- GTA Widget Card -->
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column;">
+                <span class="badge" style="background: var(--accent-red);">Stream Widget</span>
+                <h3>GTA Interactive Widget</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    A powerful tracking overlay featuring live updates, vehicle management integrations, and automated daily scrapers for essential map locations.
+                </p>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://2smokinbarrels.com/gtawidget/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; flex: 1; text-align: center;">Launch App</a>
+                    <a href="https://github.com/IronJeff80/gtawidget" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; flex: 1; text-align: center; background: #333;">Documentation</a>
+                </div>
             </div>
+
+            <!-- Red Dead Overlay Widget Card -->
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column;">
+                <span class="badge" style="background: var(--accent-red);">Stream Overlay</span>
+                <h3>Red Dead Events Overlay</h3>
+                <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    An interactive HUD overlay display for live events, weekly bonuses, and server alerts, complete with full Brazilian Portuguese localization support.
+                </p>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://2smokinbarrels.com/reddeadoverlay/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; flex: 1; text-align: center;">Launch App</a>
+                    <a href="https://github.com/IronJeff80/reddeadoverlay" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; flex: 1; text-align: center; background: #333;">Documentation</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================== -->
+        <!-- SECTION 2: PROGRAMS & CREATORS                 -->
+        <!-- ============================================== -->
+        <h2 style="font-family: 'RDRLino', serif; text-align: center; color: var(--accent-red); font-size: 2.5rem; margin-bottom: 1.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+            Programs & Creators
+        </h2>
+        <p style="text-align: center; color: var(--white-med); margin-top: -1rem; margin-bottom: 3rem; font-size: 0.95rem;">
+            Essential software solutions and brilliant tool developers driving the streaming community forward.
+        </p>
+
+        <!-- Subheading for Software Programs -->
+        <h3 style="font-family: 'Hapna', sans-serif; font-size: 1.5rem; color: var(--white-low); border-bottom: 1px solid var(--accent-red); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+            Streaming Programs
+        </h3>
+
+        <!-- Programs Grid -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 4rem;">
+            
+            <!-- Streamer.Bot -->
+            <div class="card" style="align-items: center; text-align: center; padding: 2rem;">
+                <img src="/images/apps/streamerbot.png" alt="Streamer.Bot" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem;">
+                <h3>Streamer.Bot</h3>
+                <p style="color: var(--white-med); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    The ultimate automation and integration tool for live streamers. Take full control of your broadcast with powerful C# scripting and macro logic.
+                </p>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://streamer.bot/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">Website</a>
+                    <a href="https://streamer.bot/downloads" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: #333;">Download</a>
+                </div>
+            </div>
+
+            <!-- Speaker.Bot -->
+            <div class="card" style="align-items: center; text-align: center; padding: 2rem;">
+                <img src="/images/apps/speakerbot.png" alt="Speaker.Bot" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem;">
+                <h3>Speaker.Bot</h3>
+                <p style="color: var(--white-med); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    Advanced Text-to-Speech management designed to interface seamlessly with your channel rewards, voices, and bot automation triggers.
+                </p>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://speaker.bot/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">Website</a>
+                    <a href="https://speaker.bot/get-started/installation" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: #333;">Download</a>
+                </div>
+            </div>
+
+            <!-- VoiceMod -->
+            <div class="card" style="align-items: center; text-align: center; padding: 2rem;">
+                <img src="/images/apps/voicemod.png" alt="VoiceMod" style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem;">
+                <h3>VoiceMod</h3>
+                <p style="color: var(--white-med); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    Real-time AI voice changer and soundboard software to bring immersive audio experiences and instant custom reactions straight to your stream audience.
+                </p>
+                <div style="display: flex; gap: 10px; width: 100%;">
+                    <a href="https://www.voicemod.net/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">Website</a>
+                    <a href="https://account.voicemod.net/#/?action=download" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: #333;">Download</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Subheading for Integration Creators -->
+        <h3 style="font-family: 'Hapna', sans-serif; font-size: 1.5rem; color: var(--white-low); border-bottom: 1px solid var(--accent-red); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+            Integration Creators
+        </h3>
+
+        <!-- Creators Grid -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+            
+            <!-- Tawmae -->
+            <div class="card" style="align-items: center; text-align: center; padding: 2rem; display: flex; flex-direction: column;">
+                <img src="/images/apps/tawmae.jpg" alt="Tawmae" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--accent-red); object-fit: cover; margin-bottom: 1rem;">
+                <h3>Tawmae</h3>
+                <p style="color: var(--white-med); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    A collection of custom-built Streamer.bot extensions for Twitch & YouTube. OBS & Meld overlays, games, utilities and integrations. And the best part? It all runs locally, even the overlays.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+                    <a href="https://tawmae.xyz/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Website</a>
+                    <div style="display: flex; gap: 10px; width: 100%;">
+                        <a href="https://www.twitch.tv/tawmae" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: #333;">Twitch</a>
+                        <a href="https://www.youtube.com/@tawmae" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: #333;">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mustached Maniac -->
+            <div class="card" style="align-items: center; text-align: center; padding: 2rem; display: flex; flex-direction: column;">
+                <img src="/images/apps/mm.jpg" alt="Mustached Maniac" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--accent-red); object-fit: cover; margin-bottom: 1rem;">
+                <h3>Mustached Maniac</h3>
+                <p style="color: var(--white-med); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    A highly questionable collection of projects, custom streaming experiments, and developer toolkits.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+                    <a href="https://mustachedmaniac.com/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Website</a>
+                    <div style="display: flex; gap: 10px; width: 100%;">
+                        <a href="https://www.twitch.tv/mustached_maniac" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: #333;">Twitch</a>
+                        <a href="https://www.youtube.com/@mustached_maniac" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: #333;">YouTube</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VRFlad -->
+            <div class="card" style="align-items: center; text-align: center; padding: 2rem; display: flex; flex-direction: column;">
+                <img src="/images/apps/vrflad.jpg" alt="VRFlad" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--accent-red); object-fit: cover; margin-bottom: 1rem;">
+                <h3>VRFlad</h3>
+                <p style="color: var(--white-med); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    I enjoy pushing what is possible with technology and I'm particularly passionate about VR. Streaming was never planned, but I love it and have been so fortunate to be able to give back to the amazing streaming community.
+                </p>
+                <a href="https://www.youtube.com/@vrflad" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">YouTube Channel</a>
+            </div>
+
+        </div>
+        
+        <!-- Back Navigation -->
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="/" style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr; Back to Home</a>
         </div>
     </main>
 </Layout>

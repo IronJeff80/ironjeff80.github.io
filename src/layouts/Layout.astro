@@ -12,6 +12,32 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={title} />
+    <meta name="description" content="Custom extensions, overlays, and technical tools for the Red Dead & GTA streaming community." />
+
+    <!-- Open Graph / Discord / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://2smokinbarrels.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Custom extensions, overlays, and technical tools for the Red Dead & GTA streaming community." />
+    <!-- Ensure you create a 1200x630 banner and save it at this exact path! -->
+    <meta property="og:image" content="https://2smokinbarrels.com/images/social-banner.jpg" />
+
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://2smokinbarrels.com/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content="Custom extensions, overlays, and technical tools for the Red Dead & GTA streaming community." />
+    <meta property="twitter:image" content="https://2smokinbarrels.com/images/social-banner.jpg" />
+
+    <!-- Links the Twitter Card to your specific X/Twitter account -->
+    <meta name="twitter:site" content="@2_SmokinBarrels" />
+    <meta name="twitter:creator" content="@2_SmokinBarrels" />
+
+    <!-- Discord Embed Accent Color -->
+    <meta name="theme-color" content="#8b0000" />
+
     <link rel="icon" type="image/png" href="/fav.png"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     

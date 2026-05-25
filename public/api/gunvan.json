@@ -1,8 +1,8 @@
 {
-  "id": "29",
-  "locationName": "Hearty Taco, Mirror Park",
-  "imagePath": "/images/gunvan/loc_29.jpg",
-  "mapPath": "/images/gunvan/map_29.jpg",
+  "id": "17",
+  "locationName": "Terminal (southwest corner)",
+  "imagePath": "/images/gunvan/loc_17.jpg",
+  "mapPath": "/images/gunvan/map_17.jpg",
   "inventory": [
     "Combat Shotgun: -10 %",
     "Precision Rifle: -10 %",
@@ -15,5 +15,5 @@
     "Proximity Mine: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-05-24T08:37:44.816Z"
+  "updatedAt": "2026-05-25T10:20:55.289Z"
 }

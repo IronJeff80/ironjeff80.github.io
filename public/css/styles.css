@@ -1,40 +1,54 @@
 /* =========================================
    1. TYPOGRAPHY & VARIABLES
    ========================================= */
-@font-face {
-    font-family: 'RDRLino';
-    src: url('../fonts/RDRLino-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Mr+Dafoe&display=swap');
+.font-longless {
+    font-family: 'Longless', sans-serif !important;
+}
+
+.font-bebas {
+    font-family: 'Bebas Neue', sans-serif !important;
+    letter-spacing: 2px;
+}
+
+.font-dafoe {
+    font-family: 'Mr Dafoe', cursive !important;
 }
 
 @font-face {
-    font-family: 'Hapna';
-    src: url('../fonts/HapnaSlabSerif-Regular.ttf') format('truetype');
+    font-family: 'Longless';
+    src: url('/fonts/LonglessDemoLightItalic.ttf') format('truetype');
     font-weight: 400;
-    font-style: normal;
+    font-style: italic;
 }
 
-@font-face {
-    font-family: 'Hapna';
-    src: url('../fonts/HapnaSlabSerif-DemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+.font-longless-italic {
+    font-family: 'Longless', sans-serif !important;
+    font-style: italic;
 }
 
 :root {
-    --bg-dark: #070707;
-    --card-bg: rgba(18, 18, 18, 0.85);
-    --accent-red: #8b0000;
+    /* Main Backgrounds */
+    --bg-dark: #121023; /* Dark Purple */
+    --content-bg: #297682; /* Teal */
+    
+    /* Card Background (Glass Base) */
+    --card-bg: rgba(38, 30, 62, 0.65);
+    
+    /* GTA 6 Accents */
+    --accent-pink: #ea48b2; /* Primary Neon */
+    --accent-blue: #00a3fd; /* Primary Neon */
+    --accent-orange: #ff8c1b; /* Secondary Neon */
+    
+    /* Text */
     --white-low: #ffffff;
-    --white-med: #a2a2a2;
+    --white-med: hsl(190, 20%, 90%);
+    --grey-med: #a2a2a2;
 }
 
 body {
-    font-family: 'Hapna', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
-    background-image: url('../images/bg.png');
-    background-repeat: repeat;
     color: var(--white-low);
     margin: 0;
     line-height: 1.6;
@@ -42,8 +56,9 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'RDRLino', serif;
-    text-transform: uppercase;
+    font-family: 'Mr Dafoe', cursive;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 /* =========================================
@@ -52,8 +67,7 @@ h1, h2, h3 {
 .site-header {
     text-align: center;
     padding: 20px 5%;
-    background-image: url('../images/bg.png');
-    background-repeat: repeat;
+    background-color: var(--bg-dark);
 }
 
 .header-logo-img {
@@ -65,16 +79,22 @@ h1, h2, h3 {
 nav {
     position: sticky;
     top: 0;
-    background-image: url('../images/bg.png');
-    background-repeat: repeat;
-    border-top: 3px solid var(--accent-red);
-    border-bottom: 3px solid var(--accent-red);
+    background-color: rgba(18, 16, 35, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* Neon Pink Dividers */
+    border-top: 2px solid var(--accent-pink);
+    border-bottom: 2px solid var(--accent-pink);
+    
+    /* Neon Glow */
+    box-shadow: 0 0 15px rgba(234, 72, 178, 0.4);
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 5%;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links {
@@ -103,14 +123,14 @@ nav {
 
 .social-icons a:hover img {
     transform: scale(1.15);
-    filter: brightness(0) invert(1);
+    filter: drop-shadow(0 0 8px var(--accent-pink));
 }
 
 /* Sidebar & Mobile Menu */
 .menu-toggle {
     background: none;
     border: none;
-    color: var(--accent-red);
+    color: var(--accent-pink);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0;
@@ -121,6 +141,7 @@ nav {
 
 .menu-toggle:hover {
     filter: brightness(1.2);
+    text-shadow: 0 0 8px var(--accent-pink);
 }
 
 .sidebar {
@@ -129,9 +150,9 @@ nav {
     left: -300px;
     width: 280px;
     height: 100%;
-    background: rgba(7, 7, 7, 0.98);
-    background-image: url('../images/bg.png');
-    border-right: 2px solid var(--accent-red);
+    background: rgba(18, 16, 35, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 2000;
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 2rem;
@@ -147,7 +168,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-    border-bottom: 1px solid var(--accent-red);
+    border-bottom: 1px solid var(--accent-pink);
     padding-bottom: 1rem;
 }
 
@@ -158,17 +179,20 @@ nav {
 }
 
 .sidebar-links a {
-    font-family: 'RDRLino', serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
     color: var(--white-low);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.2s;
 }
 
 .sidebar-links a:hover {
-    color: var(--accent-red);
+    color: var(--accent-pink);
     padding-left: 10px;
+    text-shadow: 0 0 8px rgba(234, 72, 178, 0.5);
 }
 
 .menu-overlay {
@@ -178,6 +202,7 @@ nav {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
     display: none;
     z-index: 1999;
 }
@@ -202,23 +227,18 @@ nav {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 2px solid var(--accent-red);
+    border: 2px solid var(--accent-pink);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 3rem 1rem 3rem;
-    border-top: 2px solid var(--accent-red);
+    padding: 3rem 1rem;
+    border-top: 2px solid var(--accent-pink);
     color: #fff;
     background-color: var(--bg-dark);
-    background-image: url('../images/footer.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     font-size: 0.9rem;
     font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 /* =========================================
@@ -234,19 +254,20 @@ footer {
    4. PAGE SPECIFIC: COMMANDS
    ========================================= */
 .page-title {
-    font-family: 'RDRLino', serif;
-    font-size: 2.2rem;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 3.5rem;
     text-align: center;
-    color: var(--accent-red);
+    color: var(--accent-blue);
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    text-shadow: 0 0 10px rgba(234, 72, 178, 0.6), 0 0 20px rgba(234, 72, 178, 0.4);
 }
 
 .command-section {
     margin-bottom: 1.5rem;
     background: var(--card-bg);
-    border: 1px solid #222;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
 }
 
 details summary {
@@ -264,7 +285,8 @@ details summary::-webkit-details-marker {
     width: 100%;
     display: block;
     cursor: pointer;
-    border: 1px solid var(--accent-red);
+    border-radius: 8px;
+    border: 1px solid var(--accent-pink);
 }
 
 .command-list {
@@ -272,19 +294,20 @@ details summary::-webkit-details-marker {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 12px;
-    border-top: 1px solid #333;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .command-item {
     background: rgba(255, 255, 255, 0.03);
     padding: 10px 15px;
-    border-left: 3px solid var(--accent-red);
+    border-left: 3px solid var(--accent-pink);
+    border-radius: 0 6px 6px 0;
     font-size: 0.95rem;
     font-weight: 500;
 }
 
 .command-item span {
-    color: var(--accent-red);
+    color: var(--accent-orange);
     font-weight: 600;
     margin-left: 5px;
 }
@@ -294,16 +317,18 @@ details summary::-webkit-details-marker {
    ========================================= */
 .coming-soon-box {
     background: var(--card-bg);
-    border: 2px solid var(--accent-red);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
     padding: 3rem;
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .coming-soon-box h1 {
-    font-family: 'RDRLino', serif;
-    font-size: 3.5rem;
-    color: var(--accent-red);
+    color: var(--accent-pink);
     margin: 0;
+    text-shadow: 0 0 10px rgba(234, 72, 178, 0.6);
 }
 
 .coming-soon-box p {
@@ -312,7 +337,7 @@ details summary::-webkit-details-marker {
 }
 
 /* =========================================
-   6. PAGE SPECIFIC: GTA & RDO REPORTS
+   6. PAGE SPECIFIC: GTA REPORTS
    ========================================= */
 .bonus-grid {
     display: grid;
@@ -324,28 +349,32 @@ details summary::-webkit-details-marker {
 
 .bonus-card {
     background: var(--card-bg);
-    border: 1px solid #222;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
     padding: 1.5rem;
-    border-top: 3px solid var(--accent-red);
+    border-top: 3px solid var(--accent-pink);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .bonus-card h3 {
-    color: var(--accent-red);
+    color: var(--accent-pink);
     margin-top: 0;
-    font-size: 1.4rem;
-    border-bottom: 1px solid #333;
+    font-size: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 10px;
 }
 
 .multiplier {
     display: inline-block;
-    background: var(--accent-red);
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange));
     color: white;
-    padding: 2px 8px;
-    font-family: 'RDRLino', serif;
-    font-size: 1.2rem;
+    padding: 4px 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
     margin-right: 10px;
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 .bonus-item {
@@ -361,7 +390,7 @@ details summary::-webkit-details-marker {
 }
 
 .highlight-text {
-    color: var(--accent-red);
+    color: var(--accent-orange);
     font-weight: 600;
 }
 
@@ -374,7 +403,7 @@ details summary::-webkit-details-marker {
     }
 
     .page-title {
-        font-size: 3.2rem;
+        font-size: 4.5rem;
         margin-bottom: 1.5rem;
     }
 }
@@ -383,41 +412,83 @@ details summary::-webkit-details-marker {
    8. PAGE SPECIFIC: HOME PAGE
    ========================================= */
 .hero { text-align: center; padding: 60px 5% 30px; }
-.hero h1 { font-size: 2.2rem; margin: 0; color: var(--accent-red); text-shadow: 3px 3px 6px rgba(0,0,0,0.9); }
-.hero p { font-size: 1.1rem; max-width: 850px; margin: 1.5rem auto; background: rgba(0,0,0,0.7); padding: 15px; }
+.hero h1 { font-size: 3.5rem; margin: 0; color: var(--accent-pink); text-shadow: 0 0 15px rgba(234, 72, 178, 0.6); }
+.hero p { font-size: 1.1rem; max-width: 850px; margin: 1.5rem auto; background: var(--card-bg); backdrop-filter: blur(10px); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); padding: 15px; }
 
-.section-title { font-size: 1.8rem; margin-top: 0.5rem; margin-bottom: 1rem; color: var(--white-med); }
+.section-title { font-family: 'Mr Dafoe', cursive; font-size: 2.8rem; margin-top: 0.5rem; margin-bottom: 1rem; color: var(--accent-orange); text-shadow: 0 0 10px rgba(255, 140, 27, 0.4); }
 
 .stream-container { display: flex; flex-direction: column; gap: 20px; margin-top: 1rem; }
-.video-wrapper { width: 100%; aspect-ratio: 16 / 9; background: #000; border: 2px solid var(--accent-red); }
+.video-wrapper { width: 100%; aspect-ratio: 16 / 9; background: #000; border: 2px solid var(--accent-pink); border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(234, 72, 178, 0.2); }
 .video-wrapper iframe { width: 100%; height: 100%; border: none; }
-.chat-wrapper { width: 100%; height: 450px; border: 2px solid var(--accent-red); background: #000; }
+.chat-wrapper { width: 100%; height: 450px; border: 2px solid var(--accent-pink); border-radius: 12px; overflow: hidden; background: #000; }
 .chat-wrapper iframe { width: 100%; height: 100%; border: none; }
 
-.command-center { background: rgba(139, 0, 0, 0.15); border: 1px solid var(--accent-red); padding: 20px; margin-top: 20px; backdrop-filter: blur(5px); }
+.command-center { background: rgba(38, 30, 62, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; margin-top: 20px; margin-bottom: 3rem; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
 .btn-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px; }
-.cmd-btn { background: var(--accent-red); color: white; border: none; padding: 12px; font-family: 'Hapna'; font-weight: 600; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
-.cmd-btn:hover:not(:disabled) { background: #b30000; }
-.cmd-btn:disabled { background: #333; color: #777; cursor: not-allowed; opacity: 0.6; }
+
+/* Global Button Styles */
+.cmd-btn { 
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange));
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    padding: 12px; 
+    font-family: 'Inter', sans-serif; 
+    font-weight: 600; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    transition: all 0.2s ease; 
+    box-shadow: 0 4px 15px rgba(234, 72, 178, 0.2);
+}
+
+.cmd-btn:hover:not(:disabled) { 
+    filter: brightness(1.1);
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(234, 72, 178, 0.5);
+}
+
+.cmd-btn:disabled { background: rgba(255, 255, 255, 0.1); color: #777; cursor: not-allowed; opacity: 0.6; box-shadow: none; }
 
 .glitch-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 3rem; }
-.glitch-card { background: var(--card-bg); border: 1px solid #222; padding: 1rem; text-align: center; }
-.glitch-card h4 { font-size: 0.85rem; margin: 0 0 10px 0; color: var(--accent-red); height: 2.4rem; overflow: hidden; font-family: 'Hapna', sans-serif; }
-.glitch-thumb { width: 100%; border: 1px solid var(--accent-red); display: block; }
+.glitch-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 1rem; text-align: center; backdrop-filter: blur(8px); }
+.glitch-card h4 { font-size: 0.9rem; margin: 0 0 10px 0; color: var(--accent-pink); height: 2.4rem; overflow: hidden; font-family: 'Inter', sans-serif; font-weight: 500; }
+.glitch-thumb { width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); display: block; }
 
+/* Global Glass Cards */
 .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-.card { background: var(--card-bg); border: 1px solid #222; padding: 1.5rem; transition: 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
-.card:hover { border-color: var(--accent-red); transform: translateY(-3px); }
-.badge { background: var(--accent-red); color: white; padding: 3px 10px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; align-self: flex-start; font-weight: 600; }
-.card h3 { font-size: 1.5rem; margin: 0.5rem 0; color: var(--accent-red); }
-.copy-link-container { margin-top: 0.5rem; display: flex; background: rgba(0, 0, 0, 0.4); border: 1px solid #333; padding: 5px; border-radius: 4px; }
-.copy-input { background: transparent; border: none; color: var(--grey-med); font-size: 0.75rem; width: 100%; padding: 5px; pointer-events: none; }
-.copy-btn { background: var(--accent-red); border: none; color: white; padding: 5px 12px; cursor: pointer; }
+.card { 
+    background: var(--card-bg); 
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    border-radius: 16px; 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.5rem; 
+    transition: all 0.3s ease; 
+    text-decoration: none; 
+    color: inherit; 
+    display: flex; 
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); 
+}
+.card:hover { 
+    border-color: var(--accent-pink); 
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 32px rgba(234, 72, 178, 0.25);
+}
+
+.badge { background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange)); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; align-self: flex-start; font-weight: 600; letter-spacing: 1px; }
+.card h3 { font-size: 2rem; margin: 0.5rem 0; color: var(--accent-pink); font-family: 'Mr Dafoe', cursive; text-transform: none; text-shadow: 0 0 8px rgba(234, 72, 178, 0.4); }
+
+.copy-link-container { margin-top: 0.5rem; display: flex; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); padding: 5px; border-radius: 8px; }
+.copy-input { background: transparent; border: none; color: var(--white-med); font-size: 0.75rem; width: 100%; padding: 5px; pointer-events: none; font-family: monospace; }
+.copy-btn { background: var(--accent-pink); border-radius: 6px; border: none; color: white; padding: 5px 12px; cursor: pointer; transition: 0.2s; }
+.copy-btn:hover { background: var(--accent-orange); }
 
 /* Desktop Overrides for Home Page Elements */
 @media (min-width: 992px) {
     #user-name { display: inline; }
-    .hero h1 { font-size: 4.5rem; }
+    .hero h1 { font-size: 5rem; }
     .hero p { font-size: 1.4rem; }
     
     .stream-container { 
@@ -466,13 +537,9 @@ details summary::-webkit-details-marker {
     transition: all 0.2s ease;
 }
 
-.media-btn:hover:not([disabled]) {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px var(--accent-red);
-}
-
 .collapsible-header:hover {
-    color: var(--accent-red) !important;
+    color: var(--accent-pink) !important;
+    text-shadow: 0 0 8px rgba(234, 72, 178, 0.5);
 }
 
 .transition-icon {
@@ -488,10 +555,10 @@ details summary::-webkit-details-marker {
 }
 
 /* =========================================
-   9. PAGE SPECIFIC: RED DEAD RESOURCES
+   9. PAGE SPECIFIC: RESOURCES
    ========================================= */
 .page-subtitle {
-    color: var(--grey-med, #aaa);
+    color: var(--grey-med);
     margin-bottom: 2rem;
     font-size: 0.95rem;
 }
@@ -503,21 +570,22 @@ details summary::-webkit-details-marker {
 }
 
 .resource-card {
-    background-color: var(--grey-dark, #1a1a1a);
-    border: 1px solid #333;
-    border-radius: 8px;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .resource-card:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-red, #ff0000);
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.15);
+    border-color: var(--accent-pink);
+    box-shadow: 0 8px 32px rgba(234, 72, 178, 0.25);
 }
 
 .resource-thumb {
@@ -528,22 +596,14 @@ details summary::-webkit-details-marker {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid var(--accent-red, #ff0000);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     position: relative;
 }
 
 .resource-thumb i {
     font-size: 3.5rem;
-    color: #333;
+    color: rgba(255,255,255,0.8);
     z-index: 1;
-}
-
-.resource-thumb::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.2);
-    z-index: 2;
 }
 
 .resource-info {
@@ -555,37 +615,39 @@ details summary::-webkit-details-marker {
 
 .resource-info h3 {
     margin: 0 0 10px 0;
-    color: #fff;
-    font-size: 1.15rem;
+    color: var(--accent-orange);
+    font-size: 1.8rem;
+    font-family: 'Mr Dafoe', cursive;
+    text-transform: none;
 }
 
 .resource-info p {
     margin: 0;
-    color: var(--white-med, #aaa);
+    color: var(--white-med);
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
 /* =========================================
-   Madam Nazar Hero Layout
+   Nazar / Tracker Hero Layout
    ========================================= */
 .nazar-hero {
     display: flex;
-    flex-direction: column; /* Mobile first: stacked */
+    flex-direction: column; 
     margin-bottom: 2.5rem;
-    border: 1px solid #333;
-    background-color: var(--grey-dark, #1a1a1a);
-    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    background-color: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
     overflow: hidden;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .nazar-hero:hover {
-    border-color: var(--accent-red, #ff0000);
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.15);
+    border-color: var(--accent-pink);
+    box-shadow: 0 8px 32px rgba(234, 72, 178, 0.25);
 }
 
-/* Desktop override: Side-by-side */
 @media (min-width: 850px) {
     .nazar-hero {
         flex-direction: row; 
@@ -595,21 +657,20 @@ details summary::-webkit-details-marker {
 
 .nazar-image-container {
     width: 100%;
-    max-width: 560px; /* Protects your 560x400 native resolution */
-    aspect-ratio: 560 / 400; /* Locks the exact dimensions */
+    max-width: 560px; 
+    aspect-ratio: 560 / 400; 
     background-color: #0d0d0d;
     position: relative;
-    border-bottom: 2px solid var(--accent-red);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     overflow: hidden;
     flex-shrink: 0; 
     margin: 0 auto; 
 }
 
-/* Desktop override: Adjust borders for side-by-side */
 @media (min-width: 850px) {
     .nazar-image-container {
         border-bottom: none;
-        border-right: 2px solid var(--accent-red);
+        border-right: 1px solid rgba(255,255,255,0.1);
         margin: 0; 
     }
 }
@@ -621,7 +682,7 @@ details summary::-webkit-details-marker {
 }
 
 .nazar-info {
-    padding: 20px; 
+    padding: 30px; 
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -631,15 +692,45 @@ details summary::-webkit-details-marker {
 
 .nazar-info h3 {
     margin: 0 0 10px 0; 
-    color: #fff;
-    font-size: 1.6rem; 
-    font-family: 'RDRLino', serif;
-    letter-spacing: 1px;
+    color: var(--accent-pink);
+    font-size: 2.8rem; 
+    font-family: 'Mr Dafoe', cursive;
+    text-transform: none;
+    text-shadow: 0 0 10px rgba(234, 72, 178, 0.4);
 }
 
 .nazar-info p {
     margin: 0;
-    color: var(--white-med, #aaa);
+    color: var(--white-med);
     font-size: 1rem;
     line-height: 1.6;
+}
+
+.widget-header {
+    display: block;
+    width: 80%; /* Shrinks from 100% to 80% */
+    margin: 20px auto; /* Centers the widget horizontally */
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(234, 72, 178, 0.15), rgba(255, 140, 27, 0.15));
+    border: 1px solid var(--accent-pink);
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.widget-header:hover {
+    background: linear-gradient(135deg, rgba(234, 72, 178, 0.3), rgba(255, 140, 27, 0.3));
+    box-shadow: 0 0 20px rgba(234, 72, 178, 0.3);
+    transform: translateY(-2px);
+}
+
+.widget-header h2 {
+    margin: 0;
+    color: var(--accent-orange); /* Changed from white to orange */
+    font-size: 2.2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: 0 0 8px rgba(255, 140, 27, 0.6);
 }

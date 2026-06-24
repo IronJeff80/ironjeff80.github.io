@@ -3,333 +3,36 @@ import Layout from '../layouts/Layout.astro';
 
 // This array holds all your album data.
 const albums = [
-    {
-        title: "Midnight Vector",
-        genre: "Synthwave / Outrun",
-        description: "High-speed synth tracks for late-night drives and neon horizons.",
-        tracks: [
-            "Autopilot Drift", "No Left Turns", "Glass Tunnels", "Neon Idle", "Pacific Circuit",
-            "Chrome Fade", "Rearview Mirage", "Digital Ave", "Soft Boost", "Shadow Lane"
-        ]
-    },
-    {
-        title: "Dusty Trails",
-        genre: "Acoustic / Western",
-        description: "Acoustic ballads and atmospheric tracks for the lonesome traveler.",
-        tracks: [
-            "Dust and Defiance", "Down to the Dakota River", "Moonrise Over Manzanita", "Camped Below Cumberland",
-            "Echoes in Gaptooth Breach", "Rain Down in Rhodes", "Above the Dakota", "Ashes in the Saddle",
-            "Red Sky, No Mercy", "Bone-Dry Ballad", "Canyon of Smoke", "Lost Riders Union", "Blood on the Bannister",
-            "Saddle’s Got No Home", "Hollow Spurs", "Last Fire Burnin’", "Whiskey Before Judgment", "Storm Comes Slow",
-            "Smoke Signals & Gunpowder", "Bury Me in Colter", "Cold Creek Stand", "Bandanas & Bullet Wounds", "Rebels of the Rock"
-        ]
-    },
-    {
-        title: "An Outlaw's World",
-        genre: "Western / Cinematic",
-        description: "Epic and moody orchestrations built for the wild west.",
-        tracks: [
-            "Whistle Through the Mesas", "Where Coyotes Sing", "Riding Past Sundown", "Smoke Over Tumbleweed",
-            "Sparrow on the Saddlehorn", "From Cactus to Snowfall", "Lanterns on the Ridge", "Whiskey in the Saddlebag",
-            "Ash Creek Morning", "Red Sky Over Armadillo", "Alone in Amber Light", "Tracks Through the Sagebrush",
-            "A Horse Named Mercy", "The Quiet Between Storms", "Last Ride to Fort Mercer", "Hollow Bones and Hollow Hills",
-            "When the Prairie Breathes", "One Match, One Fire, One Night", "Hearts Buried in the Sand", "Ashes of Blackwater",
-            "Ghosts in New Austin", "Ghosts in New Austin (Extended Cut)"
-        ]
-    },
-    {
-        title: "The Long Getaway",
-        genre: "Rock / Outlaw Country",
-        description: "Hard-hitting tracks for the desperate escape.",
-        tracks: [
-            "Hard Luck Tattoo", "Blacktop Confessional", "The Only Way Out", "Gone Before Sunrise", "The Devil’s Detour",
-            "Dead Man’s Romance", "Six Miles from Redemption", "Hollow Moon Highway", "No Maps, No Mercy", "Cactus Wine",
-            "Break the Mirror, Burn the Bridge", "The Long Getaway (Final Ride)"
-        ]
-    },
-    {
-        title: "Wanted",
-        genre: "Western / Action",
-        description: "Tense and heavy rhythms for the bounty hunter on the prowl.",
-        tracks: [
-            "Lead and Whiskey", "Rust & Thunder", "Bounty on My Name", "Moonshine & Gunpowder", "Six Rounds to Glory",
-            "Dead Man’s Jackpot", "Noose at Dawn", "Red Dust Revenge", "Posse in the Night", "Outlaw’s Creed",
-            "Bandits and Betrayals", "Wanted Till the End"
-        ]
-    },
-    {
-        title: "Desert Wobble",
-        genre: "Western Fusion / Electronic",
-        description: "A unique blend of wild west instrumentation and electronic beats.",
-        tracks: [
-            "The Bounty Shuffle", "Moonshine Mirage", "Coyote Stare", "Stagecoach Breakdown", "Fade to Dust",
-            "The Posse’s Shadow", "Rattlesnake Rhythm", "Desert Wobble", "Gunpowder Sunrise", "Gold Fever Blues",
-            "High Noon Hustle", "Outlaws in Stereo", "Six-String Ambush", "Saddlebag Secrets"
-        ]
-    },
-    {
-        title: "Sunset Cruise",
-        genre: "Chillwave / Retro",
-        description: "Relaxing, atmospheric beats for a smooth drive into the sunset.",
-        tracks: [
-            "Sunset Cruise", "Sunset Cruise (extended Cut)", "Electric Palm Trees", "Midnight Drive", "Neon Horizons",
-            "Cruise Control", "Endless Boardwalk", "Velvet Skies", "Retrograde Motion", "Heatwave Echoes", "Aurora Nights",
-            "Starlight Avenue", "Coastal Mirage", "Golden Reflection"
-        ]
-    },
-    {
-        title: "Hot Pursuit",
-        genre: "Action / Cyberpunk",
-        description: "High-octane electronic tracks designed for the ultimate chase sequence.",
-        tracks: [
-            "Cityscape Blitz", "Steel & Asphalt", "Overdrive Protocol", "Nightshift Pursuit", "Ignition Sequence",
-            "Chrome Horizon", "Adrenaline Highway", "Pulse Override", "Urban Frenzy", "Sirens & Shadows",
-            "Midnight Getaway", "Neon Afterburn", "Turbo Chase", "Apex Drift"
-        ]
-    },
-    {
-        title: "After Hours",
-        genre: "Lo-Fi / Chill",
-        description: "Mellow vibes and laid-back rhythms for late-night cityscapes.",
-        tracks: [
-            "Liquid Asphalt", "Moonlit Mirage", "Silent Corners", "Streetlight Sonata", "Chrome Reflections",
-            "Subtle Signals", "Moonlight Chase", "Cityscape Drift", "Velvet Streets", "Midnight Rendezvous",
-            "Neon Boulevard", "Hidden Avenues", "Slow Fade", "Under the Overpass"
-        ]
-    },
-    {
-        title: "Midnight Overdrive",
-        genre: "Synthwave / Action",
-        description: "Driving, aggressive synth beats that keep the momentum pushing forward.",
-        tracks: [
-            "Circuit Breaker", "Phantom Freeway", "Synth Streets", "Midnight Mirage", "Afterburn Drive",
-            "Turbo City Lights", "Neon Pursuit", "Pulse Reactor", "Chrome Horizon", "Electric Drift",
-            "Laser Skyline", "Neon Overload"
-        ]
-    },
-    {
-        title: "Highway Riot",
-        genre: "Hard Rock",
-        description: "Distorted guitars and heavy percussion for pure rebellion.",
-        tracks: [
-            "Thunder on the Streets", "Broken Chains", "Rebel’s Anthem", "Highway Flames", "Soul on the Run",
-            "Burning Horizon", "Shadow Riders", "Edge of Danger", "Echoes of Glory", "Storm Chasers"
-        ]
-    },
-    {
-        title: "Echoes of the Hollow",
-        genre: "Dark Cinematic / Horror",
-        description: "Eerie and haunting soundscapes from beyond the veil.",
-        tracks: [
-            "Beneath the Old Church", "Candles and Ashes", "Cathedral of Shadows", "Crows of the Gallows Hill",
-            "Dancing with Phantoms", "Eternal October", "Grave Waltz", "Haunted by Dawn", "Midnight’s Pulse",
-            "Nocturne for the Damned", "Ritual Under the Blood Moon", "The Bells of Evernight", "The Hollow Awakens",
-            "The Lantern Never Dies", "The Mirror’s Secret", "The Silence After the Storm", "The Witch’s Breath",
-            "Through the Iron Gate", "Voices in the Mausoleum", "Whispers Beneath the Fog"
-        ]
-    },
-    {
-        title: "Escape the Horizon",
-        genre: "Sci-Fi / Electronic",
-        description: "Expansive, space-faring synth arrangements.",
-        tracks: [
-            "Aether Run", "Celestial Drift", "Chromatic Voyage", "Echoes of Infinity", "Electro Mirage", "Galactic Reverie",
-            "Harmonic Flight", "Horizons Unbound", "Infinite Echoes", "Luminous Path", "Neon Odyssey", "Prism Cascade",
-            "Pulse of Tomorrow", "Pulsefire Anthem", "Radiant Horizon", "Solar Tide", "Starlight Drive", "Starlight",
-            "Synthwave Ascend", "Velocity of Light"
-        ]
-    },
-    {
-        title: "Careless Desires",
-        genre: "Urban / Action",
-        description: "Tense, street-level beats for combat and confrontation.",
-        tracks: [
-            "Adrenaline and Neon", "Against the Clock", "Breaking the Rules", "Chasing the Danger", "Concrete Thunder",
-            "Echoes in the Streetlight", "Edge of Chaos", "Edge of the Night", "Fast Lane Shadows", "Fast Track Fury",
-            "High Voltage Nights", "Lightning Steps", "Midnight Clash", "Midnight Surge", "Neon Skirmish", "No Escape Tonight",
-            "No Turning Back", "Pulse of the Alley", "Rivals in Motion", "Run the Streets Tonight", "Runaway Tension",
-            "Shadow Chase", "Shadow Lightning", "Silent Confrontation", "Streets on Fire", "The Last Stand",
-            "The Silent Fight", "The Streets Won’t Wait", "Urban Blitz", "Urban Frenzy", "Urban Pursuit"
-        ]
-    },
-    {
-        title: "Seasons Greetings",
-        genre: "Holiday / Ambient",
-        description: "Warm, festive instrumentals for cold winter nights.",
-        tracks: [
-            "Peace Beneath the Evergreens", "Falling Snow, Rising Fire", "Winter’s Gentle Embrace", "Stillness of Christmas Eve",
-            "Lights in the Window", "First Snow at Twilight", "Hearthside Memories", "Candlelight December", "December Skies",
-            "Evergreen Evening", "Fireside Glow", "Golden Winter Lights", "Home for the Holidays", "Midnight Sleigh Ride",
-            "Silent Snowfall", "Snow Over Pinewood", "Soft Bells at Dusk", "Warmth of the Season", "Winter Hearth",
-            "Snowlit Silence", "Winter Window Glow", "Frost on the Evergreens", "December Candlelight", "Quiet Streets at Christmas",
-            "Holly & Hearth", "Still Air, Falling Snow", "Golden Pines at Dusk", "Soft Footsteps in Snow", "A Hearth for Every Heart",
-            "The Longest Night", "Embers in the Night", "A Quiet Christmas Night"
-        ]
-    },
-    {
-        title: "Crime After Curfew",
-        genre: "Hip-Hop / Mystery",
-        description: "Deep bass and investigative beats for the underground.",
-        tracks: [
-            "Curfew Was a Suggestion", "Bassline Interrogation", "Stop-and-Frisk", "Low End Conspiracy", "Echoes Between Sirens",
-            "Static on the Police Band", "Brass in the Fog", "Concrete Breathes at Night", "No Witnesses, Just Bass",
-            "Halftime Felony", "Subwoofer Alibi", "Red Tape & Yellow Lines", "Gunmetal Reverb", "License Plate Memory",
-            "Streetlight Silence", "Blue Lights in the Rearview"
-        ]
-    },
-    {
-        title: "Vinyl Breakup",
-        genre: "Phonk / Lo-Fi",
-        description: "Gritty basslines and distorted lo-fi beats perfect for drifting or setting a heavy mood.",
-        tracks: [
-            "Last Click Before Silence", "Turntable Trauma", "Playback Error Headnod", "Low Fidelity, High Threat",
-            "Skipping on Purpose", "Distortion Has Memory", "Granular Street Logic", "Scratches Don’t Apologize",
-            "Phonk in the Red", "Needle Bent, Beat Unbroken", "Bassline Splinters", "Groove Slippage", "Chopped While Spinning",
-            "Crackles Before the Drop", "Dust in the Subwoofer", "Warped at 33⅓", "Side B Violence", "Static Between the Kicks",
-            "Needle Drop Disorder", "Saturation on the Turntable"
-        ]
-    },
-    {
-        title: "Machined Chaos",
-        genre: "Industrial / Electronic",
-        description: "Harsh, mechanical, and heavy-hitting industrial rhythms.",
-        tracks: [
-            "Steelheart Pulse", "Circuit Breaker Anthem", "Voltage Overload", "Gears in Revolt", "Mechanical Descent",
-            "Rust & Reverb", "Wired for Collision", "Sparks in the Dark", "Feedback Protocol", "Echoes of Iron",
-            "Titanium Collapse", "Shattered Bearings", "Broken Conveyor", "Overclocked Rage", "Final Actuator", "Forged in Noise"
-        ]
-    },
-    {
-        title: "Southside Society",
-        genre: "Boom Bap / Hip-Hop",
-        description: "Classic turntable cuts and heavy street beats.",
-        tracks: [
-            "Crate Digger’s Anthem", "Looped Legends", "Vinyl & Vibes", "Sunset Spin", "Downtown Loops", "Streetlight Sessions",
-            "Sampled Memories", "Boom Bap Boulevard", "Looped Horizons", "Cityscape Cypher", "Heads Nod Forever",
-            "Scratch Theory", "Bassline Diaries", "Turntable Tales", "Backspin Stories", "Hood Classics", "Tape Hiss Chronicles",
-            "Crate & Scratch"
-        ]
-    },
-    {
-        title: "Steel Legends",
-        genre: "Classic Rock",
-        description: "High-energy, driving instrumental rock anthems perfect for intense action.",
-        tracks: [
-            "Ignition Point", "Eternal Resonance", "Wings of Wire", "Piston Heart", "Synthetic Rythem", "Infinite Dawn",
-            "The Majestic Strum", "Echoes of the Arena", "Midnight Overdrive", "Silver Lining Shred", "Velocity Dreams",
-            "Chrome Horizon", "Unbound", "Golden Hour", "Skybound", "Atmosphere", "Prism", "The Edge", "Iron Pulse", "Steel Core"
-        ]
-    },
-    {
-        title: "Teal Frequency",
-        genre: "Glitch / EDM",
-        description: "Fast-paced, colorful, and glitchy electronic dance tracks.",
-        tracks: [
-            "Turbo Spark", "Prism Crash", "Cyberheart", "Bitrate Bloom", "Glitch Garden", "Parallel Pulse", "Ghost in the Code",
-            "Teal Velocity", "Neon Arpeggio", "Electric Cyan", "Turquoise Drift", "Synthetic Sky", "Resonance Point",
-            "Digital Daydream", "Frequency Flight", "Virtual Horizon", "Uplift Protocol", "Sonic Signature", "Pixel Perfect",
-            "Infinite Chorus"
-        ]
-    },
-    {
-        title: "Silk Road",
-        genre: "Cinematic / Folk",
-        description: "Sweeping traditional instruments capturing the vastness of the ancient trade routes.",
-        tracks: [
-            "The Great Horizon", "Lotus Bloom", "Imperial Rush", "Azure Dragon Dance", "Terracotta Heartbeat", "Pentatonic Fire",
-            "The 13th String", "Taklamakan Tremor", "Jade Pass", "Dune-Runner", "Caravanserai Nights", "Steppes of the Sun",
-            "Pipa Pulse", "Erhu’s Ascent", "Iron Fanfare", "Cinnabar Clouds", "Sovereign Silk", "Ghost of the Gobi", "Red Lantern",
-            "Celestial Fireworks"
-        ]
-    },
-    {
-        title: "Mandarin Trance",
-        genre: "Traditional Chinese / EDM",
-        description: "A fusion of traditional Chinese festival instruments mixed with deep trance beats.",
-        tracks: [
-            "Eternal Great Wall", "8-Bit Emperor", "Forbidden Echoes", "Monsoon Dynasty", "Lotus Petal Static", "Vermillion Gate",
-            "Nine-Sons Ritual", "Breath of the Wyrm", "Thunder-Drum Sovereign", "Coiling Scales", "Jade Talons", "Ghost-Qi",
-            "Zen State", "Silkstream", "Pagoda", "Zenith", "Paper Crane", "Odyssey"
-        ]
-    },
-    {
-        title: "Still Standing",
-        genre: "Epic Rock",
-        description: "Triumphant, stadium-ready rock instrumentals.",
-        tracks: [
-            "Chrome Dreams", "Voices", "Unstoppable", "Echoes of a Heartbeat", "The Long Goodbye", "Fading in the Mirror",
-            "Midnight Rain", "Worth the Wait", "Silent Thunder", "Written in the Dust", "Tears of the Sun", "Through the Smoke",
-            "Shadows of Forever", "Riding the Lightning", "Kings of the Concrete", "Ignite the Night", "Higher Ground",
-            "Steel and Glory", "Break the Horizon", "Legacy of Fire"
-        ]
-    },
-    {
-        title: "Blackout Protocol",
-        genre: "Cyberpunk / Industrial",
-        description: "Heavy, dark, and systemic electronic ruin.",
-        tracks: [
-            "Final Override", "Apex Predator", "The Titan’s Wake", "Architects of Ruin", "Seismic Shift", "Total Lockdown",
-            "Kinetic Strike", "Systemic Collapse", "The Quiet Before", "Distant Sirens", "Ghost Circuit", "Negative Space",
-            "Failsafe Breach", "The Grid Goes Cold", "Pre-Ignition", "Signal Decay", "Static Overload", "Oxygen Debt",
-            "Iron Pulse", "Molten Lead"
-        ]
-    },
-    {
-        title: "Infernal Chaos",
-        genre: "Heavy Metal / Doom",
-        description: "Relentless, aggressive guitar shredding and blast beats.",
-        tracks: [
-            "Kinetic Shredding", "Violent Oscillation", "Neural Redline", "Shrapnel Rain", "Abyssal Acceleration",
-            "Fragmented Reality", "Lacerated Sky", "Velocity of Terror", "Seismic Rupture", "Unstable Equilibrium",
-            "Bone-Shatter Cadence", "The Gutteral Engine", "Structural Collapse", "Mortal Compression", "Sulfuric Friction",
-            "Dead Weight Impact", "Grinding the Gearworks", "Total Disintegration", "Sub-Level Trauma", "Chaos Protocol"
-        ]
-    },
-    {
-        title: "Night Drive",
-        genre: "Synthwave / Outrun",
-        description: "The definitive soundtrack for late night cruising under the city lights.",
-        tracks: [
-            "Tempered Glass", "Final Frame", "Analog Dusk", "Static In The Marrow", "Low-Frequency Heartbeat",
-            "The 3 AM Drift", "Velocity of Silence", "Cathode Ray Prayer", "Fluorescent Ghosts", "Subterranean Neon",
-            "The Interior Monologue", "Zero-Emission Soul", "Impact Architecture", "The Sudden Horizon", "Collision In Slow Motion",
-            "Gated Memories", "Break In The Fog", "Concrete Echoes", "The Weight of Observation", "Transmission Lost"
-        ]
-    },
-    {
-        title: "Trap City",
-        genre: "Trap / Electronic",
-        description: "Heavy 808s and rapid hi-hats dominating the urban grid.",
-        tracks: [
-            "Cobalt Crush", "Emerald Current", "Vocal Chop Logic", "Static Bounce", "The Kinetic", "Vivid Impact",
-            "Power Chord Theory", "Ignite the Grid", "Raw Catalyst", "Friction Spike", "Glass Velocity", "Voltage Snap",
-            "Chrome Ricochet", "Seismic Shiver", "Syncopated Rush", "Tactile Groove", "Drop Architecture", "Copper Pulse",
-            "Primal Circuit", "Carbon Fiber Anthem"
-        ]
-    },
-    {
-        title: "Digital Heartbeat",
-        genre: "Vocaloid J-Pop",
-        description: "Upbeat, synthetic, and melodic J-Pop inspired tracks.",
-        tracks: [
-            "Carbon Loop", "Systemic Flow", "Vivid Idle", "Soft Reset", "Kinetic Syntax", "Bio-Mechanical Bloom",
-            "Haptic Feedback", "Neural Surge", "Syncopated Pulse", "Frictionless", "Chromium High", "Aqueous Data",
-            "Submerged Frequency", "Velvet Latency", "Silk & Silicon", "Diffused Light", "Tactile Memory", "Shatter-Point",
-            "Bit-Crushed Euphoria", "Echo Location"
-        ]
-    },
-    {
-        title: "Final Boss",
-        genre: "Epic Orchestral",
-        description: "Massive, orchestral orchestrations built for the ultimate showdown.",
-        tracks: [
-            "Awakening of the Overlord", "Thunderous Descent", "Wrath of Ancient Gods", "Eclipse of the Titans",
-            "Battle for Supremacy", "Ferocious Onslaught", "Chanting the End", "Taiko Fury Unleashed", "Climax of Cataclysm",
-            "Blistering Godslayer", "Swelling to Dominion", "War Drums of Eternity", "Triumphant Ascendance", "The Last Sovereign",
-            "Apocalyptic Showdown", "Hero's Final Stand", "Divine Fury Rising", "Victory's Thunder", "Eternal Battle Hymn",
-            "The Overlord's Fall"
-        ]
-    }
+    { title: "Midnight Vector", genre: "Synthwave / Outrun", description: "High-speed synth tracks for late-night drives and neon horizons.", tracks: ["Autopilot Drift", "No Left Turns", "Glass Tunnels", "Neon Idle", "Pacific Circuit", "Chrome Fade", "Rearview Mirage", "Digital Ave", "Soft Boost", "Shadow Lane"] },
+    { title: "Dusty Trails", genre: "Acoustic / Western", description: "Acoustic ballads and atmospheric tracks for the lonesome traveler.", tracks: ["Dust and Defiance", "Down to the Dakota River", "Moonrise Over Manzanita", "Camped Below Cumberland", "Echoes in Gaptooth Breach", "Rain Down in Rhodes", "Above the Dakota", "Ashes in the Saddle", "Red Sky, No Mercy", "Bone-Dry Ballad", "Canyon of Smoke", "Lost Riders Union", "Blood on the Bannister", "Saddle’s Got No Home", "Hollow Spurs", "Last Fire Burnin’", "Whiskey Before Judgment", "Storm Comes Slow", "Smoke Signals & Gunpowder", "Bury Me in Colter", "Cold Creek Stand", "Bandanas & Bullet Wounds", "Rebels of the Rock"] },
+    { title: "An Outlaw's World", genre: "Western / Cinematic", description: "Epic and moody orchestrations built for the wild west.", tracks: ["Whistle Through the Mesas", "Where Coyotes Sing", "Riding Past Sundown", "Smoke Over Tumbleweed", "Sparrow on the Saddlehorn", "From Cactus to Snowfall", "Lanterns on the Ridge", "Whiskey in the Saddlebag", "Ash Creek Morning", "Red Sky Over Armadillo", "Alone in Amber Light", "Tracks Through the Sagebrush", "A Horse Named Mercy", "The Quiet Between Storms", "Last Ride to Fort Mercer", "Hollow Bones and Hollow Hills", "When the Prairie Breathes", "One Match, One Fire, One Night", "Hearts Buried in the Sand", "Ashes of Blackwater", "Ghosts in New Austin", "Ghosts in New Austin (Extended Cut)"] },
+    { title: "The Long Getaway", genre: "Rock / Outlaw Country", description: "Hard-hitting tracks for the desperate escape.", tracks: ["Hard Luck Tattoo", "Blacktop Confessional", "The Only Way Out", "Gone Before Sunrise", "The Devil’s Detour", "Dead Man’s Romance", "Six Miles from Redemption", "Hollow Moon Highway", "No Maps, No Mercy", "Cactus Wine", "Break the Mirror, Burn the Bridge", "The Long Getaway (Final Ride)"] },
+    { title: "Wanted", genre: "Western / Action", description: "Tense and heavy rhythms for the bounty hunter on the prowl.", tracks: ["Lead and Whiskey", "Rust & Thunder", "Bounty on My Name", "Moonshine & Gunpowder", "Six Rounds to Glory", "Dead Man’s Jackpot", "Noose at Dawn", "Red Dust Revenge", "Posse in the Night", "Outlaw’s Creed", "Bandits and Betrayals", "Wanted Till the End"] },
+    { title: "Desert Wobble", genre: "Western Fusion / Electronic", description: "A unique blend of wild west instrumentation and electronic beats.", tracks: ["The Bounty Shuffle", "Moonshine Mirage", "Coyote Stare", "Stagecoach Breakdown", "Fade to Dust", "The Posse’s Shadow", "Rattlesnake Rhythm", "Desert Wobble", "Gunpowder Sunrise", "Gold Fever Blues", "High Noon Hustle", "Outlaws in Stereo", "Six-String Ambush", "Saddlebag Secrets"] },
+    { title: "Sunset Cruise", genre: "Chillwave / Retro", description: "Relaxing, atmospheric beats for a smooth drive into the sunset.", tracks: ["Sunset Cruise", "Sunset Cruise (extended Cut)", "Electric Palm Trees", "Midnight Drive", "Neon Horizons", "Cruise Control", "Endless Boardwalk", "Velvet Skies", "Retrograde Motion", "Heatwave Echoes", "Aurora Nights", "Starlight Avenue", "Coastal Mirage", "Golden Reflection"] },
+    { title: "Hot Pursuit", genre: "Action / Cyberpunk", description: "High-octane electronic tracks designed for the ultimate chase sequence.", tracks: ["Cityscape Blitz", "Steel & Asphalt", "Overdrive Protocol", "Nightshift Pursuit", "Ignition Sequence", "Chrome Horizon", "Adrenaline Highway", "Pulse Override", "Urban Frenzy", "Sirens & Shadows", "Midnight Getaway", "Neon Afterburn", "Turbo Chase", "Apex Drift"] },
+    { title: "After Hours", genre: "Lo-Fi / Chill", description: "Mellow vibes and laid-back rhythms for late-night cityscapes.", tracks: ["Liquid Asphalt", "Moonlit Mirage", "Silent Corners", "Streetlight Sonata", "Chrome Reflections", "Subtle Signals", "Moonlight Chase", "Cityscape Drift", "Velvet Streets", "Midnight Rendezvous", "Neon Boulevard", "Hidden Avenues", "Slow Fade", "Under the Overpass"] },
+    { title: "Midnight Overdrive", genre: "Synthwave / Action", description: "Driving, aggressive synth beats that keep the momentum pushing forward.", tracks: ["Circuit Breaker", "Phantom Freeway", "Synth Streets", "Midnight Mirage", "Afterburn Drive", "Turbo City Lights", "Neon Pursuit", "Pulse Reactor", "Chrome Horizon", "Electric Drift", "Laser Skyline", "Neon Overload"] },
+    { title: "Highway Riot", genre: "Hard Rock", description: "Distorted guitars and heavy percussion for pure rebellion.", tracks: ["Thunder on the Streets", "Broken Chains", "Rebel’s Anthem", "Highway Flames", "Soul on the Run", "Burning Horizon", "Shadow Riders", "Edge of Danger", "Echoes of Glory", "Storm Chasers"] },
+    { title: "Echoes of the Hollow", genre: "Dark Cinematic / Horror", description: "Eerie and haunting soundscapes from beyond the veil.", tracks: ["Beneath the Old Church", "Candles and Ashes", "Cathedral of Shadows", "Crows of the Gallows Hill", "Dancing with Phantoms", "Eternal October", "Grave Waltz", "Haunted by Dawn", "Midnight’s Pulse", "Nocturne for the Damned", "Ritual Under the Blood Moon", "The Bells of Evernight", "The Hollow Awakens", "The Lantern Never Dies", "The Mirror’s Secret", "The Silence After the Storm", "The Witch’s Breath", "Through the Iron Gate", "Voices in the Mausoleum", "Whispers Beneath the Fog"] },
+    { title: "Escape the Horizon", genre: "Sci-Fi / Electronic", description: "Expansive, space-faring synth arrangements.", tracks: ["Aether Run", "Celestial Drift", "Chromatic Voyage", "Echoes of Infinity", "Electro Mirage", "Galactic Reverie", "Harmonic Flight", "Horizons Unbound", "Infinite Echoes", "Luminous Path", "Neon Odyssey", "Prism Cascade", "Pulse of Tomorrow", "Pulsefire Anthem", "Radiant Horizon", "Solar Tide", "Starlight Drive", "Starlight", "Synthwave Ascend", "Velocity of Light"] },
+    { title: "Careless Desires", genre: "Urban / Action", description: "Tense, street-level beats for combat and confrontation.", tracks: ["Adrenaline and Neon", "Against the Clock", "Breaking the Rules", "Chasing the Danger", "Concrete Thunder", "Echoes in the Streetlight", "Edge of Chaos", "Edge of the Night", "Fast Lane Shadows", "Fast Track Fury", "High Voltage Nights", "Lightning Steps", "Midnight Clash", "Midnight Surge", "Neon Skirmish", "No Escape Tonight", "No Turning Back", "Pulse of the Alley", "Rivals in Motion", "Run the Streets Tonight", "Runaway Tension", "Shadow Chase", "Shadow Lightning", "Silent Confrontation", "Streets on Fire", "The Last Stand", "The Silent Fight", "The Streets Won’t Wait", "Urban Blitz", "Urban Frenzy", "Urban Pursuit"] },
+    { title: "Seasons Greetings", genre: "Holiday / Ambient", description: "Warm, festive instrumentals for cold winter nights.", tracks: ["Peace Beneath the Evergreens", "Falling Snow, Rising Fire", "Winter’s Gentle Embrace", "Stillness of Christmas Eve", "Lights in the Window", "First Snow at Twilight", "Hearthside Memories", "Candlelight December", "December Skies", "Evergreen Evening", "Fireside Glow", "Golden Winter Lights", "Home for the Holidays", "Midnight Sleigh Ride", "Silent Snowfall", "Snow Over Pinewood", "Soft Bells at Dusk", "Warmth of the Season", "Winter Hearth", "Snowlit Silence", "Winter Window Glow", "Frost on the Evergreens", "December Candlelight", "Quiet Streets at Christmas", "Holly & Hearth", "Still Air, Falling Snow", "Golden Pines at Dusk", "Soft Footsteps in Snow", "A Hearth for Every Heart", "The Longest Night", "Embers in the Night", "A Quiet Christmas Night"] },
+    { title: "Crime After Curfew", genre: "Hip-Hop / Mystery", description: "Deep bass and investigative beats for the underground.", tracks: ["Curfew Was a Suggestion", "Bassline Interrogation", "Stop-and-Frisk", "Low End Conspiracy", "Echoes Between Sirens", "Static on the Police Band", "Brass in the Fog", "Concrete Breathes at Night", "No Witnesses, Just Bass", "Halftime Felony", "Subwoofer Alibi", "Red Tape & Yellow Lines", "Gunmetal Reverb", "License Plate Memory", "Streetlight Silence", "Blue Lights in the Rearview"] },
+    { title: "Vinyl Breakup", genre: "Phonk / Lo-Fi", description: "Gritty basslines and distorted lo-fi beats perfect for drifting or setting a heavy mood.", tracks: ["Last Click Before Silence", "Turntable Trauma", "Playback Error Headnod", "Low Fidelity, High Threat", "Skipping on Purpose", "Distortion Has Memory", "Granular Street Logic", "Scratches Don’t Apologize", "Phonk in the Red", "Needle Bent, Beat Unbroken", "Bassline Splinters", "Groove Slippage", "Chopped While Spinning", "Crackles Before the Drop", "Dust in the Subwoofer", "Warped at 33⅓", "Side B Violence", "Static Between the Kicks", "Needle Drop Disorder", "Saturation on the Turntable"] },
+    { title: "Machined Chaos", genre: "Industrial / Electronic", description: "Harsh, mechanical, and heavy-hitting industrial rhythms.", tracks: ["Steelheart Pulse", "Circuit Breaker Anthem", "Voltage Overload", "Gears in Revolt", "Mechanical Descent", "Rust & Reverb", "Wired for Collision", "Sparks in the Dark", "Feedback Protocol", "Echoes of Iron", "Titanium Collapse", "Shattered Bearings", "Broken Conveyor", "Overclocked Rage", "Final Actuator", "Forged in Noise"] },
+    { title: "Southside Society", genre: "Boom Bap / Hip-Hop", description: "Classic turntable cuts and heavy street beats.", tracks: ["Crate Digger’s Anthem", "Looped Legends", "Vinyl & Vibes", "Sunset Spin", "Downtown Loops", "Streetlight Sessions", "Sampled Memories", "Boom Bap Boulevard", "Looped Horizons", "Cityscape Cypher", "Heads Nod Forever", "Scratch Theory", "Bassline Diaries", "Turntable Tales", "Backspin Stories", "Hood Classics", "Tape Hiss Chronicles", "Crate & Scratch"] },
+    { title: "Steel Legends", genre: "Classic Rock", description: "High-energy, driving instrumental rock anthems perfect for intense action.", tracks: ["Ignition Point", "Eternal Resonance", "Wings of Wire", "Piston Heart", "Synthetic Rythem", "Infinite Dawn", "The Majestic Strum", "Echoes of the Arena", "Midnight Overdrive", "Silver Lining Shred", "Velocity Dreams", "Chrome Horizon", "Unbound", "Golden Hour", "Skybound", "Atmosphere", "Prism", "The Edge", "Iron Pulse", "Steel Core"] },
+    { title: "Teal Frequency", genre: "Glitch / EDM", description: "Fast-paced, colorful, and glitchy electronic dance tracks.", tracks: ["Turbo Spark", "Prism Crash", "Cyberheart", "Bitrate Bloom", "Glitch Garden", "Parallel Pulse", "Ghost in the Code", "Teal Velocity", "Neon Arpeggio", "Electric Cyan", "Turquoise Drift", "Synthetic Sky", "Resonance Point", "Digital Daydream", "Frequency Flight", "Virtual Horizon", "Uplift Protocol", "Sonic Signature", "Pixel Perfect", "Infinite Chorus"] },
+    { title: "Silk Road", genre: "Cinematic / Folk", description: "Sweeping traditional instruments capturing the vastness of the ancient trade routes.", tracks: ["The Great Horizon", "Lotus Bloom", "Imperial Rush", "Azure Dragon Dance", "Terracotta Heartbeat", "Pentatonic Fire", "The 13th String", "Taklamakan Tremor", "Jade Pass", "Dune-Runner", "Caravanserai Nights", "Steppes of the Sun", "Pipa Pulse", "Erhu’s Ascent", "Iron Fanfare", "Cinnabar Clouds", "Sovereign Silk", "Ghost of the Gobi", "Red Lantern", "Celestial Fireworks"] },
+    { title: "Mandarin Trance", genre: "Traditional Chinese / EDM", description: "A fusion of traditional Chinese festival instruments mixed with deep trance beats.", tracks: ["Eternal Great Wall", "8-Bit Emperor", "Forbidden Echoes", "Monsoon Dynasty", "Lotus Petal Static", "Vermillion Gate", "Nine-Sons Ritual", "Breath of the Wyrm", "Thunder-Drum Sovereign", "Coiling Scales", "Jade Talons", "Ghost-Qi", "Zen State", "Silkstream", "Pagoda", "Zenith", "Paper Crane", "Odyssey"] },
+    { title: "Still Standing", genre: "Epic Rock", description: "Triumphant, stadium-ready rock instrumentals.", tracks: ["Chrome Dreams", "Voices", "Unstoppable", "Echoes of a Heartbeat", "The Long Goodbye", "Fading in the Mirror", "Midnight Rain", "Worth the Wait", "Silent Thunder", "Written in the Dust", "Tears of the Sun", "Through the Smoke", "Shadows of Forever", "Riding the Lightning", "Kings of the Concrete", "Ignite the Night", "Higher Ground", "Steel and Glory", "Break the Horizon", "Legacy of Fire"] },
+    { title: "Blackout Protocol", genre: "Cyberpunk / Industrial", description: "Heavy, dark, and systemic electronic ruin.", tracks: ["Final Override", "Apex Predator", "The Titan’s Wake", "Architects of Ruin", "Seismic Shift", "Total Lockdown", "Kinetic Strike", "Systemic Collapse", "The Quiet Before", "Distant Sirens", "Ghost Circuit", "Negative Space", "Failsafe Breach", "The Grid Goes Cold", "Pre-Ignition", "Signal Decay", "Static Overload", "Oxygen Debt", "Iron Pulse", "Molten Lead"] },
+    { title: "Infernal Chaos", genre: "Heavy Metal / Doom", description: "Relentless, aggressive guitar shredding and blast beats.", tracks: ["Kinetic Shredding", "Violent Oscillation", "Neural Redline", "Shrapnel Rain", "Abyssal Acceleration", "Fragmented Reality", "Lacerated Sky", "Velocity of Terror", "Seismic Rupture", "Unstable Equilibrium", "Bone-Shatter Cadence", "The Gutteral Engine", "Structural Collapse", "Mortal Compression", "Sulfuric Friction", "Dead Weight Impact", "Grinding the Gearworks", "Total Disintegration", "Sub-Level Trauma", "Chaos Protocol"] },
+    { title: "Night Drive", genre: "Synthwave / Outrun", description: "The definitive soundtrack for late night cruising under the city lights.", tracks: ["Tempered Glass", "Final Frame", "Analog Dusk", "Static In The Marrow", "Low-Frequency Heartbeat", "The 3 AM Drift", "Velocity of Silence", "Cathode Ray Prayer", "Fluorescent Ghosts", "Subterranean Neon", "The Interior Monologue", "Zero-Emission Soul", "Impact Architecture", "The Sudden Horizon", "Collision In Slow Motion", "Gated Memories", "Break In The Fog", "Concrete Echoes", "The Weight of Observation", "Transmission Lost"] },
+    { title: "Trap City", genre: "Trap / Electronic", description: "Heavy 808s and rapid hi-hats dominating the urban grid.", tracks: ["Cobalt Crush", "Emerald Current", "Vocal Chop Logic", "Static Bounce", "The Kinetic", "Vivid Impact", "Power Chord Theory", "Ignite the Grid", "Raw Catalyst", "Friction Spike", "Glass Velocity", "Voltage Snap", "Chrome Ricochet", "Seismic Shiver", "Syncopated Rush", "Tactile Groove", "Drop Architecture", "Copper Pulse", "Primal Circuit", "Carbon Fiber Anthem"] },
+    { title: "Digital Heartbeat", genre: "Vocaloid J-Pop", description: "Upbeat, synthetic, and melodic J-Pop inspired tracks.", tracks: ["Carbon Loop", "Systemic Flow", "Vivid Idle", "Soft Reset", "Kinetic Syntax", "Bio-Mechanical Bloom", "Haptic Feedback", "Neural Surge", "Syncopated Pulse", "Frictionless", "Chromium High", "Aqueous Data", "Submerged Frequency", "Velvet Latency", "Silk & Silicon", "Diffused Light", "Tactile Memory", "Shatter-Point", "Bit-Crushed Euphoria", "Echo Location"] },
+    { title: "Final Boss", genre: "Epic Orchestral", description: "Massive, orchestral orchestrations built for the ultimate showdown.", tracks: ["Awakening of the Overlord", "Thunderous Descent", "Wrath of Ancient Gods", "Eclipse of the Titans", "Battle for Supremacy", "Ferocious Onslaught", "Chanting the End", "Taiko Fury Unleashed", "Climax of Cataclysm", "Blistering Godslayer", "Swelling to Dominion", "War Drums of Eternity", "Triumphant Ascendance", "The Last Sovereign", "Apocalyptic Showdown", "Hero's Final Stand", "Divine Fury Rising", "Victory's Thunder", "Eternal Battle Hymn", "The Overlord's Fall"] }
 ];
 ---
 
@@ -343,20 +46,18 @@ const albums = [
         <!-- Albums Grid -->
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
             
-            <!-- Map through the albums array to generate cards -->
             {albums.map((album) => (
-                <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column;">
-                    
-                    <!-- Dynamic Cover Art Image -->
+                <div class="card">
                     <img 
                         src={`/images/albums/${album.title}.jpg`} 
                         alt={`${album.title} Cover Art`} 
-                        style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 2px solid var(--accent-red); margin-bottom: 1.5rem; border-radius: 4px; background-color: #111;"
+                        style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem; border-radius: 8px;"
                         loading="lazy"
                     />
 
-                    <h3>{album.title}</h3>
-                    <span class="badge" style="background: #444;">{album.genre}</span>
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--accent-orange); margin: 0.5rem 0; text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">{album.title}</h3>
+                    
+                    <span class="badge">{album.genre}</span>
                     <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
                         {album.description}
                     </p>
@@ -366,13 +67,13 @@ const albums = [
                         </a>
                     </div>
                     
-                    <details style="background: rgba(0,0,0,0.4); border: 1px solid #333; padding: 10px; border-radius: 4px;">
-                        <summary style="color: var(--accent-red); font-weight: 600; cursor: pointer; outline: none;">
+                    <details style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px;">
+                        <summary style="color: var(--accent-pink); font-weight: 600; cursor: pointer; outline: none;">
                             View Tracks ({album.tracks.length})
                         </summary>
                         <ul style="list-style: none; padding: 0; margin: 10px 0 0 0;">
                             {album.tracks.map((track, index) => (
-                                <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #222; padding: 8px 0;">
+                                <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 8px 0;">
                                     <span style="font-size: 0.9rem; color: var(--white-low);">{index + 1}. {track.replace('.mp3', '')}</span>
                                 </li>
                             ))}
@@ -380,11 +81,10 @@ const albums = [
                     </details>
                 </div>
             ))}
-
         </div>
         
         <div style="margin-top: 3rem; text-align: center;">
-            <a href="/" style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr; Back to Home</a>
+            <a href="/" style="color: var(--accent-pink); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">&larr; Back to Home</a>
         </div>
     </main>
 </Layout>

@@ -2,43 +2,42 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Read Dead Resources | 2 Smokin' Barrels">
+<Layout title="Red Dead Resources | 2 Smokin' Barrels">
     <main class="container">
         <h1 class="page-title">Red Dead Resources</h1>
-        <p class="page-subtitle">Essential tools and interactive guides for navigating the frontier.</p>
+        <p class="page-subtitle" style="text-align: center; color: var(--white-med); margin-bottom: 3rem;">
+            Essential tools and interactive guides for navigating the frontier.
+        </p>
 
-        <div id="nazar-banner" class="resource-card nazar-hero" style="display: none;">
+        {/* Updated "Widget" style for Madam Nazar tracker */}
+        <div id="nazar-banner" class="resource-card nazar-hero" style="display: none; width: 90%; margin: 0 auto 3rem auto; border: 1px solid var(--accent-pink); border-radius: 16px; box-shadow: 0 0 15px rgba(234, 72, 178, 0.2);">
             <div class="nazar-image-container">
-                <img id="nazar-image" src="" alt="Madam Nazar Location">
+                <img id="nazar-image" src="" alt="Madam Nazar Location" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="nazar-info">
-                <h3>Madam Nazar's Location</h3>
-                <p id="nazar-location-text">Locating the spirits...</p>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--accent-orange); margin-bottom: 10px; text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Madam Nazar's Location</h3>
+                <p id="nazar-location-text" style="color: var(--white-low);">Locating the spirits...</p>
             </div>
         </div>
 
         <div class="resource-grid">
-            <a href="https://jeanropke.github.io/RDR2CollectorsMap/" class="resource-card" target="_blank"
-                rel="noopener noreferrer">
+            <a href="https://jeanropke.github.io/RDR2CollectorsMap/" class="resource-card" target="_blank" rel="noopener noreferrer">
                 <div class="resource-thumb" style="background-image: url('/images/thumb-collector.jpg');">
                     <i class="fa-solid fa-map-location-dot"></i>
                 </div>
                 <div class="resource-info">
-                    <h3>RDO Collector's Map</h3>
-                    <p>The definitive interactive map for locating Madam Nazar and all daily hidden collectibles across
-                        the map.</p>
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--accent-orange); margin-bottom: 0.5rem; text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">RDO Collector's Map</h3>
+                    <p style="color: var(--white-med);">The definitive interactive map for locating Madam Nazar and all daily hidden collectibles across the map.</p>
                 </div>
             </a>
 
-            <a href="https://jeanropke.github.io/RDOMap/" class="resource-card" target="_blank"
-                rel="noopener noreferrer">
+            <a href="https://jeanropke.github.io/RDOMap/" class="resource-card" target="_blank" rel="noopener noreferrer">
                 <div class="resource-thumb" style="background-image: url('/images/thumb-rdomap.jpg');">
                     <i class="fa-solid fa-earth-americas"></i>
                 </div>
                 <div class="resource-info">
-                    <h3>Red Dead Online Map</h3>
-                    <p>A comprehensive map detailing animal spawns, dynamic events, plant locations, and other crucial
-                        points of interest.</p>
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--accent-orange); margin-bottom: 0.5rem; text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Red Dead Online Map</h3>
+                    <p style="color: var(--white-med);">A comprehensive map detailing animal spawns, dynamic events, plant locations, and other crucial points of interest.</p>
                 </div>
             </a>
 
@@ -47,23 +46,24 @@ import Layout from '../layouts/Layout.astro';
                     <i class="fa-solid fa-list-check"></i>
                 </div>
                 <div class="resource-info">
-                    <h3>Red Dead Dailies</h3>
-                    <p>A quick reference guide for tracking current daily challenges to maintain streaks and efficiently
-                        earn gold.</p>
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--accent-orange); margin-bottom: 0.5rem; text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Red Dead Dailies</h3>
+                    <p style="color: var(--white-med);">A quick reference guide for tracking current daily challenges to maintain streaks and efficiently earn gold.</p>
                 </div>
             </a>
 
-            <a href="https://tjakubowski.github.io/rdo-naturalist/" class="resource-card" target="_blank"
-                rel="noopener noreferrer">
+            <a href="https://tjakubowski.github.io/rdo-naturalist/" class="resource-card" target="_blank" rel="noopener noreferrer">
                 <div class="resource-thumb" style="background-image: url('/images/thumb-naturalist.jpg');">
                     <i class="fa-solid fa-paw"></i>
                 </div>
                 <div class="resource-info">
-                    <h3>Interactive Field Guide</h3>
-                    <p>An interactive companion to help track animal samples, hunt legendary spawns, and progress the
-                        Naturalist role.</p>
+                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--accent-orange); margin-bottom: 0.5rem; text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Interactive Field Guide</h3>
+                    <p style="color: var(--white-med);">An interactive companion to help track animal samples, hunt legendary spawns, and progress the Naturalist role.</p>
                 </div>
             </a>
+        </div>
+        
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="/" style="color: var(--accent-pink); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">&larr; Back to Home</a>
         </div>
     </main>
 </Layout>

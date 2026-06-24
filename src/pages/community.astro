@@ -12,24 +12,21 @@ import Layout from '../layouts/Layout.astro';
         <!-- ============================================== -->
         <!-- FEATURED STREAMERS                             -->
         <!-- ============================================== -->
-        <!-- Subheading for Featured -->
-        <h3 style="font-family: 'Hapna', sans-serif; font-size: 1.5rem; color: var(--white-low); border-bottom: 1px solid var(--accent-red); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+        <h3 class="section-title" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.5rem; margin-bottom: 2rem;">
             Featured Creators
         </h3>
         
-        <!-- Featured Grid (Updated to 300px) -->
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 4rem;">
             
             <!-- Official Nugzz Crew -->
             <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/nugzz.jpg" alt="Official Nugzz Crew" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Official Nugzz Crew</h3>
+                <img src="/images/community/nugzz.jpg" alt="Official Nugzz Crew" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-pink); box-shadow: 0 0 15px rgba(234, 72, 178, 0.4); margin-bottom: 1rem; object-fit: cover;">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Official Nugzz Crew</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     An amazing collective creating fantastic content. Check out their official site and latest YouTube uploads!
                 </p>
                 
-                <!-- Stream Indicators -->
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.2); padding: 8px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); width: 100%; box-sizing: border-box;">
                     <span style="color: var(--white-low);">Face: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
                     <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
                     <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Streamer.bot</span></span>
@@ -37,20 +34,19 @@ import Layout from '../layouts/Layout.astro';
 
                 <div style="display: flex; gap: 10px; width: 100%;">
                     <a href="https://officialnugzzcrew.com/" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">Website</a>
-                    <a href="https://www.youtube.com/@OfficialNugzzCrew" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">YouTube</a>
+                    <a href="https://www.youtube.com/@OfficialNugzzCrew" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: rgba(255, 255, 255, 0.1); box-shadow: none; border: 1px solid rgba(255, 255, 255, 0.1);">YouTube</a>
                 </div>
             </div>
 
             <!-- Haunter -->
             <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/haunter.jpg" alt="Haunter" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Haunter</h3>
+                <img src="/images/community/haunter.jpg" alt="Haunter" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-pink); box-shadow: 0 0 15px rgba(234, 72, 178, 0.4); margin-bottom: 1rem; object-fit: cover;">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Haunter</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Awesome content creator bringing great vibes and entertainment to the community.
                 </p>
                 
-                <!-- Stream Indicators -->
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.2); padding: 8px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); width: 100%; box-sizing: border-box;">
                     <span style="color: var(--white-low);">Face: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
                     <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
                     <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Streamer.bot</span></span>
@@ -58,36 +54,32 @@ import Layout from '../layouts/Layout.astro';
 
                 <div style="display: flex; gap: 10px; width: 100%;">
                     <a href="https://www.youtube.com/@haunter56" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">YouTube</a>
-                    <a href="https://www.twitch.tv/haunter_56" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1;">Twitch</a>
+                    <a href="https://www.twitch.tv/haunter_56" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; flex: 1; background: rgba(255, 255, 255, 0.1); box-shadow: none; border: 1px solid rgba(255, 255, 255, 0.1);">Twitch</a>
                 </div>
             </div>
-
         </div>
 
         <!-- ============================================== -->
         <!-- ENGLISH / US CREATORS                          -->
         <!-- ============================================== -->
-        <!-- Subheading for English Block -->
-        <h3 style="font-family: 'Hapna', sans-serif; font-size: 1.5rem; color: var(--white-low); border-bottom: 1px solid var(--accent-red); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+        <h3 class="section-title" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.5rem; margin-bottom: 2rem;">
             English Creators
         </h3>
         
-        <!-- English Grid (Updated to 300px) -->
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 4rem;">
             
             <!-- Leslie Cheyanne -->
             <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/leslie.jpg" alt="Leslie Cheyanne" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Leslie Cheyanne</h3>
+                <img src="/images/community/leslie.jpg" alt="Leslie Cheyanne" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-pink); box-shadow: 0 0 15px rgba(234, 72, 178, 0.4); margin-bottom: 1rem; object-fit: cover;">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Leslie Cheyanne</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Live streaming great vibes, fun chats, and awesome gameplay. Drop by Twitch and say hello!
                 </p>
                 
-                <!-- Stream Indicators -->
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
-                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-red); font-weight: bold;">None</span></span>
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.2); padding: 8px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-pink); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-pink); font-weight: bold;">&#10007;</span></span>
+                    <span style="color: var(--white-med);">Integrations: <span style="color: var(--accent-pink); font-weight: bold;">None</span></span>
                 </div>
 
                 <a href="https://www.twitch.tv/lesliecheyanne" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.8rem; padding: 10px; width: 100%; box-sizing: border-box;">Twitch Channel</a>
@@ -95,16 +87,15 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Big Cat -->
             <div class="card" style="align-items: center; text-align: center;">
-                <img src="/images/community/bigcat.jpg" alt="Big Cat" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Big Cat</h3>
+                <img src="/images/community/bigcat.jpg" alt="Big Cat" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-pink); box-shadow: 0 0 15px rgba(234, 72, 178, 0.4); margin-bottom: 1rem; object-fit: cover;">
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Big Cat</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Bringing high-energy streams and interactive moments to the community.
                 </p>
                 
-                <!-- Stream Indicators -->
-                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; border: 1px solid #333; width: 100%; box-sizing: border-box;">
-                    <span style="color: var(--white-med);">Face: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
-                    <span style="color: var(--white-med);">Mic: <span style="color: var(--accent-red); font-weight: bold;">&#10007;</span></span>
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 1.5rem; font-size: 0.8rem; background: rgba(0,0,0,0.2); padding: 8px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); width: 100%; box-sizing: border-box;">
+                    <span style="color: var(--white-low);">Face: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
+                    <span style="color: var(--white-low);">Mic: <span style="color: #00ff00; font-weight: bold;">&#10003;</span></span>
                     <span style="color: var(--white-low);">Integrations: <span style="color: #00ff00; font-weight: bold;">Mix-It-Up</span></span>
                 </div>
 
@@ -114,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Anne Williams -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/anne.jpg" alt="Anne Williams" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Anne Williams</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Anne Williams</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     An incredibly welcoming stream featuring a beautiful community built on friendship.
                 </p>
@@ -132,7 +123,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Aidan Ketch -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/aidan.jpg" alt="Aidan Ketch" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Aidan Ketch</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Aidan Ketch</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Bringing you great gameplay and high-quality streaming content. Catch the newest videos over on YouTube.
                 </p>
@@ -150,7 +141,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Creepy King -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/creepy.jpg" alt="Creepy King" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Creepy King</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Creepy King</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     A fantastic channel filled with incredible content and a welcoming community.
                 </p>
@@ -168,7 +159,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Exzumi -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/exzumi.jpg" alt="Exzumi" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Exzumi</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Exzumi</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Dive into engaging gameplay and chill streams. Don't miss out on the latest uploads!
                 </p>
@@ -186,7 +177,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- High Guy Gaming -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/highguy.jpg" alt="High Guy Gaming" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>High Guy Gaming</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">High Guy Gaming</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     High-energy gameplay and incredible interactions powered by custom stream integrations.
                 </p>
@@ -204,7 +195,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Big Dog Triple OG -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/bigdog.jpg" alt="Big Dog Triple OG" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Big Dog Triple OG</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Big Dog Triple OG</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Delivering top-notch entertainment and great gameplay. Don't miss the latest streams!
                 </p>
@@ -222,7 +213,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Okami -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/okami.jpg" alt="Okami" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Okami</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Okami</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Dive into epic adventures and highly interactive streams powered by custom automation.
                 </p>
@@ -244,7 +235,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- BRAZILIAN PORTUGUESE CREATORS                  -->
         <!-- ============================================== -->
          <!-- Subheading for Brazil Block -->
-        <h3 style="font-family: 'Hapna', sans-serif; font-size: 1.5rem; color: var(--white-low); border-bottom: 1px solid var(--accent-red); padding-bottom: 0.5rem; margin-bottom: 2rem;">
+        <h3 class="section-title" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.5rem; margin-bottom: 2rem;">
             Brazilian Portuguese Creators
         </h3>
 
@@ -254,7 +245,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Billy Ricketts -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/billy.jpg" alt="Billy Ricketts" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Billy Ricketts</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Billy Ricketts</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Check out Billy's latest streams and videos for top-tier gameplay and fun interactions.
                 </p>
@@ -272,7 +263,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- LordBlackCA -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/lordblack.jpg" alt="LordBlackCA" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>LordBlackCA</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">LordBlackCA</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Incredible Red Dead Online content and engaging streams for the Portuguese speaking community.
                 </p>
@@ -290,7 +281,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Mr. Braga -->
             <div class="card" style="align-items: center; text-align: center;">
                 <img src="/images/community/braga.jpg" alt="Mr. Braga" style="border-radius: 50%; width: 100px; height: 100px; border: 2px solid var(--accent-red); margin-bottom: 1rem; object-fit: cover;">
-                <h3>Mr. Braga</h3>
+                <h3 style="font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 0;">Mr. Braga</h3>
                 <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1rem; flex-grow: 1;">
                     Join the action-packed adventures and great discussions on Red Dead Online.
                 </p>
@@ -308,7 +299,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
         <div style="margin-top: 3rem; text-align: center;">
-            <a href="/" style="color: var(--accent-red); text-decoration: none; font-weight: 600; text-transform: uppercase;">&larr; Back to Home</a>
+            <a href="/" style="color: var(--accent-pink); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">&larr; Back to Home</a>
         </div>
     </main>
 </Layout>

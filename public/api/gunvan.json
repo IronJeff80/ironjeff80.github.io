@@ -4,16 +4,16 @@
   "imagePath": "/images/gunvan/loc_17.jpg",
   "mapPath": "/images/gunvan/map_17.jpg",
   "inventory": [
-    "Combat Shotgun: -10 %",
-    "Precision Rifle: -10 %",
-    "Railgun: -50 %",
-    "Compact Rifle: -10 %",
-    "MG: -10 %",
-    "Machete: -10 %",
+    "Stun Gun: -10 %",
+    "Military Rifle: -10 %",
+    "Compact EMP Launcher: -50 %",
+    "Minigun: -10 %",
+    "Marksman Pistol: -10 %",
+    "Knuckle Duster: -10 %",
+    "Pipe Bomb: -10 %",
     "Tear Gas: -10 %",
-    "Grenade: -10 %",
-    "Proximity Mine: -10 %",
+    "Molotov: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-05-25T10:20:55.289Z"
+  "updatedAt": "2026-06-25T06:16:46.283Z"
 }

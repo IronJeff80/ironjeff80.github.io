@@ -1,8 +1,8 @@
 {
-  "id": "11",
-  "locationName": "Thomson Scrapyard",
-  "imagePath": "/images/gunvan/loc_11.jpg",
-  "mapPath": "/images/gunvan/map_11.jpg",
+  "id": "7",
+  "locationName": "Paleto Forest Lumber Yard",
+  "imagePath": "/images/gunvan/loc_7.jpg",
+  "mapPath": "/images/gunvan/map_7.jpg",
   "inventory": [
     "Battle Rifle: -50 %",
     "Stun Gun: -10 %",
@@ -15,5 +15,5 @@
     "Sticky Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-06-28T06:33:36.365Z"
+  "updatedAt": "2026-06-29T06:59:50.889Z"
 }

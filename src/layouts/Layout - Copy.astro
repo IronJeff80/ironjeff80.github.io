@@ -3,13 +3,7 @@ import Sidebar from '../components/Sidebar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { 
-    title, 
-    description = "Custom extensions, overlays, and technical tools for the Red Dead & GTA streaming community.",
-    image = "https://2smokinbarrels.com/images/social-banner.jpg"
-} = Astro.props;
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://2smokinbarrels.com/');
+const { title } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -20,22 +14,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://2smokinb
     
     <!-- Primary Meta Tags -->
     <meta name="title" content={title} />
-    <meta name="description" content={description} />
+    <meta name="description" content="Custom extensions, overlays, and technical tools for the Red Dead & GTA streaming community." />
 
     <!-- Open Graph / Discord / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:url" content="https://2smokinbarrels.com/" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content="Custom extensions, overlays, and technical tools for the Red Dead & GTA streaming community." />
     <!-- Ensure you create a 1200x630 banner and save it at this exact path! -->
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content="https://2smokinbarrels.com/images/social-banner.jpg" />
 
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:url" content="https://2smokinbarrels.com/" />
     <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
+    <meta property="twitter:description" content="Custom extensions, overlays, and technical tools for the Red Dead & GTA streaming community." />
+    <meta property="twitter:image" content="https://2smokinbarrels.com/images/social-banner.jpg" />
 
     <!-- Links the Twitter Card to your specific X/Twitter account -->
     <meta name="twitter:site" content="@2_SmokinBarrels" />

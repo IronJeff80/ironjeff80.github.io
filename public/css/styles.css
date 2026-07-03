@@ -48,7 +48,14 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
+    /* Add this background rule */
+    background: linear-gradient(rgba(18, 16, 35, 0.85), rgba(18, 16, 35, 0.85)), url('/images/Site-background-dark.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    background-color: var(--bg-dark); /* Fallback */
     color: var(--white-low);
     margin: 0;
     line-height: 1.6;

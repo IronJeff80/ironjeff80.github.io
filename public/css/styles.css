@@ -442,7 +442,6 @@ details summary::-webkit-details-marker {
 .command-center { 
     background: rgba(38, 30, 62, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.08); 
-    /* Override only the top border */
     border-top: 3px solid var(--accent-pink)!important;
     border-radius: 16px; 
     padding: 20px; 
@@ -797,7 +796,7 @@ details summary::-webkit-details-marker {
     /* Set the base border first, then override the left side */
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-left: 5px solid var(--accent-pink) !important;
-    
+    border-right: 5px solid var(--accent-pink) !important;
     padding: 25px; 
     margin-top: 20px; 
     text-align: center; /* You can override this to 'left' on specific pages if needed */

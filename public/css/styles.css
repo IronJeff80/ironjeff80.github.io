@@ -276,6 +276,14 @@ footer {
     border: 1px solid var(--accent-pink);
     border-top: 3px solid var(--accent-pink) !important;
     border-radius: 12px;
+    backdrop-filter: blur(12px); 
+    transition: all 0.3s ease;
+}
+
+.command-section:hover {
+    border-color: var(--accent-pink);
+    box-shadow: 0 8px 32px rgba(234, 72, 178, 0.25);
+    transform: translateY(-4px);
 }
 
 details summary {

@@ -476,8 +476,11 @@ details summary::-webkit-details-marker {
 .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .card { 
     background: var(--card-bg); 
-    border-top: 3px solid var(--accent-pink);
+    /* Set the base border for all sides */
     border: 1px solid rgba(255, 255, 255, 0.08); 
+    /* Override only the top border */
+    border-top: 3px solid var(--accent-pink);
+    
     border-radius: 16px; 
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
@@ -489,7 +492,9 @@ details summary::-webkit-details-marker {
     flex-direction: column;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); 
 }
+
 .card:hover { 
+    /* This maintains the pink top border while highlighting the rest */
     border-color: var(--accent-pink); 
     transform: translateY(-4px); 
     box-shadow: 0 8px 32px rgba(234, 72, 178, 0.25);

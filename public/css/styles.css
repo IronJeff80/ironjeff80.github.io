@@ -435,7 +435,6 @@ details summary::-webkit-details-marker {
     border: 1px solid rgba(255, 255, 255, 0.08); 
     /* Override only the top border */
     border-top: 3px solid var(--accent-pink)!important;
-    border: 1px solid rgba(255, 255, 255, 0.1); 
     border-radius: 16px; 
     padding: 20px; 
     margin-top: 20px; 
@@ -476,7 +475,7 @@ details summary::-webkit-details-marker {
 .cmd-btn:disabled { background: rgba(255, 255, 255, 0.1); color: #777; cursor: not-allowed; opacity: 0.6; box-shadow: none; }
 
 .glitch-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 3rem; }
-.glitch-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 1rem; text-align: center; backdrop-filter: blur(8px); transition: all 0.3s ease; }
+.glitch-card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); border-top: 3px solid var(--accent-pink)!important; border-radius: 12px; padding: 1rem; text-align: center; backdrop-filter: blur(8px); transition: all 0.3s ease; }
 .glitch-card h4 { font-size: 0.9rem; margin: 0 0 10px 0; color: var(--accent-pink); height: 2.4rem; overflow: hidden; font-family: 'Inter', sans-serif; font-weight: 500; }
 .glitch-card:hover {
     border-color: var(--accent-pink);

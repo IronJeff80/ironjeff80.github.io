@@ -680,8 +680,8 @@ details summary::-webkit-details-marker {
     flex-direction: column; 
     margin-bottom: 2.5rem;
     width: 100%;
-    border: 1px solid rgba(255,255,255,0.05);
-    border-top: 3px solid var(--accent-pink)!important; 
+    border: 1px solid var(--accent-pink);
+    border-top: 3px solid var(--accent-pink) !important;
     background-color: var(--card-bg);
     backdrop-filter: blur(12px);
     border-radius: 16px;

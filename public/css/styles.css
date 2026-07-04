@@ -479,7 +479,7 @@ details summary::-webkit-details-marker {
     /* Set the base border for all sides */
     border: 1px solid rgba(255, 255, 255, 0.08); 
     /* Override only the top border */
-    border-top: 3px solid var(--accent-pink);
+    border-top: 3px solid var(--accent-pink)!important;
     
     border-radius: 16px; 
     backdrop-filter: blur(12px); 

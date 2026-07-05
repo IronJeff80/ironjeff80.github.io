@@ -1,8 +1,8 @@
 {
-  "id": "15",
-  "locationName": "Land Act Reservoir (north end)",
-  "imagePath": "/images/gunvan/loc_15.jpg",
-  "mapPath": "/images/gunvan/map_15.jpg",
+  "id": "3",
+  "locationName": "Merle Abrahams' house, Sandy Shores",
+  "imagePath": "/images/gunvan/loc_3.jpg",
+  "mapPath": "/images/gunvan/map_3.jpg",
   "inventory": [
     "Compact EMP Launcher: -10 %",
     "Heavy Rifle: -40 %",
@@ -16,5 +16,5 @@
     "Grenade: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-07-04T18:21:11.347Z"
+  "updatedAt": "2026-07-05T06:13:14.570Z"
 }

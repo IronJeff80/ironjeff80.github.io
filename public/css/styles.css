@@ -797,7 +797,8 @@ details summary::-webkit-details-marker {
     border-left: 5px solid var(--accent-pink) !important;
     border-right: 5px solid var(--accent-pink) !important;
     padding: 25px; 
-    margin-top: 20px; 
+    margin-top: 20px;
+    margin-bottom: 3rem;
     text-align: center; /* You can override this to 'left' on specific pages if needed */
     border-radius: 12px; 
     backdrop-filter: blur(10px); 

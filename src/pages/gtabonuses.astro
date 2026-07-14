@@ -2,15 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="GTA Weekly Bonuses | 2 Smokin' Barrels"
-        description="Celebrate Independence Day with the biggest sale ever: get a free Bunker, major discounts, bonuses on Bunker Sell Missions, Triple Rewards on Stunt Races and more. Join the Fine Art Collector program to prepare for The Kortz Center Heist."
+<Layout title="GTA Weekly Bonuses & DLC Update | 2 Smokin' Barrels"
+        description="The Kortz Center Heist is here! Plus, a new month of GTA+ benefits featuring the Grotti Veleno GT, massive property discounts, and comprehensive economy changes to Heist payouts."
         image="https://2smokinbarrels.com/images/gta-bonuses-banner.jpg"
     >
     <main class="container">
        
         <header style="margin-bottom: 3rem;">
             <h1 class="page-title">GTA Weekly Report</h1>
-            <p class="date-range" style="text-align: center; color: var(--white-med); text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">July 1, 2026 — July 13, 2026</p>
+            <p class="date-range" style="text-align: center; color: var(--white-med); text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">July 14, 2026 — August 12, 2026</p>
             
         <!-- Modernized Highlight Box -->
         <div style="background: rgba(38, 30, 62, 0.4); 
@@ -22,104 +22,161 @@ import Layout from '../layouts/Layout.astro';
                     backdrop-filter: blur(10px); 
                     border: 1px solid rgba(255, 255, 255, 0.05);">
                 <p style="margin: 0; font-size: 1.1rem; color: var(--white-low);">
-                    Celebrate <span style="color: var(--accent-orange); font-weight: 700;">Independence Day</span> with the biggest sale ever! Claim a <span style="color: var(--accent-pink); font-weight: 700;">FREE Lago Zancudo Bunker</span>, earn <span style="color: var(--accent-pink); font-weight: 700;">Triple Rewards</span> on Stunt Races, and get massive discounts. Plus, join the Fine Art Collector program to prepare for The Kortz Center Heist.
+                    <span style="color: var(--accent-orange); font-weight: 700;">The Kortz Center Heist</span> is now live alongside a brand new month of <span style="color: var(--accent-pink); font-weight: 700;">GTA+ Benefits</span>! Claim your free Grotti Veleno GT, enjoy massive property discounts, and take advantage of the newly updated Heist economy payouts and first-completion weekly bonuses.
                 </p>
             </div>
         </header>
 
+        <!-- GTA+ BENEFITS GRID -->
         <div class="bonus-grid">
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Multipliers</h3>
-                <div class="bonus-item"><span class="multiplier">3X</span> <strong>GTA$ & RP</strong> on Stunt Race Series</div>
-                <div class="bonus-item"><span class="multiplier">2X</span> <strong>GTA$ & RP</strong> on Bunker Sell Missions</div>
-                <div class="bonus-item"><span class="multiplier">2X</span> <strong>GTA$ & RP</strong> on Ammu-Nation Contract Missions & Running Back (Remix)</div>
-                <div class="bonus-item"><span class="multiplier">2X</span> <strong>GTA$ & RP</strong> on Community Series</div>
-                <div class="bonus-item"><span class="multiplier">2X</span> <strong>GTA$, RP & Research Progress</strong> on Bunker Research Missions (Agent 14)</div>
-                <div class="bonus-item"><span class="multiplier">2X</span> <strong>Speed Boost</strong> on Bunker Research</div>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">GTA+ Free Vehicles & Clothing</h3>
+                <div class="bonus-item"><strong>Free Vehicle:</strong> Grotti Veleno GT with Attack livery</div>
+                <div class="bonus-item"><strong>Free Paints:</strong> Black Oil Spill Prismatic Chameleon Body & Wheel Paint</div>
+                <div class="bonus-item"><strong>Free Clothing:</strong> The Orange Manor Bomber Zipped Jacket</div>
+                <div class="bonus-item"><span class="multiplier">2X</span> <strong>GTA$ & RP</strong> on HSW Time Trials</div>
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Weekly Challenges</h3>
-                <div class="bonus-item"><strong>July 2-8:</strong> Complete three Bunker Research Missions to get the Blue Jock Cranley Jumpsuit and GTA$100,000</div>
-                <div class="bonus-item"><strong>July 9-13:</strong> Win two Races to get the Blue Jock Cranley Jumpsuit and GTA$100,000</div>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">GTA+ Discounts</h3>
+                <div class="bonus-item"><strong>GTA$2,000,000 OFF</strong> Mansion Purchases (Through August 5)</div>
+                <div class="bonus-item"><strong>GTA$1,000,000 OFF</strong> Art Studio Upgrade</div>
+                <div class="bonus-item"><strong>50% OFF</strong> all Conversions at Benny's Original Motor Works and Hao's Special Works</div>
+                <div class="bonus-item"><strong>50% OFF</strong> all Colored Headlights Upgrades</div>
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Fine Art Collector Program</h3>
-                <div class="bonus-item"><strong>Log In Reward:</strong> GTA$500,000 (within 72 hours) + Free Turreted Limo (Sedan) from Warstock</div>
-                <div class="bonus-item"><strong>Heist Reward:</strong> Complete any Heist for GTA$1,000,000 (within 72 hours) + NOOSE Outfit</div>
-                <div class="bonus-item"><strong>Mansion Owners:</strong> Log in before July 13 for a GTA$1,000,000 Art Studio upgrade discount, a free Annihilator Stealth, a Unique Mansion Sculpture, and a high-value painting in The Kortz Center Heist</div>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Vinewood Club Showroom (20% OFF)</h3>
+                <div class="bonus-item">Benefactor LM87 / Benefactor LRC GT</div>
+                <div class="bonus-item">Declasse Scramjet / Grotti Cartuccia GT</div>
+                <div class="bonus-item">Grotti Itali RSX (Monochrome livery) / Imponte Deluxo</div>
+                <div class="bonus-item">Ocelot E-Stride / Pfister Astrale (Side Stripes livery)</div>
+                <div class="bonus-item">Übermacht Revolter (Dolla Dolla livery)</div>
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Free Claims & Unlocks</h3>
-                <div class="bonus-item"><strong>Free Properties:</strong> Lago Zancudo Bunker & High-End Garages</div>
-                <div class="bonus-item"><strong>Log In:</strong> Lady Liberty Bucket Hat</div>
-                <div class="bonus-item"><strong>Business Battles:</strong> Guaranteed Independence Day items</div>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Vinewood Club Benefits</h3>
+                <div class="bonus-item"><strong>Showroom:</strong> Rotating selection of premium vehicles with an extra 20% discount</div>
+                <div class="bonus-item"><strong>Garage:</strong> Unique garage in Downtown Los Santos with 100 personal vehicle slots</div>
+                <div class="bonus-item"><strong>Hangar Storage:</strong> Five storage slots (no McKenzie Field Hangar purchase required)</div>
+                <div class="bonus-item"><strong>Workshop:</strong> Discounted mods with no rank requirements</div>
+                <div class="bonus-item"><strong>Vinewood Club App:</strong> Collect earnings, buy ammo, request vehicles, and claim/purchase Car Club vehicles</div>
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Salvage Yard Robberies</h3>
-                <div class="bonus-item"><strong>July 2-8:</strong> Itali RSX (Top) / Broadway (Standard) / Ellie (Low)</div>
-                <div class="bonus-item"><strong>July 9-13:</strong> Turismo Omaggio (Top) / Cypher (Standard) / Eudora (Low)</div>
-                <div class="bonus-item"><strong>FIB Priority File:</strong> The Project Breakaway File (July 2-8) / The Fine Art File (July 9-13)</div>
+                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Persistent Member Benefits</h3>
+                <div class="bonus-item"><strong>GTA$500,000</strong> deposited every month</div>
+                <div class="bonus-item"><strong>FREE</strong> Taxi services with shorter cooldowns & Vehicle Requests</div>
+                <div class="bonus-item"><strong>FREE</strong> access to all CEO/VIP Abilities</div>
+                <div class="bonus-item">Remote Access to manage business staff & Claim All Business Earnings</div>
+                <div class="bonus-item">Extra Lucky Wheel Spin Every Day</div>
+                <div class="bonus-item">Gun Van always blipped on the map with additional discounts</div>
+                <div class="bonus-item">15% extra bonus GTA$ for any Shark Card</div>
             </div>
              
             <div class="bonus-card">
-                 <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Discounts (70% OFF)</h3>
-                 <div class="bonus-item">Mobile Operations Center / Terrorbyte</div>
-                 <div class="bonus-item">B-11 Strikeforce / Luxor / Avenger</div>
-                 <div class="bonus-item">RM-10 Bombushka / RO-86 Alkonost</div>
+                 <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">GTA+ Games Library</h3>
+                 <div class="bonus-item">Grand Theft Auto V & Online (Current Gen)</div>
+                 <div class="bonus-item">GTA: The Trilogy - The Definitive Edition (Console/PC/Mobile)</div>
+                 <div class="bonus-item">Bully / Red Dead Redemption / L.A. Noire (Console/PC)</div>
+                 <div class="bonus-item">GTA: Liberty City Stories / Chinatown Wars (Mobile)</div>
+                 <div class="bonus-item"><em>20% discount to purchase listed games on linked platform</em></div>
             </div>
+        </div>
 
-            <div class="bonus-card">
-                 <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Discounts (60% OFF)</h3>
-                 <div class="bonus-item">Agencies (including Upgrades and Modifications)</div>
-                 <div class="bonus-item">Hangars (including Upgrades and Modifications)</div>
-                 <div class="bonus-item">Scramjet / Furia / Stinger TT / X80 Proto / Deluxo</div>
-                 <div class="bonus-item">Zeno / Tezeract / Emerus</div>
-            </div>
-
-            <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Discounts (50% OFF)</h3>
-                <div class="bonus-item">Krieger / Banshee GTS / Buffalo EVX / Buffalo STX / Half-Track</div>
-                <div class="bonus-item">Pyro / Rocket Voltic / Vigero ZX / Weaponized Tampa / LSCM Jester RR</div>
-                <div class="bonus-item">Titan 250 D / Baller ST-D / LSCM Cheetah Classic / Barrage / Ruiner 2000</div>
-                <div class="bonus-item">P-996 LAZER / Karin Calico GTF / F-160 Raiju / Hydra / Shinobi</div>
-                <div class="bonus-item">10F / Ignus / Oppressor / Toreador / Torero XO / Weaponized Ignus</div>
-                <div class="bonus-item">La Coureuse / Growler / TM-02 Khanjali / Niobe / Sentinel GTS</div>
-                <div class="bonus-item">V-65 Molotok / FMJ MK V / Vom Feuer Anti-Aircraft Trailer / Western Police Bike</div>
-            </div>
-
-            <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Discounts (40% OFF)</h3>
-                <div class="bonus-item">Bunkers (including Upgrades and Modifications)</div>
-                <div class="bonus-item">Independence Day Returning Content</div>
-            </div>
-
-            <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Gun Van Primary Discounts</h3>
-                <div class="bonus-item"><strong>FREE:</strong> Firework Launcher, Firework Ammo, & Musket</div>
-                <div class="bonus-item"><strong>40% OFF:</strong> Heavy Rifle</div>
-                <div class="bonus-item"><strong>30% OFF (GTA+ Members):</strong> Railgun</div>
-            </div>
-
-            <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Showrooms & Test Rides</h3>
-                <div class="bonus-item"><strong>Premium Deluxe Motorsport:</strong> Banshee GTS, Vigero ZX, X80 Proto, Torero XO & Niobe</div>
-                <div class="bonus-item"><strong>Luxury Autos:</strong> Sentinel GTS & FMJ MK V</div>
-                <div class="bonus-item"><strong>Podium Vehicle:</strong> Jugular</div>
-                <div class="bonus-item"><strong>Prize Ride:</strong> Viseris (Win in LS Car Meet Series for 2 days in a row)</div>
-                <div class="bonus-item"><strong>Test Track:</strong> LSCM Cheetah Classic, 10F & La Coureuse</div>
-                <div class="bonus-item"><strong>HSW Test Ride:</strong> Deveste Eight</div>
-            </div>
+        <!-- NEW DLC UPDATE SECTION -->
+        <div style="background: rgba(38, 30, 62, 0.4); padding: 40px; margin-top: 4rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: left;">
+            <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4); margin-bottom: 20px; text-align: center;">The Kortz Center Heist Update</h2>
             
-             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Premium Race & Trials</h3>
-                <div class="bonus-item"><strong>Premium Race:</strong> Muscle In</div>
-                <div class="bonus-item"><strong>Time Trials:</strong> Lake Vinewood Estate (July 2-8) / El Burro Heights (July 9-13)</div>
-                <div class="bonus-item"><strong>HSW Time Trials:</strong> North Chumash to Palomino Highlands (July 2-8) / East Vinewood to Vespucci Beach (July 9-13)</div>
-            </div>
+            <img src="/images/dlc2026-1.jpg" alt="GTA Online The Kortz Center Heist Update" style="width: 100%; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+
+            <h3 style="color: var(--accent-pink); font-size: 1.5rem; margin-bottom: 10px;">Kortz Center Heist Features</h3>
+            <ul style="color: var(--white-low); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; padding-left: 20px;">
+                <li>Steal valuable artwork and artifacts for Mr. Faber's clients with help from Raf and your Mansion AI.</li>
+                <li>The heist requires the <strong>Art Studio</strong>, a new Mansion expansion that serves as the planning hub.</li>
+                <li>Use the setup board to review the operation, invite players, and launch prep missions through Raf.</li>
+                <li>The heist takes place inside a Kortz Center exhibition filled with paintings, artifacts, and secondary targets.</li>
+                <li>During scouting, CCTV can be used to identify the primary target.</li>
+                <li>The first completion features a specific painting requested by Mr. Faber and an additional cutscene. After that, three primary-target paintings rotate each week.</li>
+                <li>Paintings can be sold or kept and displayed in one of four Mansion locations.</li>
+                <li>The heist includes multiple entry points, loadouts, getaway vehicles, optional preps, and equipment. Entry and escape plans can also be changed during the heist.</li>
+                <li>An artist in the Art Studio creates replicas to replace the stolen paintings.</li>
+                <li>Staying undetected and disabling the CCTV allows you to sell the painting for full value. If detected, you must eliminate witnesses and erase the CCTV footage.</li>
+                <li>There are no separate "stealth" and "loud" approaches. Detection changes how the heist plays out without ending it.</li>
+                <li>Includes an Elite Challenge and a Buyer's Request for specific secondary targets.</li>
+                <li><strong>The Kortz Center offers the highest potential rewards of all heists released so far.</strong></li>
+                <li>A special high-value payout is awarded the first time you sell one of the rotating paintings. You can keep the first three, then complete the heist again and sell the fourth target for the larger payout.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-pink); font-size: 1.5rem; margin-bottom: 10px;">Vehicles & Additions</h3>
+            <ul style="color: var(--white-low); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; padding-left: 20px;">
+                <li>Six new vehicles have been added.</li>
+                <li>The <strong>Grotti Veleno GT</strong> is an HSW-eligible supercar expected to be among the fastest in its class (Exclusive to GTA+ members during its first week).</li>
+                <li>Missile Lock-On Jammers are now available for more vehicles.</li>
+                <li>More removed vehicles are returning to Southern San Andreas Super Autos and Legendary Motorsport.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-pink); font-size: 1.5rem; margin-bottom: 10px;">Quality-of-Life Changes</h3>
+            <ul style="color: var(--white-low); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; padding-left: 20px;">
+                <li>Several heists and missions now award a much higher payout for their first completion each week.</li>
+                <li>Eligible activities include: The Doomsday Heist, The Diamond Casino Heist, The Data Leaks, The Cluckin' Bell Farm Raid, KnoWay Out, Oscar Guzman Flies Again, The Fleeca Job, The Humane Labs Raid, Prison Break, Series A Funding, and The Pacific Standard Job.</li>
+                <li>The bonus applies separately to each activity. After the first weekly completion, payouts return to their standard amount. (Rotation resets every Thursday).</li>
+                <li>Designed to encourage players to revisit older content, play more activities, and stay in co-op sessions until completion.</li>
+            </ul>
+
+            <h3 style="color: var(--accent-pink); font-size: 1.5rem; margin-bottom: 10px;">Mission Creator Update</h3>
+            <ul style="color: var(--white-low); font-size: 1.1rem; line-height: 1.6; padding-left: 20px;">
+                <li>A new example mission demonstrates the latest Creator features.</li>
+                <li><strong>Warp points</strong> can move players between areas and simulate elevators, vehicle transitions, and building entrances.</li>
+                <li>A new disguise system allows outfit changes and can prevent NPCs from recognizing players.</li>
+                <li>CCTV stealth mechanics and camera hacking are now available.</li>
+                <li>Zombies have been added with dedicated behavior.</li>
+                <li>New actors include Santa, elves, Krampus, the Yeti, Sasquatch, and aliens.</li>
+                <li>Missions can now include up to five cutscenes instead of three, and players can be assigned specific tasks during cutscenes.</li>
+                <li>Props can now slide, move, and rotate. New props and customization options have been added, including a UFO prop.</li>
+                <li>More vehicles are available in the Creator alongside several smaller Creator improvements.</li>
+            </ul>
+        </div>
+
+        <!-- ECONOMY CHANGES SECTION -->
+        <div style="background: rgba(38, 30, 62, 0.4); padding: 40px; margin-top: 2rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: left;">
+            <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4); margin-bottom: 20px; text-align: center;">Economy & Payout Changes</h2>
+            
+            <p style="color: var(--white-med); font-size: 1.1rem; text-align: center; margin-bottom: 20px;">
+                Rockstar has updated Heist and Mission payouts. While base payouts have been lowered, a new weekly completion bonus increases the reward for hosts and associates completing any listed finale for the first time that week.
+            </p>
+
+            <img src="/images/economy.jpg" alt="GTA Online Economy Changes Breakdown" style="width: 100%; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+
+            <h3 style="color: var(--accent-pink); font-size: 1.5rem; margin-bottom: 10px;">Setup Mission Rewards Increased</h3>
+            <ul style="color: var(--white-low); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; padding-left: 20px;">
+                <li><strong>3.0x:</strong> Fleeca Job</li>
+                <li><strong>1.5x:</strong> Prison Break</li>
+                <li><strong>1.3x:</strong> Series A Funding</li>
+                <li><strong>1.25x:</strong> Doomsday Heist (Acts I, II & III)</li>
+                <li><strong>1.2x:</strong> Humane Labs Raid & The Pacific Standard</li>
+            </ul>
+
+            <h3 style="color: var(--accent-pink); font-size: 1.5rem; margin-bottom: 10px;">The Cayo Perico Heist Secondary Loot Values (10% Reduction)</h3>
+            <ul style="color: var(--white-low); font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; padding-left: 20px;">
+                <li><strong>Cash:</strong> GTA$ 78,750–83,250 &rarr; GTA$ 70,875–74,925</li>
+                <li><strong>Cocaine:</strong> GTA$ 198,000–202,500 &rarr; GTA$ 178,200–182,250</li>
+                <li><strong>Weed:</strong> GTA$ 130,500–135,000 &rarr; GTA$ 117,450–121,500</li>
+                <li><strong>Painting:</strong> GTA$ 157,500–180,000 &rarr; GTA$ 141,750–162,000</li>
+                <li><strong>Gold:</strong> GTA$ 328,333–333,333 &rarr; GTA$ 295,500–300,000</li>
+                <li><strong>Minimum Safe Cash:</strong> GTA$ 20,000 &rarr; GTA$ 18,000</li>
+            </ul>
+
+            <h3 style="color: var(--accent-pink); font-size: 1.5rem; margin-bottom: 10px;">Cayo Perico Target Appearance Rates</h3>
+            <p style="color: var(--white-med); font-size: 1.1rem; margin-bottom: 10px;">Primary and Secondary Target appearance rates for repeated completions have been updated to refresh in a <strong>week</strong> time instead of 3 days.</p>
+            <ul style="color: var(--white-low); font-size: 1.1rem; line-height: 1.6; padding-left: 20px;">
+                <li><strong>Sinsimito Tequila:</strong> 60% &rarr; 80%</li>
+                <li><strong>Ruby Necklace:</strong> 15% &rarr; 10%</li>
+                <li><strong>Bearer Bonds:</strong> 15% &rarr; 8%</li>
+                <li><strong>Pink Diamond:</strong> 10% &rarr; 2%</li>
+                <li><strong>Secondary Loot (Cash):</strong> 40% &rarr; 20%</li>
+                <li><strong>Secondary Loot (Cocaine):</strong> 30% &rarr; 20%</li>
+            </ul>
         </div>
         
         <div style="margin-top: 4rem; text-align: center;">

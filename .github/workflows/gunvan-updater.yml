@@ -1,9 +1,9 @@
 name: Daily Gun Van Scraper
 
 on:
-  # Runs automatically at 02:02 UTC every day (2 minutes after daily reset)
+  # Runs automatically at 03:02 UTC every day (1 hour and 2 minutes after daily reset)
   schedule:
-    - cron: '2 2 * * *'
+    - cron: '2 3 * * *'
   # Allows you to trigger it manually from the Actions tab!
   workflow_dispatch:
 

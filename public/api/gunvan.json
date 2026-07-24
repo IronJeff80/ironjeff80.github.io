@@ -1,19 +1,19 @@
 {
-  "id": "19",
-  "locationName": "Popular Street, La Mesa",
-  "imagePath": "/images/gunvan/loc_19.jpg",
-  "mapPath": "/images/gunvan/map_19.jpg",
+  "id": "7",
+  "locationName": "Paleto Forest Lumber Yard",
+  "imagePath": "/images/gunvan/loc_7.jpg",
+  "mapPath": "/images/gunvan/map_7.jpg",
   "inventory": [
-    "Tactical SMG: -10 %",
-    "Railgun: -10 %",
-    "Compact EMP Launcher: -30 %",
-    "Gusenberg Sweeper: -10 %",
-    "Vintage Pistol: -10 %",
-    "Pool Cue: -10 %",
+    "Compact EMP Launcher: -10 %",
+    "Combat Shotgun: -30 %",
+    "Military Rifle: -10 %",
+    "Compact Grenade Launcher: -10 %",
+    "Flare Gun: -10 %",
+    "Knuckle Duster: -10 %",
+    "Proximity Mine: -10 %",
     "Pipe Bomb: -10 %",
-    "Tear Gas: -10 %",
-    "Grenade: -10 %",
+    "Sticky Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-07-23T05:58:20.315Z"
+  "updatedAt": "2026-07-24T05:53:17.920Z"
 }

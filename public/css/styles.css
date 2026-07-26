@@ -34,6 +34,10 @@
     
     /* Card Background (Glass Base) */
     --card-bg: rgba(38, 30, 62, 0.65);
+
+    /*Integration Color Marks */
+    --accent-red: #8b0000;
+    --accent-green: #00ff00;
     
     /* GTA 6 Accents */
     --accent-pink: #ea48b2; /* Primary Neon */

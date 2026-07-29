@@ -1,8 +1,8 @@
 {
-  "id": "27",
-  "locationName": "Hookies, North Chumash",
-  "imagePath": "/images/gunvan/loc_27.jpg",
-  "mapPath": "/images/gunvan/map_27.jpg",
+  "id": "23",
+  "locationName": "Parking garage south of Oriental Theater, Downtown Vinewood",
+  "imagePath": "/images/gunvan/loc_23.jpg",
+  "mapPath": "/images/gunvan/map_23.jpg",
   "inventory": [
     "Compact EMP Launcher: -10 %",
     "Combat Shotgun: -30 %",
@@ -15,5 +15,5 @@
     "Sticky Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-07-28T05:49:58.574Z"
+  "updatedAt": "2026-07-29T05:55:55.715Z"
 }

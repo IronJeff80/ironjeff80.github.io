@@ -1,19 +1,19 @@
 {
-  "id": "11",
-  "locationName": "Thomson Scrapyard",
-  "imagePath": "/images/gunvan/loc_11.jpg",
-  "mapPath": "/images/gunvan/map_11.jpg",
+  "id": "25",
+  "locationName": "Caesars Auto Parking, Little Seoul",
+  "imagePath": "/images/gunvan/loc_25.jpg",
+  "mapPath": "/images/gunvan/map_25.jpg",
   "inventory": [
-    "Compact EMP Launcher: -10 %",
-    "Combat Shotgun: -30 %",
-    "Military Rifle: -10 %",
+    "Tactical SMG: -10 %",
+    "Railgun: -10 %",
+    "Service Carbine: -40 %",
     "Compact Grenade Launcher: -10 %",
-    "Flare Gun: -10 %",
-    "Knuckle Duster: -10 %",
-    "Proximity Mine: -10 %",
-    "Pipe Bomb: -10 %",
+    "Combat Pistol: -10 %",
+    "Machete: -10 %",
+    "Grenade: -10 %",
     "Sticky Bomb: -10 %",
+    "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-07-30T05:44:50.363Z"
+  "updatedAt": "2026-07-31T06:17:02.958Z"
 }

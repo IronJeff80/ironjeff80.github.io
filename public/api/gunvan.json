@@ -1,19 +1,19 @@
 {
-  "id": "3",
-  "locationName": "Merle Abrahams' house, Sandy Shores",
-  "imagePath": "/images/gunvan/loc_3.jpg",
-  "mapPath": "/images/gunvan/map_3.jpg",
+  "id": "21",
+  "locationName": "Magellan Ave / Conquistador St, Vespucci Beach",
+  "imagePath": "/images/gunvan/loc_21.jpg",
+  "mapPath": "/images/gunvan/map_21.jpg",
   "inventory": [
-    "Tactical SMG: -10 %",
-    "Railgun: -10 %",
-    "Service Carbine: -40 %",
-    "Compact Grenade Launcher: -10 %",
-    "Combat Pistol: -10 %",
-    "Machete: -10 %",
+    "Service Carbine: -10 %",
+    "Heavy Rifle: -50 %",
+    "Combat Shotgun: -10 %",
+    "Compact Rifle: -10 %",
+    "Heavy Pistol: -10 %",
+    "Battle Axe: -10 %",
     "Grenade: -10 %",
+    "Tear Gas: -10 %",
     "Sticky Bomb: -10 %",
-    "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-08-06T05:52:48.761Z"
+  "updatedAt": "2026-08-07T04:57:13.884Z"
 }

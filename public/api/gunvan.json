@@ -1,8 +1,8 @@
 {
-  "id": "27",
-  "locationName": "Hookies, North Chumash",
-  "imagePath": "/images/gunvan/loc_27.jpg",
-  "mapPath": "/images/gunvan/map_27.jpg",
+  "id": "15",
+  "locationName": "Land Act Reservoir (north end)",
+  "imagePath": "/images/gunvan/loc_15.jpg",
+  "mapPath": "/images/gunvan/map_15.jpg",
   "inventory": [
     "Battle Rifle: -50 %",
     "The Shocker: -10 %",
@@ -16,5 +16,5 @@
     "Sticky Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-08-16T05:44:22.971Z"
+  "updatedAt": "2026-08-17T03:52:27.790Z"
 }

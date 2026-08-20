@@ -1,8 +1,8 @@
 {
-  "id": "21",
-  "locationName": "Magellan Ave / Conquistador St, Vespucci Beach",
-  "imagePath": "/images/gunvan/loc_21.jpg",
-  "mapPath": "/images/gunvan/map_21.jpg",
+  "id": "17",
+  "locationName": "Terminal (southwest corner)",
+  "imagePath": "/images/gunvan/loc_17.jpg",
+  "mapPath": "/images/gunvan/map_17.jpg",
   "inventory": [
     "Battle Rifle: -50 %",
     "The Shocker: -10 %",
@@ -16,5 +16,5 @@
     "Sticky Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-08-19T03:49:28.839Z"
+  "updatedAt": "2026-08-20T03:49:46.153Z"
 }

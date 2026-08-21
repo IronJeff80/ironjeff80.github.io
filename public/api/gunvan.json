@@ -1,20 +1,21 @@
 {
-  "id": "17",
-  "locationName": "Terminal (southwest corner)",
-  "imagePath": "/images/gunvan/loc_17.jpg",
-  "mapPath": "/images/gunvan/map_17.jpg",
+  "id": "16",
+  "locationName": "Fridgit, Forced Labor Place, La Mesa",
+  "imagePath": "/images/gunvan/loc_16.jpg",
+  "mapPath": "/images/gunvan/map_16.jpg",
   "inventory": [
-    "Battle Rifle: -50 %",
-    "The Shocker: -10 %",
-    "Precision Rifle: -10 %",
+    "Unholy Hellbringer: -40 %",
     "Railgun: -10 %",
-    "Widowmaker: -10 %",
-    "Unholy Hellbringer: FREE",
+    "Combat Shotgun: -10 %",
+    "Heavy Sniper: -10 %",
+    "Pump Shotgun: -10 %",
+    "Knife: FREE",
+    "The Shocker: -10 %",
     "Up-n-Atomizer: -10 %",
-    "Tear Gas: -10 %",
     "Molotov: -10 %",
+    "Pipe Bomb: -10 %",
     "Sticky Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-08-20T03:49:46.153Z"
+  "updatedAt": "2026-08-21T03:52:39.292Z"
 }

@@ -1,8 +1,8 @@
 {
-  "id": "16",
-  "locationName": "Fridgit, Forced Labor Place, La Mesa",
-  "imagePath": "/images/gunvan/loc_16.jpg",
-  "mapPath": "/images/gunvan/map_16.jpg",
+  "id": "23",
+  "locationName": "Parking garage south of Oriental Theater, Downtown Vinewood",
+  "imagePath": "/images/gunvan/loc_23.jpg",
+  "mapPath": "/images/gunvan/map_23.jpg",
   "inventory": [
     "Unholy Hellbringer: -40 %",
     "Railgun: -10 %",
@@ -17,5 +17,5 @@
     "Sticky Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-08-21T03:52:39.292Z"
+  "updatedAt": "2026-08-22T03:44:43.818Z"
 }

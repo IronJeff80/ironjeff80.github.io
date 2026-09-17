@@ -1,19 +1,19 @@
 {
-  "id": "7",
-  "locationName": "Paleto Forest Lumber Yard",
-  "imagePath": "/images/gunvan/loc_7.jpg",
-  "mapPath": "/images/gunvan/map_7.jpg",
+  "id": "3",
+  "locationName": "Merle Abrahams' house, Sandy Shores",
+  "imagePath": "/images/gunvan/loc_3.jpg",
+  "mapPath": "/images/gunvan/map_3.jpg",
   "inventory": [
-    "Railgun: -10 %",
-    "Tactical SMG: -40 %",
+    "Tactical SMG: -10 %",
+    "Stun Gun: -40 %",
     "Compact EMP Launcher: -10 %",
-    "Double Barrel Shotgun: -10 %",
-    "Assault SMG: -10 %",
+    "Heavy Sniper: -10 %",
+    "Pump Shotgun: -10 %",
     "Pipe Wrench: -10 %",
-    "Pipe Bomb: -10 %",
-    "Proximity Mine: -10 %",
+    "Tear Gas: -10 %",
     "Sticky Bomb: -10 %",
+    "Molotov: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-09-16T09:47:05.109Z"
+  "updatedAt": "2026-09-17T09:54:50.847Z"
 }

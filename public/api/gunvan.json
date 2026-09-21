@@ -1,8 +1,8 @@
 {
-  "id": "25",
-  "locationName": "Caesars Auto Parking, Little Seoul",
-  "imagePath": "/images/gunvan/loc_25.jpg",
-  "mapPath": "/images/gunvan/map_25.jpg",
+  "id": "23",
+  "locationName": "Parking garage south of Oriental Theater, Downtown Vinewood",
+  "imagePath": "/images/gunvan/loc_23.jpg",
+  "mapPath": "/images/gunvan/map_23.jpg",
   "inventory": [
     "Tactical SMG: -10 %",
     "Stun Gun: -40 %",
@@ -15,5 +15,5 @@
     "Molotov: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-09-20T09:40:30.679Z"
+  "updatedAt": "2026-09-21T10:33:45.250Z"
 }

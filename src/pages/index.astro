@@ -106,59 +106,72 @@ import Layout from '../layouts/Layout.astro';
 
                 <!-- NEW: GTA VI Reveal Overlay -->
                 <div class="card">
-                    <a href="https://2smokinbarrels.com/gta6-overlay/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                    <a href="https://2smokinbarrels.com/gta6-overlay/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
                         <span class="badge">Overlay</span>
                         <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">GTA VI Reveal Overlay</h3>
-                        <div class="card-footer" style="margin-top: 0; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">CREATE <i class="fas fa-external-link-alt"></i></div>
+                        <div style="flex-grow: 1;"></div>
+                        <div class="card-footer" style="margin-top: 15px;">
+                            <span class="card-link">CREATE <i class="fas fa-external-link-alt"></i></span>
+                        </div>
                     </a>
                 </div>
 
                 <!-- OBS Duel Game -->
                 <div class="card">
-                    <a href="https://github.com/IronJeff80/OBS-Duel-Game" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                    <a href="https://github.com/IronJeff80/OBS-Duel-Game" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
                         <span class="badge">Mini-Game</span>
                         <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">OBS Duel Game</h3>
-                        <div class="card-footer" style="margin-top: 0; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">Download Files <i class="fas fa-external-link-alt"></i></div>
+                        <div style="flex-grow: 1;"></div>
+                        <div class="card-footer" style="margin-top: 15px;">
+                            <span class="card-link">Download Files <i class="fas fa-external-link-alt"></i></span>
+                        </div>
                     </a>
                 </div>
 
-                <!-- GTA OBS Widget (Updated with flex layout to prevent nested <a> tags) -->
+                <!-- GTA OBS Widget -->
                 <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
                         <span class="badge">Overlay</span>
                         <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">GTA OBS Widget</h3>
                     </div>
-                    <div class="card-footer" style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">
-                        <a href="https://2smokinbarrels.com/gtawidget/setup.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--grey-med);">
+                    <div style="flex-grow: 1;"></div>
+                    <div class="card-footer" style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <a href="https://2smokinbarrels.com/gtawidget/setup.html" target="_blank" rel="noopener noreferrer" class="card-link">
                             Configure <i class="fas fa-external-link-alt"></i>
                         </a>
-                        <a href="https://github.com/IronJeff80/gtawidget" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--grey-med);">
+                        <a href="https://github.com/IronJeff80/gtawidget" target="_blank" rel="noopener noreferrer" class="card-link">
                             Documentation <i class="fas fa-book"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- RDO Events OBS Overlay -->
-                <div class="card">
-                    <a href="https://github.com/IronJeff80/reddeadoverlay" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <a href="https://github.com/IronJeff80/reddeadoverlay" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                         <span class="badge">Overlay</span>
                         <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">RDO Events OBS Overlay</h3>
-                        <div class="card-footer" style="margin-top: 0; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">Configure <i class="fas fa-external-link-alt"></i></div>
+                        <div style="flex-grow: 1;"></div>
+                        <div class="card-footer" style="margin-top: 15px;">
+                            <span class="card-link">Configure <i class="fas fa-external-link-alt"></i></span>
+                        </div>
                     </a>
-                    <div class="copy-link-container">
+                    <div class="copy-link-container" style="margin-top: 15px;">
                         <input type="text" class="copy-input" value="https://2smokinbarrels.com/reddeadoverlay/" readonly id="rdo-link">
                         <button class="copy-btn" onclick="copyLink('rdo-link')"><i class="fas fa-copy"></i></button>
                     </div>
                 </div>
 
                 <!-- RDO Condor Egg Map 
-                <div class="card">
-                    <a href="/condoreggmap/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <div class="card" style="display: flex; flex-direction: column;">
+                    <a href="/condoreggmap/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
                         <span class="badge">Tool</span>
                         <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">RDO Condor Egg Map</h3>
-                        <div class="card-footer" style="margin-top: 0; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">Launch Map <i class="fas fa-external-link-alt"></i></div>
+                        <div style="flex-grow: 1;"></div>
+                        <div class="card-footer" style="margin-top: 15px;">
+                            <span class="card-link">Launch Map <i class="fas fa-external-link-alt"></i></span>
+                        </div>
                     </a>
-                    <div class="copy-link-container">
+                    <div class="copy-link-container" style="margin-top: 15px;">
                         <input type="text" class="copy-input" value="https://2smokinbarrels.com/condoreggmap/" readonly id="map-link">
                         <button class="copy-btn" onclick="copyLink('map-link')"><i class="fas fa-copy"></i></button>
                     </div>

@@ -542,6 +542,41 @@ details summary::-webkit-details-marker {
     background-image: linear-gradient(135deg, rgba(58, 45, 90, 0.65) 0%, rgba(28, 22, 50, 0.75) 100%), url('/images/card-texture.webp');
 }
 
+/* Card Action Links (Ghost Buttons) */
+.card-link {
+    color: var(--white-med);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Make sure the icon scales slightly on hover */
+.card-link i {
+    transition: transform 0.2s ease;
+}
+
+.card-link:hover {
+    color: var(--accent-pink);
+    border-color: var(--accent-pink);
+    background: rgba(234, 72, 178, 0.1);
+    box-shadow: 0 0 10px rgba(234, 72, 178, 0.2);
+    transform: translateY(-2px);
+}
+
+.card-link:hover i {
+    transform: scale(1.1) translateX(2px);
+}
+
 .badge { background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange)); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 1rem; align-self: flex-start; font-weight: 600; letter-spacing: 1px; }
 .card h3 { font-size: 2rem; margin: 0.5rem 0; color: var(--accent-pink); font-family: 'Mr Dafoe', cursive; text-transform: none; text-shadow: 0 0 8px rgba(234, 72, 178, 0.4); }
 

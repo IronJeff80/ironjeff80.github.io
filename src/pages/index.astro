@@ -122,15 +122,17 @@ import Layout from '../layouts/Layout.astro';
                     </a>
                 </div>
 
-                <!-- GTA OBS Widget -->
-                <div class="card">
-                    <a href="https://2smokinbarrels.com/gtawidget/setup.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+                <!-- GTA OBS Widget (Updated with flex layout to prevent nested <a> tags) -->
+                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
                         <span class="badge">Overlay</span>
                         <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">GTA OBS Widget</h3>
-                        <div class="card-footer" style="margin-top: 0; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">Configure <i class="fas fa-external-link-alt"></i></div>
-                    </a>
-                    <div style="margin-top: 15px; text-align: center;">
-                        <a href="https://github.com/IronJeff80/gtawidget" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--grey-med); font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">
+                    </div>
+                    <div class="card-footer" style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; text-transform: uppercase; font-size: 0.8rem;">
+                        <a href="https://2smokinbarrels.com/gtawidget/setup.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--grey-med);">
+                            Configure <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/IronJeff80/gtawidget" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--grey-med);">
                             Documentation <i class="fas fa-book"></i>
                         </a>
                     </div>

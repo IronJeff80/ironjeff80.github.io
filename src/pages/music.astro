@@ -7,228 +7,266 @@ const albums = [
         title: "808 Boulevard", 
         genre: "Miami Bass / Electro Funk", 
         description: "High-energy early 90s Miami bass, 808 subs, and B-boy breakbeats.", 
+        folderUrl: "https://drive.google.com/drive/folders/1X0uK6-f9fnHT4oAUuh3xgXAc6WOnzdIf", 
         tracks: ["Booty Shake Brigade", "Break the Wax", "Breakout", "Concrete Coalition", "Cyber B-Boy", "Decibel Syndicate", "Double-Decker", "Introgator", "Puma's on Pavemenr", "Session 93", "Sidewalk Assassins", "Sub-Zero Sessions", "Subwoofer Soldier", "Trunk Tremor", "Underground Frequency", "Vibration Theory"] 
     },
     { 
         title: "After Hours", 
         genre: "Lo-Fi / Chill", 
         description: "Mellow vibes and laid-back rhythms for late-night cityscapes.", 
+        folderUrl: "https://drive.google.com/drive/folders/13DMLJuNA9L2i0fa0O1eMJIug1RZQnn6R", 
         tracks: ["Chrome Reflections", "Cityscape Drift", "Hidden Avenues", "Liquid Asphalt", "Midnight Rendezvous", "Moonlight Chase", "Moonlit Mirage", "Neon Boulevard", "Silent Corners", "Slow Fade", "Streetlight Sonata", "Subtle Signals", "Under the Overpass", "Velvet Streets"] 
     },
     { 
         title: "An Outlaw's World", 
         genre: "Western / Cinematic", 
         description: "Epic and moody orchestrations built for the wild west.", 
+        folderUrl: "https://drive.google.com/drive/folders/1mEbtve39NczDCuaE_K8Z4LoF46VNEsYv", 
         tracks: ["A Horse Named Mercy", "Alone in Amber Light", "Ash Creek Morning", "Ashes of Blackwater", "From Cactus to Snowfall", "Ghosts in New Austin (Extended Cut)", "Ghosts in New Austin", "Hearts Buried in the Sand", "Hollow Bones and Hollow Hills", "Lanterns on the Ridge", "Last Ride to Fort Mercer", "One Match, One Fire, One Night", "Red Sky Over Armadillo", "Riding Past Sundown", "Smoke Over Tumbleweed", "Sparrow on the Saddlehorn", "The Quiet Between Storms", "Tracks Through the Sagebrush", "When the Prairie Breathes", "Where Coyotes Sing", "Whiskey in the Saddlebag", "Whistle Through the Mesas"] 
     },
     { 
         title: "Blackout Protocol", 
         genre: "Cyberpunk / Industrial", 
         description: "Heavy, dark, and systemic electronic ruin.", 
+        folderUrl: "https://drive.google.com/drive/folders/1GsUiJ2FuBNCvLzoiaVfh9FFA_pOQYkg6", 
         tracks: ["Apex Predator", "Architects of Ruin", "Distant Sirens", "Failsafe Breach", "Final Override", "Ghost Circuit", "Iron Pulse", "Kinetic Strike", "Molten Lead", "Negative Space", "Oxygen Debt", "Pre-Ignition", "Seismic Shift", "Signal Decay", "Static Overload", "Systemic Collapse", "The Grid Goes Cold", "The Quiet Before", "The Titan’s Wake", "Total Lockdown"] 
     },
     { 
         title: "Careless Desires", 
         genre: "Urban / Action", 
         description: "Tense, street-level beats for combat and confrontation.", 
+        folderUrl: "https://drive.google.com/drive/folders/1UOgX2csQRcNX8hMhek1pHCNRLT7q2EJY", 
         tracks: ["Adrenaline and Neon", "Against the Clock", "Breaking the Rules", "Chasing the Danger", "Concrete Thunder", "Echoes in the Streetlight", "Edge of Chaos", "Edge of the Night", "Fast Lane Shadows", "Fast Track Fury", "High Voltage Nights", "Lightning Steps", "Midnight Clash", "Midnight Surge", "Neon Skirmish", "No Escape Tonight", "No Turning Back", "Pulse of the Alley", "Rivals in Motion", "Run the Streets Tonight", "Runaway Tension", "Shadow Chase", "Shadow Lightning", "Silent Confrontation", "Streets on Fire", "The Last Stand", "The Silent Fight", "The Streets Won’t Wait", "Urban Blitz", "Urban Frenzy", "Urban Pursuit"] 
     },
     { 
         title: "Crime After Curfew", 
         genre: "Hip-Hop / Mystery", 
         description: "Deep bass and investigative beats for the underground.", 
+        folderUrl: "https://drive.google.com/drive/folders/1XFETuUxB0l9_anVHX5AwYiL4FsFeWX_s", 
         tracks: ["Bassline Interrogation", "Blue Lights in the Rearview", "Brass in the Fog", "Concrete Breathes at Night", "Curfew Was a Suggestion", "Echoes Between Sirens", "Gunmetal Reverb", "Halftime Felony", "License Plate Memory", "Low End Conspiracy", "No Witnesses, Just Bass", "Red Tape & Yellow Lines", "Static on the Police Band", "Stop-and-Frisk", "Streetlight Silence", "Subwoofer Alibi"] 
     },
     { 
         title: "Cruisin' USA", 
         genre: "Synthwave / Boom-Bap / Blues", 
         description: "Sun-drenched coastal cruising and late-night highway road trip vibes.", 
+        folderUrl: "https://drive.google.com/drive/folders/1TWkeUMsu3XCQBEU33xJFqYVeE0B5eM3c", 
         tracks: ["Blacktop Phantom", "Blacktop Serenade", "Cahuenga Pass at Dusk", "Exit Zero", "Fuel & Smoke", "Headlights Through the Mist", "High Gear Heart", "Horizon Chaser", "Ignition & Open Sky", "Interstate Ghost", "Midnight Detour", "Neon Oasis in the Dust", "Night Shift Navigator", "Overpass Breeze", "Pacific Coast Low-Glide", "Pacific Crest Rhythm", "Passing Lane Hustle", "Redline Rhythm", "The Infinite Mile", "Tire Smoke & Amber Sky", "Two A.M. Flyover", "Venice Palm Lines"] 
     },
     { 
         title: "Desert Wobble", 
         genre: "Western Fusion / Electronic", 
         description: "A unique blend of wild west instrumentation and electronic beats.", 
+        folderUrl: "https://drive.google.com/drive/folders/18l3Vj_5ZuRzce7WJMW-l0TnpBKTrsipV", 
         tracks: ["Coyote Stare", "Desert Wobble", "Fade to Dust", "Gold Fever Blues", "Gunpowder Sunrise", "High Noon Hustle", "Moonshine Mirage", "Outlaws in Stereo", "Rattlesnake Rhythm", "Saddlebag Secrets", "Six-String Ambush", "Stagecoach Breakdown", "The Bounty Shuffle", "The Posse’s Shadow"] 
     },
     { 
         title: "Digital Borough", 
         genre: "Trap / Hip-Hop / R&B", 
         description: "Hypnotic, dark futuristic warehouse trap infused with gritty East Coast soul.", 
+        folderUrl: "https://drive.google.com/drive/folders/1rxxdnds1HrkQh4DHItIHpbTm5Dxx9ukB", 
         tracks: ["808 Confessions", "Bass in the Alley", "Bodega Singles", "Borough Genesis", "Brick & Timberlands", "Curb Appeal", "Digital Borough Protocol", "DUMBO Skyline", "East River Drift", "Echoes Down Fulton", "Last Call at the Roll-Up Gate", "Loading Dock Jam", "Midnight at the Warehouse", "Neon Underglow", "Puddle Reflections", "Static on the 2 Train", "Strobe Lights", "Subwoofer Smoke", "Sunrise Over the Bridge", "Temptation in the Terminal", "The City Never Slept", "Track Cypher", "Transfer at Flatbush", "Velvet on Atlantic"] 
     },
     { 
         title: "Digital Heartbeat", 
         genre: "Vocaloid J-Pop", 
         description: "Upbeat, synthetic, and melodic J-Pop inspired tracks.", 
+        folderUrl: "https://drive.google.com/drive/folders/10I9UiToXZCvAq-RzkF5C5A4Ndb7rUAdw", 
         tracks: ["Aqueous Data", "Bio-Mechanical Bloom", "Bit-Crushed Euphoria", "Carbon Loop", "Chromium High", "Diffused Light", "Echo Location", "Frictionless", "Haptic Feedback", "Kinetic Syntax", "Neural Surge", "Shatter-Point", "Silk & Silicon", "Soft Reset", "Submerged Frequency", "Syncopated Pulse", "Systemic Flow", "Tactile Memory", "Velvet Latency", "Vivid Idle"] 
     },
     { 
         title: "Dusty Trails", 
         genre: "Acoustic / Western", 
         description: "Acoustic ballads and atmospheric tracks for the lonesome traveler.", 
+        folderUrl: "https://drive.google.com/drive/folders/1Ps2R5t-YCrYJ-pvklfmEOhZNlsrzZ3Tk", 
         tracks: ["Above the Dakota", "Ashes in the Saddle", "Bandanas & Bullet Wounds", "Blood on the Bannister", "Bone-Dry Ballad", "Bury Me in Colter", "Camped Below Cumberland", "Canyon of Smoke", "Cold Creek Stand", "Down to the Dakota River", "Dust and Defiance", "Echoes in Gaptooth Breach", "Hollow Spurs", "Last Fire Burnin’", "Lost Riders Union", "Moonrise Over Manzanita", "Rain Down in Rhodes", "Rebels of the Rock", "Red Sky, No Mercy", "Saddle’s Got No Home", "Smoke Signals & Gunpowder", "Storm Comes Slow", "Whiskey Before Judgment"] 
     },
     { 
         title: "Echoes of Niflheim", 
         genre: "Nordic Cinematic Fusion", 
         description: "Dark, aggressive, and mystic ritual music blended with cinematic percussion.", 
+        folderUrl: "https://drive.google.com/drive/folders/1HSo9iGDaVODoMRbbz1FBnfeGBre5WSBt", 
         tracks: ["Awakening of Jormungandr", "Bones Beneath the Ice", "Cursed Silver", "Fenrir Unleashed", "Fimbulwinter Slum", "Gallows Tree", "Gungnir Strikes", "Hymn of the Berserkir", "Kall of the Valkyrie", "Obsidian Cairn", "Siege at Midnight", "The Weaver’s Thread", "Visions of the Void"] 
     },
     { 
         title: "Echoes of the Hollow", 
         genre: "Dark Cinematic / Horror", 
         description: "Eerie and haunting soundscapes from beyond the veil.", 
+        folderUrl: "https://drive.google.com/drive/folders/1cAnoFJyTP1X42HcbREWfaholDFsdlW3x", 
         tracks: ["Beneath the Old Church", "Candles and Ashes", "Cathedral of Shadows", "Crows of the Gallows Hill", "Dancing with Phantoms", "Eternal October", "Grave Waltz", "Haunted by Dawn", "Midnight’s Pulse", "Nocturne for the Damned", "Ritual Under the Blood Moon", "The Bells of Evernight", "The Hollow Awakens", "The Lantern Never Dies", "The Mirror’s Secret", "The Silence After the Storm", "The Witch’s Breath", "Through the Iron Gate", "Voices in the Mausoleum", "Whispers Beneath the Fog"] 
     },
     { 
         title: "Escape the Horizon", 
         genre: "Sci-Fi / Electronic", 
         description: "Expansive, space-faring synth arrangements.", 
+        folderUrl: "https://drive.google.com/drive/folders/1WBsYrEnWiMBWx31Pp1G3Okq3V7paBLjC", 
         tracks: ["Aether Run", "Celestial Drift", "Chromatic Voyage", "Echoes of Infinity", "Electro Mirage", "Galactic Reverie", "Harmonic Flight", "Horizons Unbound", "Infinite Echoes", "Luminous Path", "Neon Odyssey", "Prism Cascade", "Pulse of Tomorrow", "Pulsefire Anthem", "Radiant Horizon", "Solar Tide", "Starlight Drive", "Starlight", "Synthwave Ascend", "Velocity of Light"] 
     },
     { 
         title: "Final Boss", 
         genre: "Epic Orchestral", 
         description: "Massive, orchestral orchestrations built for the ultimate showdown.", 
+        folderUrl: "https://drive.google.com/drive/folders/1FXPfm3B-5WNMwCaxn58K2qdlnm_ZHfpZ", 
         tracks: ["Apocalyptic Showdown", "Awakening of the Overlord", "Battle for Supremacy", "Blistering Godslayer", "Chanting the End", "Climax of Cataclysm", "Divine Fury Rising", "Eclipse of the Titans", "Eternal Battle Hymn", "Ferocious Onslaught", "Hero's Final Stand", "Swelling to Dominion", "Taiko Fury Unleashed", "The Last Sovereign", "The Overlord's Fall", "Thunderous Descent", "Triumphant Ascendance", "Victory's Thunder", "War Drums of Eternity", "Wrath of Ancient Gods"] 
     },
     { 
         title: "Highway Riot", 
         genre: "Hard Rock", 
         description: "Distorted guitars and heavy percussion for pure rebellion.", 
+        folderUrl: "https://drive.google.com/drive/folders/1CavachNeUWhd5iTsnE1MWunMMJNPlld_", 
         tracks: ["Broken Chains", "Burning Horizon", "Echoes of Glory", "Edge of Danger", "Highway Flames", "Rebel’s Anthem", "Shadow Riders", "Soul on the Run", "Storm Chasers", "Thunder on the Streets"] 
     },
     { 
         title: "Hot Pursuit", 
         genre: "Action / Cyberpunk", 
         description: "High-octane electronic tracks designed for the ultimate chase sequence.", 
+        folderUrl: "https://drive.google.com/drive/folders/1cQYcpX2b4cr9CMteo4nPmb7CkynR1VBN", 
         tracks: ["Adrenaline Highway", "Apex Drift", "Chrome Horizon", "Cityscape Blitz", "Ignition Sequence", "Midnight Getaway", "Neon Afterburn", "Nightshift Pursuit", "Overdrive Protocol", "Pulse Override", "Sirens & Shadows", "Steel & Asphalt", "Turbo Chase", "Urban Frenzy"] 
     },
     { 
         title: "Infernal Chaos", 
         genre: "Heavy Metal / Doom", 
         description: "Relentless, aggressive guitar shredding and blast beats.", 
+        folderUrl: "https://drive.google.com/drive/folders/1NAANI7eowLf9kjEwLST7n1M2JI-26Rph", 
         tracks: ["Abyssal Acceleration", "Bone-Shatter Cadence", "Chaos Protocol", "Dead Weight Impact", "Fragmented Reality", "Grinding the Gearworks", "Kinetic Shredding", "Lacerated Sky", "Mortal Compression", "Neural Redline", "Seismic Rupture", "Shrapnel Rain", "Structural Collapse", "Sub-Level Trauma", "Sulfuric Friction", "The Gutteral Engine", "Total Disintegration", "Unstable Equilibrium", "Velocity of Terror", "Violent Oscillation"] 
     },
     { 
         title: "Locker 84", 
         genre: "80s Roller Rink Instrumental", 
         description: "Upbeat synth-funk, bright analog keys, and retro roller rink swagger.", 
+        folderUrl: "https://drive.google.com/drive/folders/1-9kVi7YliPsrd90WDIL2BiY02tE-njYv", 
         tracks: ["Cherry Cola Fizz", "Fast Lane Fever", "Ghost Skater", "Golden Hour", "Last Lap", "Side-Step Boogie", "Speed Skate Special", "Strobe Light Shuffle", "Toe Stop Strut", "Two by Two", "Whip Around"] 
     },
     { 
         title: "Machined Chaos", 
         genre: "Industrial / Electronic", 
         description: "Harsh, mechanical, and heavy-hitting industrial rhythms.", 
+        folderUrl: "https://drive.google.com/drive/folders/1TwLBuD7Z4BDv_xxr_f1Z3FXLvKn6gAob", 
         tracks: ["Broken Conveyor", "Circuit Breaker Anthem", "Echoes of Iron", "Feedback Protocol", "Final Actuator", "Forged in Noise", "Gears in Revolt", "Mechanical Descent", "Overclocked Rage", "Rust & Reverb", "Shattered Bearings", "Sparks in the Dark", "Steelheart Pulse", "Titanium Collapse", "Voltage Overload", "Wired for Collision"] 
     },
     { 
         title: "Mandarin Trance", 
         genre: "Traditional Chinese / EDM", 
         description: "A fusion of traditional Chinese festival instruments mixed with deep trance beats.", 
+        folderUrl: "https://drive.google.com/drive/folders/1f0TuS8y5IS3BHYhsy4fBYWViOZMQ48-f", 
         tracks: ["8-Bit Emperor", "Breath of the Wyrm", "Coiling Scales", "Eternal Great Wall", "Forbidden Echoes", "Ghost-Qi", "Jade Talons", "Lotus Petal Static", "Monsoon Dynasty", "Nine-Sons Ritual", "Odyssey", "Pagoda", "Paper Crane", "Silkstream", "Thunder-Drum Sovereign", "Vermillion Gate", "Zen State", "Zenith"] 
     },
     { 
         title: "Midnight Overdrive", 
         genre: "Synthwave / Action", 
         description: "Driving, aggressive synth beats that keep the momentum pushing forward.", 
+        folderUrl: "https://drive.google.com/drive/folders/18TZMe2mfX7K3t2N1xrc2X126kiTBZMpD", 
         tracks: ["Afterburn Drive", "Chrome Horizon", "Circuit Breaker", "Electric Drift", "Laser Skyline", "Midnight Mirage", "Neon Overload", "Neon Pursuit", "Phantom Freeway", "Pulse Reactor", "Synth Streets", "Turbo City Lights"] 
     },
     { 
         title: "Midnight Vector", 
         genre: "Synthwave / Outrun", 
         description: "High-speed synth tracks for late-night drives and neon horizons.", 
+        folderUrl: "https://drive.google.com/drive/folders/17FIhW35e4AfGXqPmiq0lzvFOpBJb8BqZ", 
         tracks: ["Autopilot Drift", "Chrome Fade", "Digital Ave", "Glass Tunnels", "Neon Idle", "No Left Turns", "Pacific Circuit", "Rearview Mirage", "Shadow Lane", "Soft Boost"] 
     },
     { 
         title: "Night Drive", 
         genre: "Synthwave / Outrun", 
         description: "The definitive soundtrack for late night cruising under the city lights.", 
+        folderUrl: "https://drive.google.com/drive/folders/1X8k5Gw25NqrwLLd2mAQFBpnYPoetTAf1", 
         tracks: ["Analog Dusk", "Break In The Fog", "Cathode Ray Prayer", "Collision In Slow Motion", "Concrete Echoes", "Final Frame", "Fluorescent Ghosts", "Gated Memories", "Impact Architecture", "Low-Frequency Heartbeat", "Static In The Marrow", "Subterranean Neon", "Tempered Glass", "The 3 AM Drift", "The Interior Monologue", "The Sudden Horizon", "The Weight of Observation", "Transmission Lost", "Velocity of Silence", "Zero-Emission Soul"] 
     },
     { 
         title: "Nipsey Hustle", 
         genre: "West Coast Hip-Hop / Soul", 
         description: "Soulful late-90s bounce, melancholic storytelling, and cinematic West Coast orchestration.", 
+        folderUrl: "https://drive.google.com/drive/folders/1ifqibyNGb75nfi9gJN4Bj44vvpAW1wnC", 
         tracks: ["Bricks & Spraypaint", "Corner Store", "Crenshaw & Slauson (Golden Hour)", "Dedication at the Crossroads", "Hydraulics on the Strip", "Lowrider Shadows", "Marathon Blue", "Midnight Stand", "Neighborhood Hero", "Pride of South Central", "Slauson Shakedown", "Square One Legacy", "Tears Under Palm Trees", "The Long Run", "The Marathon Continues (Sunset Fade)"] 
     },
     { 
         title: "Panic on Funkotron", 
         genre: "Funk Rock / Psychedelic", 
         description: "16-bit arcade swagger colliding with psychedelic blues and swamp funk.", 
+        folderUrl: "https://drive.google.com/drive/folders/1mP0YZHHz__jYCS_XDfhEqXVIDwa54-DK", 
         tracks: ["Blast Off from Funkotron", "Boogie Man Sneak", "Cosmic Slapdown", "Dentist with a Drill", "Earthlings in the Bushes", "Funkodude’s Secret Island", "Hi-Tops & Low Frequencies", "High Score Sunset", "Hyperfunk Dimension", "Mail Order Mayhem", "Mayday from the Mothership", "Megaphone Hype", "Orbiting the Gutter", "Rocket Skates Overdrive", "Root Beer Float Intermission", "Ship Piece Secured!", "Swamp Planet Jam", "The Funk Will Prevail", "The Jam Out Jar", "The Wizard’s Disguise", "Tornado in the Park", "Tractor Beam Boogie", "Zero Gravity Groove"] 
     },
     { 
         title: "Seasons Greetings", 
         genre: "Holiday / Ambient", 
         description: "Warm, festive instrumentals for cold winter nights.", 
+        folderUrl: "https://drive.google.com/drive/folders/1x_cpfm5SlV2fD0lxTYWcaQIH_oIcl_VW", 
         tracks: ["A Hearth for Every Heart", "A Quiet Christmas Night", "Candlelight December", "December Candlelight", "December Skies", "Embers in the Night", "Evergreen Evening", "Falling Snow, Rising Fire", "Fireside Glow", "First Snow at Twilight", "Frost on the Evergreens", "Golden Pines at Dusk", "Golden Winter Lights", "Hearthside Memories", "Holly & Hearth", "Home for the Holidays", "Lights in the Window", "Midnight Sleigh Ride", "Peace Beneath the Evergreens", "Quiet Streets at Christmas", "Silent Snowfall", "Snow Over Pinewood", "Snowlit Silence", "Soft Bells at Dusk", "Soft Footsteps in Snow", "Still Air, Falling Snow", "Stillness of Christmas Eve", "The Longest Night", "Warmth of the Season", "Winter Hearth", "Winter Window Glow", "Winter’s Gentle Embrace"] 
     },
     { 
         title: "Shipwrecked", 
         genre: "Sea Shanty / Folk", 
         description: "High-seas rogue anthems, stomping tavern accordions, and nautical battle ballads.", 
+        folderUrl: "https://drive.google.com/drive/folders/1zSZ1Ja6iibeQixvT0SIvbPoe6ldWirsq", 
         tracks: ["Bones Beneath the Blue (Farewell to Nassau)", "Broadside at Devil’s Reef", "Dead Reckoning at Gallows Point", "Grog in the Hold", "Mutiny in the Bilge", "Pieces of Eight & A Full Moon", "Run Down the Black Flag", "Ten Paces on Smuggler’s Cay", "The Hangman’s Horizon", "The Jackdaw’s Wake", "The Siren of Dead Man’s Shoal"] 
     },
     { 
         title: "Silk Road", 
         genre: "Cinematic / Folk", 
         description: "Sweeping traditional instruments capturing the vastness of the ancient trade routes.", 
+        folderUrl: "https://drive.google.com/drive/folders/15Xv5vDwPavO3J0wi9plhaGT-pXux7W89", 
         tracks: ["Azure Dragon Dance", "Caravanserai Nights", "Celestial Fireworks", "Cinnabar Clouds", "Dune-Runner", "Erhu’s Ascent", "Ghost of the Gobi", "Imperial Rush", "Iron Fanfare", "Jade Pass", "Lotus Bloom", "Pentatonic Fire", "Pipa Pulse", "Red Lantern", "Sovereign Silk", "Steppes of the Sun", "Taklamakan Tremor", "Terracotta Heartbeat", "The 13th String", "The Great Horizon"] 
     },
     { 
         title: "Southside Society", 
         genre: "Boom Bap / Hip-Hop", 
         description: "Classic turntable cuts and heavy street beats.", 
+        folderUrl: "https://drive.google.com/drive/folders/19KOb3FY4wWFvDnCrW-tiGiry4uhjsDeF", 
         tracks: ["Backspin Stories", "Bassline Diaries", "Boom Bap Boulevard", "Cityscape Cypher", "Crate & Scratch", "Crate Digger’s Anthem", "Downtown Loops", "Heads Nod Forever", "Hood Classics", "Looped Horizons", "Looped Legends", "Sampled Memories", "Scratch Theory", "Streetlight Sessions", "Sunset Spin", "Tape Hiss Chronicles", "Turntable Tales", "Vinyl & Vibes"] 
     },
     { 
         title: "Steel Legends", 
         genre: "Classic Rock", 
         description: "High-energy, driving instrumental rock anthems perfect for intense action.", 
+        folderUrl: "https://drive.google.com/drive/folders/1EZcc4JY7VC5vaP_Hc3kdEHoHreo-yVvI", 
         tracks: ["Atmosphere", "Chrome Horizon", "Echoes of the Arena", "Eternal Resonance", "Golden Hour", "Ignition Point", "Infinite Dawn", "Iron Pulse", "Midnight Overdrive", "Piston Heart", "Prism", "Silver Lining Shred", "Skybound", "Steel Core", "Synthetic Rythem", "The Edge", "The Majestic Strum", "Unbound", "Velocity Dreams", "Wings of Wire"] 
     },
     { 
         title: "Still Standing", 
         genre: "Epic Rock", 
         description: "Triumphant, stadium-ready rock instrumentals.", 
+        folderUrl: "https://drive.google.com/drive/folders/1gC2bLh-V_EEBzZu6-WEFhbIZ-7HJEJj4", 
         tracks: ["Break the Horizon", "Chrome Dreams", "Echoes of a Heartbeat", "Fading in the Mirror", "Higher Ground", "Ignite the Night", "Kings of the Concrete", "Legacy of Fire", "Midnight Rain", "Riding the Lightning", "Shadows of Forever", "Silent Thunder", "Steel and Glory", "Tears of the Sun", "The Long Goodbye", "Through the Smoke", "Unstoppable", "Voices", "Worth the Wait", "Written in the Dust"] 
     },
     { 
         title: "Sunset Cruise", 
         genre: "Chillwave / Retro", 
         description: "Relaxing, atmospheric beats for a smooth drive into the sunset.", 
+        folderUrl: "https://drive.google.com/drive/folders/1Hbqz4PlsPTuJDWiJUaVr6_Ca5opm9gde", 
         tracks: ["Aurora Nights", "Coastal Mirage", "Cruise Control", "Electric Palm Trees", "Endless Boardwalk", "Golden Reflection", "Heatwave Echoes", "Midnight Drive", "Neon Horizons", "Retrograde Motion", "Starlight Avenue", "Sunset Cruise (extended Cut)", "Sunset Cruise", "Velvet Skies"] 
     },
     { 
         title: "Teal Frequency", 
         genre: "Glitch / EDM", 
         description: "Fast-paced, colorful, and glitchy electronic dance tracks.", 
+        folderUrl: "https://drive.google.com/drive/folders/1_RKsa-ovWYl90eDU1zVmclsOWUoJZKBf", 
         tracks: ["Bitrate Bloom", "Cyberheart", "Digital Daydream", "Electric Cyan", "Frequency Flight", "Ghost in the Code", "Glitch Garden", "Infinite Chorus", "Neon Arpeggio", "Parallel Pulse", "Pixel Perfect", "Prism Crash", "Resonance Point", "Sonic Signature", "Synthetic Sky", "Teal Velocity", "Turbo Spark", "Turquoise Drift", "Uplift Protocol", "Virtual Horizon"] 
     },
     { 
         title: "The Long Getaway", 
         genre: "Rock / Outlaw Country", 
         description: "Hard-hitting tracks for the desperate escape.", 
+        folderUrl: "https://drive.google.com/drive/folders/1_Hko5xMHns5wieWdGuX7WmrY0ojeU3kg", 
         tracks: ["Blacktop Confessional", "Break the Mirror, Burn the Bridge", "Cactus Wine", "Dead Man’s Romance", "Gone Before Sunrise", "Hard Luck Tattoo", "Hollow Moon Highway", "No Maps, No Mercy", "Six Miles from Redemption", "The Devil’s Detour", "The Long Getaway (Final Ride)", "The Only Way Out"] 
     },
     { 
         title: "Trap City", 
         genre: "Trap / Electronic", 
         description: "Heavy 808s and rapid hi-hats dominating the urban grid.", 
+        folderUrl: "https://drive.google.com/drive/folders/1aKKwwleG7ZAocSDgtLebVZotTWsAheUS", 
         tracks: ["Carbon Fiber Anthem", "Chrome Ricochet", "Cobalt Crush", "Copper Pulse", "Drop Architecture", "Emerald Current", "Friction Spike", "Glass Velocity", "Ignite the Grid", "Power Chord Theory", "Primal Circuit", "Raw Catalyst", "Seismic Shiver", "Static Bounce", "Syncopated Rush", "Tactile Groove", "The Kinetic", "Vivid Impact", "Vocal Chop Logic", "Voltage Snap"] 
     },
     { 
         title: "Vinyl Breakup", 
         genre: "Phonk / Lo-Fi", 
         description: "Gritty basslines and distorted lo-fi beats perfect for drifting or setting a heavy mood.", 
-        tracks: ["Bassline Splinters", "Chopped While Spinning", "Crackles Before the Drop", "Distortion Has Memory", "Dust in the Subwoofer", "Granular Street Logic", "Groove Slippage", "Last Click Before Silence", "Low Fidelity, High Threat", "Needle Bent, Beat Unbroken", "Needle Drop Disorder", "Phonk in the Red", "Playback Error Headnod", "Saturation on the Turntable", "Scratches Don’t Apologize", "Side B Violence", "Skipping on Purpose", "Static Between the Kicks", "Turntable Trauma", "Warped at 33⅓"] 
+        folderUrl: "https://drive.google.com/drive/folders/1FwjNwuQIHz3JYOso9zCoOOEDCANDMw9x", 
+        tracks: ["Bassline Splinters", "Chopped While Spinning", "Crackles Before the Drop", "Distortion Has Memory", "Dust in the Subwoofer", "Granular Street Logic", "Groove Slippage", "Last Click Before silence", "Low Fidelity, High Threat", "Needle Bent, Beat Unbroken", "Needle Drop Disorder", "Phonk in the Red", "Playback Error Headnod", "Saturation on the Turntable", "Scratches Don’t Apologize", "Side B Violence", "Skipping on Purpose", "Static Between the Kicks", "Turntable Trauma", "Warped at 33⅓"] 
     },
     { 
         title: "Wanted", 
         genre: "Western / Action", 
         description: "Tense and heavy rhythms for the bounty hunter on the prowl.", 
+        folderUrl: "https://drive.google.com/drive/folders/1DPSAr4Ld98u6gp-ITE1oIUZTdtyKxlQA", 
         tracks: ["Bandits and Betrayals", "Bounty on My Name", "Dead Man’s Jackpot", "Lead and Whiskey", "Moonshine & Gunpowder", "Noose at Dawn", "Outlaw’s Creed", "Posse in the Night", "Red Dust Revenge", "Rust & Thunder", "Six Rounds to Glory", "Wanted Till the End"] 
     }
 ];
@@ -265,8 +303,8 @@ const albums = [
                         {album.description}
                     </p>
                     <div style="margin-bottom: 1rem;">
-                        <a href="https://drive.google.com/drive/folders/1xAi6wL8cdLEPr6ogqhJ99O8lPwGn3QDy?usp=drive_link" target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; display: block;">
-                            Google Drive Folder
+                        <a href={album.folderUrl} target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; display: block;">
+                            Download
                         </a>
                     </div>
                     

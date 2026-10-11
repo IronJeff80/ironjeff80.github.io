@@ -23,3 +23,4 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 public/css/styles - Copy.css
+src/pages/music - Copy.astro

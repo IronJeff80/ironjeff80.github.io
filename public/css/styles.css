@@ -40,9 +40,9 @@
     --accent-green: #00ff00;
     
     /* GTA 6 Accents */
-    --accent-pink: #ea48b2; /* Primary Neon */
-    --accent-blue: #00a3fd; /* Primary Neon */
-    --accent-orange: #ff8c1b; /* Secondary Neon */
+    --accent-pink: #375fcf; /* Primary Neon #ea48b2 */
+    --accent-blue: #f74aa9; /* Primary Neon #00a3fd */
+    --accent-orange: #ff9d49; /* Secondary Neon #ff8c1b */
     
     /* Text */
     --white-low: #ffffff;

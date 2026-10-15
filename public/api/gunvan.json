@@ -1,8 +1,8 @@
 {
-  "id": "8",
-  "locationName": "Next to Ortega's Trailer, Zancudo River",
-  "imagePath": "/images/gunvan/loc_8.jpg",
-  "mapPath": "/images/gunvan/map_8.jpg",
+  "id": "23",
+  "locationName": "Parking garage south of Oriental Theater, Downtown Vinewood",
+  "imagePath": "/images/gunvan/loc_23.jpg",
+  "mapPath": "/images/gunvan/map_23.jpg",
   "inventory": [
     "Service Carbine: -30 %",
     "Precision Rifle: -10 %",
@@ -17,5 +17,5 @@
     "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-10-14T10:00:28.285Z"
+  "updatedAt": "2026-10-15T09:42:12.863Z"
 }

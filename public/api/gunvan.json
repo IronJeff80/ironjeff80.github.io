@@ -1,8 +1,8 @@
 {
-  "id": "23",
-  "locationName": "Parking garage south of Oriental Theater, Downtown Vinewood",
-  "imagePath": "/images/gunvan/loc_23.jpg",
-  "mapPath": "/images/gunvan/map_23.jpg",
+  "id": "19",
+  "locationName": "Popular Street, La Mesa",
+  "imagePath": "/images/gunvan/loc_19.jpg",
+  "mapPath": "/images/gunvan/map_19.jpg",
   "inventory": [
     "Service Carbine: -30 %",
     "Precision Rifle: -10 %",
@@ -17,5 +17,5 @@
     "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-10-15T09:42:12.863Z"
+  "updatedAt": "2026-10-16T09:35:52.256Z"
 }

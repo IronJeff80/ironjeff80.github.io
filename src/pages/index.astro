@@ -5,34 +5,33 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="2 Smokin' Barrels | Stream Tools & Extensions">
 
     <main class="container">
-    <header style="margin-bottom: 3rem;">
-        <h1 class="page-title">In Smokin' We Trust</h1>
+        <header class="page-header">
+            <h1 class="page-title">In Smokin' We Trust</h1>
 
-        <!-- Modernized Highlight Box -->
-        <div class="highlight-box">
-            <p>
-                <span class="highlight-text">Custom extensions and technical tools for the Red Dead & GTA community.</span>
-            </p>
-        </div>
-    </header>
+            <div class="highlight-box">
+                <p>
+                    <span class="highlight-text">Custom extensions and technical tools for the Red Dead & GTA community.</span>
+                </p>
+            </div>
+        </header>
 
         <div>
-            <h2 class="section-title" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Live Stream</h2>
+            <h2 class="section-title">Live Stream</h2>
             <div class="stream-container">
-                <div class="video-wrapper" style="position: relative;">
-                    <img id="offline-placeholder" src="/images/offline.webp" alt="Stream is currently offline" style="width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; top: 0; left: 0;">
-                    <iframe id="yt-video-frame" src="https://www.youtube.com/embed/live_stream?channel=UCbflkZl3HSQVyVW153f2Z3A" allowfullscreen style="display: none; width: 100%; height: 100%; position: relative; z-index: 2;"></iframe>
+                <div class="video-wrapper">
+                    <img id="offline-placeholder" src="/images/offline.webp" alt="Stream is currently offline">
+                    <iframe id="yt-video-frame" src="https://www.youtube.com/embed/live_stream?channel=UCbflkZl3HSQVyVW153f2Z3A" allowfullscreen></iframe>
                 </div>
-                <div class="chat-wrapper" id="chat-wrapper" style="display: none;">
+                <div class="chat-wrapper" id="chat-wrapper">
                     <iframe id="yt-chat-frame" src="about:blank"></iframe>
                 </div>
             </div>
 
             <div class="command-center">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; color: var(--accent-orange); font-size: 2.2rem; margin-top: 0; letter-spacing: 1px;">Command Center</h3>
-                <p id="status-msg" style="color: var(--white-med); font-size: 0.9rem; margin-bottom: 20px;">Connecting to Streamer.bot...</p>
+                <h3>Command Center</h3>
+                <p id="status-msg">Connecting to Streamer.bot...</p>
                 
-                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)" style="color: var(--accent-pink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 5px;">
+                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
                     Fun Stuff & Games <i class="fas fa-chevron-down transition-icon"></i>
                 </h4>
                 <div class="btn-grid collapsible-content collapsed">
@@ -50,10 +49,10 @@ import Layout from '../layouts/Layout.astro';
                     <button class="cmd-btn stream-cmd" onclick="sendAction('GTA Wasted')" disabled>GTA Wasted</button>
                 </div>
 
-                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)" style="color: var(--accent-pink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 5px; margin-top: 20px;">
+                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
                     Media Controls <i class="fas fa-chevron-down transition-icon"></i>
                 </h4>
-                <div class="media-bar collapsible-content collapsed" style="margin-top: 15px;">
+                <div class="media-bar collapsible-content collapsed">
                     <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
                     <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
                     <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
@@ -61,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
                     <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
                 </div>
 
-                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)" style="color: var(--accent-pink); cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 5px; margin-top: 20px;">
+                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
                     Album Selection <i class="fas fa-chevron-down transition-icon"></i>
                 </h4>
                 <div class="btn-grid collapsible-content collapsed">
@@ -79,38 +78,37 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div>
-            <h2 class="section-title" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Red Dead Online Glitches</h2>
+            <h2 class="section-title">Red Dead Online Glitches</h2>
             <div class="glitch-grid">
                 <div class="glitch-card">
-                    <h4 style="color: var(--accent-pink);">Lake Isabella COMPLETE Guide</h4>
+                    <h4>Lake Isabella COMPLETE Guide</h4>
                     <a href="https://www.youtube.com/watch?v=olP7h9B7V90" target="_blank"><img class="glitch-thumb" src="https://img.youtube.com/vi/olP7h9B7V90/hqdefault.jpg" alt="Lake Isabella Gold Glitch"></a>
                 </div>
                 <div class="glitch-card">
-                    <h4 style="color: var(--accent-pink);">Rapid Spawn All Treasure Maps</h4>
+                    <h4>Rapid Spawn All Treasure Maps</h4>
                     <a href="https://www.youtube.com/watch?v=sf41Gy08b-I" target="_blank"><img class="glitch-thumb" src="https://img.youtube.com/vi/sf41Gy08b-I/hqdefault.jpg" alt="Red Dead Treasure Map Glitch"></a>
                 </div>
                 <div class="glitch-card">
-                    <h4 style="color: var(--accent-pink);">Lake Isabella Gold Glitch</h4>
+                    <h4>Lake Isabella Gold Glitch</h4>
                     <a href="https://www.youtube.com/watch?v=puidk5oZY7o" target="_blank"><img class="glitch-thumb" src="https://img.youtube.com/vi/puidk5oZY7o/hqdefault.jpg" alt="Lake Isabella Gold Bar Glitch"></a>
                 </div>
                 <div class="glitch-card">
-                    <h4 style="color: var(--accent-pink);">How to: Dupe Large Pelts</h4>
+                    <h4>How to: Dupe Large Pelts</h4>
                     <a href="https://www.youtube.com/watch?v=R6Hcy5KiiPk" target="_blank"><img class="glitch-thumb" src="https://img.youtube.com/vi/R6Hcy5KiiPk/hqdefault.jpg" alt="Red Dead Pelt Duplication"></a>
                 </div>
             </div>
         </div>
 
-       <div>
-            <h2 class="section-title" style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Available Projects</h2>
+        <div>
+            <h2 class="section-title">Available Projects</h2>
             <div class="grid">
 
-                <!-- NEW: GTA VI Reveal Overlay -->
+                <!-- GTA VI Reveal Overlay -->
                 <div class="card">
-                    <a href="https://2smokinbarrels.com/gta6-overlay/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+                    <a href="https://2smokinbarrels.com/gta6-overlay/" target="_blank" rel="noopener noreferrer" class="card-stretch-link">
                         <span class="badge">Overlay</span>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">GTA VI Reveal Overlay</h3>
-                        <div style="flex-grow: 1;"></div>
-                        <div class="card-footer" style="margin-top: 15px;">
+                        <h3 class="card-title-bebas">GTA VI Reveal Overlay</h3>
+                        <div class="card-footer">
                             <span class="card-link">CREATE <i class="fas fa-external-link-alt"></i></span>
                         </div>
                     </a>
@@ -118,24 +116,22 @@ import Layout from '../layouts/Layout.astro';
 
                 <!-- OBS Duel Game -->
                 <div class="card">
-                    <a href="https://github.com/IronJeff80/OBS-Duel-Game" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+                    <a href="https://github.com/IronJeff80/OBS-Duel-Game" target="_blank" rel="noopener noreferrer" class="card-stretch-link">
                         <span class="badge">Mini-Game</span>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">OBS Duel Game</h3>
-                        <div style="flex-grow: 1;"></div>
-                        <div class="card-footer" style="margin-top: 15px;">
+                        <h3 class="card-title-bebas">OBS Duel Game</h3>
+                        <div class="card-footer">
                             <span class="card-link">Download Files <i class="fas fa-external-link-alt"></i></span>
                         </div>
                     </a>
                 </div>
 
                 <!-- GTA OBS Widget -->
-                <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="card">
                     <div>
                         <span class="badge">Overlay</span>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">GTA OBS Widget</h3>
+                        <h3 class="card-title-bebas">GTA OBS Widget</h3>
                     </div>
-                    <div style="flex-grow: 1;"></div>
-                    <div class="card-footer" style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="card-footer">
                         <a href="https://2smokinbarrels.com/gtawidget/setup.html" target="_blank" rel="noopener noreferrer" class="card-link">
                             Configure <i class="fas fa-external-link-alt"></i>
                         </a>
@@ -146,36 +142,20 @@ import Layout from '../layouts/Layout.astro';
                 </div>
 
                 <!-- RDO Events OBS Overlay -->
-                <div class="card" style="display: flex; flex-direction: column;">
-                    <a href="https://github.com/IronJeff80/reddeadoverlay" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
+                <div class="card">
+                    <a href="https://github.com/IronJeff80/reddeadoverlay" target="_blank" rel="noopener noreferrer" class="card-stretch-link">
                         <span class="badge">Overlay</span>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">RDO Events OBS Overlay</h3>
-                        <div style="flex-grow: 1;"></div>
-                        <div class="card-footer" style="margin-top: 15px;">
+                        <h3 class="card-title-bebas">RDO Events OBS Overlay</h3>
+                        <div class="card-footer">
                             <span class="card-link">Configure <i class="fas fa-external-link-alt"></i></span>
                         </div>
                     </a>
-                    <div class="copy-link-container" style="margin-top: 15px;">
+                    <div class="copy-link-container">
                         <input type="text" class="copy-input" value="https://2smokinbarrels.com/reddeadoverlay/" readonly id="rdo-link">
                         <button class="copy-btn" onclick="copyLink('rdo-link')"><i class="fas fa-copy"></i></button>
                     </div>
                 </div>
 
-                <!-- RDO Condor Egg Map 
-                <div class="card" style="display: flex; flex-direction: column;">
-                    <a href="/condoreggmap/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; flex-grow: 1;">
-                        <span class="badge">Tool</span>
-                        <h3 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: var(--accent-orange);">RDO Condor Egg Map</h3>
-                        <div style="flex-grow: 1;"></div>
-                        <div class="card-footer" style="margin-top: 15px;">
-                            <span class="card-link">Launch Map <i class="fas fa-external-link-alt"></i></span>
-                        </div>
-                    </a>
-                    <div class="copy-link-container" style="margin-top: 15px;">
-                        <input type="text" class="copy-input" value="https://2smokinbarrels.com/condoreggmap/" readonly id="map-link">
-                        <button class="copy-btn" onclick="copyLink('map-link')"><i class="fas fa-copy"></i></button>
-                    </div>
-                </div>-->
             </div>
         </div>
     </main>

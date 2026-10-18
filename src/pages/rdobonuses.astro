@@ -9,29 +9,21 @@ import Layout from '../layouts/Layout.astro';
     >
     <main class="container">
         
-        <header style="margin-bottom: 3rem;">
+        <header class="page-header">
             <h1 class="page-title">Red Dead Monthly</h1>
-            <p class="date-range" style="text-align: center; color: var(--white-med); text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">October 6, 2026 — November 2, 2026</p>
+            <p class="date-range">October 6, 2026 — November 2, 2026</p>
             
-        <!-- Modernized Highlight Box -->
-        <div style="background: rgba(38, 30, 62, 0.4); 
-                    border-left: 5px solid var(--accent-pink); 
-                    padding: 25px; 
-                    margin-top: 20px; 
-                    text-align: left; 
-                    border-radius: 12px; 
-                    backdrop-filter: blur(10px); 
-                    border: 1px solid rgba(255, 255, 255, 0.05);">
-                <p style="margin: 0; font-size: 1.1rem; color: var(--white-low);">
-                    Red Dead Online gets spooky this month with <span style="color: var(--accent-orange); font-weight: 700;">4X RDO$, Gold & XP</span> on Strange Tales of the West Telegram Missions, plus <span style="color: var(--accent-pink); font-weight: 700;">3X RDO$, Gold & XP</span> in All Hallows' Call to Arms. 
-                    Naturalist Sample Sales are also paying out <span style="color: var(--accent-pink); font-weight: 700;">3X RDO$, XP & Role XP</span>, alongside the return of <span style="color: var(--accent-orange); font-weight: 700;">Halloween Pass 2</span>!
+            <div class="highlight-box highlight-box-left">
+                <p>
+                    Red Dead Online gets spooky this month with <span class="highlight-text">4X RDO$, Gold & XP</span> on Strange Tales of the West Telegram Missions, plus <span class="highlight-pink">3X RDO$, Gold & XP</span> in All Hallows' Call to Arms. 
+                    Naturalist Sample Sales are also paying out <span class="highlight-pink">3X RDO$, XP & Role XP</span>, alongside the return of <span class="highlight-text">Halloween Pass 2</span>!
                 </p>
             </div>
         </header>
 
         <div class="bonus-grid">
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Current Bonuses</h3>
+                <h3>Current Bonuses</h3>
                 <div class="bonus-item"><span class="multiplier">4X</span> <strong>RDO$, Gold & XP</strong> on Strange Tales of the West Telegram Missions</div>
                 <div class="bonus-item"><span class="multiplier">3X</span> <strong>RDO$, Gold & XP</strong> on All Hallows' Call to Arms</div>
                 <div class="bonus-item"><span class="multiplier">3X</span> <strong>RDO$, XP & Role XP</strong> on Naturalist Sample Sales</div>
@@ -39,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Monthly Rewards</h3>
+                <h3>Monthly Rewards</h3>
                 <div class="bonus-item"><strong>Red Fernwater Coat:</strong> Log in and play to receive.</div>
                 <div class="bonus-item"><strong>Irontooth Mask:</strong> Log in as a Naturalist.</div>
                 <div class="bonus-item"><strong>Best Shot Emote:</strong> Hunt or sample a Legendary Animal.</div>
@@ -48,32 +40,32 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Weekly Rewards</h3>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 6 - 12</span><br>Complete a Sample Sale: <strong>Free Coat Reward</strong></div>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 13 - 19</span><br>Win in the Featured Series: <strong>North Clingman Treasure Map</strong></div>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 20 - 26</span><br>Complete any Blood Money Contract: <strong>Free Weapon Reward</strong></div>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 27 - Nov 2</span><br>Play All Hallows' Call to Arms: <strong>Orange Benbow Jacket</strong></div>
+                <h3>Weekly Rewards</h3>
+                <div class="bonus-item"><span class="bonus-date">Oct 6 - 12</span><br>Complete a Sample Sale: <strong>Free Coat Reward</strong></div>
+                <div class="bonus-item"><span class="bonus-date">Oct 13 - 19</span><br>Win in the Featured Series: <strong>North Clingman Treasure Map</strong></div>
+                <div class="bonus-item"><span class="bonus-date">Oct 20 - 26</span><br>Complete any Blood Money Contract: <strong>Free Weapon Reward</strong></div>
+                <div class="bonus-item"><span class="bonus-date">Oct 27 - Nov 2</span><br>Play All Hallows' Call to Arms: <strong>Orange Benbow Jacket</strong></div>
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Featured Series</h3>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 6 - 12:</span> Halloween Series 1</div>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 13 - 19:</span> Halloween Series 2</div>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 20 - 26:</span> Hardcore Halloween Series 1</div>
-                <div class="bonus-item"><span class="date-range" style="color: var(--accent-pink);">Oct 27 - Nov 2:</span> Hardcore Halloween Series 2</div>
+                <h3>Featured Series</h3>
+                <div class="bonus-item"><span class="bonus-date">Oct 6 - 12:</span> Halloween Series 1</div>
+                <div class="bonus-item"><span class="bonus-date">Oct 13 - 19:</span> Halloween Series 2</div>
+                <div class="bonus-item"><span class="bonus-date">Oct 20 - 26:</span> Hardcore Halloween Series 1</div>
+                <div class="bonus-item"><span class="bonus-date">Oct 27 - Nov 2:</span> Hardcore Halloween Series 2</div>
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Discounts</h3>
-                <div class="bonus-item"><span style="color: var(--accent-orange);">FREE:</span> Fast Travel Fees, Sedative Ammo & Tomahawks (from Fence)</div>
-                <div class="bonus-item"><span style="color: var(--accent-orange);">10 GOLD OFF:</span> Naturalist Sample Kit</div>
-                <div class="bonus-item"><span style="color: var(--accent-orange);">50% OFF:</span> Halloween Masks (Madame Nazar), Melee Weapons, Haircuts, Dentistry, Makeup & Eyepatches</div>
-                <div class="bonus-item"><span style="color: var(--accent-orange);">40% OFF:</span> Novice, Promising & Established Naturalist Items, Cripps' Outfits, Camp Dogs, Gypsy Cob & Missouri Fox Trotter Horses, Coats & Bandoliers</div>
+                <h3>Discounts</h3>
+                <div class="bonus-item"><span class="discount-tag">FREE:</span> Fast Travel Fees, Sedative Ammo & Tomahawks (from Fence)</div>
+                <div class="bonus-item"><span class="discount-tag">10 GOLD OFF:</span> Naturalist Sample Kit</div>
+                <div class="bonus-item"><span class="discount-tag">50% OFF:</span> Halloween Masks (Madame Nazar), Melee Weapons, Haircuts, Dentistry, Makeup & Eyepatches</div>
+                <div class="bonus-item"><span class="discount-tag">40% OFF:</span> Novice, Promising & Established Naturalist Items, Cripps' Outfits, Camp Dogs, Gypsy Cob & Missouri Fox Trotter Horses, Coats & Bandoliers</div>
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Returning Clothing</h3>
-                <ul style="list-style: none; padding: 0; margin: 0;">
+                <h3>Returning Clothing</h3>
+                <ul class="bonus-list">
                     <li class="bonus-item">Folwell Hat</li>
                     <li class="bonus-item">Prieto Poncho</li>
                     <li class="bonus-item">Tied Pants</li>
@@ -82,8 +74,8 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="bonus-card">
-                <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; color: var(--accent-orange); text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">Community Outfit</h3>
-                <p style="font-size: 0.8rem; font-style: italic; margin-bottom: 10px; color: var(--accent-pink);">By Criggz628</p>
+                <h3>Community Outfit</h3>
+                <p class="bonus-credit">By Criggz628</p>
                 <div class="bonus-item">Worn Flop Hat & Bandana</div>
                 <div class="bonus-item">Laborer Overshirt (F) or Lautnip Shirt (M)</div>
                 <div class="bonus-item">Leather Duster & Leather Gloves</div>
@@ -92,8 +84,8 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </div>
         
-        <div style="margin-top: 4rem; text-align: center;">
-            <a href="/" style="color: var(--accent-pink); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">&larr; Back to Home</a>
+        <div class="back-nav">
+            <a href="/" class="back-link">&larr; Back to Home</a>
         </div>
     </main>
 </Layout>

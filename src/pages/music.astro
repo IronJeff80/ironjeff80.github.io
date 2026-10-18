@@ -278,44 +278,44 @@ const albums = [
     >
     <main class="container">
         <h1 class="page-title">Royalty Free Music</h1>
-        <div class="highlight-box" style="margin-bottom: 5rem;">
+        <div class="highlight-box highlight-box-spaced">
             <p>
                 <span class="highlight-text">Download and use these royalty-free instrumental tracks and stems for your streams and content.</span>
             </p>
         </div>
 
         <!-- Albums Grid -->
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="grid grid-albums">
             
             {albums.map((album) => (
                 <div class="card">
                     <img 
                         src={`/images/albums/${album.title}.webp`} 
                         alt={`${album.title} Cover Art`} 
-                        style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem; border-radius: 8px;"
+                        class="album-cover"
                         loading="lazy"
                     />
 
-                    <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--accent-orange); margin: 0.5rem 0; text-shadow: 0 0 8px rgba(255, 140, 27, 0.4);">{album.title}</h3>
+                    <h3 class="album-title">{album.title}</h3>
                     
                     <span class="badge">{album.genre}</span>
-                    <p style="color: var(--white-med); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+                    <p>
                         {album.description}
                     </p>
-                    <div style="margin-bottom: 1rem;">
-                        <a href={album.folderUrl} target="_blank" class="cmd-btn" style="text-decoration: none; font-size: 0.85rem; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; display: block;">
+                    <div class="album-actions">
+                        <a href={album.folderUrl} target="_blank" class="cmd-btn btn-full">
                             Download
                         </a>
                     </div>
                     
-                    <details style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 8px;">
-                        <summary style="color: var(--accent-pink); font-weight: 600; cursor: pointer; outline: none;">
+                    <details class="tracklist-details">
+                        <summary>
                             View Tracks ({album.tracks.length})
                         </summary>
-                        <ul style="list-style: none; padding: 0; margin: 10px 0 0 0;">
+                        <ul class="tracklist">
                             {album.tracks.map((track, index) => (
-                                <li style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 8px 0;">
-                                    <span style="font-size: 0.9rem; color: var(--white-low);">{index + 1}. {track.replace('.mp3', '')}</span>
+                                <li class="tracklist-item">
+                                    <span>{index + 1}. {track.replace('.mp3', '')}</span>
                                 </li>
                             ))}
                         </ul>
@@ -324,8 +324,8 @@ const albums = [
             ))}
         </div>
         
-        <div style="margin-top: 3rem; text-align: center;">
-            <a href="/" style="color: var(--accent-pink); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">&larr; Back to Home</a>
+        <div class="back-nav">
+            <a href="/" class="back-link">&larr; Back to Home</a>
         </div>
     </main>
 </Layout>

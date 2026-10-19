@@ -1,21 +1,8 @@
 {
-  "id": "25",
-  "locationName": "Caesars Auto Parking, Little Seoul",
-  "imagePath": "/images/gunvan/loc_25.jpg",
-  "mapPath": "/images/gunvan/map_25.jpg",
-  "inventory": [
-    "Service Carbine: -30 %",
-    "Precision Rifle: -10 %",
-    "Combat Shotgun: -10 %",
-    "Widowmaker: -10 %",
-    "Up-n-Atomizer: -10 %",
-    "Unholy Hellbringer: -10 %",
-    "Baseball Bat: FREE",
-    "Knife: -10 %",
-    "The Shocker: FREE",
-    "Unknown (hash: -1916886713): -10 %",
-    "Pipe Bomb: -10 %",
-    "Body armor: -10 %"
-  ],
-  "updatedAt": "2026-10-18T09:24:53.907Z"
+  "id": "",
+  "locationName": "Location data parsing failed.",
+  "imagePath": "",
+  "mapPath": "",
+  "inventory": [],
+  "updatedAt": "2026-10-19T10:37:31.714Z"
 }

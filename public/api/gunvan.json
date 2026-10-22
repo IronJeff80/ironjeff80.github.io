@@ -1,8 +1,21 @@
 {
-  "id": "",
-  "locationName": "Location data parsing failed.",
-  "imagePath": "",
-  "mapPath": "",
-  "inventory": [],
-  "updatedAt": "2026-10-20T09:54:22.895Z"
+  "id": "15",
+  "locationName": "Land Act Reservoir (north end)",
+  "imagePath": "/images/gunvan/loc_15.jpg",
+  "mapPath": "/images/gunvan/map_15.jpg",
+  "inventory": [
+    "Service Carbine: -30 %",
+    "Precision Rifle: -10 %",
+    "Combat Shotgun: -10 %",
+    "Widowmaker: -10 %",
+    "Up-n-Atomizer: -10 %",
+    "Unholy Hellbringer: -10 %",
+    "Baseball Bat: FREE",
+    "Knife: -10 %",
+    "The Shocker: FREE",
+    "Unknown (hash: -1916886713): -10 %",
+    "Pipe Bomb: -10 %",
+    "Body armor: -10 %"
+  ],
+  "updatedAt": "2026-10-22T09:56:28.867Z"
 }

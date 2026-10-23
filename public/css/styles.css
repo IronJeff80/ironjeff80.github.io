@@ -78,12 +78,19 @@ body {
     margin: 0;
     line-height: 1.6;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1, h2, h3 {
     font-family: 'Mr Dafoe', cursive;
     font-weight: 400;
     letter-spacing: 2px;
+}
+
+main {
+    flex-grow: 1;
 }
 
 /* =========================================

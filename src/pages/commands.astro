@@ -7,734 +7,733 @@ import Layout from '../layouts/Layout.astro';
         image="https://2smokinbarrels.com/images/commands-banner.jpg"
     >
     <main class="container">
-        <h1 class="page-title">Stream Commands</h1>
+        <!-- Hidden page title for SEO/Accessibility since it's removed from the visual layout -->
+        <h1 class="page-title" style="display: none;">Stream Commands</h1>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Face & Voice Filters</h2>
-                </summary>
-                <div class="command-list">
-                    <div class="command-item">!Anime <span>(8000)</span></div>
-                    <div class="command-item">!Banana <span>(16000)</span></div>
-                    <div class="command-item">!Batman <span>(8000)</span></div>
-                    <div class="command-item">!BayC <span>(8000)</span></div>
-                    <div class="command-item">!Burnt <span>(8000)</span></div>
-                    <div class="command-item">!Cartoon <span>(8000)</span></div>
-                    <div class="command-item">!ConeZone <span>(8000)</span></div>
-                    <div class="command-item">!Cool <span>(8000)</span></div>
-                    <div class="command-item">!Devil <span>(8000)</span></div>
-                    <div class="command-item">!Dragon <span>(8000)</span></div>
-                    <div class="command-item">!Ghost Rider <span>(8000)</span></div>
-                    <div class="command-item">!Girl <span>(8000)</span></div>
-                    <div class="command-item">!Gypsy <span>(8000)</span></div>
-                    <div class="command-item">!IceQueen <span>(8000)</span></div>
-                    <div class="command-item">!Jaws <span>(8000)</span></div>
-                    <div class="command-item">!Odin <span>(8000)</span></div>
-                    <div class="command-item">!Pippi <span>(8000)</span></div>
-                </div>
-            </details>
-        </div>
+        <div class="commands-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="commands-sidebar">
+                <input type="text" id="command-search" class="command-search" placeholder="Search commands..." />
+                
+                <nav class="sidebar-nav">
+                    <button class="sidebar-nav-btn active" data-target="face-voice">
+                        <span>Face & Voice Filters</span>
+                        <span class="nav-count">17</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="face-only">
+                        <span>Face Only Filters</span>
+                        <span class="nav-count">48</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="toast-messaging">
+                        <span>Toast & Messaging</span>
+                        <span class="nav-count">7</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="fun-stuff">
+                        <span>Fun Stuff</span>
+                        <span class="nav-count">9</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="camera-controls">
+                        <span>Camera Controls</span>
+                        <span class="nav-count">7</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="theme-colors">
+                        <span>Theme Colors</span>
+                        <span class="nav-count">26</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="gameplay-filters">
+                        <span>Gameplay Filters</span>
+                        <span class="nav-count">18</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="tts-voices">
+                        <span>TTS Voices</span>
+                        <span class="nav-count">17</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="utilities">
+                        <span>Utilities & Tools</span>
+                        <span class="nav-count">21</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="info-links">
+                        <span>Information & Links</span>
+                        <span class="nav-count">14</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="music-control">
+                        <span>Music Control</span>
+                        <span class="nav-count">19</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="statistics">
+                        <span>Statistics</span>
+                        <span class="nav-count">15</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="leaderboards">
+                        <span>Leaderboards</span>
+                        <span class="nav-count">40</span>
+                    </button>
+                    <button class="sidebar-nav-btn" data-target="soundbytes">
+                        <span>Soundbytes</span>
+                        <span class="nav-count">131</span>
+                    </button>
+                </nav>
+            </aside>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Face Only Filters</h2>
-                </summary>
-                <div class="command-list">
-                    <div class="command-item">#BlameBigCat <span>(8000)</span></div>
-                    <div class="command-item">!Anonymous <span>(8000)</span></div>
-                    <div class="command-item">!Baby <span>(8000)</span></div>
-                    <div class="command-item">!Cage <span>(8000)</span></div>
-                    <div class="command-item">!Chad <span>(8000)</span></div>
-                    <div class="command-item">!Chopps <span>(8000)</span></div>
-                    <div class="command-item">!Clown <span>(8000)</span></div>
-                    <div class="command-item">!Cry <span>(8000)</span></div>
-                    <div class="command-item">!Evil <span>(8000)</span></div>
-                    <div class="command-item">!Fire Eyes <span>(8000)</span></div>
-                    <div class="command-item">!Fire Spirit <span>(8000)</span></div>
-                    <div class="command-item">!FlameOn <span>(8000)</span></div>
-                    <div class="command-item">!Freddy <span>(8000)</span></div>
-                    <div class="command-item">!Goblin <span>(8000)</span></div>
-                    <div class="command-item">!Ghost1 <span>(8000)</span></div>
-                    <div class="command-item">!Ghost2 <span>(8000)</span></div>
-                    <div class="command-item">!Ghoul <span>(8000)</span></div>
-                    <div class="command-item">!Goatee <span>(8000)</span></div>
-                    <div class="command-item">!Googly <span>(8000)</span></div>
-                    <div class="command-item">!Groucho <span>(8000)</span></div>
-                    <div class="command-item">!Horns <span>(8000)</span></div>
-                    <div class="command-item">!Ice Eyes <span>(8000)</span></div>
-                    <div class="command-item">!Jack <span>(8000)</span></div>
-                    <div class="command-item">!JeffreyG <span>(8000)</span></div>
-                    <div class="command-item">!Joker <span>(8000)</span></div>
-                    <div class="command-item">!Joker2 <span>(8000)</span></div>
-                    <div class="command-item">!Kong <span>(8000)</span></div>
-                    <div class="command-item">!LadyD <span>(8000)</span></div>
-                    <div class="command-item">!Link <span>(8000)</span></div>
-                    <div class="command-item">!Loathing <span>(8000)</span></div>
-                    <div class="command-item">!Mario <span>(8000)</span></div>
-                    <div class="command-item">!Marshmellow <span>(8000)</span></div>
-                    <div class="command-item">!Morgan <span>(8000)</span></div>
-                    <div class="command-item">!Multi <span>(8000)</span></div>
-                    <div class="command-item">!Optimus <span>(8000)</span></div>
-                    <div class="command-item">!Pirate <span>(8000)</span></div>
-                    <div class="command-item">!Ranni <span>(8000)</span></div>
-                    <div class="command-item">!Roblox <span>(8000)</span></div>
-                    <div class="command-item">!Satan <span>(8000)</span></div>
-                    <div class="command-item">!Sketch <span>(8000)</span></div>
-                    <div class="command-item">!Scuba <span>(8000)</span></div>
-                    <div class="command-item">!Snowman <span>(8000)</span></div>
-                    <div class="command-item">!Shook <span>(8000)</span></div>
-                    <div class="command-item">!Spicy <span>(8000)</span></div>
-                    <div class="command-item">!Thuglife <span>(8000)</span></div>
-                    <div class="command-item">!Viking <span>(8000)</span></div>
-                    <div class="command-item">!Wicked <span>(8000)</span></div>
-                    <div class="command-item">!Zombie <span>(8000)</span></div>
-                </div>
-            </details>
-        </div>
-
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Toast & Messaging</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>Display & Read Message</h4>
+            <!-- Main Content Area -->
+            <div class="commands-content">
+                
+                <div id="face-voice" class="command-section command-category-pane active">
+                    <h2 class="section-title pane-title">Face & Voice Filters</h2>
                     <div class="command-list">
-                        <div class="command-item">!Toast (Message) <span>(3000)</span></div>
-                        <div class="command-item">!Text (Message) <span>(3000)</span></div>
-                    </div>
-
-                    <h4>Text To Speech</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Say (Message) <span>(1000)</span></div>
-                        <div class="command-item">!Speak (Message) <span>(1000)</span></div>
-                        <div class="command-item">!Talk (Message) <span>(1000)</span></div>
-                        <div class="command-item">!TTS (Message) <span>(1000)</span></div>
-                    </div>
-
-                    <h4>Horizontal Chat Overlay</h4>
-                    <div class="command-list">
-                        <div class="command-item">!ToggleChat <span>(1000)</span></div>
+                        <div class="command-item">!Anime <span>(8000)</span></div>
+                        <div class="command-item">!Banana <span>(16000)</span></div>
+                        <div class="command-item">!Batman <span>(8000)</span></div>
+                        <div class="command-item">!BayC <span>(8000)</span></div>
+                        <div class="command-item">!Burnt <span>(8000)</span></div>
+                        <div class="command-item">!Cartoon <span>(8000)</span></div>
+                        <div class="command-item">!ConeZone <span>(8000)</span></div>
+                        <div class="command-item">!Cool <span>(8000)</span></div>
+                        <div class="command-item">!Devil <span>(8000)</span></div>
+                        <div class="command-item">!Dragon <span>(8000)</span></div>
+                        <div class="command-item">!Ghost Rider <span>(8000)</span></div>
+                        <div class="command-item">!Girl <span>(8000)</span></div>
+                        <div class="command-item">!Gypsy <span>(8000)</span></div>
+                        <div class="command-item">!IceQueen <span>(8000)</span></div>
+                        <div class="command-item">!Jaws <span>(8000)</span></div>
+                        <div class="command-item">!Odin <span>(8000)</span></div>
+                        <div class="command-item">!Pippi <span>(8000)</span></div>
                     </div>
                 </div>
-            </details>
-        </div>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Fun Stuff</h2>
-                </summary>
-                <div class="command-list">
-                    <div class="command-item">!BallDrop <span>(3000)</span></div>
-                    <div class="command-item">!BarrelRoll <span>(3000)</span></div>
-                    <div class="command-item">!Bomb <span>(3000)</span></div>
-                    <div class="command-item">!Haduken <span>(3000)</span></div>
-                    <div class="command-item">!Kickflip <span>(3000)</span></div>
-                    <div class="command-item">!Shoryuken <span>(3000)</span></div>
-                    <div class="command-item">!Scorpion <span>(3000)</span></div>
-                    <div class="command-item">!Skeletor <span>(3000)</span></div>
-                    <div class="command-item">!Wasted <span>(3000)</span></div>
-                </div>
-            </details>
-        </div>
-
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Camera Controls</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>Move My Camera</h4>
+                <div id="face-only" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Face Only Filters</h2>
                     <div class="command-list">
-                        <div class="command-item">!Camera(0-11) <span>(2500)</span></div>
-                        <div class="command-item">!Bigcam <span>(2500)</span></div>
-                        <div class="command-item">!GTA <span>(2500)</span></div>
-                        <div class="command-item">!RDO <span>(2500)</span></div>
-                        <div class="command-item">!Round <span>(2500)</span></div>
-                        <div class="command-item">!Square <span>(2500)</span></div>
-                        <div class="command-item">!Inline <span>(2500)</span></div>
+                        <div class="command-item">#BlameBigCat <span>(8000)</span></div>
+                        <div class="command-item">!Anonymous <span>(8000)</span></div>
+                        <div class="command-item">!Baby <span>(8000)</span></div>
+                        <div class="command-item">!Cage <span>(8000)</span></div>
+                        <div class="command-item">!Chad <span>(8000)</span></div>
+                        <div class="command-item">!Chopps <span>(8000)</span></div>
+                        <div class="command-item">!Clown <span>(8000)</span></div>
+                        <div class="command-item">!Cry <span>(8000)</span></div>
+                        <div class="command-item">!Evil <span>(8000)</span></div>
+                        <div class="command-item">!Fire Eyes <span>(8000)</span></div>
+                        <div class="command-item">!Fire Spirit <span>(8000)</span></div>
+                        <div class="command-item">!FlameOn <span>(8000)</span></div>
+                        <div class="command-item">!Freddy <span>(8000)</span></div>
+                        <div class="command-item">!Goblin <span>(8000)</span></div>
+                        <div class="command-item">!Ghost1 <span>(8000)</span></div>
+                        <div class="command-item">!Ghost2 <span>(8000)</span></div>
+                        <div class="command-item">!Ghoul <span>(8000)</span></div>
+                        <div class="command-item">!Goatee <span>(8000)</span></div>
+                        <div class="command-item">!Googly <span>(8000)</span></div>
+                        <div class="command-item">!Groucho <span>(8000)</span></div>
+                        <div class="command-item">!Horns <span>(8000)</span></div>
+                        <div class="command-item">!Ice Eyes <span>(8000)</span></div>
+                        <div class="command-item">!Jack <span>(8000)</span></div>
+                        <div class="command-item">!JeffreyG <span>(8000)</span></div>
+                        <div class="command-item">!Joker <span>(8000)</span></div>
+                        <div class="command-item">!Joker2 <span>(8000)</span></div>
+                        <div class="command-item">!Kong <span>(8000)</span></div>
+                        <div class="command-item">!LadyD <span>(8000)</span></div>
+                        <div class="command-item">!Link <span>(8000)</span></div>
+                        <div class="command-item">!Loathing <span>(8000)</span></div>
+                        <div class="command-item">!Mario <span>(8000)</span></div>
+                        <div class="command-item">!Marshmellow <span>(8000)</span></div>
+                        <div class="command-item">!Morgan <span>(8000)</span></div>
+                        <div class="command-item">!Multi <span>(8000)</span></div>
+                        <div class="command-item">!Optimus <span>(8000)</span></div>
+                        <div class="command-item">!Pirate <span>(8000)</span></div>
+                        <div class="command-item">!Ranni <span>(8000)</span></div>
+                        <div class="command-item">!Roblox <span>(8000)</span></div>
+                        <div class="command-item">!Satan <span>(8000)</span></div>
+                        <div class="command-item">!Sketch <span>(8000)</span></div>
+                        <div class="command-item">!Scuba <span>(8000)</span></div>
+                        <div class="command-item">!Snowman <span>(8000)</span></div>
+                        <div class="command-item">!Shook <span>(8000)</span></div>
+                        <div class="command-item">!Spicy <span>(8000)</span></div>
+                        <div class="command-item">!Thuglife <span>(8000)</span></div>
+                        <div class="command-item">!Viking <span>(8000)</span></div>
+                        <div class="command-item">!Wicked <span>(8000)</span></div>
+                        <div class="command-item">!Zombie <span>(8000)</span></div>
                     </div>
                 </div>
-            </details>
-        </div>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Theme Colors</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>Theme Colors</h4>
-                    <div class="command-list">
-                        <div class="command-item">!RDR <span>(4000)</span></div>
-                        <div class="command-item">!VI <span>(4000)</span></div>
-                        <div class="command-item">!Marine <span>(4000)</span></div>
-                        <div class="command-item">!Aurora <span>(4000)</span></div>
-                        <div class="command-item">!Blue <span>(4000)</span></div>
-                        <div class="command-item">!Bubblegum <span>(4000)</span></div>
-                        <div class="command-item">!CottonCandy <span>(4000)</span></div>
-                        <div class="command-item">!Crimson <span>(4000)</span></div>
-                        <div class="command-item">!Flare <span>(4000)</span></div>
-                        <div class="command-item">!Fruity <span>(4000)</span></div>
-                        <div class="command-item">!Green <span>(4000)</span></div>
-                        <div class="command-item">!Illusion <span>(4000)</span></div>
-                        <div class="command-item">!Orange <span>(4000)</span></div>
-                        <div class="command-item">!OutRun <span>(4000)</span></div>
-                        <div class="command-item">!Party <span>(4000)</span></div>
-                        <div class="command-item">!Pastel <span>(4000)</span></div>
-                        <div class="command-item">!Pink <span>(4000)</span></div>
-                        <div class="command-item">!Plum <span>(4000)</span></div>
-                        <div class="command-item">!Rainbow <span>(4000)</span></div>
-                        <div class="command-item">!Red <span>(4000)</span></div>
-                        <div class="command-item">!Retro <span>(4000)</span></div>
-                        <div class="command-item">!Sunset <span>(4000)</span></div>
-                        <div class="command-item">!Swirl <span>(4000)</span></div>
-                        <div class="command-item">!Vaporwave <span>(4000)</span></div>
-                        <div class="command-item">!White <span>(4000)</span></div>
-                        <div class="command-item">!Yellow <span>(4000)</span></div>
-                    </div>
-                </div>
-            </details>
-        </div>
-
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Gameplay Filters</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <div class="command-header-row">
-                        <h4>Gameplay Filters</h4>
-                        <span class="command-header-note">*Applies the filter to the game*</span>
-                    </div>
-                    <div class="command-list">
-                        <div class="command-item">!bw <span>(10000)</span></div>
-                        <div class="command-item">!drunk <span>(10000)</span></div>
-                        <div class="command-item">!earthquake <span>(10000)</span></div>
-                        <div class="command-item">!fisheye <span>(10000)</span></div>
-                        <div class="command-item">!flip <span>(10000)</span></div>
-                        <div class="command-item">!glitch <span>(10000)</span></div>
-                        <div class="command-item">!matrix <span>(10000)</span></div>
-                        <div class="command-item">!mirror <span>(10000)</span></div>
-                        <div class="command-item">!pixels <span>(10000)</span></div>
-                        <div class="command-item">!pulse <span>(10000)</span></div>
-                        <div class="command-item">!rain <span>(10000)</span></div>
-                        <div class="command-item">!sephia <span>(10000)</span></div>
-                        <div class="command-item">!warp <span>(10000)</span></div>
-                        <div class="command-item">!spin <span>(10000)</span></div>
-                        <div class="command-item">!thermal <span>(10000)</span></div>
-                        <div class="command-item">!thermalquake <span>(15000)</span></div>
-                        <div class="command-item">!mirrorflip <span>(15000)</span></div>
-                        <div class="command-item">!fisheyeflip <span>(15000)</span></div>
-                    </div>
-                </div>
-            </details>
-        </div>
-
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>TTS Voices</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>TTS Voice Options</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Male <span>(0)</span></div>
-                        <div class="command-item">!Female <span>(0)</span></div>
-                        <div class="command-item">!Random <span>(0)</span></div>
-                        <div class="command-item">!Aussie (M/F) <span>(0)</span></div>
-                        <div class="command-item">!British (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Chinese (M/F) <span>(0)</span></div>
-                        <div class="command-item">!French (M/F) <span>(0)</span></div>
-                        <div class="command-item">!German (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Hindi (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Italian (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Japanese (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Norwegian (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Pinoy (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Portuguese (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Russian (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Spanish (M/F) <span>(0)</span></div>
-                        <div class="command-item">!Swedish (M/F) <span>(0)</span></div>
-                    </div>
-                </div>
-            </details>
-        </div>
-
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Utilities & Tools</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>Utilities</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Clip <span>(0)</span></div>
-                        <div class="command-item">!Commands <span>(0)</span></div>
-                        <div class="command-item">!Events <span>(0)</span></div>
-                        <div class="command-item">!KOTC <span>(0)</span></div>
-                        <div class="command-item">!Marker <span>(0)</span></div>
-                        <div class="command-item">!Nazar <span>(0)</span></div>
-                        <div class="command-item">!Rollcall <span>(0)</span></div>
-                        <div class="command-item">!Timer <span>(0)</span></div>
-                        <div class="command-item">!Subs <span>(0)</span></div>
-                    </div>
-
-                    <div class="command-list">
-                        <div class="command-item">
-                            !Ask <small>(question)</small> <span>(0)</span>
-                            <div class="command-subtext">Adds to the Questions Queue</div>
+                <div id="toast-messaging" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Toast & Messaging</h2>
+                    <div class="command-list-wrapper">
+                        <h4>Display & Read Message</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Toast (Message) <span>(3000)</span></div>
+                            <div class="command-item">!Text (Message) <span>(3000)</span></div>
                         </div>
-                        <div class="command-item">
-                            !Song <small>(style/topic)</small>
-                            <div class="command-subtext">Request custom AI music production</div>
+                        <h4>Text To Speech</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Say (Message) <span>(1000)</span></div>
+                            <div class="command-item">!Speak (Message) <span>(1000)</span></div>
+                            <div class="command-item">!Talk (Message) <span>(1000)</span></div>
+                            <div class="command-item">!TTS (Message) <span>(1000)</span></div>
                         </div>
-                        <div class="command-item">!Daily <span>(0)</span></div>
-                    </div>
-
-                    <h4>Nicknames</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Nickname <small>(name)</small> <span>(0)</span></div>
-                        <div class="command-item">!Reset Name <span>(0)</span></div>
-                    </div>
-
-                    <h4>Gift Points</h4>
-                    <div class="command-list command-list-single">
-                        <div class="command-item">
-                            !GiftPoints <span>(0)</span>
-                            <div class="command-subtext-italic">Example: !giftpoints @2smokinbarrels+1000</div>
-                        </div>
-                    </div>
-
-                    <h4>Custom Timers</h4>
-                    <div class="command-list">
-                        <div class="command-item">!CreateTimer</div>
-                        <div class="command-item">!DeleteTimer</div>
-                        <div class="command-item">!PauseTimer</div>
-                        <div class="command-item">!ResumeTimer</div>
-                        <div class="command-item">!AddTime</div>
-                        <div class="command-item">!DeductTime</div>
-                    </div>
-
-                    <div class="command-info-box">
-                        <div class="command-info-title">Timer Formatting:</div>
-                        <code class="command-code">
-                            !CreateTimer &lt;Time&gt; | &lt;Title&gt; | &lt;Description&gt; | &lt;CountUp=true&gt;<br>
-                            !deleteTimer: &lt;Title&gt; | !pauseTimer: &lt;Title&gt; | !resumeTimer: &lt;Title&gt;<br>
-                            !addTime: &lt;Time&gt; | !deductTime: &lt;Time&gt;
-                        </code>
-                        <div class="command-info-title">Examples:</div>
-                        <div class="command-examples">
-                            • !createTimer 00:00:30 | Test Timer | This is the description | False<br>
-                            • !addTime 00:00:30 | Test Timer
+                        <h4>Horizontal Chat Overlay</h4>
+                        <div class="command-list">
+                            <div class="command-item">!ToggleChat <span>(1000)</span></div>
                         </div>
                     </div>
                 </div>
-            </details>
-        </div>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Information & Links</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>General Info</h4>
+                <div id="fun-stuff" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Fun Stuff</h2>
                     <div class="command-list">
-                        <div class="command-item">!Discord <span>(0)</span></div>
-                        <div class="command-item">
-                            !PayPal <span>(0)</span>
-                            <div class="command-subtext"><a href="https://PayPal.Me/2SmokinBarrels" target="_blank">Donate via PayPal</a></div>
-                        </div>
-                        <div class="command-item">!PSN <span>(0)</span></div>
-                        <div class="command-item">
-                            !Merch <span>(0)</span>
-                            <div class="command-subtext"><a href="https://2smokinbarrels-shop.fourthwall.com" target="_blank">Merch Store</a></div>
-                        </div>
+                        <div class="command-item">!BallDrop <span>(3000)</span></div>
+                        <div class="command-item">!BarrelRoll <span>(3000)</span></div>
+                        <div class="command-item">!Bomb <span>(3000)</span></div>
+                        <div class="command-item">!Haduken <span>(3000)</span></div>
+                        <div class="command-item">!Kickflip <span>(3000)</span></div>
+                        <div class="command-item">!Shoryuken <span>(3000)</span></div>
+                        <div class="command-item">!Scorpion <span>(3000)</span></div>
+                        <div class="command-item">!Skeletor <span>(3000)</span></div>
+                        <div class="command-item">!Wasted <span>(3000)</span></div>
                     </div>
+                </div>
 
-                    <h4>Red Dead Links</h4>
-                    <div class="command-list">
-                        <div class="command-item">!RDODailies <span>(0)</span>
-                            <div class="command-subtext"><a href="https://www.rdo-dailies.com" target="_blank">RDO-Dailes.com</a></div>
-                        </div>
-                        <div class="command-item">!CollectorsMap <span>(0)</span>
-                            <div class="command-subtext"><a href="https://jeanropke.github.io/RDR2CollectorsMap" target="_blank">RDO Collector's Map</a></div>
-                        </div>
-                        <div class="command-item">!RDOMap <span>(0)</span>
-                            <div class="command-subtext"><a href="https://jeanropke.github.io/RDOMap" target="_blank">RDO Map</a></div>
-                        </div>
-                        <div class="command-item">!PriceList <span>(0)</span>
-                            <div class="command-subtext"><a href="https://discord.com/channels/758192378409779200/1099573893502619668/1442336702592057384" target="_blank">Legendary Animal Prices</a></div>
-                        </div>
-                        <div class="command-item">!FieldGuide <span>(0)</span>
-                            <div class="command-subtext"><a href="https://tjakubowski.github.io/rdo-naturalist" target="_blank">Interactive Field Guide</a></div>
-                        </div>
-                    </div>
-
-                    <h4>Community & Official Resources</h4>
-                    <div class="command-list">
-                        <div class="command-item">!GoldGlitch <span>(0)</span>
-                            <div class="command-subtext"><a href="https://youtu.be/olP7h9B7V90" target="_blank">Lake Isabella Video</a></div>
-                        </div>
-                        <div class="command-item">!MapGlitch <span>(0)</span>
-                            <div class="command-subtext"><a href="https://youtu.be/sf41Gy08b-I" target="_blank">Treasure Map Video</a></div>
-                        </div>
-                        <div class="command-item">!Macros <span>(0)</span>
-                            <div class="command-subtext"><a href="https://drive.google.com/drive/folders/17yeL7dmmE9Nuz7w5TODVh-gHd6AaVLo5?usp=sharing" target="_blank">Macro Files & Guide</a></div>
-                        </div>
-                        <div class="command-item">!Newswire <span>(0)</span>
-                            <div class="command-subtext"><a href="https://www.rockstargames.com" target="_blank">Rockstar Newswire</a></div>
-                        </div>
-                    </div>
-
-                    <h4>Birthdays</h4>
-                    <div class="command-list command-list-single">
-                        <div class="command-item">!Birthday <small>(MM dd)</small>
-                            <div class="command-subtext-italic">Example: !birthday 12 25</div>
+                <div id="camera-controls" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Camera Controls</h2>
+                    <div class="command-list-wrapper">
+                        <h4>Move My Camera</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Camera(0-11) <span>(2500)</span></div>
+                            <div class="command-item">!Bigcam <span>(2500)</span></div>
+                            <div class="command-item">!GTA <span>(2500)</span></div>
+                            <div class="command-item">!RDO <span>(2500)</span></div>
+                            <div class="command-item">!Round <span>(2500)</span></div>
+                            <div class="command-item">!Square <span>(2500)</span></div>
+                            <div class="command-item">!Inline <span>(2500)</span></div>
                         </div>
                     </div>
                 </div>
-            </details>
-        </div>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Music Control</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>Music Controls</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Play <span>(0)</span></div>
-                        <div class="command-item">!Pause <span>(0)</span></div>
-                        <div class="command-item">!Previous <span>(0)</span></div>
-                        <div class="command-item">!Skip <span>(0)</span></div>
-                        <div class="command-item">!Stop <span>(0)</span></div>
-                        <div class="command-item">!Show <span>(0)</span></div>
-                        <div class="command-item">!Hide <span>(0)</span></div>
-                        <div class="command-item">!Favorite <span>(0)</span>
-                            <div class="command-subtext-italic">Add track to Favorites List</div>
-                        </div>
-                    </div>
-
-                    <h4>Select Album</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Breakin <span>(300)</span>
-                            <div class="command-subtext">Instrumental 90's breakin/scratchin vibes</div>
-                        </div>
-                        <div class="command-item">!Camp <span>(300)</span>
-                            <div class="command-subtext">Camp Songs from RDR2</div>
-                        </div>
-                        <div class="command-item">!Careless <span>(300)</span>
-                            <div class="command-subtext">80's-ish retro vibes</div>
-                        </div>
-                        <div class="command-item">!Halloween <span>(300)</span>
-                            <div class="command-subtext">Spooky instrumental vibes</div>
-                        </div>
-                        <div class="command-item">!Hot List <span>(300)</span>
-                            <div class="command-subtext">Chat's favorite tracks</div>
-                        </div>
-                        <div class="command-item">!Midnight <span>(300)</span>
-                            <div class="command-subtext">GTA inspired driving music</div>
-                        </div>
-                        <div class="command-item">!Pipa <span>(300)</span>
-                            <div class="command-subtext">Instrumental Chinese meditation vibes</div>
-                        </div>
-                        <div class="command-item">!Rock <span>(300)</span>
-                            <div class="command-subtext">Instrumental Rock vibes</div>
-                        </div>
-                        <div class="command-item">!Shuffle <span>(300)</span>
-                            <div class="command-subtext">Shuffle all albums/tracks</div>
-                        </div>
-                        <div class="command-item">!Western <span>(300)</span>
-                            <div class="command-subtext">Country Western vibes</div>
-                        </div>
-                    </div>
-
-                    <h4>Free Music Downloads</h4>
-                    <div class="command-list command-list-single">
-                        <div class="command-item">
-                            <a href="https://drive.google.com/drive/u/0/folders/1xAi6wL8cdLEPr6ogqhJ99O8lPwGn3QDy" target="_blank" class="command-download-link">
-                                <i class="fas fa-download"></i>
-                                <span>!Music - Download Folder</span>
-                            </a>
-                            <div class="command-subtext-italic">Access the full archive of royalty-free stream tracks</div>
+                <div id="theme-colors" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Theme Colors</h2>
+                    <div class="command-list-wrapper">
+                        <h4>Theme Colors</h4>
+                        <div class="command-list">
+                            <div class="command-item">!RDR <span>(4000)</span></div>
+                            <div class="command-item">!VI <span>(4000)</span></div>
+                            <div class="command-item">!Marine <span>(4000)</span></div>
+                            <div class="command-item">!Aurora <span>(4000)</span></div>
+                            <div class="command-item">!Blue <span>(4000)</span></div>
+                            <div class="command-item">!Bubblegum <span>(4000)</span></div>
+                            <div class="command-item">!CottonCandy <span>(4000)</span></div>
+                            <div class="command-item">!Crimson <span>(4000)</span></div>
+                            <div class="command-item">!Flare <span>(4000)</span></div>
+                            <div class="command-item">!Fruity <span>(4000)</span></div>
+                            <div class="command-item">!Green <span>(4000)</span></div>
+                            <div class="command-item">!Illusion <span>(4000)</span></div>
+                            <div class="command-item">!Orange <span>(4000)</span></div>
+                            <div class="command-item">!OutRun <span>(4000)</span></div>
+                            <div class="command-item">!Party <span>(4000)</span></div>
+                            <div class="command-item">!Pastel <span>(4000)</span></div>
+                            <div class="command-item">!Pink <span>(4000)</span></div>
+                            <div class="command-item">!Plum <span>(4000)</span></div>
+                            <div class="command-item">!Rainbow <span>(4000)</span></div>
+                            <div class="command-item">!Red <span>(4000)</span></div>
+                            <div class="command-item">!Retro <span>(4000)</span></div>
+                            <div class="command-item">!Sunset <span>(4000)</span></div>
+                            <div class="command-item">!Swirl <span>(4000)</span></div>
+                            <div class="command-item">!Vaporwave <span>(4000)</span></div>
+                            <div class="command-item">!White <span>(4000)</span></div>
+                            <div class="command-item">!Yellow <span>(4000)</span></div>
                         </div>
                     </div>
                 </div>
-            </details>
-        </div>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Statistics</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>Engagement</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Checkin <span>(0)</span></div>
-                        <div class="command-item">!Rollcall</div>
-                    </div>
-
-                    <h4>Overall Statistics</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Stats <span>(0)</span></div>
-                        <div class="command-item">!MonthlyStats <span>(0)</span></div>
-                        <div class="command-item">!StreamStats <span>(0)</span></div>
-                    </div>
-
-                    <h4>Specific Statistics</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Attendance <span>(0)</span></div>
-                        <div class="command-item">!Checkins <span>(0)</span></div>
-                        <div class="command-item">!Donations <span>(0)</span></div>
-                        <div class="command-item">!Gifts <span>(0)</span></div>
-                        <div class="command-item">!Points <span>(0)</span></div>
-                        <div class="command-item">!PointsUsed <span>(0)</span></div>
-                        <div class="command-item">!Messages <span>(0)</span></div>
-                        <div class="command-item">!Rank <span>(0)</span></div>
-                        <div class="command-item">!Supers <span>(0)</span></div>
-                        <div class="command-item">!WhammyPoints <span>(0)</span></div>
-                        <div class="command-item">!WhammyWins <span>(0)</span></div>
-                        <div class="command-item">!Watchtime <span>(0)</span></div>
-                        <div class="command-item">!XP <span>(0)</span></div>
+                <div id="gameplay-filters" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Gameplay Filters</h2>
+                    <div class="command-list-wrapper">
+                        <div class="command-header-row">
+                            <h4>Gameplay Filters</h4>
+                            <span class="command-header-note">*Applies the filter to the game*</span>
+                        </div>
+                        <div class="command-list">
+                            <div class="command-item">!bw <span>(10000)</span></div>
+                            <div class="command-item">!drunk <span>(10000)</span></div>
+                            <div class="command-item">!earthquake <span>(10000)</span></div>
+                            <div class="command-item">!fisheye <span>(10000)</span></div>
+                            <div class="command-item">!flip <span>(10000)</span></div>
+                            <div class="command-item">!glitch <span>(10000)</span></div>
+                            <div class="command-item">!matrix <span>(10000)</span></div>
+                            <div class="command-item">!mirror <span>(10000)</span></div>
+                            <div class="command-item">!pixels <span>(10000)</span></div>
+                            <div class="command-item">!pulse <span>(10000)</span></div>
+                            <div class="command-item">!rain <span>(10000)</span></div>
+                            <div class="command-item">!sephia <span>(10000)</span></div>
+                            <div class="command-item">!warp <span>(10000)</span></div>
+                            <div class="command-item">!spin <span>(10000)</span></div>
+                            <div class="command-item">!thermal <span>(10000)</span></div>
+                            <div class="command-item">!thermalquake <span>(15000)</span></div>
+                            <div class="command-item">!mirrorflip <span>(15000)</span></div>
+                            <div class="command-item">!fisheyeflip <span>(15000)</span></div>
+                        </div>
                     </div>
                 </div>
-            </details>
-        </div>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Leaderboards</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>All Time Leaderboards</h4>
-                    <div class="command-list">
-                        <div class="command-item">!topAttendance <span>(0)</span></div>
-                        <div class="command-item">!topCheckins <span>(0)</span></div>
-                        <div class="command-item">!topCommands <span>(0)</span></div>
-                        <div class="command-item">!topDailyStreak <span>(0)</span></div>
-                        <div class="command-item">!topDailyTotal <span>(0)</span></div>
-                        <div class="command-item">!topDonators <span>(0)</span></div>
-                        <div class="command-item">!topGifters <span>(0)</span></div>
-                        <div class="command-item">!topMessages <span>(0)</span></div>
-                        <div class="command-item">!topPoints <span>(0)</span></div>
-                        <div class="command-item">!topSupers <span>(0)</span></div>
-                        <div class="command-item">!topWatchtime <span>(0)</span></div>
-                        <div class="command-item">!topWhammyPoints <span>(0)</span></div>
-                        <div class="command-item">!topWins <span>(0)</span></div>
-                        <div class="command-item">!topWOTD <span>(0)</span></div>
-                        <div class="command-item">!topXP <span>(0)</span></div>
-                    </div>
-
-                    <h4>Monthly Leaderboards</h4>
-                    <div class="command-list">
-                        <div class="command-item">!monthlyAttendance <span>(0)</span></div>
-                        <div class="command-item">!monthlyCheckins <span>(0)</span></div>
-                        <div class="command-item">!monthlyCommands <span>(0)</span></div>
-                        <div class="command-item">!monthlyDailyStreak <span>(0)</span></div>
-                        <div class="command-item">!monthlyDailyTotal <span>(0)</span></div>
-                        <div class="command-item">!monthlyDonators <span>(0)</span></div>
-                        <div class="command-item">!monthlyGifters <span>(0)</span></div>
-                        <div class="command-item">!monthlyMessages <span>(0)</span></div>
-                        <div class="command-item">!monthlyPoints <span>(0)</span></div>
-                        <div class="command-item">!monthlyPointsUsed <span>(0)</span></div>
-                        <div class="command-item">!monthlySupers <span>(0)</span></div>
-                        <div class="command-item">!monthlyWatchtime <span>(0)</span></div>
-                        <div class="command-item">!monthlyWhammyPoints <span>(0)</span></div>
-                        <div class="command-item">!monthlyWins <span>(0)</span></div>
-                        <div class="command-item">!monthlyWOTD <span>(0)</span></div>
-                        <div class="command-item">!monthlyXP <span>(0)</span></div>
-                    </div>
-
-                    <h4>Current Stream Leaderboards</h4>
-                    <div class="command-list">
-                        <div class="command-item">!StreamCommands <span>(0)</span></div>
-                        <div class="command-item">!StreamGifters <span>(0)</span></div>
-                        <div class="command-item">!StreamMessages <span>(0)</span></div>
-                        <div class="command-item">!StreamPoints <span>(0)</span></div>
-                        <div class="command-item">!StreamSupers <span>(0)</span></div>
-                        <div class="command-item">!StreamWatchtime <span>(0)</span></div>
-                        <div class="command-item">!StreamWhammyPoints <span>(0)</span></div>
-                        <div class="command-item">!StreamWins <span>(0)</span></div>
-                        <div class="command-item">!StreamXP <span>(0)</span></div>
+                <div id="tts-voices" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">TTS Voices</h2>
+                    <div class="command-list-wrapper">
+                        <h4>TTS Voice Options</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Male <span>(0)</span></div>
+                            <div class="command-item">!Female <span>(0)</span></div>
+                            <div class="command-item">!Random <span>(0)</span></div>
+                            <div class="command-item">!Aussie (M/F) <span>(0)</span></div>
+                            <div class="command-item">!British (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Chinese (M/F) <span>(0)</span></div>
+                            <div class="command-item">!French (M/F) <span>(0)</span></div>
+                            <div class="command-item">!German (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Hindi (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Italian (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Japanese (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Norwegian (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Pinoy (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Portuguese (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Russian (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Spanish (M/F) <span>(0)</span></div>
+                            <div class="command-item">!Swedish (M/F) <span>(0)</span></div>
+                        </div>
                     </div>
                 </div>
-            </details>
-        </div>
 
-        <div class="command-section">
-            <details name="commands">
-                <summary class="widget-header">
-                    <h2>Soundbytes</h2>
-                </summary>
-                <div class="command-list-wrapper">
-                    <h4>Random SoundBites</h4>
-                    <div class="command-list">
-                        <div class="command-item">!1up <span>(1000)</span></div>
-                        <div class="command-item">!applause <span>(1000)</span></div>
-                        <div class="command-item">!Bruh <span>(1000)</span></div>
-                        <div class="command-item">!Cheesy <span>(1000)</span></div>
-                        <div class="command-item">!ChooChoo <span>(1000)</span></div>
-                        <div class="command-item">!DamnSon <span>(1000)</span></div>
-                        <div class="command-item">!Dog <span>(1000)</span></div>
-                        <div class="command-item">!DoIt <span>(1000)</span></div>
-                        <div class="command-item">!Doh <span>(1000)</span></div>
-                        <div class="command-item">!ElResitas <span>(1000)</span></div>
-                        <div class="command-item">!Emotional <span>(1000)</span></div>
-                        <div class="command-item">!Escalated <span>(1000)</span></div>
-                        <div class="command-item">!Face <span>(1000)</span></div>
-                        <div class="command-item">!Fact <span>(1000)</span></div>
-                        <div class="command-item">!Fahhh<span>(1000)</span></div>
-                        <div class="command-item">!Fine <span>(1000)</span></div>
-                        <div class="command-item">!Floating <span>(1000)</span></div>
-                        <div class="command-item">!Fucked <span>(1000)</span></div>
-                        <div class="command-item">!Great <span>(1000)</span></div>
-                        <div class="command-item">!HawkTuah <span>(1000)</span></div>
-                        <div class="command-item">!HeeHee <span>(1000)</span></div>
-                        <div class="command-item">Hello, Hi, Hola <span>(1000)</span></div>
-                        <div class="command-item">!HellNo <span>(1000)</span></div>
-                        <div class="command-item">!HoldUp <span>(1000)</span></div>
-                        <div class="command-item">!Joe <span>(1000)</span></div>
-                        <div class="command-item">!JustDoIt <span>(1000)</span></div>
-                        <div class="command-item">!Leeroy <span>(1000)</span></div>
-                        <div class="command-item">!Legitness <span>(1000)</span></div>
-                        <div class="command-item">!Mother Trucker <span>(1000)</span></div>
-                        <div class="command-item">!Noid <span>(1000)</span></div>
-                        <div class="command-item">!Noob <span>(1000)</span></div>
-                        <div class="command-item">!Perfect <span>(1000)</span></div>
-                        <div class="command-item">!PlayStation <span>(1000)</span></div>
-                        <div class="command-item">!Relax <span>(1000)</span></div>
-                        <div class="command-item">#Rigged <span>(1000)</span></div>
-                        <div class="command-item">!Sad <span>(1000)</span></div>
-                        <div class="command-item">!Shut up <span>(1000)</span></div>
-                        <div class="command-item">!That <span>(1000)</span></div>
-                        <div class="command-item">!Touching <span>(1000)</span></div>
-                        <div class="command-item">!Trophy <span>(1000)</span></div>
-                        <div class="command-item">!WeedTrain <span>(300)</span></div>
-                        <div class="command-item">!Why <span>(1000)</span></div>
-                        <div class="command-item">!Woody <span>(1000)</span></div>
-                        <div class="command-item">!Wow <span>(1000)</span></div>
-                        <div class="command-item">!YeeHaw <span>(1000)</span></div>
-                    </div>
-
-                    <h4>WWE</h4>
-                    <div class="command-list">
-                        <div class="command-item">( . )( . ) <span>(1000)</span></div>
-                        <div class="command-item">!Damn <span>(1000)</span></div>
-                        <div class="command-item">!John Cena <span>(1000)</span></div>
-                        <div class="command-item">!Nameis <span>(1000)</span></div>
-                        <div class="command-item">What? <span>(1000)</span></div>
-                        <div class="command-item">!Woo <span>(1000)</span></div>
-                        <div class="command-item">Yeet <span>(1000)</span></div>
-                    </div>
-
-                    <h4>Tombstone</h4>
-                    <div class="command-list">
-                        <div class="command-item">!2Guns <span>(1000)</span></div>
-                        <div class="command-item">!Bare <span>(1000)</span></div>
-                        <div class="command-item">!Bleed <span>(1000)</span></div>
-                        <div class="command-item">!Blood <span>(1000)</span></div>
-                        <div class="command-item">!Bye <span>(1000)</span></div>
-                        <div class="command-item">!Daisy <span>(1000)</span></div>
-                        <div class="command-item">!Famous <span>(1000)</span></div>
-                        <div class="command-item">!Foolin <span>(1000)</span></div>
-                        <div class="command-item">!Hell <span>(1000)</span></div>
-                        <div class="command-item">!Huckleberry <span>(1000)</span></div>
-                        <div class="command-item">!Prime <span>(1000)</span></div>
-                        <div class="command-item">!Skin <span>(1000)</span></div>
-                        <div class="command-item">!Thing <span>(1000)</span></div>
-                        <div class="command-item">!Ugly <span>(1000)</span></div>
-                    </div>
-
-                    <h4>Music Clips</h4>
-                    <div class="command-list">
-                        <div class="command-item">!15Bucks <span>(2000)</span></div>
-                        <div class="command-item">!2Legit <span>(2000)</span></div>
-                        <div class="command-item"><i class="fas fa-heart"></i><i class="fas fa-heart"></i> <span>(2000)</span></div>
-                        <div class="command-item">!CryMe <span>(2000)</span></div>
-                        <div class="command-item">!Hiroshima <span>(2000)</span></div>
-                        <div class="command-item">!Kids <span>(2000)</span></div>
-                        <div class="command-item">!RideIt <span>(2000)</span></div>
-                        <div class="command-item">!Slam <span>(2000)</span></div>
-                        <div class="command-item">!Starting <span>(2000)</span></div>
-                        <div class="command-item">!Whoop <span>(2000)</span></div>
-                    </div>
-
-                    <h4>In Living Color</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Backward <span>(1000)</span></div>
-                        <div class="command-item">!Birdie <span>(1000)</span></div>
-                        <div class="command-item">!Blackbelt <span>(1000)</span></div>
-                        <div class="command-item">!HatedIt <span>(1000)</span></div>
-                        <div class="command-item">!Marshall <span>(1000)</span></div>
-                        <div class="command-item">!Shaboing <span>(1000)</span></div>
-                        <div class="command-item">!Wanda <span>(1000)</span></div>
-                </div>
-
-                    <h4>Back to the Future</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Asshole <span>(1000)</span></div>
-                        <div class="command-item">!GreatScott <span>(1000)</span></div>
-                        <div class="command-item">!McFly <span>(1000)</span></div>
-                        <div class="command-item">!RightAnswer <span>(1000)</span></div>
-                        <div class="command-item">!HiMom <span>(1000)</span></div>
-                        <div class="command-item">!Slacker <span>(1000)</span></div>
-                        <div class="command-item">!TYVM <span>(1000)</span></div>
-                    </div>
-
-                    <h4>Misc Film & TV</h4>
-                    <div class="command-list">
-                        <div class="command-item">!Bingo <span>(1000)</span></div>
-                        <div class="command-item">!Bueller <span>(1000)</span></div>
-                        <div class="command-item">!Buttercup <span>(1000)</span></div>
-                        <div class="command-item">!CandyAss <span>(1000)</span></div>
-                        <div class="command-item">!Daddy <span>(1000)</span></div>
-                        <div class="command-item">!Dangerous <span>(1000)</span></div>
-                        <div class="command-item">!Dirt <span>(1000)</span></div>
-                        <div class="command-item">!Ever <span>(1000)</span></div>
-                        <div class="command-item">!Everyone <span>(1000)</span></div>
-                        <div class="command-item">!Friends <span>(1000)</span></div>
-                        <div class="command-item">!Goodluck <span>(1000)</span></div>
-                        <div class="command-item">!Help <span>(1000)</span></div>
-                        <div class="command-item">!Homeboy <span>(1000)</span></div>
-                        <div class="command-item">!Hounds <span>(1000)</span></div>
-                        <div class="command-item">!Jeff <span>(1000)</span></div>
-                        <div class="command-item">!Juice <span>(1000)</span></div>
-                        <div class="command-item">!Kent <span>(1000)</span></div>
-                        <div class="command-item">!GIJoe <span>(1000)</span></div>
-                        <div class="command-item">!Manners <span>(1000)</span></div>
-                        <div class="command-item">!NAN <span>(1000)</span></div>
-                        <div class="command-item">!NFWJ <span>(1000)</span></div>
-                        <div class="command-item">!Ohno <span>(1000)</span></div>
-                        <div class="command-item">!Opinion <span>(1000)</span></div>
-                        <div class="command-item">!Peach <span>(1000)</span></div>
-                        <div class="command-item">!Pena <span>(1000)</span></div>
-                        <div class="command-item">!References <span>(1000)</span></div>
-                        <div class="command-item">!SaveMe <span>(1000)</span></div>
-                        <div class="command-item">!Say What <span>(1000)</span></div>
-                        <div class="command-item">!Sir <span>(0)</span></div>
-                        <div class="command-item">!Shitter <span>(1000)</span></div>
-                        <div class="command-item">!ShoNuff <span>(1000)</span></div>
-                        <div class="command-item">!Shoosh <span>(1000)</span></div>
-                        <div class="command-item">!Slow <span>(1000)</span></div>
-                        <div class="command-item">!Smokin <span>(1000)</span></div>
-                        <div class="command-item">!Snoochie <span>(1000)</span></div>
-                        <div class="command-item">!Sparta <span>(1000)</span></div>
-                        <div class="command-item">!VeryNice <span>(1000)</span></div>
-                        <div class="command-item">!Waitforit <span>(1000)</span></div>
-                        <div class="command-item">!Wee <span>(1000)</span></div>
-                        <div class="command-item">!What <span>(1000)</span></div>
-                        <div class="command-item">!Winning <span>(1000)</span></div>
+                <div id="utilities" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Utilities & Tools</h2>
+                    <div class="command-list-wrapper">
+                        <h4>Utilities</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Clip <span>(0)</span></div>
+                            <div class="command-item">!Commands <span>(0)</span></div>
+                            <div class="command-item">!Events <span>(0)</span></div>
+                            <div class="command-item">!KOTC <span>(0)</span></div>
+                            <div class="command-item">!Marker <span>(0)</span></div>
+                            <div class="command-item">!Nazar <span>(0)</span></div>
+                            <div class="command-item">!Rollcall <span>(0)</span></div>
+                            <div class="command-item">!Timer <span>(0)</span></div>
+                            <div class="command-item">!Subs <span>(0)</span></div>
+                        </div>
+                        <div class="command-list">
+                            <div class="command-item">
+                                !Ask <small>(question)</small> <span>(0)</span>
+                                <div class="command-subtext">Adds to the Questions Queue</div>
+                            </div>
+                            <div class="command-item">
+                                !Song <small>(style/topic)</small>
+                                <div class="command-subtext">Request custom AI music production</div>
+                            </div>
+                            <div class="command-item">!Daily <span>(0)</span></div>
+                        </div>
+                        <h4>Nicknames</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Nickname <small>(name)</small> <span>(0)</span></div>
+                            <div class="command-item">!Reset Name <span>(0)</span></div>
+                        </div>
+                        <h4>Gift Points</h4>
+                        <div class="command-list command-list-single">
+                            <div class="command-item">
+                                !GiftPoints <span>(0)</span>
+                                <div class="command-subtext-italic">Example: !giftpoints @2smokinbarrels+1000</div>
+                            </div>
+                        </div>
+                        <h4>Custom Timers</h4>
+                        <div class="command-list">
+                            <div class="command-item">!CreateTimer</div>
+                            <div class="command-item">!DeleteTimer</div>
+                            <div class="command-item">!PauseTimer</div>
+                            <div class="command-item">!ResumeTimer</div>
+                            <div class="command-item">!AddTime</div>
+                            <div class="command-item">!DeductTime</div>
+                        </div>
+                        <div class="command-info-box">
+                            <div class="command-info-title">Timer Formatting:</div>
+                            <code class="command-code">
+                                !CreateTimer &lt;Time&gt; | &lt;Title&gt; | &lt;Description&gt; | &lt;CountUp=true&gt;<br>
+                                !deleteTimer: &lt;Title&gt; | !pauseTimer: &lt;Title&gt; | !resumeTimer: &lt;Title&gt;<br>
+                                !addTime: &lt;Time&gt; | !deductTime: &lt;Time&gt;
+                            </code>
+                            <div class="command-info-title">Examples:</div>
+                            <div class="command-examples">
+                                • !createTimer 00:00:30 | Test Timer | This is the description | False<br>
+                                • !addTime 00:00:30 | Test Timer
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </details>
+
+                <div id="info-links" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Information & Links</h2>
+                    <div class="command-list-wrapper">
+                        <h4>General Info</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Discord <span>(0)</span></div>
+                            <div class="command-item">
+                                !PayPal <span>(0)</span>
+                                <div class="command-subtext"><a href="https://PayPal.Me/2SmokinBarrels" target="_blank">Donate via PayPal</a></div>
+                            </div>
+                            <div class="command-item">!PSN <span>(0)</span></div>
+                            <div class="command-item">
+                                !Merch <span>(0)</span>
+                                <div class="command-subtext"><a href="https://2smokinbarrels-shop.fourthwall.com" target="_blank">Merch Store</a></div>
+                            </div>
+                        </div>
+                        <h4>Red Dead Links</h4>
+                        <div class="command-list">
+                            <div class="command-item">!RDODailies <span>(0)</span>
+                                <div class="command-subtext"><a href="https://www.rdo-dailies.com" target="_blank">RDO-Dailes.com</a></div>
+                            </div>
+                            <div class="command-item">!CollectorsMap <span>(0)</span>
+                                <div class="command-subtext"><a href="https://jeanropke.github.io/RDR2CollectorsMap" target="_blank">RDO Collector's Map</a></div>
+                            </div>
+                            <div class="command-item">!RDOMap <span>(0)</span>
+                                <div class="command-subtext"><a href="https://jeanropke.github.io/RDOMap" target="_blank">RDO Map</a></div>
+                            </div>
+                            <div class="command-item">!PriceList <span>(0)</span>
+                                <div class="command-subtext"><a href="https://discord.com/channels/758192378409779200/1099573893502619668/1442336702592057384" target="_blank">Legendary Animal Prices</a></div>
+                            </div>
+                            <div class="command-item">!FieldGuide <span>(0)</span>
+                                <div class="command-subtext"><a href="https://tjakubowski.github.io/rdo-naturalist" target="_blank">Interactive Field Guide</a></div>
+                            </div>
+                        </div>
+                        <h4>Community & Official Resources</h4>
+                        <div class="command-list">
+                            <div class="command-item">!GoldGlitch <span>(0)</span>
+                                <div class="command-subtext"><a href="https://youtu.be/olP7h9B7V90" target="_blank">Lake Isabella Video</a></div>
+                            </div>
+                            <div class="command-item">!MapGlitch <span>(0)</span>
+                                <div class="command-subtext"><a href="https://youtu.be/sf41Gy08b-I" target="_blank">Treasure Map Video</a></div>
+                            </div>
+                            <div class="command-item">!Macros <span>(0)</span>
+                                <div class="command-subtext"><a href="https://drive.google.com/drive/folders/17yeL7dmmE9Nuz7w5TODVh-gHd6AaVLo5?usp=sharing" target="_blank">Macro Files & Guide</a></div>
+                            </div>
+                            <div class="command-item">!Newswire <span>(0)</span>
+                                <div class="command-subtext"><a href="https://www.rockstargames.com" target="_blank">Rockstar Newswire</a></div>
+                            </div>
+                        </div>
+                        <h4>Birthdays</h4>
+                        <div class="command-list command-list-single">
+                            <div class="command-item">!Birthday <small>(MM dd)</small>
+                                <div class="command-subtext-italic">Example: !birthday 12 25</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="music-control" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Music Control</h2>
+                    <div class="command-list-wrapper">
+                        <h4>Music Controls</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Play <span>(0)</span></div>
+                            <div class="command-item">!Pause <span>(0)</span></div>
+                            <div class="command-item">!Previous <span>(0)</span></div>
+                            <div class="command-item">!Skip <span>(0)</span></div>
+                            <div class="command-item">!Stop <span>(0)</span></div>
+                            <div class="command-item">!Show <span>(0)</span></div>
+                            <div class="command-item">!Hide <span>(0)</span></div>
+                            <div class="command-item">!Favorite <span>(0)</span>
+                                <div class="command-subtext-italic">Add track to Favorites List</div>
+                            </div>
+                        </div>
+                        <h4>Select Album</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Breakin <span>(300)</span>
+                                <div class="command-subtext">Instrumental 90's breakin/scratchin vibes</div>
+                            </div>
+                            <div class="command-item">!Camp <span>(300)</span>
+                                <div class="command-subtext">Camp Songs from RDR2</div>
+                            </div>
+                            <div class="command-item">!Careless <span>(300)</span>
+                                <div class="command-subtext">80's-ish retro vibes</div>
+                            </div>
+                            <div class="command-item">!Halloween <span>(300)</span>
+                                <div class="command-subtext">Spooky instrumental vibes</div>
+                            </div>
+                            <div class="command-item">!Hot List <span>(300)</span>
+                                <div class="command-subtext">Chat's favorite tracks</div>
+                            </div>
+                            <div class="command-item">!Midnight <span>(300)</span>
+                                <div class="command-subtext">GTA inspired driving music</div>
+                            </div>
+                            <div class="command-item">!Pipa <span>(300)</span>
+                                <div class="command-subtext">Instrumental Chinese meditation vibes</div>
+                            </div>
+                            <div class="command-item">!Rock <span>(300)</span>
+                                <div class="command-subtext">Instrumental Rock vibes</div>
+                            </div>
+                            <div class="command-item">!Shuffle <span>(300)</span>
+                                <div class="command-subtext">Shuffle all albums/tracks</div>
+                            </div>
+                            <div class="command-item">!Western <span>(300)</span>
+                                <div class="command-subtext">Country Western vibes</div>
+                            </div>
+                        </div>
+                        <h4>Free Music Downloads</h4>
+                        <div class="command-list command-list-single">
+                            <div class="command-item">
+                                <a href="https://drive.google.com/drive/u/0/folders/1xAi6wL8cdLEPr6ogqhJ99O8lPwGn3QDy" target="_blank" class="command-download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>!Music - Download Folder</span>
+                                </a>
+                                <div class="command-subtext-italic">Access the full archive of royalty-free stream tracks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="statistics" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Statistics</h2>
+                    <div class="command-list-wrapper">
+                        <h4>Engagement</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Checkin <span>(0)</span></div>
+                            <div class="command-item">!Rollcall <span>(0)</span></div>
+                        </div>
+                        <h4>Overall Statistics</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Stats <span>(0)</span></div>
+                            <div class="command-item">!MonthlyStats <span>(0)</span></div>
+                            <div class="command-item">!StreamStats <span>(0)</span></div>
+                        </div>
+                        <h4>Specific Statistics</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Attendance <span>(0)</span></div>
+                            <div class="command-item">!Checkins <span>(0)</span></div>
+                            <div class="command-item">!Donations <span>(0)</span></div>
+                            <div class="command-item">!Gifts <span>(0)</span></div>
+                            <div class="command-item">!Points <span>(0)</span></div>
+                            <div class="command-item">!PointsUsed <span>(0)</span></div>
+                            <div class="command-item">!Messages <span>(0)</span></div>
+                            <div class="command-item">!Rank <span>(0)</span></div>
+                            <div class="command-item">!Supers <span>(0)</span></div>
+                            <div class="command-item">!WhammyPoints <span>(0)</span></div>
+                            <div class="command-item">!WhammyWins <span>(0)</span></div>
+                            <div class="command-item">!Watchtime <span>(0)</span></div>
+                            <div class="command-item">!XP <span>(0)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="leaderboards" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Leaderboards</h2>
+                    <div class="command-list-wrapper">
+                        <h4>All Time Leaderboards</h4>
+                        <div class="command-list">
+                            <div class="command-item">!topAttendance <span>(0)</span></div>
+                            <div class="command-item">!topCheckins <span>(0)</span></div>
+                            <div class="command-item">!topCommands <span>(0)</span></div>
+                            <div class="command-item">!topDailyStreak <span>(0)</span></div>
+                            <div class="command-item">!topDailyTotal <span>(0)</span></div>
+                            <div class="command-item">!topDonators <span>(0)</span></div>
+                            <div class="command-item">!topGifters <span>(0)</span></div>
+                            <div class="command-item">!topMessages <span>(0)</span></div>
+                            <div class="command-item">!topPoints <span>(0)</span></div>
+                            <div class="command-item">!topSupers <span>(0)</span></div>
+                            <div class="command-item">!topWatchtime <span>(0)</span></div>
+                            <div class="command-item">!topWhammyPoints <span>(0)</span></div>
+                            <div class="command-item">!topWins <span>(0)</span></div>
+                            <div class="command-item">!topWOTD <span>(0)</span></div>
+                            <div class="command-item">!topXP <span>(0)</span></div>
+                        </div>
+                        <h4>Monthly Leaderboards</h4>
+                        <div class="command-list">
+                            <div class="command-item">!monthlyAttendance <span>(0)</span></div>
+                            <div class="command-item">!monthlyCheckins <span>(0)</span></div>
+                            <div class="command-item">!monthlyCommands <span>(0)</span></div>
+                            <div class="command-item">!monthlyDailyStreak <span>(0)</span></div>
+                            <div class="command-item">!monthlyDailyTotal <span>(0)</span></div>
+                            <div class="command-item">!monthlyDonators <span>(0)</span></div>
+                            <div class="command-item">!monthlyGifters <span>(0)</span></div>
+                            <div class="command-item">!monthlyMessages <span>(0)</span></div>
+                            <div class="command-item">!monthlyPoints <span>(0)</span></div>
+                            <div class="command-item">!monthlyPointsUsed <span>(0)</span></div>
+                            <div class="command-item">!monthlySupers <span>(0)</span></div>
+                            <div class="command-item">!monthlyWatchtime <span>(0)</span></div>
+                            <div class="command-item">!monthlyWhammyPoints <span>(0)</span></div>
+                            <div class="command-item">!monthlyWins <span>(0)</span></div>
+                            <div class="command-item">!monthlyWOTD <span>(0)</span></div>
+                            <div class="command-item">!monthlyXP <span>(0)</span></div>
+                        </div>
+                        <h4>Current Stream Leaderboards</h4>
+                        <div class="command-list">
+                            <div class="command-item">!StreamCommands <span>(0)</span></div>
+                            <div class="command-item">!StreamGifters <span>(0)</span></div>
+                            <div class="command-item">!StreamMessages <span>(0)</span></div>
+                            <div class="command-item">!StreamPoints <span>(0)</span></div>
+                            <div class="command-item">!StreamSupers <span>(0)</span></div>
+                            <div class="command-item">!StreamWatchtime <span>(0)</span></div>
+                            <div class="command-item">!StreamWhammyPoints <span>(0)</span></div>
+                            <div class="command-item">!StreamWins <span>(0)</span></div>
+                            <div class="command-item">!StreamXP <span>(0)</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="soundbytes" class="command-section command-category-pane">
+                    <h2 class="section-title pane-title">Soundbytes</h2>
+                    <div class="command-list-wrapper">
+                        <h4>Random SoundBites</h4>
+                        <div class="command-list">
+                            <div class="command-item">!1up <span>(1000)</span></div>
+                            <div class="command-item">!applause <span>(1000)</span></div>
+                            <div class="command-item">!Bruh <span>(1000)</span></div>
+                            <div class="command-item">!Cheesy <span>(1000)</span></div>
+                            <div class="command-item">!ChooChoo <span>(1000)</span></div>
+                            <div class="command-item">!DamnSon <span>(1000)</span></div>
+                            <div class="command-item">!Dog <span>(1000)</span></div>
+                            <div class="command-item">!DoIt <span>(1000)</span></div>
+                            <div class="command-item">!Doh <span>(1000)</span></div>
+                            <div class="command-item">!ElResitas <span>(1000)</span></div>
+                            <div class="command-item">!Emotional <span>(1000)</span></div>
+                            <div class="command-item">!Escalated <span>(1000)</span></div>
+                            <div class="command-item">!Face <span>(1000)</span></div>
+                            <div class="command-item">!Fact <span>(1000)</span></div>
+                            <div class="command-item">!Fahhh<span>(1000)</span></div>
+                            <div class="command-item">!Fine <span>(1000)</span></div>
+                            <div class="command-item">!Floating <span>(1000)</span></div>
+                            <div class="command-item">!Fucked <span>(1000)</span></div>
+                            <div class="command-item">!Great <span>(1000)</span></div>
+                            <div class="command-item">!HawkTuah <span>(1000)</span></div>
+                            <div class="command-item">!HeeHee <span>(1000)</span></div>
+                            <div class="command-item">Hello, Hi, Hola <span>(1000)</span></div>
+                            <div class="command-item">!HellNo <span>(1000)</span></div>
+                            <div class="command-item">!HoldUp <span>(1000)</span></div>
+                            <div class="command-item">!Joe <span>(1000)</span></div>
+                            <div class="command-item">!JustDoIt <span>(1000)</span></div>
+                            <div class="command-item">!Leeroy <span>(1000)</span></div>
+                            <div class="command-item">!Legitness <span>(1000)</span></div>
+                            <div class="command-item">!Mother Trucker <span>(1000)</span></div>
+                            <div class="command-item">!Noid <span>(1000)</span></div>
+                            <div class="command-item">!Noob <span>(1000)</span></div>
+                            <div class="command-item">!Perfect <span>(1000)</span></div>
+                            <div class="command-item">!PlayStation <span>(1000)</span></div>
+                            <div class="command-item">!Relax <span>(1000)</span></div>
+                            <div class="command-item">#Rigged <span>(1000)</span></div>
+                            <div class="command-item">!Sad <span>(1000)</span></div>
+                            <div class="command-item">!Shut up <span>(1000)</span></div>
+                            <div class="command-item">!That <span>(1000)</span></div>
+                            <div class="command-item">!Touching <span>(1000)</span></div>
+                            <div class="command-item">!Trophy <span>(1000)</span></div>
+                            <div class="command-item">!WeedTrain <span>(300)</span></div>
+                            <div class="command-item">!Why <span>(1000)</span></div>
+                            <div class="command-item">!Woody <span>(1000)</span></div>
+                            <div class="command-item">!Wow <span>(1000)</span></div>
+                            <div class="command-item">!YeeHaw <span>(1000)</span></div>
+                        </div>
+
+                        <h4>WWE</h4>
+                        <div class="command-list">
+                            <div class="command-item">( . )( . ) <span>(1000)</span></div>
+                            <div class="command-item">!Damn <span>(1000)</span></div>
+                            <div class="command-item">!John Cena <span>(1000)</span></div>
+                            <div class="command-item">!Nameis <span>(1000)</span></div>
+                            <div class="command-item">What? <span>(1000)</span></div>
+                            <div class="command-item">!Woo <span>(1000)</span></div>
+                            <div class="command-item">Yeet <span>(1000)</span></div>
+                        </div>
+
+                        <h4>Tombstone</h4>
+                        <div class="command-list">
+                            <div class="command-item">!2Guns <span>(1000)</span></div>
+                            <div class="command-item">!Bare <span>(1000)</span></div>
+                            <div class="command-item">!Bleed <span>(1000)</span></div>
+                            <div class="command-item">!Blood <span>(1000)</span></div>
+                            <div class="command-item">!Bye <span>(1000)</span></div>
+                            <div class="command-item">!Daisy <span>(1000)</span></div>
+                            <div class="command-item">!Famous <span>(1000)</span></div>
+                            <div class="command-item">!Foolin <span>(1000)</span></div>
+                            <div class="command-item">!Hell <span>(1000)</span></div>
+                            <div class="command-item">!Huckleberry <span>(1000)</span></div>
+                            <div class="command-item">!Prime <span>(1000)</span></div>
+                            <div class="command-item">!Skin <span>(1000)</span></div>
+                            <div class="command-item">!Thing <span>(1000)</span></div>
+                            <div class="command-item">!Ugly <span>(1000)</span></div>
+                        </div>
+
+                        <h4>Music Clips</h4>
+                        <div class="command-list">
+                            <div class="command-item">!15Bucks <span>(2000)</span></div>
+                            <div class="command-item">!2Legit <span>(2000)</span></div>
+                            <div class="command-item"><i class="fas fa-heart"></i><i class="fas fa-heart"></i> <span>(2000)</span></div>
+                            <div class="command-item">!CryMe <span>(2000)</span></div>
+                            <div class="command-item">!Hiroshima <span>(2000)</span></div>
+                            <div class="command-item">!Kids <span>(2000)</span></div>
+                            <div class="command-item">!RideIt <span>(2000)</span></div>
+                            <div class="command-item">!Slam <span>(2000)</span></div>
+                            <div class="command-item">!Starting <span>(2000)</span></div>
+                            <div class="command-item">!Whoop <span>(2000)</span></div>
+                        </div>
+
+                        <h4>In Living Color</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Backward <span>(1000)</span></div>
+                            <div class="command-item">!Birdie <span>(1000)</span></div>
+                            <div class="command-item">!Blackbelt <span>(1000)</span></div>
+                            <div class="command-item">!HatedIt <span>(1000)</span></div>
+                            <div class="command-item">!Marshall <span>(1000)</span></div>
+                            <div class="command-item">!Shaboing <span>(1000)</span></div>
+                            <div class="command-item">!Wanda <span>(1000)</span></div>
+                        </div>
+
+                        <h4>Back to the Future</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Asshole <span>(1000)</span></div>
+                            <div class="command-item">!GreatScott <span>(1000)</span></div>
+                            <div class="command-item">!McFly <span>(1000)</span></div>
+                            <div class="command-item">!RightAnswer <span>(1000)</span></div>
+                            <div class="command-item">!HiMom <span>(1000)</span></div>
+                            <div class="command-item">!Slacker <span>(1000)</span></div>
+                            <div class="command-item">!TYVM <span>(1000)</span></div>
+                        </div>
+
+                        <h4>Misc Film & TV</h4>
+                        <div class="command-list">
+                            <div class="command-item">!Bingo <span>(1000)</span></div>
+                            <div class="command-item">!Bueller <span>(1000)</span></div>
+                            <div class="command-item">!Buttercup <span>(1000)</span></div>
+                            <div class="command-item">!CandyAss <span>(1000)</span></div>
+                            <div class="command-item">!Daddy <span>(1000)</span></div>
+                            <div class="command-item">!Dangerous <span>(1000)</span></div>
+                            <div class="command-item">!Dirt <span>(1000)</span></div>
+                            <div class="command-item">!Ever <span>(1000)</span></div>
+                            <div class="command-item">!Everyone <span>(1000)</span></div>
+                            <div class="command-item">!Friends <span>(1000)</span></div>
+                            <div class="command-item">!Goodluck <span>(1000)</span></div>
+                            <div class="command-item">!Help <span>(1000)</span></div>
+                            <div class="command-item">!Homeboy <span>(1000)</span></div>
+                            <div class="command-item">!Hounds <span>(1000)</span></div>
+                            <div class="command-item">!Jeff <span>(1000)</span></div>
+                            <div class="command-item">!Juice <span>(1000)</span></div>
+                            <div class="command-item">!Kent <span>(1000)</span></div>
+                            <div class="command-item">!GIJoe <span>(1000)</span></div>
+                            <div class="command-item">!Manners <span>(1000)</span></div>
+                            <div class="command-item">!NAN <span>(1000)</span></div>
+                            <div class="command-item">!NFWJ <span>(1000)</span></div>
+                            <div class="command-item">!Ohno <span>(1000)</span></div>
+                            <div class="command-item">!Opinion <span>(1000)</span></div>
+                            <div class="command-item">!Peach <span>(1000)</span></div>
+                            <div class="command-item">!Pena <span>(1000)</span></div>
+                            <div class="command-item">!References <span>(1000)</span></div>
+                            <div class="command-item">!SaveMe <span>(1000)</span></div>
+                            <div class="command-item">!Say What <span>(1000)</span></div>
+                            <div class="command-item">!Sir <span>(0)</span></div>
+                            <div class="command-item">!Shitter <span>(1000)</span></div>
+                            <div class="command-item">!ShoNuff <span>(1000)</span></div>
+                            <div class="command-item">!Shoosh <span>(1000)</span></div>
+                            <div class="command-item">!Slow <span>(1000)</span></div>
+                            <div class="command-item">!Smokin <span>(1000)</span></div>
+                            <div class="command-item">!Snoochie <span>(1000)</span></div>
+                            <div class="command-item">!Sparta <span>(1000)</span></div>
+                            <div class="command-item">!VeryNice <span>(1000)</span></div>
+                            <div class="command-item">!Waitforit <span>(1000)</span></div>
+                            <div class="command-item">!Wee <span>(1000)</span></div>
+                            <div class="command-item">!What <span>(1000)</span></div>
+                            <div class="command-item">!Winning <span>(1000)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </Layout>

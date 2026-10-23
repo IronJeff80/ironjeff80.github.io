@@ -78,13 +78,14 @@ body {
     margin: 0;
     line-height: 1.6;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+    
+    /* Grid-based sticky footer */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
 main {
-    flex-grow: 1;
     width: 100%;
     box-sizing: border-box;
 }

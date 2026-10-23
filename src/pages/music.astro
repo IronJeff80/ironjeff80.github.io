@@ -287,52 +287,52 @@ const albums = [
         <!-- View Controls -->
         <div class="view-toggle-container">
             <span class="view-label">Layout:</span>
-            <button class="cmd-btn view-btn active" data-view="grid" aria-label="Gallery View">Gallery</button>
-            <button class="cmd-btn btn-secondary view-btn" data-view="list" aria-label="List View">List</button>
+            <button class="cmd-btn btn-secondary view-btn" data-view="grid" aria-label="Gallery View">Gallery</button>
+            <button class="cmd-btn view-btn active" data-view="list" aria-label="List View">List</button>
         </div>
 
         <!-- Albums Grid -->
-        <div id="album-container" class="grid grid-albums">
-            
-            {albums.map((album) => (
-                <div class="card">
-                    <img 
-                        src={`/images/albums/${album.title}.webp`} 
-                        alt={`${album.title} Cover Art`} 
-                        class="album-cover"
-                        loading="lazy"
-                    />
+                <div id="album-container" class="grid grid-albums list-view">
+                    
+                    {albums.map((album) => (
+                        <div class="card">
+                            <img 
+                                src={`/images/albums/${album.title}.webp`} 
+                                alt={`${album.title} Cover Art`} 
+                                class="album-cover"
+                                loading="lazy"
+                            />
 
-                    <!-- Wrapper added for List view flexbox layout -->
-                    <div class="album-info">
-                        <h3 class="album-title">{album.title}</h3>
-                        
-                        <span class="badge">{album.genre}</span>
-                        <p>
-                            {album.description}
-                        </p>
-                        <div class="album-actions">
-                            <a href={album.folderUrl} target="_blank" class="cmd-btn btn-full">
-                                Download
-                            </a>
+                            <!-- Wrapper added for List view flexbox layout -->
+                            <div class="album-info">
+                                <h3 class="album-title">{album.title}</h3>
+                                
+                                <span class="badge">{album.genre}</span>
+                                <p>
+                                    {album.description}
+                                </p>
+                                <div class="album-actions">
+                                    <a href={album.folderUrl} target="_blank" class="cmd-btn btn-full">
+                                        Download
+                                    </a>
+                                </div>
+                                
+                                <details class="tracklist-details">
+                                    <summary>
+                                        View Tracks ({album.tracks.length})
+                                    </summary>
+                                    <ul class="tracklist">
+                                        {album.tracks.map((track, index) => (
+                                            <li class="tracklist-item">
+                                                <span>{index + 1}. {track.replace('.mp3', '')}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </details>
+                            </div>
                         </div>
-                        
-                        <details class="tracklist-details">
-                            <summary>
-                                View Tracks ({album.tracks.length})
-                            </summary>
-                            <ul class="tracklist">
-                                {album.tracks.map((track, index) => (
-                                    <li class="tracklist-item">
-                                        <span>{index + 1}. {track.replace('.mp3', '')}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </details>
-                    </div>
+                    ))}
                 </div>
-            ))}
-        </div>
         
         <div class="back-nav">
             <a href="/" class="back-link">&larr; Back to Home</a>

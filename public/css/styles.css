@@ -483,6 +483,13 @@ footer,
     color: var(--accent-pink);
     font-weight: 700;
 }
+.highlight-subtext {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--white-med);
+    font-weight: 400;
+}
 
 /* Back to Home Navigation */
 .back-nav {

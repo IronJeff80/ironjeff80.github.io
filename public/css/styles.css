@@ -2260,6 +2260,8 @@ details[open] > .widget-header {
     cursor: pointer;
     font-size: 0.75rem;
     transition: all 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .vod-reset-btn:hover {
@@ -2290,6 +2292,8 @@ details[open] > .widget-header {
     color: var(--white-low);
     font-family: 'Inter', sans-serif;
     transition: all 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .vod-item:hover,

@@ -399,10 +399,10 @@ footer,
    ========================================= */
 .container {
     width: 100%;
-    box-sizing: border-box;
-    max-width: 1400px;
+    max-width: 1250px; /* Bumped slightly from 1100px to perfectly fit 3 music columns */
     margin: 0 auto;
-    padding: 2rem 5%;
+    padding: 2rem 20px; /* Replaces 5% to stop padding from crushing content on wide screens */
+    box-sizing: border-box;
 }
 
 .page-header {

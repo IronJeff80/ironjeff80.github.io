@@ -2090,3 +2090,82 @@ details[open] > .widget-header {
         padding: 0.5rem;
     }
 }
+
+/* =========================================
+   16. PAGE SPECIFIC: MUSIC (VIEW TOGGLE)
+   ========================================= */
+.view-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+.view-label {
+    color: var(--white-med);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.view-btn {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* List View Overrides */
+.grid-albums.list-view {
+    grid-template-columns: 1fr;
+}
+
+.grid-albums.list-view .card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 1.5rem;
+}
+
+.grid-albums.list-view .album-cover {
+    width: 220px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.grid-albums.list-view .album-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: auto;
+    align-self: flex-start;
+}
+
+.grid-albums.list-view .cmd-btn.btn-full {
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Switch back to column on smaller screens even if list view is active */
+@media (max-width: 768px) {
+    .grid-albums.list-view .card {
+        flex-direction: column;
+    }
+    .grid-albums.list-view .album-cover {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .grid-albums.list-view .album-actions {
+        width: 100%;
+        align-self: stretch;
+    }
+    .grid-albums.list-view .cmd-btn.btn-full {
+        width: 100%;
+    }
+}

@@ -511,3 +511,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ==========================================
+// 10. MUSIC PAGE VIEW TOGGLE
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const albumContainer = document.getElementById('album-container');
+    const viewBtns = document.querySelectorAll('.view-btn');
+
+    if (!albumContainer || viewBtns.length === 0) return;
+
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active state from all view buttons
+            viewBtns.forEach(b => {
+                b.classList.remove('active');
+                b.classList.add('btn-secondary'); // Your ghost outline style
+            });
+            
+            // Add active state to clicked button
+            btn.classList.add('active');
+            btn.classList.remove('btn-secondary');
+
+            // Apply layout structure based on data-view attribute
+            const viewType = btn.getAttribute('data-view');
+            if (viewType === 'list') {
+                albumContainer.classList.add('list-view');
+            } else {
+                albumContainer.classList.remove('list-view');
+            }
+        });
+    });
+});

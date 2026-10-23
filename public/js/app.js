@@ -36,24 +36,6 @@ window.onload = function () {
         if (statusMsg) statusMsg.innerText = "Sign in to interact with the stream.";
     }
 
-    // Commands Page Auto-scroll Logic
-    const details = document.querySelectorAll('details[name="commands"]');
-    details.forEach((targetDetail) => {
-        targetDetail.addEventListener("toggle", (e) => {
-            if (targetDetail.open) {
-                setTimeout(() => {
-                    const nav = document.querySelector('nav');
-                    const navHeight = nav ? nav.offsetHeight : 0;
-                    const elementPosition = targetDetail.getBoundingClientRect().top + window.pageYOffset;
-
-                    window.scrollTo({
-                        top: elementPosition - navHeight - 10,
-                        behavior: "smooth"
-                    });
-                }, 50);
-            }
-        });
-    });
 
     // Fetch dynamic resource locations for the Resource pages
     fetchNazarLocation();

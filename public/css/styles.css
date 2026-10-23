@@ -79,15 +79,10 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     
-    /* Grid-based sticky footer mapped to your 4 exact layout elements */
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
+    /* Simple flex setup */
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-}
-
-main {
-    width: 100%;
-    box-sizing: border-box;
 }
 
 h1, h2, h3 {
@@ -348,6 +343,9 @@ footer,
     flex-direction: column;
     gap: 0.4rem;
     align-items: center;
+    
+    /* This pushes the footer to the bottom of the screen */
+    margin-top: auto; 
 }
 
 .footer-social {

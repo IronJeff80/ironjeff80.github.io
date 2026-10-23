@@ -470,3 +470,62 @@ async function fetchGunVanLocation() {
         locationText.innerText = "Los Santos is quiet today (API Data missing).";
     }
 }
+
+// ==========================================
+// 9. COMMANDS PAGE INTERACTIVITY
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Only run this logic if we are on the commands page
+    if (!document.querySelector('.commands-layout')) return;
+
+    const navButtons = document.querySelectorAll('.sidebar-nav-btn');
+    const panes = document.querySelectorAll('.command-category-pane');
+    const searchInput = document.getElementById('command-search');
+
+    // Sidebar Navigation Logic
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Reset search when switching tabs manually
+            if (searchInput.value) {
+                searchInput.value = '';
+                resetSearch();
+            }
+
+            navButtons.forEach(b => b.classList.remove('active'));
+            panes.forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            const targetPane = document.getElementById(btn.getAttribute('data-target'));
+            if (targetPane) targetPane.classList.add('active');
+        });
+    });
+
+    // Search Filter Logic
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const activePane = document.querySelector('.command-category-pane.active');
+            
+            if (!activePane) return;
+
+            // Search only within the active pane
+            const commandItems = activePane.querySelectorAll('.command-item');
+            
+            commandItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    function resetSearch() {
+        const allItems = document.querySelectorAll('.command-item');
+        allItems.forEach(item => {
+            item.style.display = '';
+        });
+    }
+});

@@ -482,23 +482,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Search Filter Logic
+    // Search Filter Logic (Global)
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
-            const activePane = document.querySelector('.command-category-pane.active');
-            
-            if (!activePane) return;
 
-            // Search only within the active pane
-            const commandItems = activePane.querySelectorAll('.command-item');
-            
-            commandItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    item.style.display = '';
+            // If search is cleared, restore normal tab behavior
+            if (searchTerm === '') {
+                resetSearch();
+                
+                const activeBtn = document.querySelector('.sidebar-nav-btn.active');
+                panes.forEach(p => p.classList.remove('active'));
+                
+                if (activeBtn) {
+                    const targetPane = document.getElementById(activeBtn.getAttribute('data-target'));
+                    if (targetPane) targetPane.classList.add('active');
+                }
+                return;
+            }
+
+            // Search globally across ALL panes
+            panes.forEach(pane => {
+                const commandItems = pane.querySelectorAll('.command-item');
+                let hasMatch = false;
+                
+                commandItems.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = '';
+                        hasMatch = true; // Found at least one match in this category
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Temporarily show the whole pane if it contains a matching command
+                if (hasMatch) {
+                    pane.classList.add('active');
                 } else {
-                    item.style.display = 'none';
+                    pane.classList.remove('active');
                 }
             });
         });

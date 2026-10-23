@@ -15,7 +15,8 @@ import Layout from '../layouts/Layout.astro';
             <aside class="commands-sidebar">
                 <input type="text" id="command-search" class="command-search" placeholder="Search commands..." />
                 
-                <nav class="sidebar-nav">
+                <!-- Changed from <nav> to <div> to prevent conflict with global nav styles in styles.css -->
+                <div class="sidebar-nav">
                     <button class="sidebar-nav-btn active" data-target="face-voice">
                         <span>Face & Voice Filters</span>
                         <span class="nav-count">17</span>
@@ -72,7 +73,7 @@ import Layout from '../layouts/Layout.astro';
                         <span>Soundbytes</span>
                         <span class="nav-count">131</span>
                     </button>
-                </nav>
+                </div>
             </aside>
 
             <!-- Main Content Area -->

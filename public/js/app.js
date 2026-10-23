@@ -151,9 +151,17 @@ function connectBot() {
                     const chatFrame = document.getElementById('yt-chat-frame');
                     const msgEl = document.getElementById('status-msg');
                     const chatWrapper = document.getElementById('chat-wrapper');
+                    const vodWrapper = document.getElementById('vod-wrapper');
+                    const vodResetBtn = document.getElementById('vod-reset-btn');
 
                     if (customData.videoId && customData.videoId.trim() !== "") {
+                        // Stream is Live or Scheduled -> Show Live Player & Chat, Hide VOD list
+                        document.querySelectorAll('.vod-item').forEach(item => item.classList.remove('active'));
+                        if (vodResetBtn) vodResetBtn.style.display = 'none';
+                        if (vodWrapper) vodWrapper.style.display = 'none';
+
                         if (videoFrame) {
+                            videoFrame.removeAttribute('data-playing-vod');
                             videoFrame.style.display = 'block';
                             if (!videoFrame.src.includes(customData.videoId)) {
                                 const autoPlay = customData.isLive ? "?autoplay=1" : "";
@@ -174,13 +182,20 @@ function connectBot() {
                             msgEl.style.color = "#ffaa00"; 
                         }
                     } else {
-                        if (videoFrame) {
-                            videoFrame.style.display = 'none';
-                            if (!videoFrame.src.includes("about:blank")) videoFrame.src = "about:blank"; 
-                        }
-                        if (placeholderImg) placeholderImg.style.display = 'block';
+                        // Stream is Offline -> Hide Chat, Show VOD list
                         if (chatFrame && !chatFrame.src.includes("about:blank")) chatFrame.src = "about:blank"; 
                         if (chatWrapper) chatWrapper.style.display = 'none';
+                        if (vodWrapper) vodWrapper.style.display = 'flex';
+
+                        // Only reset the video player to offline.webp if the user isn't currently watching a VOD
+                        const isPlayingVod = videoFrame && videoFrame.getAttribute('data-playing-vod') === 'true';
+                        if (!isPlayingVod) {
+                            if (videoFrame) {
+                                videoFrame.style.display = 'none';
+                                if (!videoFrame.src.includes("about:blank")) videoFrame.src = "about:blank"; 
+                            }
+                            if (placeholderImg) placeholderImg.style.display = 'block';
+                        }
                     }
                 }
             }
@@ -287,6 +302,54 @@ function toggleSection(headerElement) {
     if (contentElement) {
         contentElement.classList.toggle('collapsed');
     }
+}
+
+function toggleTheatreMode() {
+    const streamGrid = document.getElementById('stream-layout-grid');
+    const toggleBtn = document.getElementById('theatre-toggle-btn');
+    if (!streamGrid) return;
+
+    streamGrid.classList.toggle('theatre-mode');
+    const isTheatre = streamGrid.classList.contains('theatre-mode');
+
+    if (toggleBtn) {
+        toggleBtn.innerHTML = isTheatre 
+            ? '<i class="fas fa-compress"></i> <span>Default View</span>' 
+            : '<i class="fas fa-expand"></i> <span>Theater Mode</span>';
+    }
+}
+
+function playVodInStage(videoId, clickedEl) {
+    const videoFrame = document.getElementById('yt-video-frame');
+    const placeholderImg = document.getElementById('offline-placeholder');
+    const resetBtn = document.getElementById('vod-reset-btn');
+
+    if (!videoFrame) return;
+
+    if (placeholderImg) placeholderImg.style.display = 'none';
+    videoFrame.style.display = 'block';
+    videoFrame.setAttribute('data-playing-vod', 'true');
+    videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+
+    document.querySelectorAll('.vod-item').forEach(item => item.classList.remove('active'));
+    if (clickedEl) clickedEl.classList.add('active');
+    if (resetBtn) resetBtn.style.display = 'inline-block';
+}
+
+function resetToOfflineSlate() {
+    const videoFrame = document.getElementById('yt-video-frame');
+    const placeholderImg = document.getElementById('offline-placeholder');
+    const resetBtn = document.getElementById('vod-reset-btn');
+
+    if (videoFrame) {
+        videoFrame.removeAttribute('data-playing-vod');
+        videoFrame.style.display = 'none';
+        videoFrame.src = 'about:blank';
+    }
+    if (placeholderImg) placeholderImg.style.display = 'block';
+    if (resetBtn) resetBtn.style.display = 'none';
+
+    document.querySelectorAll('.vod-item').forEach(item => item.classList.remove('active'));
 }
 
 // ==========================================

@@ -2186,3 +2186,206 @@ details[open] > .widget-header {
         width: 100%;
     }
 }
+
+/* =========================================
+   17. STREAM STAGE: THEATER MODE & VODS
+   ========================================= */
+.stream-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.stream-header-row .section-title {
+    margin: 0;
+}
+
+.theatre-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    gap: 8px;
+}
+
+/* Past Streams / VOD Panel */
+.vod-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 450px;
+    background: var(--card-bg);
+    border: 2px solid var(--accent-blue);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px var(--glow-blue-soft);
+    box-sizing: border-box;
+}
+
+.vod-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(18, 16, 35, 0.85);
+    border-bottom: 1px solid rgba(55, 95, 207, 0.35);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    color: var(--accent-orange);
+    text-shadow: 0 0 8px var(--glow-orange);
+}
+
+.vod-header-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vod-header-title i {
+    color: var(--accent-pink);
+    font-size: 1rem;
+}
+
+.vod-reset-btn {
+    display: none;
+    background: rgba(247, 74, 169, 0.15);
+    border: 1px solid var(--accent-pink);
+    color: var(--white-low);
+    border-radius: 6px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.vod-reset-btn:hover {
+    background: var(--accent-pink);
+    box-shadow: 0 0 10px var(--glow-pink);
+}
+
+.vod-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.vod-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(55, 95, 207, 0.25);
+    border-left: 3px solid var(--accent-blue);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--white-low);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.vod-item:hover,
+.vod-item.active {
+    border-color: var(--accent-pink);
+    border-left-color: var(--accent-pink);
+    background: rgba(55, 95, 207, 0.18);
+    transform: translateX(3px);
+    box-shadow: 0 4px 12px var(--glow-pink-soft);
+}
+
+.vod-thumb-wrap {
+    position: relative;
+    width: 110px;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vod-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.vod-play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 16, 35, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: var(--white-low);
+    font-size: 0.9rem;
+}
+
+.vod-item:hover .vod-play-overlay,
+.vod-item.active .vod-play-overlay {
+    opacity: 1;
+}
+
+.vod-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.vod-game {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent-orange);
+}
+
+.vod-title {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white-low);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Desktop & Theater Mode Overrides */
+@media (min-width: 992px) {
+    .vod-wrapper {
+        height: 100%;
+        min-height: 450px;
+        max-height: 475px;
+    }
+
+    .stream-container.theatre-mode {
+        grid-template-columns: 1fr;
+    }
+
+    .stream-container.theatre-mode .chat-wrapper,
+    .stream-container.theatre-mode .vod-wrapper {
+        height: 360px;
+        min-height: 360px;
+        max-height: 360px;
+    }
+
+    .stream-container.theatre-mode .vod-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: start;
+    }
+}

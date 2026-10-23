@@ -83,14 +83,14 @@ body {
     min-height: 100vh;
 }
 
+main {
+    flex-grow: 1;
+}
+
 h1, h2, h3 {
     font-family: 'Mr Dafoe', cursive;
     font-weight: 400;
     letter-spacing: 2px;
-}
-
-main {
-    flex-grow: 1;
 }
 
 /* =========================================

@@ -457,7 +457,6 @@ async function fetchGunVanLocation() {
 // 9. COMMANDS PAGE INTERACTIVITY
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Only run this logic if we are on the commands page
     if (!document.querySelector('.commands-layout')) return;
 
     const navButtons = document.querySelectorAll('.sidebar-nav-btn');
@@ -491,15 +490,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (searchTerm === '') {
                 resetSearch();
                 
-                const activeBtn = document.querySelector('.sidebar-nav-btn.active');
+                // Clear all active states first
+                navButtons.forEach(b => b.classList.remove('active'));
                 panes.forEach(p => p.classList.remove('active'));
                 
-                if (activeBtn) {
-                    const targetPane = document.getElementById(activeBtn.getAttribute('data-target'));
+                // Snap back to the first tab visually
+                if (navButtons.length > 0) {
+                    navButtons[0].classList.add('active');
+                    const targetPane = document.getElementById(navButtons[0].getAttribute('data-target'));
                     if (targetPane) targetPane.classList.add('active');
                 }
                 return;
             }
+
+            // Remove active class from all sidebar buttons to indicate global search
+            navButtons.forEach(b => b.classList.remove('active'));
 
             // Search globally across ALL panes
             panes.forEach(pane => {
@@ -510,7 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const text = item.textContent.toLowerCase();
                     if (text.includes(searchTerm)) {
                         item.style.display = '';
-                        hasMatch = true; // Found at least one match in this category
+                        hasMatch = true; 
                     } else {
                         item.style.display = 'none';
                     }

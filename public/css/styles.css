@@ -85,6 +85,8 @@ body {
 
 main {
     flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1, h2, h3 {

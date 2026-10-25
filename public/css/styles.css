@@ -444,7 +444,8 @@ footer,
 
 /* Modernized Highlight Box */
 .highlight-box {
-    background: var(--panel-bg);
+    position: relative;
+    background: radial-gradient(circle at center, #febcad 0%, #9270b4 100%);
     box-sizing: border-box;
     border: 1px solid rgba(55, 95, 207, 0.25);
     border-left: 5px solid var(--accent-blue) !important;
@@ -455,40 +456,80 @@ footer,
     margin-bottom: 3rem;
     text-align: center;
     border-radius: 12px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* Left & Right SVG Masks (Positioned so the center of each SVG sits on the left/right edges) */
+.highlight-box::before,
+.highlight-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+    pointer-events: none;
+    z-index: 1;
+    background-color: rgba(88, 62, 107, 0.55); /* Tints the palm silhouettes to match your #583e6b theme */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: auto 130%;
+    mask-size: auto 130%;
+}
+
+.highlight-box::before {
+    left: 0;
+    -webkit-mask-image: url('/images/art-left-mask.svg');
+    mask-image: url('/images/art-left-mask.svg');
+    -webkit-mask-position: right bottom; /* Anchors the center of the SVG to the left edge */
+    mask-position: right bottom;
+}
+
+.highlight-box::after {
+    right: 0;
+    -webkit-mask-image: url('/images/art-right-mask.svg');
+    mask-image: url('/images/art-right-mask.svg');
+    -webkit-mask-position: left bottom; /* Anchors the center of the SVG to the right edge */
+    mask-position: left bottom;
 }
 
 .highlight-box-left {
     text-align: left;
-    border-right: 1px solid rgba(55, 95, 207, 0.25) !important;
+    /* Removed the 1px border-right override so your 5px blue accent stays on both sides */
 }
 
 .highlight-box-spaced {
     margin-bottom: 5rem;
 }
 
+/* Ensure text sits above the SVG masks with the new color & glow */
 .highlight-box p {
+    position: relative;
+    z-index: 2;
     margin: 0;
     font-size: 1.1rem;
-    color: var(--white-low);
+    color: #583e6b;
+    text-shadow: 0 0 10px #ea48b2, 0 0 20px rgba(234, 72, 178, 0.5);
 }
 
 .highlight-text {
-    color: var(--accent-orange);
+    color: #583e6b;
     font-weight: 700;
+    text-shadow: 0 0 10px #ea48b2, 0 0 20px rgba(234, 72, 178, 0.6);
 }
 
 .highlight-pink {
-    color: var(--accent-pink);
+    color: #583e6b;
     font-weight: 700;
+    text-shadow: 0 0 12px #ea48b2, 0 0 24px #ea48b2;
 }
+
 .highlight-subtext {
     display: block;
     margin-top: 10px;
     font-size: 0.95rem;
-    color: var(--white-med);
-    font-weight: 400;
+    color: #583e6b;
+    font-weight: 500;
+    text-shadow: 0 0 8px #ea48b2;
 }
 
 /* Back to Home Navigation */

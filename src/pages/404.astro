@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Page Not Found | 2 Smokin' Barrels"
+  description="The page you're looking for doesn't exist or has been moved."
+>
+  <main class="container">
+    <h1 class="page-title">404</h1>
+    
+    <div class="highlight-box">
+      <p>
+        <span class="highlight-text">This trail's gone cold.</span><br>
+        The page you're looking for doesn't exist, or it may have been moved.
+      </p>
+    </div>
+
+    <div class="card" style="text-align: center; max-width: 520px; margin: 2rem auto;">
+      <h3 class="album-title" style="font-size: 1.6rem;">Lost in the Badlands</h3>
+      <p>
+        Double-check the URL, or head back to familiar territory.
+      </p>
+      <div class="album-actions" style="justify-content: center; gap: 12px; display: flex; flex-wrap: wrap;">
+        <a href="/" class="cmd-btn">Back to Home</a>
+        <a href="/community" class="cmd-btn btn-secondary">Community</a>
+        <a href="/music" class="cmd-btn btn-secondary">Free Music</a>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -700,10 +700,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const idx = getCurrentIndex();
     if (idx === -1) return;
 
-    if (distX < 0 && idx < pages.length - 1) {
-      window.location.assign(pages[idx + 1]);
-    } else if (distX > 0 && idx > 0) {
-      window.location.assign(pages[idx - 1]);
+    const target = distX < 0 && idx < pages.length - 1
+      ? pages[idx + 1]
+      : distX > 0 && idx > 0
+        ? pages[idx - 1]
+        : null;
+
+    if (target) {
+      // Use Astro's client router when available for a smooth transition
+      if (window.astroNavigate) {
+        window.astroNavigate(target);
+      } else {
+        window.location.assign(target);
+      }
     }
   }, { passive: true });
 })();

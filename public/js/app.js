@@ -633,11 +633,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 // ==========================================
 // 11. MOBILE SWIPE NAVIGATION
 // ==========================================
 (function () {
-  // Only enable on touch devices / narrow screens
   const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   if (!isTouch) return;
 
@@ -656,15 +656,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let startX = 0;
   let startY = 0;
   let tracking = false;
-
-  const threshold = 60;       // minimum horizontal distance
-  const restraint = 80;       // max vertical drift allowed
-  const allowedTime = 400;    // max time for a swipe
   let startTime = 0;
 
+  const threshold = 50;     // slightly more forgiving
+  const restraint = 100;
+  const allowedTime = 500;
+
   function normalizePath(path) {
-    if (path === '' || path === '/') return '/';
-    return path.endsWith('/') ? path.slice(0, -1) : path;
+    if (!path || path === '/') return '/';
+    return path.replace(/\/$/, '') || '/';
   }
 
   function getCurrentIndex() {
@@ -673,14 +673,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('touchstart', (e) => {
-    // Ignore swipes that start on interactive controls
-    if (e.target.closest('a, button, input, textarea, select, details, .vod-item')) {
+    if (e.target.closest('a, button, input, textarea, select, details, .vod-item, .cmd-btn')) {
       tracking = false;
       return;
     }
-    const touch = e.changedTouches[0];
-    startX = touch.pageX;
-    startY = touch.pageY;
+    const t = e.changedTouches[0];
+    startX = t.clientX;
+    startY = t.clientY;
     startTime = Date.now();
     tracking = true;
   }, { passive: true });
@@ -689,9 +688,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!tracking) return;
     tracking = false;
 
-    const touch = e.changedTouches[0];
-    const distX = touch.pageX - startX;
-    const distY = touch.pageY - startY;
+    const t = e.changedTouches[0];
+    const distX = t.clientX - startX;
+    const distY = t.clientY - startY;
     const elapsed = Date.now() - startTime;
 
     if (elapsed > allowedTime) return;
@@ -699,14 +698,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Math.abs(distY) > restraint) return;
 
     const idx = getCurrentIndex();
-    if (idx === -1) return; // not on a swipeable page
+    if (idx === -1) return;
 
     if (distX < 0 && idx < pages.length - 1) {
-      // swipe left → next page
-      window.location.href = pages[idx + 1];
+      window.location.assign(pages[idx + 1]);
     } else if (distX > 0 && idx > 0) {
-      // swipe right → previous page
-      window.location.href = pages[idx - 1];
+      window.location.assign(pages[idx - 1]);
     }
   }, { passive: true });
 })();

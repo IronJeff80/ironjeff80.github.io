@@ -1990,8 +1990,8 @@ details[open] > .widget-header {
 }
 
 .legal-card {
-    max-width: 800px;
-    margin: 4rem auto;
+    max-width: 1250px;
+    margin: 2rem auto;
     padding: 2.5rem;
     background: var(--card-bg);
     border: 1px solid rgba(55, 95, 207, 0.25);

@@ -68,7 +68,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(rgba(18, 16, 35, 0.85), rgba(18, 16, 35, 0.85)), url('/images/Site-background-dark.png');
+    background: linear-gradient(rgba(18, 16, 35, 0.85), rgba(18, 16, 35, 0.85)), url('../assets/images/backgrounds/Site-background-dark.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -482,16 +482,16 @@ footer,
 
 .highlight-box::before {
     left: 0;
-    -webkit-mask-image: url('/images/art-left-mask.svg');
-    mask-image: url('/images/art-left-mask.svg');
+    -webkit-mask-image: url('../assets/images/backgrounds/art-left-mask.svg');
+    mask-image: url('../assets/images/backgrounds/art-left-mask.svg');
     -webkit-mask-position: right bottom; /* Anchors the center of the SVG to the left edge */
     mask-position: right bottom;
 }
 
 .highlight-box::after {
     right: 0;
-    -webkit-mask-image: url('/images/art-right-mask.svg');
-    mask-image: url('/images/art-right-mask.svg');
+    -webkit-mask-image: url('../assets/images/backgrounds/art-right-mask.svg');
+    mask-image: url('../assets/images/backgrounds/art-right-mask.svg');
     -webkit-mask-position: left bottom; /* Anchors the center of the SVG to the right edge */
     mask-position: left bottom;
 }
@@ -728,7 +728,7 @@ footer,
 
 .card {
     background-color: var(--card-bg);
-    background-image: linear-gradient(135deg, rgba(38, 30, 62, 0.75) 0%, rgba(18, 16, 35, 0.85) 100%), url('/images/card-texture.webp');
+    background-image: linear-gradient(135deg, rgba(38, 30, 62, 0.75) 0%, rgba(18, 16, 35, 0.85) 100%), url('../assets/images/backgrounds/card-texture.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -752,7 +752,7 @@ footer,
     border-top-color: var(--accent-pink) !important;
     transform: translateY(-4px);
     box-shadow: 0 8px 32px var(--glow-pink-soft);
-    background-image: linear-gradient(135deg, rgba(58, 45, 90, 0.65) 0%, rgba(28, 22, 50, 0.75) 100%), url('/images/card-texture.webp');
+    background-image: linear-gradient(135deg, rgba(58, 45, 90, 0.65) 0%, rgba(28, 22, 50, 0.75) 100%), url('../assets/images/backgrounds/card-texture.webp');
 }
 
 .card-center {
@@ -1562,14 +1562,14 @@ details[open] > .widget-header {
     position: relative;
 }
 
-.thumb-vimap { background-image: url('/images/thumb-vimap.jpg'); }
-.thumb-textgen { background-image: url('/images/thumb-textgen.jpg'); }
-.thumb-intel { background-image: url('/images/thumb-intel.jpg'); }
-.thumb-gtaweb { background-image: url('/images/thumb-gtaweb.jpg'); }
-.thumb-gtawiki { background-image: url('/images/thumb-gtawiki.jpg'); }
-.thumb-gtaforums { background-image: url('/images/thumb-gtaforums.jpg'); }
-.thumb-amethyst { background-image: url('/images/thumb-amethyst.jpg'); }
-.thumb-livery { background-image: url('/images/thumb-livery.jpg'); }
+.thumb-vimap { background-image: url('../assets/images/backgrounds/thumb-vimap.jpg'); }
+.thumb-textgen { background-image: url('../assets/images/backgrounds/thumb-textgen.jpg'); }
+.thumb-intel { background-image: url('../assets/images/backgrounds/thumb-intel.jpg'); }
+.thumb-gtaweb { background-image: url('../assets/images/backgrounds/thumb-gtaweb.jpg'); }
+.thumb-gtawiki { background-image: url('../assets/images/backgrounds/thumb-gtawiki.jpg'); }
+.thumb-gtaforums { background-image: url('../assets/images/backgrounds/thumb-gtaforums.jpg'); }
+.thumb-amethyst { background-image: url('../assets/images/backgrounds/thumb-amethyst.jpg'); }
+.thumb-livery { background-image: url('../assets/images/backgrounds/thumb-livery.jpg'); }
 
 .resource-thumb i {
     font-size: 3.5rem;
@@ -1866,12 +1866,12 @@ details[open] > .widget-header {
 }
 
 /* Additional RDO Resource Thumbnails */
-.thumb-collector { background-image: url('/images/thumb-collector.jpg'); }
-.thumb-rdomap { background-image: url('/images/thumb-rdomap.jpg'); }
-.thumb-dailies { background-image: url('/images/thumb-dailies.jpg'); }
-.thumb-rdrtools { background-image: url('/images/thumb-rdrtools.jpg'); }
-.thumb-naturalist { background-image: url('/images/thumb-naturalist.jpg'); }
-.thumb-rdr2map { background-image: url('/images/thumb-rdr2map.jpg'); }
+.thumb-collector { background-image: url('../assets/images/backgrounds/thumb-collector.jpg'); }
+.thumb-rdomap { background-image: url('../assets/images/backgrounds/thumb-rdomap.jpg'); }
+.thumb-dailies { background-image: url('../assets/images/backgrounds/thumb-dailies.jpg'); }
+.thumb-rdrtools { background-image: url('../assets/images/backgrounds/thumb-rdrtools.jpg'); }
+.thumb-naturalist { background-image: url('../assets/images/backgrounds/thumb-naturalist.jpg'); }
+.thumb-rdr2map { background-image: url('../assets/images/backgrounds/thumb-rdr2map.jpg'); }
 
 /* =========================================
    12. PAGE SPECIFIC: MUSIC ALBUMS

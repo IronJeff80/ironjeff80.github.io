@@ -1879,6 +1879,7 @@ details[open] > .widget-header {
 
 .album-cover {
     width: 100%;
+    height: auto !important;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border: 1px solid rgba(55, 95, 207, 0.25);
@@ -2193,6 +2194,8 @@ details[open] > .widget-header {
 
 .grid-albums.list-view .album-cover {
     width: 220px;
+    height: 220px !important;
+    aspect-ratio: 1 / 1;
     margin-bottom: 0;
     flex-shrink: 0;
 }
@@ -2217,6 +2220,8 @@ details[open] > .widget-header {
     }
     .grid-albums.list-view .album-cover {
         width: 100%;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
         margin-bottom: 1.5rem;
     }
     .grid-albums.list-view .album-actions {

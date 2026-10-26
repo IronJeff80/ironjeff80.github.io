@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+const communityModules = import.meta.glob('/src/assets/community/*.{jpg,webp,png}', { eager: true });
+
+function getCommunityImage(filename: string) {
+  const key = `/src/assets/community/${filename}`;
+  return communityModules[key]?.default;
+}
 ---
 
 <Layout title="Community | 2 Smokin' Barrels"
@@ -25,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Official Nugzz Crew -->
             <div class="card card-center">
-                <img src="/images/community/nugzz.webp" alt="Official Nugzz Crew" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("nugzz.webp")} alt="Official Nugzz Crew" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Official Nugzz Crew</h3>
                 <p>
                     An amazing collective creating fantastic content. Check out their official site and latest YouTube uploads!
@@ -45,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Haunter -->
             <div class="card card-center">
-                <img src="/images/community/haunter.jpg" alt="Haunter" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("haunter.jpg")} alt="Haunter" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Haunter</h3>
                 <p>
                     Awesome content creator bringing great vibes and entertainment to the community.
@@ -75,7 +83,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Leslie Cheyanne -->
             <div class="card card-center">
-                <img src="/images/community/leslie.jpg" alt="Leslie Cheyanne" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("leslie.jpg")} alt="Leslie Cheyanne" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Leslie Cheyanne</h3>
                 <p>
                     Live streaming great vibes, fun chats, and awesome gameplay. Drop by Twitch and say hello!
@@ -92,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Big Cat -->
             <div class="card card-center">
-                <img src="/images/community/bigcat.jpg" alt="Big Cat" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("bigcat.jpg")} alt="Big Cat" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Big Cat</h3>
                 <p>
                     Bringing high-energy streams and interactive moments to the community.
@@ -109,7 +117,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Anne Williams -->
             <div class="card card-center">
-                <img src="/images/community/anne.jpg" alt="Anne Williams" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("anne.jpg")} alt="Anne Williams" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Anne Williams</h3>
                 <p>
                     An incredibly welcoming stream featuring a beautiful community built on friendship.
@@ -126,7 +134,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Aidan Ketch -->
             <div class="card card-center">
-                <img src="/images/community/aidan.jpg" alt="Aidan Ketch" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("aidan.jpg")} alt="Aidan Ketch" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Aidan Ketch</h3>
                 <p>
                     Bringing you great gameplay and high-quality streaming content. Catch the newest videos over on YouTube.
@@ -143,7 +151,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Creepy King -->
             <div class="card card-center">
-                <img src="/images/community/creepy.jpg" alt="Creepy King" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("creepy.jpg")} alt="Creepy King" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Creepy King</h3>
                 <p>
                     A fantastic channel filled with incredible content and a welcoming community.
@@ -160,7 +168,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Exzumi -->
             <div class="card card-center">
-                <img src="/images/community/exzumi.jpg" alt="Exzumi" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("exzumi.jpg")} alt="Exzumi" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Exzumi</h3>
                 <p>
                     Dive into engaging gameplay and chill streams. Don't miss out on the latest uploads!
@@ -177,7 +185,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- High Guy Gaming -->
             <div class="card card-center">
-                <img src="/images/community/highguy.jpg" alt="High Guy Gaming" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("highguy.jpg")} alt="High Guy Gaming" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>High Guy Gaming</h3>
                 <p>
                     High-energy gameplay and incredible interactions powered by custom stream integrations.
@@ -194,7 +202,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Big Dog Triple OG -->
             <div class="card card-center">
-                <img src="/images/community/bigdog.jpg" alt="Big Dog Triple OG" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("bigdog.jpg")} alt="Big Dog Triple OG" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Big Dog Triple OG</h3>
                 <p>
                     Delivering top-notch entertainment and great gameplay. Don't miss the latest streams!
@@ -211,7 +219,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Okami -->
             <div class="card card-center">
-                <img src="/images/community/okami.jpg" alt="Okami" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("okami.jpg")} alt="Okami" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Okami</h3>
                 <p>
                     Dive into epic adventures and highly interactive streams powered by custom automation.
@@ -239,7 +247,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Billy Ricketts -->
             <div class="card card-center">
-                <img src="/images/community/billy.jpg" alt="Billy Ricketts" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("billy.jpg")} alt="Billy Ricketts" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Billy Ricketts</h3>
                 <p>
                     Check out Billy's latest streams and videos for top-tier gameplay and fun interactions.
@@ -256,7 +264,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- LordBlackCA -->
             <div class="card card-center">
-                <img src="/images/community/lordblack.jpg" alt="LordBlackCA" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("lordblack.jpg")} alt="LordBlackCA" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>LordBlackCA</h3>
                 <p>
                     Incredible Red Dead Online content and engaging streams for the Portuguese speaking community.
@@ -273,7 +281,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Mr. Braga -->
             <div class="card card-center">
-                <img src="/images/community/braga.jpg" alt="Mr. Braga" class="avatar-img avatar-lg">
+                <Image src={getCommunityImage("braga.jpg")} alt="Mr. Braga" class="avatar-img avatar-lg" width={120} height={120} />
                 <h3>Mr. Braga</h3>
                 <p>
                     Join the action-packed adventures and great discussions on Red Dead Online.

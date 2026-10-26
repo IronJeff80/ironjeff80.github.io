@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import offlineImg from '../assets/images/offline.webp';
 
 // Add or swap your past stream YouTube Video IDs and titles here
 const pastStreams = [
@@ -34,7 +36,7 @@ const pastStreams = [
 
             <div class="stream-container" id="stream-layout-grid">
                 <div class="video-wrapper" id="video-wrapper">
-                    <img id="offline-placeholder" src="/images/offline.webp" alt="Stream is currently offline">
+                    <Image id="offline-placeholder" src={offlineImg} alt="Stream is currently offline" width={800} height={450} />
                     <iframe id="yt-video-frame" src="https://www.youtube.com/embed/live_stream?channel=UCbflkZl3HSQVyVW153f2Z3A" allowfullscreen></iframe>
                 </div>
 

@@ -1,5 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import streamerbot from '../assets/apps/streamerbot.png';
+import speakerbot from '../assets/apps/speakerbot.png';
+import voicemod from '../assets/apps/voicemod.png';
+import tawmae from '../assets/apps/tawmae.jpg';
+import mm from '../assets/apps/mm.jpg';
+import vrflad from '../assets/apps/vrflad.jpg';
+import exeldro from '../assets/apps/exeldro.png';
+import finite from '../assets/apps/finite.jpg';
 ---
 
 <Layout title="Stream Apps & Tools | 2 Smokin' Barrels"
@@ -74,7 +83,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Streamer.Bot -->
             <div class="card card-center">
-                <img src="/images/apps/streamerbot.png" alt="Streamer.Bot" class="app-icon">
+                <Image src={streamerbot} alt="Streamer.Bot" class="app-icon" width={64} height={64} />
                 <h3>Streamer.Bot</h3>
                 <p>
                     The ultimate automation and integration tool for live streamers. Take full control of your broadcast with powerful C# scripting and macro logic.
@@ -87,7 +96,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Speaker.Bot -->
             <div class="card card-center">
-                <img src="/images/apps/speakerbot.png" alt="Speaker.Bot" class="app-icon">
+                <Image src={speakerbot} alt="Speaker.Bot" class="app-icon" width={64} height={64} />
                 <h3>Speaker.Bot</h3>
                 <p>
                     Advanced Text-to-Speech management designed to interface seamlessly with your channel rewards, voices, and bot automation triggers.
@@ -100,7 +109,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- VoiceMod -->
             <div class="card card-center">
-                <img src="/images/apps/voicemod.png" alt="VoiceMod" class="app-icon">
+                <Image src={voicemod} alt="VoiceMod" class="app-icon" width={64} height={64} />
                 <h3>VoiceMod</h3>
                 <p>
                     Real-time AI voice changer and soundboard software to bring immersive audio experiences and instant custom reactions straight to your stream audience.
@@ -122,7 +131,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Tawmae -->
             <div class="card card-center">
-                <img src="/images/apps/tawmae.jpg" alt="Tawmae" class="avatar-img">
+                <Image src={tawmae} alt="Tawmae" class="avatar-img" width={80} height={80} />
                 <h3>Tawmae</h3>
                 <p>
                     A collection of custom-built Streamer.bot extensions for Twitch & YouTube. OBS & Meld overlays, games, utilities and integrations. And the best part? It all runs locally, even the overlays.
@@ -138,7 +147,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Mustached Maniac -->
             <div class="card card-center">
-                <img src="/images/apps/mm.jpg" alt="Mustached Maniac" class="avatar-img">
+                <Image src={mm} alt="Mustached Maniac" class="avatar-img" width={80} height={80} />
                 <h3>Mustached Maniac</h3>
                 <p>
                     A highly questionable collection of projects, custom streaming experiments, and developer toolkits.
@@ -154,7 +163,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- VRFlad -->
             <div class="card card-center">
-                <img src="/images/apps/vrflad.jpg" alt="VRFlad" class="avatar-img">
+                <Image src={vrflad} alt="VRFlad" class="avatar-img" width={80} height={80} />
                 <h3>VRFlad</h3>
                 <p>
                     I enjoy pushing what is possible with technology and I'm particularly passionate about VR. Streaming was never planned, but I love it and have been so fortunate to be able to give back to the amazing streaming community.
@@ -181,7 +190,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Exeldro -->
             <div class="card card-center">
-                <img src="/images/apps/exeldro.png" alt="Exeldro" class="avatar-img">
+                <Image src={exeldro} alt="Exeldro" class="avatar-img" width={80} height={80} />
                 <h3>Exeldro</h3>
                 <p>
                     Exeldro is a prominent software developer from the Netherlands, best known for creating dozens of highly popular plugins and tools for OBS Studio.
@@ -200,7 +209,7 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- FiniteSingularity -->
             <div class="card card-center">
-                <img src="/images/apps/finite.jpg" alt="FiniteSingularity" class="avatar-img">
+                <Image src={finite} alt="FiniteSingularity" class="avatar-img" width={80} height={80} />
                 <h3>FiniteSingularity</h3>
                 <p>
                     FiniteSingularity is a developer, former academic, and educator with over 20 years of experience. He is best known in the streaming community for creating popular open-source plugins for OBS Studio.

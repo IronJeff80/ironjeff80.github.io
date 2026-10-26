@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import longlogo from '../assets/images/longlogo.png';
 ---
 <header class="site-header">
     <a href="/">
-        <img src="/images/longlogo.png" alt="Logo" class="header-logo-img">
+        <Image src={longlogo} alt="Logo" class="header-logo-img" width={300} height={60} />
     </a>
 </header>
 

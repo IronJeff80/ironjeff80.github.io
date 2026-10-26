@@ -104,6 +104,7 @@ h1, h2, h3 {
     max-width: 100%;
     height: auto;
     max-height: 80px;
+    aspect-ratio: 2430 / 429;
     object-fit: contain;
     display: block;
     margin: 0 auto;

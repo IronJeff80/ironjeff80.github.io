@@ -1,8 +1,8 @@
 {
-  "id": "19",
-  "locationName": "Popular Street, La Mesa",
-  "imagePath": "/images/gunvan/loc_19.jpg",
-  "mapPath": "/images/gunvan/map_19.jpg",
+  "id": "7",
+  "locationName": "Paleto Forest Lumber Yard",
+  "imagePath": "/images/gunvan/loc_7.jpg",
+  "mapPath": "/images/gunvan/map_7.jpg",
   "inventory": [
     "Service Carbine: -30 %",
     "Precision Rifle: -10 %",
@@ -17,5 +17,5 @@
     "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-10-28T11:10:35.286Z"
+  "updatedAt": "2026-10-29T11:23:13.969Z"
 }

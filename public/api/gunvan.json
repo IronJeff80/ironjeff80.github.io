@@ -1,8 +1,8 @@
 {
-  "id": "7",
-  "locationName": "Paleto Forest Lumber Yard",
-  "imagePath": "/images/gunvan/loc_7.jpg",
-  "mapPath": "/images/gunvan/map_7.jpg",
+  "id": "3",
+  "locationName": "Merle Abrahams' house, Sandy Shores",
+  "imagePath": "/images/gunvan/loc_3.jpg",
+  "mapPath": "/images/gunvan/map_3.jpg",
   "inventory": [
     "Service Carbine: -30 %",
     "Precision Rifle: -10 %",
@@ -17,5 +17,5 @@
     "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-10-29T11:23:13.969Z"
+  "updatedAt": "2026-10-30T11:15:31.738Z"
 }

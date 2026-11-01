@@ -1,8 +1,8 @@
 {
-  "id": "21",
-  "locationName": "Magellan Ave / Conquistador St, Vespucci Beach",
-  "imagePath": "/images/gunvan/loc_21.jpg",
-  "mapPath": "/images/gunvan/map_21.jpg",
+  "id": "9",
+  "locationName": "Palmer-Taylor Power Station",
+  "imagePath": "/images/gunvan/loc_9.jpg",
+  "mapPath": "/images/gunvan/map_9.jpg",
   "inventory": [
     "Service Carbine: -30 %",
     "Precision Rifle: -10 %",
@@ -17,5 +17,5 @@
     "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-10-31T10:48:34.016Z"
+  "updatedAt": "2026-11-01T11:45:07.491Z"
 }

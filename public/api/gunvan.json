@@ -1,8 +1,8 @@
 {
-  "id": "9",
-  "locationName": "Palmer-Taylor Power Station",
-  "imagePath": "/images/gunvan/loc_9.jpg",
-  "mapPath": "/images/gunvan/map_9.jpg",
+  "id": "27",
+  "locationName": "Hookies, North Chumash",
+  "imagePath": "/images/gunvan/loc_27.jpg",
+  "mapPath": "/images/gunvan/map_27.jpg",
   "inventory": [
     "Service Carbine: -30 %",
     "Precision Rifle: -10 %",
@@ -17,5 +17,5 @@
     "Pipe Bomb: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-11-01T11:45:07.491Z"
+  "updatedAt": "2026-11-02T13:17:18.575Z"
 }

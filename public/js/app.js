@@ -19,9 +19,16 @@ function toggleSidebar() {
 // ==========================================
 // 3. INITIALIZATION ON PAGE LOAD
 // ==========================================
-window.onload = function () {
-    // START BOT CONNECTION IMMEDIATELY FOR TESTING
-    if (document.getElementById('status-msg')) {
+function initializePage() {
+    // Close any open sidebar/overlay that might have been left from a previous page
+    // (prevents overlay from blocking clicks after client-side navigation)
+    const sidebar = document.getElementById('sidebar');
+    const menuOverlay = document.getElementById('menuOverlay');
+    if (sidebar) sidebar.classList.remove('active');
+    if (menuOverlay) menuOverlay.classList.remove('active');
+
+    // START BOT CONNECTION if on a page that needs it and not already connected
+    if (document.getElementById('status-msg') && (!ws || ws.readyState === WebSocket.CLOSED || ws.readyState === WebSocket.CLOSING)) {
         connectBot();
     }
 
@@ -34,13 +41,24 @@ window.onload = function () {
         restoreUserUI();
     } else {
         if (statusMsg) statusMsg.innerText = "Sign in to interact with the stream.";
+        // Explicitly ensure login button is visible and profile is hidden
+        const loginContainer = document.getElementById('login-button-container');
+        const userProfile = document.getElementById('user-profile');
+        if (loginContainer) loginContainer.style.display = '';
+        if (userProfile) userProfile.style.display = 'none';
     }
-
 
     // Fetch dynamic resource locations for the Resource pages
     fetchNazarLocation();
     fetchGunVanLocation();
-};
+
+    // Setup page-specific interactivity (re-runs after every navigation)
+    setupCommandsPage();
+    setupMusicView();
+}
+
+// Run on every page load (initial load + client-side navigations via <ClientRouter />)
+document.addEventListener('astro:page-load', initializePage);
 
 // ==========================================
 // 4. GOOGLE AUTH & YOUTUBE API LOGIC
@@ -519,7 +537,7 @@ async function fetchGunVanLocation() {
 // ==========================================
 // 9. COMMANDS PAGE INTERACTIVITY
 // ==========================================
-document.addEventListener('DOMContentLoaded', () => {
+function setupCommandsPage() {
     if (!document.querySelector('.commands-layout')) return;
 
     const navButtons = document.querySelectorAll('.sidebar-nav-btn');
@@ -600,12 +618,12 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.display = '';
         });
     }
-});
+}
 
 // ==========================================
 // 10. MUSIC PAGE VIEW TOGGLE
 // ==========================================
-document.addEventListener('DOMContentLoaded', () => {
+function setupMusicView() {
     const albumContainer = document.getElementById('album-container');
     const viewBtns = document.querySelectorAll('.view-btn');
 
@@ -632,7 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+}
 
 // ==========================================
 // 11. MOBILE SWIPE NAVIGATION

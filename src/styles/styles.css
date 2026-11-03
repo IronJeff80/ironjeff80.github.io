@@ -2443,3 +2443,74 @@ details[open] > .widget-header {
         align-content: start;
     }
 }
+/* Command Center Header Controls (Album dropdown + Media buttons inline with title) */
+.command-center-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.command-center-header h3 {
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+.command-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.album-dropdown {
+    background: var(--panel-bg);
+    color: var(--white-med);
+    border: 1px solid rgba(55, 95, 207, 0.4);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    min-width: 180px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.album-dropdown:focus {
+    outline: none;
+    border-color: var(--accent-pink);
+}
+
+.album-dropdown:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.header-media.media-bar {
+    margin: 0;
+    padding: 8px 12px;
+    background-color: rgba(55, 95, 207, 0.08);
+    border: 1px solid rgba(55, 95, 207, 0.2);
+    border-radius: 12px;
+    gap: 8px;
+}
+
+.header-media .media-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+}
+
+/* Responsive: stack controls under title on narrow screens */
+@media (max-width: 700px) {
+    .command-center-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .command-header-controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

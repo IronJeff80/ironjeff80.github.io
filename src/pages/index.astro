@@ -74,7 +74,30 @@ const pastStreams = [
             </div>
 
             <div class="command-center">
-                <h3>Command Center</h3>
+                <div class="command-center-header">
+                    <h3>Command Center</h3>
+                    <div class="command-header-controls">
+                        <select id="album-select" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction('Select Album', this.value); this.selectedIndex = 0; }" disabled>
+                            <option value="">Choose Album</option>
+                            <option value="Breakin">Breakin & Scratchin</option>
+                            <option value="Careless Desires">80s Retro Vibes</option>
+                            <option value="RDO Camp SOngs">RDO Camp Songs</option>
+                            <option value="Halloween">Halloween Vibes</option>
+                            <option value="Hot List">Chat Favorites</option>
+                            <option value="Midnight Ride">80s Driving Vibes</option>
+                            <option value="Pipa">Orient Meditation</option>
+                            <option value="Rock">Rock N Roll Vibes</option>
+                            <option value="Western">Western Vibes</option>
+                        </select>
+                        <div class="media-bar header-media">
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
+                        </div>
+                    </div>
+                </div>
                 <p id="status-msg">Connecting to Streamer.bot...</p>
                 
                 <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
@@ -93,32 +116,6 @@ const pastStreams = [
                     <button class="cmd-btn stream-cmd" onclick="sendAction('Bombs Away')" disabled>Bombs Away</button>
                     <button class="cmd-btn stream-cmd" onclick="sendAction('Skeletor')" disabled>Skeletor</button>
                     <button class="cmd-btn stream-cmd" onclick="sendAction('GTA Wasted')" disabled>GTA Wasted</button>
-                </div>
-
-                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
-                    Media Controls <i class="fas fa-chevron-down transition-icon"></i>
-                </h4>
-                <div class="media-bar collapsible-content collapsed">
-                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
-                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
-                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
-                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
-                    <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
-                </div>
-
-                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
-                    Album Selection <i class="fas fa-chevron-down transition-icon"></i>
-                </h4>
-                <div class="btn-grid collapsible-content collapsed">
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Breakin')" disabled>Breakin & Scratchin</button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Careless Desires')" disabled>80s Retro Vibes </button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'RDO Camp SOngs')" disabled>RDO Camp Songs</button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Halloween')" disabled>Halloween Vibes</button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Hot List')" disabled>Chat Favorites</button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Midnight Ride')" disabled>80s Driving Vibes</button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Pipa')" disabled>Orient Meditation</button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Rock')" disabled>Rock N Roll Vibes</button>
-                    <button class="cmd-btn stream-cmd" onclick="sendAction('Select Album', 'Western')" disabled>Western Vibes</button>
                 </div>
             </div>
         </div>

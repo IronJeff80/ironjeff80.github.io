@@ -2514,3 +2514,54 @@ details[open] > .widget-header {
         justify-content: flex-start;
     }
 }
+
+/* Theme Color Buttons */
+.theme-colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.theme-btn {
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    border: 2px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.theme-aurora { background: linear-gradient(135deg, #fdfeee, #0c5e6c); color: #0c5e6c; border-color: #0c5e6c; }
+.theme-blue { background: #0066ff; color: #fff; border-color: #0066ff; }
+.theme-bubblegum { background: linear-gradient(135deg, #f0897a, #e21d52); color: #fff; border-color: #e21d52; }
+.theme-cottoncandy { background: linear-gradient(135deg, #723ab9, #9951ce); color: #fff; border-color: #9951ce; }
+.theme-crimson { background: linear-gradient(135deg, #b30000, #7f1c79); color: #fff; border-color: #7f1c79; }
+.theme-flare { background: linear-gradient(135deg, #ffb3a3, #ff4a1f); color: #fff; border-color: #ff4a1f; }
+.theme-fruity { background: #ffbf00; color: #333; border-color: #ffbf00; }
+.theme-green { background: #009900; color: #fff; border-color: #009900; }
+.theme-illusion { background: linear-gradient(135deg, #ca2b65, #28cf2a); color: #fff; border-color: #28cf2a; }
+.theme-marine { background: #008080; color: #fff; border-color: #008080; }
+.theme-orange { background: #ff6600; color: #fff; border-color: #ff6600; }
+.theme-outrun { background: linear-gradient(135deg, #7700ff, #9a0aff); color: #fff; border-color: #9a0aff; }
+.theme-party { background: linear-gradient(135deg, #ec8a29, #68dcb5); color: #fff; border-color: #68dcb5; }
+.theme-pastel { background: linear-gradient(135deg, #ffb7b2, #543680); color: #fff; border-color: #543680; }
+.theme-pink { background: linear-gradient(135deg, #ffd687, #ff3399); color: #fff; border-color: #ff3399; }
+.theme-plum { background: #811e68; color: #fff; border-color: #811e68; }
+.theme-rainbow { background: linear-gradient(135deg, #ffff00, #52f915); color: #333; border-color: #52f915; }
+.theme-red { background: #ff0000; color: #fff; border-color: #ff0000; }
+.theme-retro { background: linear-gradient(135deg, #4f7fed, #4376e9); color: #fff; border-color: #4376e9; }
+.theme-sunset { background: #cc0066; color: #fff; border-color: #cc0066; }
+.theme-swirl { background: linear-gradient(135deg, #e8482e, #0356b6); color: #fff; border-color: #0356b6; }
+.theme-vaporwave { background: linear-gradient(135deg, #533bc3, #150d60); color: #fff; border-color: #150d60; }
+.theme-white { background: #cccccc; color: #333; border-color: #ffffff; }
+.theme-yellow { background: #ffff00; color: #333; border-color: #ffff00; }
+.theme-rdr { background: linear-gradient(135deg, #c23b22, #7a120c); color: #fff; border-color: #7a120c; }
+.theme-gta { background: linear-gradient(135deg, #01dcf2, #358680); color: #fff; border-color: #358680; }
+.theme-gta6 { background: linear-gradient(135deg, #ff9d49, #28bad9); color: #fff; border-color: #28bad9; }
+.theme-ac { background: linear-gradient(135deg, #ca9b4b, #ede2a0); color: #333; border-color: #ede2a0; }
+.theme-nugzz { background: #d4af37; color: #333; border-color: #d4af37; }
+.theme-fortnite { background: #b800ff; color: #fff; border-color: #b800ff; }
+.theme-fallout { background: linear-gradient(135deg, #005a9c, #ffb81c); color: #fff; border-color: #ffb81c; }

@@ -243,17 +243,21 @@ function updateStreamState(live) {
     const msgEl = document.getElementById('status-msg');
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
     const commandButtons = document.querySelectorAll('.stream-cmd');
-    const isOwner = userData && userData.id === OWNER_CHANNEL_ID;
+    const isOwner = !!(userData && userData.id === OWNER_CHANNEL_ID);
     const debugTools = document.getElementById('owner-debug-tools');
     const commandCenter = document.querySelector('.command-center');
 
+    // Owner always sees debug tools
     if (debugTools) {
         debugTools.style.display = isOwner ? 'block' : 'none';
     }
 
-    // Hide entire Command Center for non-owners when stream is offline
+    // Owner always sees the full Command Center.
+    // Everyone else only sees it when a public stream is live.
+    // (Unlisted/debug streams do not count as public.)
     if (commandCenter) {
-        const shouldShow = isStreamLive || isOwner;
+        const publicLive = isStreamLive && !ownerOverrideVideoId;
+        const shouldShow = isOwner || publicLive;
         commandCenter.style.display = shouldShow ? 'block' : 'none';
     }
 
@@ -261,26 +265,20 @@ function updateStreamState(live) {
 
     const allowCommands = isConnected && userData && (isStreamLive || (isOwner && ownerForceEnable));
 
-    if (allowCommands) {
+    if (isOwner && ownerForceEnable && !isStreamLive) {
+        msgEl.innerText = "Debug Mode";
+        msgEl.style.color = "#00ff00";
         commandButtons.forEach(btn => btn.disabled = false);
-        if (isOwner && !isStreamLive && ownerForceEnable) {
-            msgEl.innerText = "Debug Mode";
-            msgEl.style.color = "#00ff00";
-        } else if (isStreamLive) {
-            msgEl.innerText = "Stream Online";
-            msgEl.style.color = "#00ff00";
-        } else {
-            msgEl.innerText = "Stream Offline";
-            msgEl.style.color = "var(--white-med)";
-        }
+    } else if (isStreamLive && !ownerOverrideVideoId) {
+        msgEl.innerText = "Stream Online";
+        msgEl.style.color = "#00ff00";
+        commandButtons.forEach(btn => btn.disabled = !(isConnected && userData));
     } else {
-        commandButtons.forEach(btn => btn.disabled = true);
-        if (isStreamLive) {
-            msgEl.innerText = userData ? "Stream Online" : "Stream Online — Sign in to use commands";
-            msgEl.style.color = "#00ff00";
-        } else {
-            msgEl.innerText = "Stream Offline";
-            msgEl.style.color = "var(--white-med)";
+        msgEl.innerText = isOwner ? "Stream Offline" : "Stream Offline";
+        msgEl.style.color = "var(--white-med)";
+        commandButtons.forEach(btn => btn.disabled = !isOwner || !ownerForceEnable);
+        if (isOwner && ownerForceEnable) {
+            commandButtons.forEach(btn => btn.disabled = false);
         }
     }
 }

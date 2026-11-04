@@ -19,16 +19,9 @@ function toggleSidebar() {
 // ==========================================
 // 3. INITIALIZATION ON PAGE LOAD
 // ==========================================
-function initializePage() {
-    // Close any open sidebar/overlay that might have been left from a previous page
-    // (prevents overlay from blocking clicks after client-side navigation)
-    const sidebar = document.getElementById('sidebar');
-    const menuOverlay = document.getElementById('menuOverlay');
-    if (sidebar) sidebar.classList.remove('active');
-    if (menuOverlay) menuOverlay.classList.remove('active');
-
-    // START BOT CONNECTION if on a page that needs it and not already connected
-    if (document.getElementById('status-msg') && (!ws || ws.readyState === WebSocket.CLOSED || ws.readyState === WebSocket.CLOSING)) {
+window.onload = function () {
+    // START BOT CONNECTION IMMEDIATELY FOR TESTING
+    if (document.getElementById('status-msg')) {
         connectBot();
     }
 
@@ -41,24 +34,13 @@ function initializePage() {
         restoreUserUI();
     } else {
         if (statusMsg) statusMsg.innerText = "Sign in to interact with the stream.";
-        // Explicitly ensure login button is visible and profile is hidden
-        const loginContainer = document.getElementById('login-button-container');
-        const userProfile = document.getElementById('user-profile');
-        if (loginContainer) loginContainer.style.display = '';
-        if (userProfile) userProfile.style.display = 'none';
     }
+
 
     // Fetch dynamic resource locations for the Resource pages
     fetchNazarLocation();
     fetchGunVanLocation();
-
-    // Setup page-specific interactivity (re-runs after every navigation)
-    setupCommandsPage();
-    setupMusicView();
-}
-
-// Run on every page load (initial load + client-side navigations via <ClientRouter />)
-document.addEventListener('astro:page-load', initializePage);
+};
 
 // ==========================================
 // 4. GOOGLE AUTH & YOUTUBE API LOGIC
@@ -235,37 +217,135 @@ function checkCurrentStatus() {
     }
 }
 
+const OWNER_CHANNEL_ID = "UCbflkZl3HSQVyVW153f2Z3A";
+let ownerForceEnable = false;
+let ownerOverrideVideoId = null;
+
 function updateStreamState(live) {
     isStreamLive = live;
     const msgEl = document.getElementById('status-msg');
     const isConnected = ws && ws.readyState === WebSocket.OPEN;
     const commandButtons = document.querySelectorAll('.stream-cmd');
+    const isOwner = userData && userData.id === OWNER_CHANNEL_ID;
+    const debugTools = document.getElementById('owner-debug-tools');
+
+    if (debugTools) {
+        debugTools.style.display = isOwner ? 'block' : 'none';
+    }
 
     if (!msgEl) return;
 
-    if (isConnected && userData) {
-        if (isStreamLive) {
-            commandButtons.forEach(btn => btn.disabled = false); 
+    const allowCommands = isConnected && userData && (isStreamLive || (isOwner && ownerForceEnable));
+
+    if (allowCommands) {
+        commandButtons.forEach(btn => btn.disabled = false);
+        if (isOwner && !isStreamLive && ownerForceEnable) {
+            msgEl.innerText = ownerOverrideVideoId
+                ? "Owner Debug Mode — Custom video loaded + commands enabled."
+                : "Bot Connected (Owner Force-Enable). Commands enabled for preview.";
+            msgEl.style.color = "#00ff00";
+        } else if (isStreamLive) {
             msgEl.innerText = "Bot Connected (Stream Online). System ready for testing.";
-            msgEl.style.color = "#00ff00"; 
+            msgEl.style.color = "#00ff00";
         } else {
-            commandButtons.forEach(btn => btn.disabled = true); 
-            if (msgEl.innerText !== "Stream Scheduled! Waiting room is open.") {
-                msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
-                msgEl.style.color = "var(--white-med)";
-            }
+            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
+            msgEl.style.color = "var(--white-med)";
         }
     } else {
-        commandButtons.forEach(btn => btn.disabled = true); 
+        commandButtons.forEach(btn => btn.disabled = true);
         if (!userData) {
             msgEl.innerText = "Sign in to trigger commands.";
-            msgEl.style.color = "var(--white-med)"; 
-        } else {
+            msgEl.style.color = "var(--white-med)";
+        } else if (!isConnected) {
             msgEl.innerText = "Connecting to Streamer.bot...";
-            msgEl.style.color = "var(--white-med)"; 
+            msgEl.style.color = "var(--white-med)";
+        } else {
+            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
+            msgEl.style.color = "var(--white-med)";
         }
     }
+
+    // Apply owner video override if set
+    if (isOwner && ownerOverrideVideoId) {
+        applyOwnerVideoOverride(ownerOverrideVideoId);
+    }
 }
+
+function applyOwnerVideoOverride(videoId) {
+    const videoFrame = document.getElementById('yt-video-frame');
+    const chatFrame = document.getElementById('yt-chat-frame');
+    const placeholderImg = document.getElementById('offline-placeholder');
+    const chatWrapper = document.getElementById('chat-wrapper');
+    const vodWrapper = document.getElementById('vod-wrapper');
+
+    if (videoFrame) {
+        videoFrame.style.display = 'block';
+        videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    }
+    if (placeholderImg) placeholderImg.style.display = 'none';
+    if (chatFrame) {
+        const currentDomain = window.location.hostname;
+        chatFrame.src = `https://www.youtube.com/live_chat?v=${videoId}&embed_domain=${currentDomain}&dark_theme=1`;
+    }
+    if (chatWrapper) chatWrapper.style.display = 'block';
+    if (vodWrapper) vodWrapper.style.display = 'none';
+}
+
+function clearOwnerVideoOverride() {
+    ownerOverrideVideoId = null;
+    const videoFrame = document.getElementById('yt-video-frame');
+    const chatFrame = document.getElementById('yt-chat-frame');
+    const placeholderImg = document.getElementById('offline-placeholder');
+    const chatWrapper = document.getElementById('chat-wrapper');
+    const vodWrapper = document.getElementById('vod-wrapper');
+
+    if (videoFrame) {
+        videoFrame.style.display = 'none';
+        videoFrame.src = 'about:blank';
+    }
+    if (chatFrame) chatFrame.src = 'about:blank';
+    if (chatWrapper) chatWrapper.style.display = 'none';
+    if (placeholderImg) placeholderImg.style.display = 'block';
+    if (vodWrapper) vodWrapper.style.display = 'flex';
+
+    const input = document.getElementById('owner-video-id');
+    if (input) input.value = '';
+    updateStreamState(isStreamLive);
+}
+
+// Wire up owner debug tools
+document.addEventListener('astro:page-load', () => {
+    const forceCheckbox = document.getElementById('owner-force-enable');
+    const loadBtn = document.getElementById('owner-load-video');
+    const clearBtn = document.getElementById('owner-clear-video');
+    const videoInput = document.getElementById('owner-video-id');
+
+    if (forceCheckbox) {
+        forceCheckbox.addEventListener('change', (e) => {
+            ownerForceEnable = e.target.checked;
+            updateStreamState(isStreamLive);
+        });
+    }
+
+    if (loadBtn && videoInput) {
+        loadBtn.addEventListener('click', () => {
+            const id = videoInput.value.trim();
+            if (!id) return;
+            ownerOverrideVideoId = id;
+            applyOwnerVideoOverride(id);
+            updateStreamState(isStreamLive);
+        });
+        videoInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                loadBtn.click();
+            }
+        });
+    }
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', clearOwnerVideoOverride);
+    }
+});
 
 function sendAction(actionName, extraCommand = null) {
     if (!ws || ws.readyState !== WebSocket.OPEN) {
@@ -537,7 +617,7 @@ async function fetchGunVanLocation() {
 // ==========================================
 // 9. COMMANDS PAGE INTERACTIVITY
 // ==========================================
-function setupCommandsPage() {
+document.addEventListener('DOMContentLoaded', () => {
     if (!document.querySelector('.commands-layout')) return;
 
     const navButtons = document.querySelectorAll('.sidebar-nav-btn');
@@ -618,12 +698,12 @@ function setupCommandsPage() {
             item.style.display = '';
         });
     }
-}
+});
 
 // ==========================================
 // 10. MUSIC PAGE VIEW TOGGLE
 // ==========================================
-function setupMusicView() {
+document.addEventListener('DOMContentLoaded', () => {
     const albumContainer = document.getElementById('album-container');
     const viewBtns = document.querySelectorAll('.view-btn');
 
@@ -650,7 +730,7 @@ function setupMusicView() {
             }
         });
     });
-}
+});
 
 // ==========================================
 // 11. MOBILE SWIPE NAVIGATION

@@ -2559,7 +2559,12 @@ details[open] > .widget-header {
 .theme-white { background: #cccccc; color: #333; border-color: #ffffff; }
 .theme-yellow { background: #ffff00; color: #333; border-color: #ffff00; }
 .theme-rdr { background: linear-gradient(135deg, #c23b22, #7a120c); color: #fff; border-color: #7a120c; }
+.theme-gta { background: linear-gradient(135deg, #01dcf2, #358680); color: #fff; border-color: #358680; }
 .theme-gta6 { background: linear-gradient(135deg, #ff9d49, #28bad9); color: #fff; border-color: #28bad9; }
+.theme-ac { background: linear-gradient(135deg, #ca9b4b, #ede2a0); color: #333; border-color: #ede2a0; }
+.theme-nugzz { background: #d4af37; color: #333; border-color: #d4af37; }
+.theme-fortnite { background: #b800ff; color: #fff; border-color: #b800ff; }
+.theme-fallout { background: linear-gradient(135deg, #005a9c, #ffb81c); color: #fff; border-color: #ffb81c; }
 
 /* Camera Control Section */
 .camera-control-section {
@@ -2593,4 +2598,70 @@ details[open] > .widget-header {
 .camera-dropdown-group select {
     width: 100%;
     max-width: 220px;
+}
+
+/* Owner debug toggle */
+.owner-debug-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 4px;
+    font-size: 0.82rem;
+    opacity: 0.75;
+    cursor: pointer;
+    user-select: none;
+}
+
+.owner-debug-toggle input {
+    accent-color: #00ff00;
+    cursor: pointer;
+}
+
+/* Owner debug tools */
+.owner-debug-tools {
+    margin: 10px 0 6px;
+    padding: 10px 12px;
+    background: rgba(0,0,0,0.25);
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.owner-debug-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.owner-video-override {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+}
+
+.owner-video-override label {
+    opacity: 0.75;
+    white-space: nowrap;
+}
+
+.owner-video-override input {
+    flex: 1;
+    min-width: 140px;
+    max-width: 220px;
+    padding: 4px 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    color: inherit;
+    font-size: 0.85rem;
+}
+
+.owner-video-override .cmd-btn {
+    padding: 4px 10px;
+    font-size: 0.8rem;
 }

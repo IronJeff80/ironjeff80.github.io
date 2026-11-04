@@ -99,6 +99,18 @@ const pastStreams = [
                     </div>
                 </div>
                 <p id="status-msg">Connecting to Streamer.bot...</p>
+                <div id="owner-debug-tools" class="owner-debug-tools" style="display:none;">
+                    <label class="owner-debug-toggle">
+                        <input type="checkbox" id="owner-force-enable">
+                        <span>Force commands enabled (offline preview)</span>
+                    </label>
+                    <div class="owner-video-override">
+                        <label for="owner-video-id">Unlisted / Debug Video ID:</label>
+                        <input type="text" id="owner-video-id" placeholder="e.g. dQw4w9WgXcQ" maxlength="20">
+                        <button type="button" id="owner-load-video" class="cmd-btn">Load</button>
+                        <button type="button" id="owner-clear-video" class="cmd-btn">Clear</button>
+                    </div>
+                </div>
                 
                 <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
                     Fun Stuff & Games <i class="fas fa-chevron-down transition-icon"></i>

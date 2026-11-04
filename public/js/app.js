@@ -146,6 +146,11 @@ function connectBot() {
                 if (customData.name === "LiveStatusUpdate") {
                     updateStreamState(customData.isLive);
 
+                    // If the owner has an active debug video override, leave the player alone
+                    if (ownerOverrideVideoId) {
+                        return; // skip normal live/offline player updates
+                    }
+
                     const videoFrame = document.getElementById('yt-video-frame');
                     const placeholderImg = document.getElementById('offline-placeholder');
                     const chatFrame = document.getElementById('yt-chat-frame');
@@ -283,6 +288,8 @@ function applyOwnerVideoOverride(videoId) {
     const chatWrapper = document.getElementById('chat-wrapper');
     const vodWrapper = document.getElementById('vod-wrapper');
 
+    window._currentLiveVideoId = videoId; // prevent status updates from fighting the override
+
     if (videoFrame) {
         videoFrame.style.display = 'block';
         videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
@@ -298,6 +305,7 @@ function applyOwnerVideoOverride(videoId) {
 
 function clearOwnerVideoOverride() {
     ownerOverrideVideoId = null;
+    window._currentLiveVideoId = null;
     const videoFrame = document.getElementById('yt-video-frame');
     const chatFrame = document.getElementById('yt-chat-frame');
     const placeholderImg = document.getElementById('offline-placeholder');

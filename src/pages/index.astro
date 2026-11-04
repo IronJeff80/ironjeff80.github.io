@@ -102,9 +102,8 @@ const pastStreams = [
                     <p id="status-msg">Connecting to Streamer.bot...</p>
                     <div class="camera-dropdowns header-camera">
                         <div class="camera-dropdown-group">
-                            <label for="camera-position">Position</label>
                             <select id="camera-position" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction(this.value); this.selectedIndex = 0; }" disabled>
-                                <option value="">Choose Position</option>
+                                <option value="">Camera Position</option>
                                 <option value="01 - Command - Redeem Camera Top Left">Top Left</option>
                                 <option value="02 - Command - Redeem Camera Top Center">Top Center</option>
                                 <option value="03 - Command - Redeem Camera Top Right">Top Right</option>
@@ -121,9 +120,8 @@ const pastStreams = [
                             </select>
                         </div>
                         <div class="camera-dropdown-group">
-                            <label for="camera-style">Style</label>
                             <select id="camera-style" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction(this.value); this.selectedIndex = 0; }" disabled>
-                                <option value="">Choose Style</option>
+                                <option value="">Camera Style</option>
                                 <option value="0B - Command - Redeem Camera Design Glitch Box">RDR Compass</option>
                                 <option value="0C - Command Redeem - Camera Design RDO Compass">GTA Glitch Box</option>
                                 <option value="0D - Command Redeem - Camera Design Inline">Inline Basic</option>

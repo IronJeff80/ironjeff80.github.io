@@ -2700,14 +2700,10 @@ details[open] > .widget-header {
 }
 
 .header-camera .camera-dropdown-group {
-    min-width: 140px;
-}
-
-.header-camera .camera-dropdown-group label {
-    font-size: 0.72rem;
+    min-width: 150px;
 }
 
 .header-camera select {
-    max-width: 170px;
+    max-width: 180px;
     font-size: 0.85rem;
 }

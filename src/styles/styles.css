@@ -2677,3 +2677,37 @@ details[open] > .widget-header {
     gap: 8px;
     font-size: 0.75rem;
 }
+
+/* Status + Camera Controls row */
+.status-camera-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 4px 0 10px;
+}
+
+.status-camera-row #status-msg {
+    margin: 0;
+    flex: 1;
+    min-width: 180px;
+}
+
+.header-camera {
+    margin: 0;
+    gap: 16px;
+}
+
+.header-camera .camera-dropdown-group {
+    min-width: 140px;
+}
+
+.header-camera .camera-dropdown-group label {
+    font-size: 0.72rem;
+}
+
+.header-camera select {
+    max-width: 170px;
+    font-size: 0.85rem;
+}

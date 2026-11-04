@@ -98,7 +98,39 @@ const pastStreams = [
                         </div>
                     </div>
                 </div>
-                <p id="status-msg">Connecting to Streamer.bot...</p>
+                <div class="status-camera-row">
+                    <p id="status-msg">Connecting to Streamer.bot...</p>
+                    <div class="camera-dropdowns header-camera">
+                        <div class="camera-dropdown-group">
+                            <label for="camera-position">Position</label>
+                            <select id="camera-position" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction(this.value); this.selectedIndex = 0; }" disabled>
+                                <option value="">Choose Position</option>
+                                <option value="01 - Command - Redeem Camera Top Left">Top Left</option>
+                                <option value="02 - Command - Redeem Camera Top Center">Top Center</option>
+                                <option value="03 - Command - Redeem Camera Top Right">Top Right</option>
+                                <option value="04 - Command - Redeem Camera Middle Left">Mid Left</option>
+                                <option value="05 - Command - Redeem Camera Middle Center">Mid Center</option>
+                                <option value="06 - Command - Redeem Camera Middle Right">Mid Right</option>
+                                <option value="07 - Command - Redeem Camera Bottom Left">Bottom Left</option>
+                                <option value="08 - Command - Redeem Camera Bottom Center">Bottom Center</option>
+                                <option value="09 - Command - Redeem Camera Bottom Right">Bottom Right</option>
+                                <option value="10 - Command - Redeem Camera Inline Right">Right Align</option>
+                                <option value="0 - Command - Redeem Camera RDO Default">Red Dead Spot</option>
+                                <option value="000 - Command - Redeem Camera GTA Default">GTA Spot</option>
+                                <option value="00 - Command - Redeem Camera Enlarged">Full Center</option>
+                            </select>
+                        </div>
+                        <div class="camera-dropdown-group">
+                            <label for="camera-style">Style</label>
+                            <select id="camera-style" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction(this.value); this.selectedIndex = 0; }" disabled>
+                                <option value="">Choose Style</option>
+                                <option value="0B - Command - Redeem Camera Design Glitch Box">RDR Compass</option>
+                                <option value="0C - Command Redeem - Camera Design RDO Compass">GTA Glitch Box</option>
+                                <option value="0D - Command Redeem - Camera Design Inline">Inline Basic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div id="owner-debug-tools" class="owner-debug-tools" style="display:none;">
                     <label class="owner-debug-toggle">
                         <input type="checkbox" id="owner-force-enable">
@@ -192,41 +224,6 @@ const pastStreams = [
                     <button class="cmd-btn stream-cmd" onclick="sendAction('Filter Thermal', 'Filter Thermal')" disabled>Thermal</button>
                     <button class="cmd-btn stream-cmd" onclick="sendAction('Filter Upside Down', 'Filter Upside Down')" disabled>Upside Down</button>
                 </div>
-
-                <h4 class="collapsible-header collapsed" onclick="toggleSection(this)">
-                    Camera Control <i class="fas fa-chevron-down transition-icon"></i>
-                </h4>
-                <div class="collapsible-content collapsed camera-control-section">
-                    <div class="camera-dropdowns">
-                        <div class="camera-dropdown-group">
-                            <label for="camera-position">Position</label>
-                            <select id="camera-position" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction(this.value); this.selectedIndex = 0; }" disabled>
-                                <option value="">Choose Position</option>
-                                <option value="01 - Command - Redeem Camera Top Left">Top Left</option>
-                                <option value="02 - Command - Redeem Camera Top Center">Top Center</option>
-                                <option value="03 - Command - Redeem Camera Top Right">Top Right</option>
-                                <option value="04 - Command - Redeem Camera Middle Left">Mid Left</option>
-                                <option value="05 - Command - Redeem Camera Middle Center">Mid Center</option>
-                                <option value="06 - Command - Redeem Camera Middle Right">Mid Right</option>
-                                <option value="07 - Command - Redeem Camera Bottom Left">Bottom Left</option>
-                                <option value="08 - Command - Redeem Camera Bottom Center">Bottom Center</option>
-                                <option value="09 - Command - Redeem Camera Bottom Right">Bottom Right</option>
-                                <option value="10 - Command - Redeem Camera Inline Right">Right Align</option>
-                                <option value="0 - Command - Redeem Camera RDO Default">Red Dead Spot</option>
-                                <option value="000 - Command - Redeem Camera GTA Default">GTA Spot</option>
-                                <option value="00 - Command - Redeem Camera Enlarged">Full Center</option>
-                            </select>
-                        </div>
-                        <div class="camera-dropdown-group">
-                            <label for="camera-style">Style</label>
-                            <select id="camera-style" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction(this.value); this.selectedIndex = 0; }" disabled>
-                                <option value="">Choose Style</option>
-                                <option value="0B - Command - Redeem Camera Design Glitch Box">RDR Compass</option>
-                                <option value="0C - Command Redeem - Camera Design RDO Compass">GTA Glitch Box</option>
-                                <option value="0D - Command Redeem - Camera Design Inline">Inline Basic</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

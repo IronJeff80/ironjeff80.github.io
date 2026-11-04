@@ -332,33 +332,47 @@ function clearOwnerVideoOverride() {
 
 async function fetchOwnerLiveVideos() {
     const select = document.getElementById('owner-video-select');
-    if (!select || !window._ytAccessToken || !userData) return;
+    console.log('[Debug Videos] fetchOwnerLiveVideos called');
+    console.log('[Debug Videos] select element:', !!select);
+    console.log('[Debug Videos] access token present:', !!window._ytAccessToken);
+    console.log('[Debug Videos] userData:', userData);
+
+    if (!select || !window._ytAccessToken || !userData) {
+        console.warn('[Debug Videos] Missing requirements, aborting');
+        if (select) select.innerHTML = '<option value="">Missing token or user</option>';
+        return;
+    }
 
     select.innerHTML = '<option value="">Loading…</option>';
 
     try {
-        // liveBroadcasts.list with mine=true returns the authenticated user's broadcasts (including unlisted)
         const url = 'https://www.googleapis.com/youtube/v3/liveBroadcasts?part=snippet,status&mine=true&broadcastStatus=all&maxResults=20';
+        console.log('[Debug Videos] Requesting:', url);
+
         const res = await fetch(url, {
             headers: { 'Authorization': `Bearer ${window._ytAccessToken}` }
         });
+
+        console.log('[Debug Videos] HTTP status:', res.status);
         const data = await res.json();
+        console.log('[Debug Videos] Full API response:', data);
 
         select.innerHTML = '<option value="">— Select a stream —</option>';
 
         if (data.error) {
-            console.error('YouTube API error', data.error);
+            console.error('[Debug Videos] API error:', data.error);
             select.innerHTML = `<option value="">API error: ${data.error.message || 'unknown'}</option>`;
             return;
         }
 
         if (data.items && data.items.length) {
-            // Prefer active/upcoming, but show all
+            console.log('[Debug Videos] Found', data.items.length, 'broadcasts');
             data.items.forEach(item => {
-                const id = item.id; // for liveBroadcasts, id is the video ID
+                const id = item.id;
                 const title = item.snippet?.title || id;
                 const status = item.status?.lifeCycleStatus || '';
                 const privacy = item.status?.privacyStatus || '';
+                console.log('[Debug Videos] Item:', { id, title, status, privacy });
                 const label = `${title} (${privacy}${status ? ' · ' + status : ''})`;
                 const opt = document.createElement('option');
                 opt.value = id;
@@ -366,6 +380,7 @@ async function fetchOwnerLiveVideos() {
                 select.appendChild(opt);
             });
         } else {
+            console.log('[Debug Videos] No items in response');
             const opt = document.createElement('option');
             opt.value = '';
             opt.textContent = 'No broadcasts found';
@@ -373,7 +388,7 @@ async function fetchOwnerLiveVideos() {
             select.appendChild(opt);
         }
     } catch (err) {
-        console.error('Failed to fetch live videos', err);
+        console.error('[Debug Videos] Fetch failed:', err);
         select.innerHTML = '<option value="">Failed to load</option>';
     }
 }

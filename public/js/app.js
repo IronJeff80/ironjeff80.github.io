@@ -339,8 +339,8 @@ async function fetchOwnerLiveVideos() {
     select.innerHTML = '<option value="">Loading…</option>';
 
     try {
-        // Fetch currently live + upcoming broadcasts for the authenticated channel
-        const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${encodeURIComponent(userData.id)}&type=video&eventType=live&maxResults=15&order=date`;
+        // liveBroadcasts.list with mine=true returns the authenticated user's broadcasts (including unlisted)
+        const url = 'https://www.googleapis.com/youtube/v3/liveBroadcasts?part=snippet,status&mine=true&broadcastStatus=all&maxResults=20';
         const res = await fetch(url, {
             headers: { 'Authorization': `Bearer ${window._ytAccessToken}` }
         });
@@ -348,19 +348,29 @@ async function fetchOwnerLiveVideos() {
 
         select.innerHTML = '<option value="">— Select a stream —</option>';
 
+        if (data.error) {
+            console.error('YouTube API error', data.error);
+            select.innerHTML = `<option value="">API error: ${data.error.message || 'unknown'}</option>`;
+            return;
+        }
+
         if (data.items && data.items.length) {
+            // Prefer active/upcoming, but show all
             data.items.forEach(item => {
-                const id = item.id.videoId;
-                const title = item.snippet.title || id;
+                const id = item.id; // for liveBroadcasts, id is the video ID
+                const title = item.snippet?.title || id;
+                const status = item.status?.lifeCycleStatus || '';
+                const privacy = item.status?.privacyStatus || '';
+                const label = `${title} (${privacy}${status ? ' · ' + status : ''})`;
                 const opt = document.createElement('option');
                 opt.value = id;
-                opt.textContent = title.length > 60 ? title.slice(0, 57) + '…' : title;
+                opt.textContent = label.length > 70 ? label.slice(0, 67) + '…' : label;
                 select.appendChild(opt);
             });
         } else {
             const opt = document.createElement('option');
             opt.value = '';
-            opt.textContent = 'No live/upcoming streams found';
+            opt.textContent = 'No broadcasts found';
             opt.disabled = true;
             select.appendChild(opt);
         }

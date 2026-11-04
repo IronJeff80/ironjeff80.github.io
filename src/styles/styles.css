@@ -2665,3 +2665,15 @@ details[open] > .widget-header {
     padding: 4px 10px;
     font-size: 0.8rem;
 }
+
+.owner-video-override select {
+    min-width: 220px;
+    max-width: 320px;
+}
+
+.owner-video-manual {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+}

@@ -54,6 +54,7 @@ function setupGoogleClient() {
             scope: "https://www.googleapis.com/auth/youtube.readonly",
             callback: (tokenResponse) => {
                 if (tokenResponse && tokenResponse.access_token) {
+                    window._ytAccessToken = tokenResponse.access_token;
                     fetchYouTubeData(tokenResponse.access_token);
                 }
             }
@@ -330,11 +331,52 @@ function clearOwnerVideoOverride() {
     updateStreamState(isStreamLive);
 }
 
+
+async function fetchOwnerLiveVideos() {
+    const select = document.getElementById('owner-video-select');
+    if (!select || !window._ytAccessToken || !userData) return;
+
+    select.innerHTML = '<option value="">Loading…</option>';
+
+    try {
+        // Fetch currently live + upcoming broadcasts for the authenticated channel
+        const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${encodeURIComponent(userData.id)}&type=video&eventType=live&maxResults=15&order=date`;
+        const res = await fetch(url, {
+            headers: { 'Authorization': `Bearer ${window._ytAccessToken}` }
+        });
+        const data = await res.json();
+
+        select.innerHTML = '<option value="">— Select a stream —</option>';
+
+        if (data.items && data.items.length) {
+            data.items.forEach(item => {
+                const id = item.id.videoId;
+                const title = item.snippet.title || id;
+                const opt = document.createElement('option');
+                opt.value = id;
+                opt.textContent = title.length > 60 ? title.slice(0, 57) + '…' : title;
+                select.appendChild(opt);
+            });
+        } else {
+            const opt = document.createElement('option');
+            opt.value = '';
+            opt.textContent = 'No live/upcoming streams found';
+            opt.disabled = true;
+            select.appendChild(opt);
+        }
+    } catch (err) {
+        console.error('Failed to fetch live videos', err);
+        select.innerHTML = '<option value="">Failed to load</option>';
+    }
+}
+
 // Wire up owner debug tools
 document.addEventListener('astro:page-load', () => {
     const forceCheckbox = document.getElementById('owner-force-enable');
     const loadBtn = document.getElementById('owner-load-video');
     const clearBtn = document.getElementById('owner-clear-video');
+    const refreshBtn = document.getElementById('owner-refresh-videos');
+    const videoSelect = document.getElementById('owner-video-select');
     const videoInput = document.getElementById('owner-video-id');
 
     if (forceCheckbox) {
@@ -344,18 +386,29 @@ document.addEventListener('astro:page-load', () => {
         });
     }
 
-    if (loadBtn && videoInput) {
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', fetchOwnerLiveVideos);
+    }
+
+    // Auto-load list when owner tools become visible
+    if (userData && userData.id === OWNER_CHANNEL_ID && window._ytAccessToken) {
+        fetchOwnerLiveVideos();
+    }
+
+    if (loadBtn) {
         loadBtn.addEventListener('click', () => {
-            const id = videoInput.value.trim();
+            // Prefer dropdown selection, fall back to manual input
+            const id = (videoSelect && videoSelect.value) || (videoInput && videoInput.value.trim());
             if (!id) return;
             ownerOverrideVideoId = id;
             applyOwnerVideoOverride(id);
             updateStreamState(isStreamLive);
         });
+    }
+
+    if (videoInput) {
         videoInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                loadBtn.click();
-            }
+            if (e.key === 'Enter' && loadBtn) loadBtn.click();
         });
     }
 

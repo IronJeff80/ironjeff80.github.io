@@ -105,10 +105,17 @@ const pastStreams = [
                         <span>Force commands enabled (offline preview)</span>
                     </label>
                     <div class="owner-video-override">
-                        <label for="owner-video-id">Unlisted / Debug Video ID:</label>
-                        <input type="text" id="owner-video-id" placeholder="e.g. dQw4w9WgXcQ" maxlength="20">
+                        <label for="owner-video-select">Unlisted / Live Streams:</label>
+                        <select id="owner-video-select" class="album-dropdown">
+                            <option value="">— Select a stream —</option>
+                        </select>
+                        <button type="button" id="owner-refresh-videos" class="cmd-btn" title="Refresh list">↻</button>
                         <button type="button" id="owner-load-video" class="cmd-btn">Load</button>
                         <button type="button" id="owner-clear-video" class="cmd-btn">Clear</button>
+                    </div>
+                    <div class="owner-video-manual" style="margin-top:6px;">
+                        <label for="owner-video-id" style="opacity:0.6;font-size:0.75rem;">or paste ID:</label>
+                        <input type="text" id="owner-video-id" placeholder="manual video ID" maxlength="20" style="max-width:140px;">
                     </div>
                 </div>
                 

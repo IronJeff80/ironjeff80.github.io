@@ -4,6 +4,7 @@
 let ws;
 let userData = null;
 let isStreamLive = false;
+let isPublicLive = false;
 
 // ==========================================
 // 2. UI & LAYOUT LOGIC
@@ -146,6 +147,8 @@ function connectBot() {
 
                 if (customData.name === "LiveStatusUpdate") {
                     const incomingId = (customData.videoId || "").trim();
+                    const privacy = (customData.privacy || "").toLowerCase();
+                    isPublicLive = customData.isLive && privacy === "public";
 
                     // Owner debug override is absolute — do not touch video/chat at all
                     if (ownerOverrideVideoId) {
@@ -253,11 +256,9 @@ function updateStreamState(live) {
     }
 
     // Owner always sees the full Command Center.
-    // Everyone else only sees it when a public stream is live.
-    // (Unlisted/debug streams do not count as public.)
+    // Everyone else only sees it when a PUBLIC stream is live.
     if (commandCenter) {
-        const publicLive = isStreamLive && !ownerOverrideVideoId;
-        const shouldShow = isOwner || publicLive;
+        const shouldShow = isOwner || isPublicLive;
         commandCenter.style.display = shouldShow ? 'block' : 'none';
     }
 
@@ -269,7 +270,7 @@ function updateStreamState(live) {
         msgEl.innerText = "Debug Mode";
         msgEl.style.color = "#00ff00";
         commandButtons.forEach(btn => btn.disabled = false);
-    } else if (isStreamLive && !ownerOverrideVideoId) {
+    } else if (isPublicLive) {
         msgEl.innerText = "Stream Online";
         msgEl.style.color = "#00ff00";
         commandButtons.forEach(btn => btn.disabled = !(isConnected && userData));

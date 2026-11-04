@@ -2465,17 +2465,26 @@ details[open] > .widget-header {
     flex-wrap: wrap;
 }
 
-.album-dropdown {
-    background: var(--panel-bg);
-    color: var(--white-med);
-    border: 1px solid rgba(55, 95, 207, 0.4);
+.album-dropdown,
+.owner-video-override select,
+.header-camera select {
+    background: rgba(18, 16, 35, 0.9);
+    color: var(--white-low);
+    border: 1px solid rgba(146, 112, 180, 0.5);
     border-radius: 8px;
     padding: 8px 12px;
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     min-width: 180px;
     cursor: pointer;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.album-dropdown:hover,
+.owner-video-override select:hover,
+.header-camera select:hover {
+    border-color: rgba(146, 112, 180, 0.8);
+    background: rgba(28, 24, 50, 0.95);
 }
 
 .album-dropdown:focus {
@@ -2706,4 +2715,12 @@ details[open] > .widget-header {
 .header-camera select {
     max-width: 180px;
     font-size: 0.85rem;
+}
+
+
+.album-dropdown option,
+.owner-video-override select option,
+.header-camera select option {
+    background: #121023;
+    color: #ffffff;
 }

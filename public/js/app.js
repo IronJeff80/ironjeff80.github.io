@@ -387,19 +387,33 @@ async function fetchOwnerLiveVideos() {
         }
 
         if (data.items && data.items.length) {
-            console.log('[Debug Videos] Found', data.items.length, 'broadcasts');
-            data.items.forEach(item => {
-                const id = item.id;
-                const title = item.snippet?.title || id;
-                const status = item.status?.lifeCycleStatus || '';
-                const privacy = item.status?.privacyStatus || '';
-                console.log('[Debug Videos] Item:', { id, title, status, privacy });
-                const label = `${title} (${privacy}${status ? ' · ' + status : ''})`;
-                const opt = document.createElement('option');
-                opt.value = id;
-                opt.textContent = label.length > 70 ? label.slice(0, 67) + '…' : label;
-                select.appendChild(opt);
+            // Only keep live and scheduled/upcoming (exclude completed)
+            const active = data.items.filter(item => {
+                const s = (item.status?.lifeCycleStatus || '').toLowerCase();
+                return s === 'live' || s === 'ready' || s === 'testing' || s === 'created';
             });
+            console.log('[Debug Videos] Found', data.items.length, 'broadcasts,', active.length, 'active/scheduled');
+
+            if (active.length) {
+                active.forEach(item => {
+                    const id = item.id;
+                    const title = item.snippet?.title || id;
+                    const status = item.status?.lifeCycleStatus || '';
+                    const privacy = item.status?.privacyStatus || '';
+                    console.log('[Debug Videos] Item:', { id, title, status, privacy });
+                    const label = `${title} (${privacy} · ${status})`;
+                    const opt = document.createElement('option');
+                    opt.value = id;
+                    opt.textContent = label.length > 70 ? label.slice(0, 67) + '…' : label;
+                    select.appendChild(opt);
+                });
+            } else {
+                const opt = document.createElement('option');
+                opt.value = '';
+                opt.textContent = 'No live or scheduled streams';
+                opt.disabled = true;
+                select.appendChild(opt);
+            }
         } else {
             console.log('[Debug Videos] No items in response');
             const opt = document.createElement('option');

@@ -154,25 +154,28 @@ function connectBot() {
                     const vodWrapper = document.getElementById('vod-wrapper');
                     const vodResetBtn = document.getElementById('vod-reset-btn');
 
-                    if (customData.videoId && customData.videoId.trim() !== "") {
+                    const incomingId = (customData.videoId || "").trim();
+
+                    if (incomingId !== "") {
                         // Stream is Live or Scheduled -> Show Live Player & Chat, Hide VOD list
                         document.querySelectorAll('.vod-item').forEach(item => item.classList.remove('active'));
                         if (vodResetBtn) vodResetBtn.style.display = 'none';
                         if (vodWrapper) vodWrapper.style.display = 'none';
 
-                        if (videoFrame) {
+                        // Only update the player when the video ID actually changes.
+                        // This prevents every new visitor/refresh from resetting playback for everyone.
+                        if (videoFrame && window._currentLiveVideoId !== incomingId) {
                             videoFrame.removeAttribute('data-playing-vod');
                             videoFrame.style.display = 'block';
-                            if (!videoFrame.src.includes(customData.videoId)) {
-                                const autoPlay = customData.isLive ? "?autoplay=1" : "";
-                                videoFrame.src = `https://www.youtube.com/embed/${customData.videoId}${autoPlay}`;
-                            }
+                            const autoPlay = customData.isLive ? "?autoplay=1" : "";
+                            videoFrame.src = `https://www.youtube.com/embed/${incomingId}${autoPlay}`;
+                            window._currentLiveVideoId = incomingId;
                         }
                         if (placeholderImg) placeholderImg.style.display = 'none';
 
-                        if (chatFrame && !chatFrame.src.includes(customData.videoId)) {
+                        if (chatFrame && !chatFrame.src.includes(incomingId)) {
                             const currentDomain = window.location.hostname;
-                            chatFrame.src = `https://www.youtube.com/live_chat?v=${customData.videoId}&embed_domain=${currentDomain}&dark_theme=1`;
+                            chatFrame.src = `https://www.youtube.com/live_chat?v=${incomingId}&embed_domain=${currentDomain}&dark_theme=1`;
                         }
                         
                         if (chatWrapper) chatWrapper.style.display = 'block';
@@ -182,6 +185,8 @@ function connectBot() {
                             msgEl.style.color = "#ffaa00"; 
                         }
                     } else {
+                        // Clear the tracked ID when going offline so the next live stream loads cleanly
+                        window._currentLiveVideoId = null;
                         // Stream is Offline -> Hide Chat, Show VOD list
                         if (chatFrame && !chatFrame.src.includes("about:blank")) chatFrame.src = "about:blank"; 
                         if (chatWrapper) chatWrapper.style.display = 'none';

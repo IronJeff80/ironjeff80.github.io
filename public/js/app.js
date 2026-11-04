@@ -144,12 +144,14 @@ function connectBot() {
                 const customData = JSON.parse(msg.data.data);
 
                 if (customData.name === "LiveStatusUpdate") {
-                    updateStreamState(customData.isLive);
-
-                    // If the owner has an active debug video override, leave the player alone
+                    // Owner debug override is absolute — ignore all live/offline player changes
                     if (ownerOverrideVideoId) {
-                        return; // skip normal live/offline player updates
+                        // Still update command enable state, but do not touch video/chat
+                        updateStreamState(customData.isLive);
+                        return;
                     }
+
+                    updateStreamState(customData.isLive);
 
                     const videoFrame = document.getElementById('yt-video-frame');
                     const placeholderImg = document.getElementById('offline-placeholder');
@@ -275,7 +277,7 @@ function updateStreamState(live) {
         }
     }
 
-    // Apply owner video override if set
+    // Apply owner video override if set (re-assert it after any status change)
     if (isOwner && ownerOverrideVideoId) {
         applyOwnerVideoOverride(ownerOverrideVideoId);
     }

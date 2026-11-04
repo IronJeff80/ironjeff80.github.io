@@ -56,7 +56,12 @@ function setupGoogleClient() {
             callback: (tokenResponse) => {
                 if (tokenResponse && tokenResponse.access_token) {
                     window._ytAccessToken = tokenResponse.access_token;
+                    sessionStorage.setItem('ytAccessToken', tokenResponse.access_token);
                     fetchYouTubeData(tokenResponse.access_token);
+                    // If owner tools are open, refresh the video list
+                    if (typeof fetchOwnerLiveVideos === 'function') {
+                        setTimeout(fetchOwnerLiveVideos, 300);
+                    }
                 }
             }
         });
@@ -66,6 +71,12 @@ function setupGoogleClient() {
 }
 
 setupGoogleClient();
+
+// Restore token from this browser session if available
+const savedToken = sessionStorage.getItem('ytAccessToken');
+if (savedToken) {
+    window._ytAccessToken = savedToken;
+}
 
 function initGoogleSignIn() {
     if (!tokenClient) {
@@ -337,9 +348,19 @@ async function fetchOwnerLiveVideos() {
     console.log('[Debug Videos] access token present:', !!window._ytAccessToken);
     console.log('[Debug Videos] userData:', userData);
 
-    if (!select || !window._ytAccessToken || !userData) {
-        console.warn('[Debug Videos] Missing requirements, aborting');
-        if (select) select.innerHTML = '<option value="">Missing token or user</option>';
+    if (!select || !userData) {
+        console.warn('[Debug Videos] Missing select or userData');
+        return;
+    }
+
+    if (!window._ytAccessToken) {
+        console.log('[Debug Videos] No access token, requesting one...');
+        if (select) select.innerHTML = '<option value="">Requesting YouTube access…</option>';
+        if (tokenClient) {
+            tokenClient.requestAccessToken({ prompt: '' });
+        } else {
+            if (select) select.innerHTML = '<option value="">Google client not ready</option>';
+        }
         return;
     }
 

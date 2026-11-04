@@ -346,7 +346,7 @@ async function fetchOwnerLiveVideos() {
     select.innerHTML = '<option value="">Loading…</option>';
 
     try {
-        const url = 'https://www.googleapis.com/youtube/v3/liveBroadcasts?part=snippet,status&mine=true&broadcastStatus=all&maxResults=20';
+        const url = 'https://www.googleapis.com/youtube/v3/liveBroadcasts?part=snippet,status&mine=true&maxResults=20';
         console.log('[Debug Videos] Requesting:', url);
 
         const res = await fetch(url, {

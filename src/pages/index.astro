@@ -90,11 +90,11 @@ const pastStreams = [
                             <option value="Western">Western Vibes</option>
                         </select>
                         <div class="media-bar header-media">
-                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
-                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
-                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
-                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
-                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Change Media State', 'Media Previous')" title="Previous" disabled><i class="fas fa-step-backward"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Change Media State', 'Media Stop')" title="Stop" disabled><i class="fas fa-stop"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Change Media State', 'Media Play')" title="Play" disabled><i class="fas fa-play"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Change Media State', 'Media Pause')" title="Pause" disabled><i class="fas fa-pause"></i></button>
+                            <button class="cmd-btn media-btn stream-cmd" onclick="sendAction('Change Media State', 'Media Skip')" title="Skip" disabled><i class="fas fa-step-forward"></i></button>
                         </div>
                     </div>
                 </div>

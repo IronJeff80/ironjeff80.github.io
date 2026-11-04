@@ -76,6 +76,16 @@ const pastStreams = [
             <div class="command-center">
                 <div class="command-center-header">
                     <h3>Command Center</h3>
+                    <div id="now-playing" class="now-playing" style="display:none;">
+                        <img id="np-artwork" class="np-artwork" src="" alt="">
+                        <div class="np-info">
+                            <div id="np-title" class="np-title"></div>
+                            <div id="np-artist" class="np-artist"></div>
+                        </div>
+                        <button id="np-favorite" class="np-fav-btn stream-cmd" onclick="sendAction('Add Favorite')" title="Add to Favorites" disabled>
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
                     <div class="command-header-controls">
                         <select id="album-select" class="album-dropdown stream-cmd" onchange="if(this.value){ sendAction('Select Album', this.value); this.selectedIndex = 0; }" disabled>
                             <option value="">Choose Album</option>

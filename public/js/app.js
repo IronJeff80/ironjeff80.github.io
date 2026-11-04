@@ -156,6 +156,11 @@ function connectBot() {
             if (msg.event && msg.event.type === "Custom" && msg.data && msg.data.data) {
                 const customData = JSON.parse(msg.data.data);
 
+                if (customData.name === "NowPlayingUpdate") {
+                    updateNowPlaying(customData);
+                    return;
+                }
+
                 if (customData.name === "LiveStatusUpdate") {
                     const incomingId = (customData.videoId || "").trim();
                     const privacy = (customData.privacy || "").toLowerCase();
@@ -251,6 +256,42 @@ function checkCurrentStatus() {
 const OWNER_CHANNEL_ID = "UCbflkZl3HSQVyVW153f2Z3A";
 let ownerForceEnable = false;
 let ownerOverrideVideoId = null;
+
+
+function updateNowPlaying(data) {
+    const container = document.getElementById('now-playing');
+    const artwork = document.getElementById('np-artwork');
+    const titleEl = document.getElementById('np-title');
+    const artistEl = document.getElementById('np-artist');
+    const favBtn = document.getElementById('np-favorite');
+
+    if (!container) return;
+
+    const isPlaying = data.isPlaying && data.title;
+    if (!isPlaying) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'flex';
+
+    if (titleEl) titleEl.textContent = data.title || '';
+    if (artistEl) artistEl.textContent = data.artist || '';
+
+    if (artwork && data.album) {
+        const safeAlbum = encodeURIComponent(data.album);
+        artwork.src = `/assets/albums/${safeAlbum}.webp`;
+        artwork.alt = data.album;
+        artwork.onerror = () => { artwork.style.display = 'none'; };
+        artwork.style.display = 'block';
+    } else if (artwork) {
+        artwork.style.display = 'none';
+    }
+
+    if (favBtn) {
+        favBtn.disabled = false;
+    }
+}
 
 function updateStreamState(live) {
     isStreamLive = live;

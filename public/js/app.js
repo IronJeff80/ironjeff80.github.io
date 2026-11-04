@@ -223,7 +223,7 @@ function connectBot() {
 
     ws.onclose = () => {
         const statusMsg = document.getElementById('status-msg');
-        if (statusMsg) statusMsg.innerText = "Offline: Streamer's PC not reachable.";
+        if (statusMsg) statusMsg.innerText = "Stream Offline";
         setTimeout(connectBot, 5000);
     };
 }
@@ -245,9 +245,16 @@ function updateStreamState(live) {
     const commandButtons = document.querySelectorAll('.stream-cmd');
     const isOwner = userData && userData.id === OWNER_CHANNEL_ID;
     const debugTools = document.getElementById('owner-debug-tools');
+    const commandCenter = document.querySelector('.command-center');
 
     if (debugTools) {
         debugTools.style.display = isOwner ? 'block' : 'none';
+    }
+
+    // Hide entire Command Center for non-owners when stream is offline
+    if (commandCenter) {
+        const shouldShow = isStreamLive || isOwner;
+        commandCenter.style.display = shouldShow ? 'block' : 'none';
     }
 
     if (!msgEl) return;
@@ -257,33 +264,25 @@ function updateStreamState(live) {
     if (allowCommands) {
         commandButtons.forEach(btn => btn.disabled = false);
         if (isOwner && !isStreamLive && ownerForceEnable) {
-            msgEl.innerText = ownerOverrideVideoId
-                ? "Owner Debug Mode — Custom video loaded + commands enabled."
-                : "Bot Connected (Owner Force-Enable). Commands enabled for preview.";
+            msgEl.innerText = "Debug Mode";
             msgEl.style.color = "#00ff00";
         } else if (isStreamLive) {
-            msgEl.innerText = "Bot Connected (Stream Online). System ready for testing.";
+            msgEl.innerText = "Stream Online";
             msgEl.style.color = "#00ff00";
         } else {
-            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
+            msgEl.innerText = "Stream Offline";
             msgEl.style.color = "var(--white-med)";
         }
     } else {
         commandButtons.forEach(btn => btn.disabled = true);
-        if (!userData) {
-            msgEl.innerText = "Sign in to trigger commands.";
-            msgEl.style.color = "var(--white-med)";
-        } else if (!isConnected) {
-            msgEl.innerText = "Connecting to Streamer.bot...";
-            msgEl.style.color = "var(--white-med)";
+        if (isStreamLive) {
+            msgEl.innerText = userData ? "Stream Online" : "Stream Online — Sign in to use commands";
+            msgEl.style.color = "#00ff00";
         } else {
-            msgEl.innerText = "Bot Connected (Stream Offline). Testing not available till Live.";
+            msgEl.innerText = "Stream Offline";
             msgEl.style.color = "var(--white-med)";
         }
     }
-
-    // Do not re-apply override here — the LiveStatusUpdate handler
-    // already exits early when an override is active.
 }
 
 function applyOwnerVideoOverride(videoId) {

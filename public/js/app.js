@@ -144,9 +144,17 @@ function connectBot() {
                 const customData = JSON.parse(msg.data.data);
 
                 if (customData.name === "LiveStatusUpdate") {
-                    // Owner debug override is absolute — ignore all live/offline player changes
+                    const incomingId = (customData.videoId || "").trim();
+
+                    // Owner debug override is absolute — do not touch video/chat at all
                     if (ownerOverrideVideoId) {
-                        // Still update command enable state, but do not touch video/chat
+                        updateStreamState(customData.isLive);
+                        return;
+                    }
+
+                    // Public live stream: if we are already showing this exact video ID,
+                    // do nothing. This prevents any flicker for existing viewers.
+                    if (incomingId !== "" && window._currentLiveVideoId === incomingId) {
                         updateStreamState(customData.isLive);
                         return;
                     }
@@ -161,17 +169,13 @@ function connectBot() {
                     const vodWrapper = document.getElementById('vod-wrapper');
                     const vodResetBtn = document.getElementById('vod-reset-btn');
 
-                    const incomingId = (customData.videoId || "").trim();
-
                     if (incomingId !== "") {
                         // Stream is Live or Scheduled -> Show Live Player & Chat, Hide VOD list
                         document.querySelectorAll('.vod-item').forEach(item => item.classList.remove('active'));
                         if (vodResetBtn) vodResetBtn.style.display = 'none';
                         if (vodWrapper) vodWrapper.style.display = 'none';
 
-                        // Only update the player when the video ID actually changes.
-                        // This prevents every new visitor/refresh from resetting playback for everyone.
-                        if (videoFrame && window._currentLiveVideoId !== incomingId) {
+                        if (videoFrame) {
                             videoFrame.removeAttribute('data-playing-vod');
                             videoFrame.style.display = 'block';
                             const autoPlay = customData.isLive ? "?autoplay=1" : "";
@@ -180,7 +184,7 @@ function connectBot() {
                         }
                         if (placeholderImg) placeholderImg.style.display = 'none';
 
-                        if (chatFrame && !chatFrame.src.includes(incomingId)) {
+                        if (chatFrame) {
                             const currentDomain = window.location.hostname;
                             chatFrame.src = `https://www.youtube.com/live_chat?v=${incomingId}&embed_domain=${currentDomain}&dark_theme=1`;
                         }
@@ -277,10 +281,8 @@ function updateStreamState(live) {
         }
     }
 
-    // Apply owner video override if set (re-assert it after any status change)
-    if (isOwner && ownerOverrideVideoId) {
-        applyOwnerVideoOverride(ownerOverrideVideoId);
-    }
+    // Do not re-apply override here — the LiveStatusUpdate handler
+    // already exits early when an override is active.
 }
 
 function applyOwnerVideoOverride(videoId) {

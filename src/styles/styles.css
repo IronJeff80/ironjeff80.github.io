@@ -2560,3 +2560,37 @@ details[open] > .widget-header {
 .theme-yellow { background: #ffff00; color: #333; border-color: #ffff00; }
 .theme-rdr { background: linear-gradient(135deg, #c23b22, #7a120c); color: #fff; border-color: #7a120c; }
 .theme-gta6 { background: linear-gradient(135deg, #ff9d49, #28bad9); color: #fff; border-color: #28bad9; }
+
+/* Camera Control Section */
+.camera-control-section {
+    padding: 16px 0 8px;
+}
+
+.camera-dropdowns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.camera-dropdown-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 180px;
+}
+
+.camera-dropdown-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.camera-dropdown-group select {
+    width: 100%;
+    max-width: 220px;
+}

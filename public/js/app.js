@@ -20,7 +20,7 @@ function toggleSidebar() {
 // ==========================================
 // 3. INITIALIZATION ON PAGE LOAD
 // ==========================================
-window.onload = function () {
+function initializePage() {
     // START BOT CONNECTION IMMEDIATELY FOR TESTING
     if (document.getElementById('status-msg')) {
         connectBot();
@@ -31,17 +31,26 @@ window.onload = function () {
     const statusMsg = document.getElementById('status-msg');
 
     if (savedUser) {
-        userData = JSON.parse(savedUser);
-        restoreUserUI();
+        try {
+            userData = JSON.parse(savedUser);
+            restoreUserUI();
+        } catch (e) {
+            console.error('Failed to restore user', e);
+        }
     } else {
         if (statusMsg) statusMsg.innerText = "Sign in to interact with the stream.";
     }
 
-
     // Fetch dynamic resource locations for the Resource pages
     fetchNazarLocation();
     fetchGunVanLocation();
-};
+}
+
+// Initial load
+window.onload = initializePage;
+
+// Astro client-side navigations
+document.addEventListener('astro:page-load', initializePage);
 
 // ==========================================
 // 4. GOOGLE AUTH & YOUTUBE API LOGIC
@@ -140,6 +149,10 @@ function signOut() {
 // 5. STREAMER.BOT WEBSOCKET LOGIC
 // ==========================================
 function connectBot() {
+    // Avoid duplicate connections on Astro page transitions
+    if (ws && (ws.readyState === WebSocket.OPEN || ws.readyState === WebSocket.CONNECTING)) {
+        return;
+    }
     ws = new WebSocket("wss://bot.2smokinbarrels.com/");
 
     ws.onopen = () => {
@@ -164,7 +177,8 @@ function connectBot() {
                 if (customData.name === "LiveStatusUpdate") {
                     const incomingId = (customData.videoId || "").trim();
                     const privacy = (customData.privacy || "").toLowerCase();
-                    isPublicLive = customData.isLive && privacy === "public";
+                    // Treat missing privacy as public when live (back-compat with current bot script)
+                    isPublicLive = customData.isLive && (privacy === "public" || privacy === "");
 
                     // Owner debug override is absolute — do not touch video/chat at all
                     if (ownerOverrideVideoId) {

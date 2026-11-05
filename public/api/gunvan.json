@@ -1,21 +1,21 @@
 {
-  "id": "11",
-  "locationName": "Thomson Scrapyard",
-  "imagePath": "/images/gunvan/loc_11.jpg",
-  "mapPath": "/images/gunvan/map_11.jpg",
+  "id": "29",
+  "locationName": "Hearty Taco, Mirror Park",
+  "imagePath": "/images/gunvan/loc_29.jpg",
+  "mapPath": "/images/gunvan/map_29.jpg",
   "inventory": [
-    "Service Carbine: -30 %",
-    "Precision Rifle: -10 %",
-    "Combat Shotgun: -10 %",
+    "Compact EMP Launcher: -10 %",
+    "Precision Rifle: -50 %",
+    "Sweeper Shotgun: -10 %",
     "Widowmaker: -10 %",
-    "Up-n-Atomizer: -10 %",
-    "Unholy Hellbringer: -10 %",
+    "Knuckle Duster: -10 %",
     "Baseball Bat: FREE",
-    "Knife: -10 %",
-    "The Shocker: FREE",
+    "Knife: FREE",
     "Unknown (hash: -1916886713): -10 %",
+    "Proximity Mine: -10 %",
     "Pipe Bomb: -10 %",
+    "Molotov: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-11-04T12:51:24.397Z"
+  "updatedAt": "2026-11-05T12:59:40.975Z"
 }

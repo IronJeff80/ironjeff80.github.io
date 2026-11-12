@@ -1,21 +1,20 @@
 {
-  "id": "3",
-  "locationName": "Merle Abrahams' house, Sandy Shores",
-  "imagePath": "/images/gunvan/loc_3.jpg",
-  "mapPath": "/images/gunvan/map_3.jpg",
+  "id": "21",
+  "locationName": "Magellan Ave / Conquistador St, Vespucci Beach",
+  "imagePath": "/images/gunvan/loc_21.jpg",
+  "mapPath": "/images/gunvan/map_21.jpg",
   "inventory": [
-    "Compact EMP Launcher: -10 %",
-    "Precision Rifle: -50 %",
-    "Sweeper Shotgun: -10 %",
-    "Widowmaker: -10 %",
-    "Knuckle Duster: -10 %",
+    "Stun Gun: -10 %",
+    "Up-n-Atomizer: -10 %",
+    "Combat Shotgun: -10 %",
+    "Tactical SMG: -40 %",
+    "Compact Rifle: -10 %",
     "Baseball Bat: FREE",
     "Knife: FREE",
-    "Unknown (hash: -1916886713): -10 %",
-    "Proximity Mine: -10 %",
-    "Pipe Bomb: -10 %",
     "Molotov: -10 %",
+    "Sticky Bomb: -10 %",
+    "Proximity Mine: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-11-11T12:32:07.482Z"
+  "updatedAt": "2026-11-12T13:37:24.981Z"
 }

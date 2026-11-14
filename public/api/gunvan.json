@@ -1,8 +1,8 @@
 {
-  "id": "9",
-  "locationName": "Palmer-Taylor Power Station",
-  "imagePath": "/images/gunvan/loc_9.jpg",
-  "mapPath": "/images/gunvan/map_9.jpg",
+  "id": "25",
+  "locationName": "Caesars Auto Parking, Little Seoul",
+  "imagePath": "/images/gunvan/loc_25.jpg",
+  "mapPath": "/images/gunvan/map_25.jpg",
   "inventory": [
     "Stun Gun: -10 %",
     "Up-n-Atomizer: -10 %",
@@ -16,5 +16,5 @@
     "Proximity Mine: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-11-13T12:56:02.422Z"
+  "updatedAt": "2026-11-14T11:59:20.267Z"
 }

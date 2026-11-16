@@ -1,8 +1,8 @@
 {
-  "id": "23",
-  "locationName": "Parking garage south of Oriental Theater, Downtown Vinewood",
-  "imagePath": "/images/gunvan/loc_23.jpg",
-  "mapPath": "/images/gunvan/map_23.jpg",
+  "id": "11",
+  "locationName": "Thomson Scrapyard",
+  "imagePath": "/images/gunvan/loc_11.jpg",
+  "mapPath": "/images/gunvan/map_11.jpg",
   "inventory": [
     "Stun Gun: -10 %",
     "Up-n-Atomizer: -10 %",
@@ -16,5 +16,5 @@
     "Proximity Mine: -10 %",
     "Body armor: -10 %"
   ],
-  "updatedAt": "2026-11-15T12:35:39.281Z"
+  "updatedAt": "2026-11-16T13:27:27.292Z"
 }
